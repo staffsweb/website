@@ -1,0 +1,13 @@
+.access-able-link {
+    display: table;
+
+    & > div {
+        display: table-cell; vertical-align: middle;
+    }
+    &__logo > img {
+        margin-right: 10px; min-width: 32px;
+    }
+    &__link {
+        font-weight: 300; line-height: 1.5rem;
+    }
+}

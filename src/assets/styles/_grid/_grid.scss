@@ -1,0 +1,564 @@
+@import '../__vars/spacing';
+@import '../__vars/grid';
+@import '../__vars/breakpoints';
+@import '../__vars/layout';
+
+// .
+
+
+
+
+
+
+
+
+
+// NB: This file's mostly just for generation of grid CSS,
+// to configure what you want to output for use,
+// setup options in __vars/grid.scss :)
+
+
+
+
+
+
+
+
+
+
+
+// .
+
+@if (length($grid-cols) > 0) {
+
+  [class^="grid"] {
+    @include clearfix;
+    clear: both;
+    padding: 0;
+    margin: 0 -#{$grid-gutter/2};
+
+    > * {
+      display: block;
+      float: left;
+      list-style-type: none;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 $grid-gutter/2;
+    }
+  }
+
+  .grid--spaced {
+    @media (min-width: $wrap-large-gutter-width) {
+      margin: 0 -#{$grid-gutter-large/2};
+
+      > * {
+        padding: 0 $grid-gutter-large/2;
+      }
+    }
+  }
+
+  .grid--compact {
+    @media (min-width: 1em) {
+      margin: 0 -#{$grid-gutter-small/2};
+
+      > * {
+        padding: 0 $grid-gutter-small/2;
+      }
+    }
+  }
+
+  .grid--flush {
+    margin: 0;
+
+    > * {
+      padding: 0;
+    }
+  }
+
+  .grid--flexbox {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      //display: flex;
+      //flex-wrap: wrap;
+      //margin-left: auto;
+      //margin-right: auto;
+    }
+
+    &:before,
+    &:after {
+      display: none;
+      // This fixes:
+      // https://stackoverflow.com/questions/34250282/flexbox-wraps-last-column-of-the-first-row-in-safari
+    }
+  }
+
+  [class^="col-"] {
+    display: block;
+    float: left;
+    clear: none;
+  }
+
+  [class^="grid"] [class^="col-"] {
+    clear: none !important;
+  }
+
+  // ----
+
+  // 1/2
+
+  @if ($half-breakpoint) {
+    @media (min-width: $half-breakpoint) {
+      .grid-2-cols > * {
+        @include grid-col(1, 2);
+      }
+
+      .col-1\/2 {
+        @include col(1, 2);
+      }
+    }
+  }
+
+  // 1/3
+
+  @if ($third-breakpoint) {
+    @media (min-width: $third-breakpoint) {
+      .grid-3-cols > * {
+        @include grid-col(1, 3);
+      }
+
+      .col-1\/3 {
+        @include col(1, 3);
+      }
+      .col-2\/3 {
+        @include col(2, 3);
+      }
+    }
+  }
+
+  // 1/4
+
+  @if ($quart-breakpoint) {
+    @media (min-width: $half-breakpoint) {
+      .grid-4-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+
+    @media (min-width: $quart-breakpoint) {
+      .grid-4-cols > * {
+        @include grid-col(1, 4);
+      }
+
+      .col-1\/4 {
+        @include col(1, 4);
+      }
+      .col-3\/4 {
+        @include col(3, 4);
+      }
+    }
+  }
+
+  // 1/5
+
+  @if ($fifth-breakpoint) {
+    @media (min-width: $half-breakpoint) {
+      .grid-5-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+    @media (min-width: $third-breakpoint) {
+      .grid-5-cols > * {
+        @include grid-col(1, 3);
+      }
+    }
+    @media (min-width: $fifth-breakpoint) {
+      .grid-5-cols > * {
+        @include grid-col(1, 5);
+      }
+
+      .col-1\/5 {
+        @include col(1, 5);
+      }
+
+      @if ($complex-fractions or $complex-5ths) {
+
+        .col-2\/5 {
+          @include col(2, 5);
+        }
+        .col-3\/5 {
+          @include col(3, 5);
+        }
+        .col-4\/5 {
+          @include col(4, 5);
+        }
+      }
+    }
+  }
+
+  // 1/6
+
+  @if ($sixth-breakpoint) {
+    @media (min-width: $half-breakpoint) {
+      .grid-6-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+
+    @media (min-width: $third-breakpoint) {
+      .grid-6-cols > * {
+        @include grid-col(1, 3);
+      }
+    }
+
+    @media (min-width: $quart-breakpoint) {
+      .grid-6-cols > * {
+        @include grid-col(1, 4);
+      }
+    }
+
+    @media (min-width: $sixth-breakpoint) {
+      .grid-6-cols > * {
+        @include grid-col(1, 6);
+      }
+
+      .col-1\/6 {
+        @include col(1, 6);
+      }
+
+      @if ($complex-fractions or $complex-6ths) {
+
+        .col-5\/6 {
+          @include col(5, 6);
+        }
+      }
+    }
+  }
+
+  // 1/7
+
+  @if ($seventh-breakpoint) {
+    @media (min-width: $seventh-breakpoint) {
+      .grid-7-cols > * {
+        @include grid-col(1, 7);
+      }
+
+      .col-1\/7 {
+        @include col(1, 7);
+      }
+
+      @if ($complex-fractions or $complex-7ths) {
+
+        .col-2\/7 {
+          @include col(2, 7);
+        }
+        .col-3\/7 {
+          @include col(3, 7);
+        }
+        .col-4\/7 {
+          @include col(4, 7);
+        }
+        .col-5\/7 {
+          @include col(5, 7);
+        }
+        .col-6\/7 {
+          @include col(6, 7);
+        }
+      }
+    }
+  }
+
+  // 1/8
+
+  @if ($eighth-breakpoint) {
+    @media (min-width: $half-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 8);
+      }
+    }
+
+    @media (min-width: $quart-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 8);
+      }
+    }
+
+    @media (min-width: $eighth-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 8);
+      }
+
+      .col-1\/8 {
+        @include col(1, 8);
+      }
+
+      @if ($complex-fractions or $complex-8ths) {
+
+        .col-3\/8 {
+          @include col(3, 8);
+        }
+        .col-5\/8 {
+          @include col(5, 8);
+        }
+        .col-7\/8 {
+          @include col(7, 8);
+        }
+      }
+    }
+  }
+
+  // 1/9
+
+  @if ($ninth-breakpoint) {
+
+    @media (min-width: $half-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+
+    @media (min-width: $third-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 3);
+      }
+    }
+
+    @media (min-width: $sixth-breakpoint) {
+      .grid-8-cols > * {
+        @include grid-col(1, 6);
+      }
+    }
+
+    @media (min-width: $ninth-breakpoint) {
+      .grid-9-cols > * {
+        @include grid-col(1, 9);
+      }
+
+      .col-1\/9 {
+        @include col(1, 9);
+      }
+
+      @if ($complex-fractions or $complex-9ths) {
+
+        .col-2\/9 {
+          @include col(2, 9);
+        }
+        .col-5\/9 {
+          @include col(5, 9);
+        }
+        .col-7\/9 {
+          @include col(7, 9);
+        }
+        .col-8\/9 {
+          @include col(8, 9);
+        }
+      }
+    }
+  }
+
+  // 1/10
+
+  @if ($tenth-breakpoint) {
+
+    @media (min-width: $half-breakpoint) {
+      .grid-10-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+
+    @media (min-width: $quart-breakpoint) {
+      .grid-10-cols > * {
+        @include grid-col(1, 4);
+      }
+    }
+
+    @media (min-width: $fifth-breakpoint) {
+      .grid-10-cols > * {
+        @include grid-col(1, 5);
+      }
+    }
+
+    @media (min-width: $tenth-breakpoint) {
+      .grid-10-cols > * {
+        @include grid-col(1, 10);
+      }
+
+      .col-1\/10 {
+        @include col(1, 10);
+      }
+
+      @if ($complex-fractions or $complex-10ths) {
+
+        .col-3\/10 {
+          @include col(3, 10);
+        }
+        .col-7\/10 {
+          @include col(7, 10);
+        }
+        .col-9\/10 {
+          @include col(9, 10);
+        }
+      }
+    }
+  }
+
+  // 1/11
+
+  @if ($eleventh-breakpoint) {
+    @media (min-width: $eleventh-breakpoint) {
+      .grid-11-cols > * {
+        @include grid-col(1, 11);
+      }
+
+      .col-1\/11 {
+        @include col(1, 11);
+      }
+
+      @if ($complex-fractions or $complex-11ths) {
+
+        .col-2\/11 {
+          @include col(2, 11);
+        }
+        .col-3\/11 {
+          @include col(3, 11);
+        }
+        .col-4\/11 {
+          @include col(4, 11);
+        }
+        .col-5\/11 {
+          @include col(5, 11);
+        }
+        .col-6\/11 {
+          @include col(6, 11);
+        }
+        .col-7\/11 {
+          @include col(7, 11);
+        }
+        .col-8\/11 {
+          @include col(8, 11);
+        }
+        .col-9\/11 {
+          @include col(9, 11);
+        }
+        .col-10\/11 {
+          @include col(10, 11);
+        }
+      }
+    }
+  }
+
+  // 1/12
+
+  @if ($twelfth-breakpoint) {
+
+    @media (min-width: $half-breakpoint) {
+      .grid-12-cols > * {
+        @include grid-col(1, 2);
+      }
+    }
+
+    @media (min-width: $quart-breakpoint) {
+      .grid-12-cols > * {
+        @include grid-col(1, 4);
+      }
+    }
+
+    @media (min-width: $sixth-breakpoint) {
+      .grid-12-cols > * {
+        @include grid-col(1, 6);
+      }
+    }
+
+    @media (min-width: $twelfth-breakpoint) {
+      .grid-12-cols > * {
+        @include grid-col(1, 12);
+      }
+
+      .col-1\/12 {
+        @include col(1, 12);
+      }
+
+      @if ($complex-fractions or $complex-12ths) {
+
+        .col-5\/12 {
+          @include col(5, 12);
+        }
+        .col-7\/12 {
+          @include col(7, 12);
+        }
+        .col-11\/12 {
+          @include col(9, 12);
+        }
+      }
+    }
+  }
+
+  // ----
+
+  @each $stage, $breakpoint in $breakpoint-stages {
+
+    @media (min-width: #{$breakpoint}) {
+      @each $col in $grid-cols {
+
+        .grid-#{$col}-cols\@#{$stage} > * {
+          @include grid-col(1, $col);
+        }
+
+        .col-1\/#{$col}\@#{$stage} {
+          @include col(1, $col);
+        }
+
+        @if ($offsets) {
+          .offset-1\/#{$col}\@#{$stage} {
+            @include offset-left(1, $col);
+          }
+          .offset-reverse-1\/#{$col}\@#{$stage} {
+            @include offset-right(1, $col);
+          }
+        }
+
+        @if ($complex-fractions) {
+          @for $i from 2 through ($col - 1) {
+            @if gcd($col,$i) == 1 {
+              .col-#{$i}\/#{$col}\@#{$stage} {
+                @include col($i, $col);
+              }
+            }
+          }
+        }
+
+        @if ($complex-offsets) {
+          @for $i from 2 through ($col - 1) {
+            @if gcd($col,$i) == 1 {
+              .offset-#{$i}\/#{$col}\@#{$stage} {
+                @include offset-left($i, $col);
+              }
+              .offset-reverse-#{$i}\/#{$col}\@#{$stage} {
+                @include offset-right($i, $col);
+              }
+            }
+          }
+        }
+
+      }
+
+      .col-full\@#{$stage} {
+        width: 100%;
+      }
+    }
+
+  }
+
+  // ----
+
+  .col-reverse {
+    float: right;
+  }
+
+  .col-full {
+    width: 100%;
+    clear: both;
+  }
+
+}

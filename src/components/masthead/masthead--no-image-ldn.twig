@@ -1,0 +1,19 @@
+{% include '@meganav--ldn' with {
+  solidBg: false
+} %}
+
+<div class="masthead  masthead--shallow  masthead--primary-gradient">
+  <div class="masthead__inner">
+    <div class="wrap">
+      {% include '@breadcrumbs' %}
+
+      {% include '@title' with {
+        text: 'Masthead With No Image (Shallow)',
+        modifiers: ['has-tail'],
+        textElement: 'h1',
+        textElementStyle: 'h1',
+        animate: true
+      } %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+fieldset {
+  margin: 0 0 $spacing-xl;
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 500;
+  margin-bottom: $spacing-sm;
+}
+
+label {
+  display: block;
+  margin-bottom: $spacing-2xs;
+}
+
+.label--inline {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  margin-right: 0.2em;
+
+  + label {
+    display: inline-block;
+    margin-left: -1.2em;
+    margin-right: 1.2em;
+    margin-bottom: 0;
+    padding-left: 1.2em;
+    box-sizing: border-box;
+    max-width: calc(100% - 2.4em);
+    vertical-align: top;
+    cursor: pointer;
+  }
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email],
+input[type=tel],
+input[type=search],
+input[type=date],
+input[type=time],
+textarea,
+select {
+  width: 100%;
+  max-width: 40em;
+  padding: calc(0.75em - 1px) 0.75em;
+  background: #fff;
+  border: 1px solid rgba(50, 50, 50, 0.25);
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+
+  &:focus {
+    outline: none;
+    border-color: rgba(50, 50, 50, 0.75);
+  }
+
+  .crm-form & {
+    max-width: none;
+  }
+}
+
+textarea {
+  max-width: 25em;
+}
+
+select {
+  appearance: none;
+  padding-right: 2em;
+  background: white url('#{$image-theme-directory-icon}/icon-arrow-down-black.svg') no-repeat right 0.75em center;
+  background-size: 0.75em;
+}
+
+.form--invalid, .crm-form__error-msg {
+  color: $red;
+  border-color: $red!important;
+}
+
+.form__item {
+  margin: 0 0 $spacing-lg;
+}
+
+.form__group {
+  margin: 0 0 $spacing-lg;
+
+  .form__item {
+    margin: 0 0 $spacing-sm;
+  }
+}
+
+.form__group--inline {
+  .form__item {
+    margin: 0 $spacing-sm $spacing-sm 0;
+    display: inline-block;
+
+    label {
+      display: inline;
+      max-width: none;
+    }
+  }
+}
+
+.multipage-form {
+  &__page {
+    &[aria-hidden='true'] {
+      display: none;
+    }
+  }
+}
+
+.sys_form-submit {
+  @include button;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sys_fieldlabel, .sys_legend, .sys_sectionbreak-header {
+  font-weight: 500;
+}
+
+.sys_cms-form-body {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sys_namesubelement {
+  float: left;
+  margin-right: $spacing-md;
+}
+
+.sys_cms-form-validationsummary {
+  color: $primary;
+
+  & a {
+    color: $primary;
+  }
+}
+
+.progress {
+  display: flex;
+  list-style: none;
+  align-items: center;
+
+  &__step {
+    flex: 1; text-align: center;
+  }
+  &__icon {
+    position: relative;
+  }
+  &__step svg {
+    max-height: 40px;
+  }
+  &__step:not(.current), &__separator:not(.current) {
+    opacity: 0.6;
+  }
+  &__separator {
+    flex-basis: 25%;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+  }
+  &__tick svg {
+    position: absolute;
+    bottom: 0;
+    max-height: 20px!important;
+    display: none;
+  }
+}
+
+.completed .progress__tick svg { display: inline; }
+.privacy-statement a { color: inherit; }
+
+.multipage-form {
+  &__question { font-weight: 500; }
+  & .progress svg * { fill: none; }
+  &__error-msg { color: #FFF; }
+  & button:hover { cursor: pointer; }
+  &__error-msg {
+		background: #d70a26;
+		display: inline-block;
+		clear: both;
+		padding: 0 0.5rem;
+	}
+}
+
+.sys_cms-form-error {
+  font-weight: normal;
+  color: #D70A26;
+  margin-left: 0;
+  background-color: #FEE;
+
+  &::placeholder {
+    color: #D70A26;
+  }
+
+  input &, textarea &, select & {
+    border-color: #D70A26;
+    background-color: #FEE;
+  }
+}
+label.sys_cms-form-error::after {
+  content: " [please complete this field]";
+}

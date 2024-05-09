@@ -1,0 +1,6 @@
+status: wip
+
+variants:
+  - name: legacy
+  - name: multipage
+  - name: slabs

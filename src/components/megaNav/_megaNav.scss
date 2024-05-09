@@ -1,0 +1,647 @@
+
+.megaNav {
+  $border-color: #bebfc1;
+  $row-padding-y: 0.75em;
+  //$megaNav-full-breakpoint: _layout.scss;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: white;
+  font-size: 1.2em;
+  z-index: 9;
+  overflow: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  overflow-scrolling: touch;
+  transform: translateX(-150%);
+
+  &.is-open {
+    transition: transform 200ms ease-out;
+    transform: translateX(0);
+  }
+
+  @media (min-width: $megaNav-full-breakpoint) {
+    top: auto;
+    width: 100%;
+    transform: none;
+    transition: none;
+    font-size: 1em;
+    position: static;
+    overflow: visible;
+    background: none;
+    margin: 0 0 0 5%;
+  }
+
+  @media (min-width: $megaNav-full-breakpoint + 10rem) {
+    font-size: 1.1em;
+  }
+
+  ul ul {
+    @at-root .no-js & {
+      padding-left: $spacing-sm;
+    }
+  }
+
+  li {
+    margin: 0;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: $row-padding-y 2em $row-padding-y 0;
+      color: $neutral--primary;
+      font-weight: 500;
+      //border-bottom: 1px solid $border-color;
+
+      @media (min-width: $megaNav-full-breakpoint) {
+        padding: $spacing-sm $spacing-lg $spacing-sm;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      > a {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .has-children {
+    > a {
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 0.4em;
+        width: 2em;
+        height: 2em;
+        background: url('#{$image-theme-directory-icon}/icon-gt-primary.svg') no-repeat center center;
+        background-size: 0.5em;
+      }
+    }
+  }
+  
+  .has-simple-children {
+    @media (min-width: $megaNav-full-breakpoint) {
+      position: relative;
+
+      .megaNav__levelFooter {
+        display: none;
+      }
+
+      .megaNav__level {
+        left: auto;
+      }
+
+      .megaNav__secondLevel {
+        background: white;
+      }
+
+      .megaNav__secondLevel-list {
+        padding: $spacing-md;
+        min-height: auto;
+        width: auto;
+        min-width: 17.5em;
+      }
+    }
+  }
+
+  .is-expanded {
+    > .megaNav__level {
+      //left: 0;
+      //opacity: 1;
+      visibility: visible;
+      height: auto;
+      overflow: visible;
+      min-height: 100%;
+      transform: translateX(0);
+      transition: transform 100ms, visibility 100ms;
+
+      @media (min-width: $megaNav-full-breakpoint) {
+        transition: none;
+        transform: translateY(0);
+        opacity: 1;
+        min-height: unset;
+      }
+    }
+
+    > .megaNav__secondLevel {
+      @media (min-width: $megaNav-full-breakpoint) {
+        display: flex;
+      }
+    }
+  }
+
+
+  &__controls {
+    position: absolute;
+    left: 0;
+    width: $spacing-4xl;
+    overflow: hidden;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__close {
+    content: '';
+    border: 0;
+    box-sizing: border-box;
+    display: block;
+    width: $spacing-4xl;
+    height: $spacing-4xl;
+    margin-top: 0.1em; // yeah this is a bit of a magic number to get it to align with the closeLevel arrows
+    background: url('#{$image-theme-directory-icon}/icon-x-primary.svg') no-repeat center center;
+    background-size: 1rem;
+    cursor: pointer;
+  }
+
+  &__level {
+    position: absolute;
+    //opacity: 0;
+    visibility: hidden;
+    background: $greyblue--light;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    min-height: 0;
+    padding-bottom: 12rem; // this needs to be stupidly large, because of the way iOS handles 100vh, so items aren't covered by the bottom OS UI when expanded.
+    overflow: hidden;
+    transform: translateX(100%);
+    padding-left: $spacing-lg;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: transform 100ms, visibility 100ms;
+
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      min-height: auto;
+      transform: translateY(-200%);
+      padding: 0;
+      opacity: 0;
+      background: transparent;
+    }
+  }
+
+  &__levelHeader {
+    margin-left: -$spacing-lg;
+    padding-left: $spacing-lg;
+    background: white;
+    color: $neutral--primary;
+    font-weight: 500;
+    border-bottom: 1px solid $border-color;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__closeLevel {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: none;
+    border: 0;
+    @include line-height('spaced');
+    padding: $row-padding-y 2em;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+
+    &:active {
+      color: $primary;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      top: $row-padding-y;
+      width: 1em;
+      height: 2em;
+      background: url('#{$image-theme-directory-icon}/icon-gt-primary.svg') no-repeat center center;
+      background-size: 0.5em;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__levelList {
+  }
+
+  &__levelMobileFooter {
+
+    .megaNav__closeLevel {
+      text-align: left;
+    }
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__levelFooter {
+    position: relative;
+    margin-left: -$spacing-lg;
+    padding: $spacing-sm;
+    padding-left: $spacing-lg;
+    background: $neutral--light;
+    color: white;
+    z-index: 0;
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -#{$grid-gutter-small};
+      margin-right: -#{$grid-gutter-small};
+
+      input[type=text], .button {
+        width: auto;
+        margin-left: #{$grid-gutter-small};
+        margin-right: #{$grid-gutter-small};
+        flex: 1 1 15em;
+        margin-bottom: $spacing-2xs;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: $spacing-sm $spacing-sm 0;
+      z-index: 2;
+
+      p, form {
+        margin: $spacing-sm $spacing-md;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__topLevel {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background: $greyblue--light;
+    padding: 0 0 $spacing-4xl $spacing-lg;
+    margin-left: $spacing-4xl;
+    border-left: 1px solid $border-color;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-scrolling: touch;
+    box-sizing: border-box;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      position: static;
+      height: auto;
+      background: none;
+      padding: 0;
+      margin-left: 0;
+      border-left: 0;
+      overflow: visible;
+    }
+
+    &-item {
+      > a {
+        font-weight: 500;
+      }
+
+      @media (min-width: $megaNav-full-breakpoint) {
+        &.has-children {
+          > a {
+            &:after {
+              display: none;
+            }
+          }
+        }
+
+        &.is-expanded {
+          > a {
+            background: white;
+            color: black;
+          }
+        }
+
+        &.is-active {
+          > a {
+            box-shadow: inset 0 $spacing-2xs 0 $primary;
+          }
+        }
+      }
+    }
+
+    &-list {
+      @media (min-width: $megaNav-full-breakpoint) {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 0 0 auto;
+      }
+    }
+
+    .megaNav__topLevel-link {
+      // increase specificity to override > li > a' behaviour
+
+      @media (min-width: $megaNav-full-breakpoint) {
+        padding: $spacing-sm $spacing-lg;
+        border: 0;
+      }
+    }
+  }
+
+  &__secondLevel {
+    //display: none;
+    //padding-top: $spacing-4xl;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      display: flex;
+      flex-wrap: wrap;
+      top: 100%;
+      box-shadow: 0 1em 1em rgba(black, 0.15);
+
+      &-item {
+        &.is-expanded {
+          //background: #fff;
+          box-shadow: -1px -1px 0 #d70a26, -1px 1px 0 #d70a26;
+          box-shadow: 0 -1px 0 #d70a26, 0 1px 0 #d70a26;
+
+          > a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 1px;
+            background: #fff;
+            z-index: 100;
+          }
+        }
+      }
+
+      &-list {
+        position: relative;
+        margin: 0;
+        padding: $spacing-5xl 0 $spacing-md $spacing-md;
+        min-height: 70vh;
+        width: 25%; // yeah I really don't like this either (pt.1), please do feel free to think of a better way of doing this.
+        box-sizing: border-box;
+        background: #FFF;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 5rem;
+          right: 0;
+          bottom: 1rem;
+          display: block;
+          width: 1px;
+          background: $red;
+        }
+      }
+    }
+
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    &.has-children {
+      > a {
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          right: 0;
+          top: 0.4em;
+          width: 2em;
+          height: 2em;
+          background: url('#{$image-theme-directory-icon}/icon-gt-primary.svg') no-repeat center center;
+          background-size: 0.5em;
+        }
+      }
+    }
+
+  }
+
+
+  &__thirdLevel, &__fourthLevel {
+    //display: none;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      font-size: 0.85em;
+      left: 100%;
+      right: -300%; // yeah I really don't like this either (pt.2), please do feel free to think of a better way of doing this.
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      padding: $spacing-xl;
+      max-height: 100%;
+      overflow: auto !important; // sorry, this was lazy
+      box-sizing: border-box;
+
+      &-list {
+        columns: 2;
+        column-gap: $spacing-xl;
+        &:nth-child(2) {
+          //padding-top: $spacing-5xl;
+        }
+      }
+
+      &-item.has-children {
+        > a {
+          &:after {
+            //display: none;
+          }
+        }
+      }
+
+
+
+      .megaNav__thirdLevel-link, .megaNav__fourthLevel-link {
+        // increase specificity to override > li > a' behaviour
+        padding: 0;
+        border: 0;
+        margin: 0 0 $spacing-xs;
+      }
+    }
+
+    &-link {
+      line-height: 1.5;
+    }
+
+
+
+  }
+
+  &__secondLevel-item-has-fourthLevel {
+
+      &.is-expanded {
+        //background: #f7f8f9;
+      }
+
+      .megaNav__thirdLevel {
+        //background: #f7f8f9;
+
+        @media (min-width: $megaNav-full-breakpoint) {
+          padding: 0;
+          font-size: 1em;
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 5rem;
+            right: 0;
+            bottom: 1rem;
+            display: block;
+            width: 1px;
+            background: $red;
+          }
+
+          //box-shadow: 0 1em 1em rgba(black, 0.15);
+
+          &-item {
+            &.is-expanded {
+              background: #fff;
+              > a {
+                //box-shadow: -1px -1px 0 #d70a26, -1px 1px 0 #d70a26;
+                box-shadow: 0 -1px 0 #d70a26, 0 1px 0 #d70a26;
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  display: block;
+                  width: 1px;
+                  background: #fff;
+                  z-index: 100;
+                }
+              }
+
+            }
+          }
+
+          &-list {
+            margin: 0;
+            padding: $spacing-5xl 0 $spacing-md $spacing-md;
+            min-height: 60vh;
+            box-sizing: border-box;
+            columns: unset;
+            width: 33.33%;
+            //box-shadow: -1px 0 0 #eee inset;
+            height: 100%;
+            position: relative;
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 5rem;
+              right: 0;
+              bottom: 1rem;
+              display: block;
+              width: 1px;
+              background: $red;
+            }
+          }
+        }
+
+
+        &-link {
+          position: relative;
+          font-weight: 500;
+          margin: 0;
+        }
+
+
+        .megaNav__thirdLevel-link {
+          @media (min-width: $megaNav-full-breakpoint) {
+            padding: 0.75rem 1.5rem 0.75rem;
+          }
+          //border-bottom: 1px solid #bebfc1;
+        }
+
+      }
+
+
+  }
+
+  &__thirdLevel {
+    //display: none;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      padding-top: 6.7rem;
+    }
+
+  }
+
+  &__fourthLevel {
+    //display: none;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      left: 100%;
+      right: 0;
+      width: 200%;
+      padding-top: 6.7rem;
+    }
+
+  }
+
+
+  &__topLevel-item {
+
+
+    //display: inline;
+    //
+    //> a, a:visited {
+    //  font-weight: 500;
+    //  color: #fff;
+    //  display: inline-block;
+    //  padding: 0.5em;
+    //  background: transparent;
+    //  transition: all 0.2s;
+    //
+    //  @media (min-width: 60em) and (min-height: 30em) {
+    //    @include typescale('lg');
+    //    padding: 1em;
+    //  }
+    //
+    //  &:hover {
+    //    box-shadow: inset 0 3px 0 $red;
+    //    background: black;
+    //  }
+    //}
+  }
+
+  .meganav-mobile-section-link {
+    margin-top: 2rem;
+    a {
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+    @media (min-width: $megaNav-full-breakpoint) {
+      display: none;
+    }
+  }
+}
+
+.has-simple-children {
+  .megaNav__secondLevel {
+    .megaNav__secondLevel-list {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

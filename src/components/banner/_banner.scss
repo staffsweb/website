@@ -1,0 +1,62 @@
+.banner {
+  position: relative;
+  display: flex;
+  margin-bottom: $spacing-xl;
+  color: #fff;
+  border-radius: $spacing-md;
+  background: url('#{$image-theme-directory}/bg-knot.svg') no-repeat right bottom;
+  padding: #{$spacing-md} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
+
+  @each $name, $value in $banner-bg-colors {
+    &--bg-#{$name} {
+      background: #{$value};
+
+      @if (choose-contrast-color($value) == white) {
+        color: white;
+        & h2 {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &--bg-dark-blue &__title {
+    color: $neon;
+  }
+
+  &__bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 70%;
+    overflow: hidden;
+    z-index: 0;
+
+    svg {
+      height: 100%;
+      width: 100%;
+      object-position: right bottom;
+      object-fit: contain;
+    }  
+  }
+
+  &__body {
+    position: relative;
+    align-self: flex-end;
+    box-sizing: border-box;
+    width: 70%;
+    z-index: 1;
+  }
+
+  .wrap {
+    .banner__body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

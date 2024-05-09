@@ -1,0 +1,30 @@
+{% set textElement = textElement ?: 'h2' %}
+
+{% set classString = '' %}
+{% for modifier in modifiers %}
+  {% set classString = classString ~ '  title--' ~ modifier %}
+{% endfor %}
+{% if background %}
+  {% set classString = classString ~ '  title--bg-' ~ background %}
+{% endif %}
+{% if tail %}
+  {% set classString = classString ~ '  title--has-tail' %}
+{% endif %}
+{% if animate %}
+  {% set classString = classString ~ '  js-waypoint' %}
+{% endif %}
+
+
+<div class="title{{ classString }}">
+  <{{ textElement }} class="title__highlight{{ textElementStyle ? '  ' ~ textElementStyle }}">
+  {{ text }}
+</{{ textElement }}>
+</div>
+
+
+
+
+
+
+
+

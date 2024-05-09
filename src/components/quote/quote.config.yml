@@ -1,0 +1,12 @@
+label: Quotes
+status: wip
+
+variants:
+  - name: long
+    label: "Long (/Small)"
+
+  - name: short
+    label: "Short (/Large)"
+
+  - name: multiline
+    label: "Multiple Paragraphs"

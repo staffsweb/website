@@ -1,0 +1,409 @@
+$card__internal-spacing: $spacing-sm;
+
+.card {
+  // $theme-colours: see __vars/colours
+
+  display: block;
+  position: relative;
+  --accent-color: #{$primary};
+  margin-bottom: $spacing-xl;
+  border-left: $border-accent-width solid $primary;
+  border-color: var(--accent-color);
+  @include clearfix;
+
+  a:not(.button) {
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    margin-bottom: $card__internal-spacing;
+  }
+
+  &__content {
+    padding: 0 calc(#{$card__internal-spacing} + 2.5%);
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: $spacing-md;
+
+    a {
+      color: #{$primary};
+      color: var(--accent-color);
+    }
+  }
+
+  &__figure {
+    &--video {
+      position: relative;
+      background-color: #CCC;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: $spacing-4xl;
+        height: $spacing-4xl;
+        max-width: 50%;
+        max-height: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url('#{$image-theme-directory-icon}/icon-play-circle-neutral-light.svg') no-repeat center center;
+        background-size: contain;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      & img {
+        color: #CCC;
+      }
+    }
+  }
+
+  &__clearing-flag {
+    background-color: $red;
+    color: #FFF;
+    padding: 0.25rem 0.5rem;
+    font-weight: 400;
+  }
+
+  // CG: A card across multiple days will clash with the one below if there is no image, so add a minimum height if necessary
+  &--multiple-days {
+    min-height: 210px;
+  }
+
+  //--  Child elements affected by accent colour
+
+  .blockquote__title {
+    color: var(--accent-color);
+  }
+
+  .meta--inline-dd,
+  .meta--inline {
+    dd:before {
+      color: var(--accent-color);
+    }
+  }
+
+  //--  ACCENT THEMES
+  @each $name, $value in $card-accent-colors {
+    &--#{$name} {
+      --accent-color: #{$value};
+    }
+  } 
+
+  @each $name, $value in $theme-colours {
+    &--#{$name} {
+      --accent-color: #{$value};
+
+      svg {
+          fill: #{$value};
+      }
+    }
+  }
+
+  &--light {
+    --accent-color: #{rgba(white, 0.5)};
+    color: white;
+
+    svg {
+      fill: white;
+    }
+
+  }
+}
+
+a.card {
+  text-decoration: none;
+
+  .card__title {
+    color: #{$primary};
+    color: var(--accent-color);
+  }
+
+  &:hover {
+    color: $text-color;
+
+    .card__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+//--  VARIANTS
+
+.card--flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+
+  .card__figure {
+    flex: 1 1 33%;
+  }
+
+  .card__content {
+    flex: 99 1 17.5em;
+  }
+}
+
+.card--flex-overlap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  padding-bottom: $spacing-sm;
+
+  .card__figure {
+    flex: 1 1 33%;
+  }
+
+  .card__content {
+    flex: 99 1 17.5em;
+  }
+
+  .card__figure {
+    margin-bottom: -#{$spacing-sm};
+  }
+}
+
+.card--testimonial {
+  padding-bottom: $card__internal-spacing;
+}
+
+.card--pullquote {
+  padding-bottom: $card__internal-spacing;
+  margin-left: 5%;
+
+  &:before {
+    content: '';
+    display: block;
+    float: left;
+    width: 5%;
+    height: 0;
+    padding-bottom: 5%;
+    margin-left: -5%;
+    background: #fff url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
+    background-size: contain;
+  }
+
+  // These themes need to be updated 'manually' for now, as we're using an svg,
+  // and I can't think of a clever way to update dynamically based on the accent var
+  // something using inline SVG use/fill, or a mask?
+  // Don't forget to add the SVG to the filesystem!
+
+  @each $name, $value in $card-accent-colors {
+    &.card--#{$name} {
+      &:before {
+        background: #fff url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.card--contact {
+  ul.list--inline {
+    padding-left: 1.5em;
+    li a {
+      text-decoration: none!important;
+    }
+    .icon {
+      font-size: 1.5rem;
+    }
+  }
+  ul.list--icon-bullets {
+    li a {
+      text-decoration: none!important;
+      border-bottom: 1px solid $grey--light
+    }
+  }
+}
+
+.card--course {
+  // this exists, but doesn't need anything specific (yet)
+}
+
+.card--result {
+  // this exists, but doesn't need anything specific (yet)
+}
+
+.card--profile {
+  // this exists, but doesn't need anything specific (yet)
+}
+
+.card--ksp {
+  color: $neutral--primary;
+
+  &__icon {
+    margin-bottom: $card__internal-spacing * 2;
+    max-width: 100%;
+    height: auto!important;
+
+    img {
+      vertical-align: baseline !important; // this is horribly lazy but browsers, sorry
+    }
+  }
+
+  &.card--light {
+    color: white;
+  }
+}
+
+.card--event {
+  margin-left: $spacing-4xl;
+
+  .card__figure {
+    margin-bottom: -#{$spacing-sm};
+  }
+
+  .card__date {
+    position: absolute;
+    top: 0;
+    left: -$spacing-4xl;
+    width: $spacing-4xl;
+    @include typescale('xs');
+    padding: $spacing-sm 0;
+    color: white;
+    background: $primary;
+    background: var(--accent-color);
+    line-height: 1;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .card__day {
+    display: block;
+    font-weight: 500;
+    @include typescale('xl');
+
+    @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      @include typescale('3xl');
+    }
+  }
+
+  .card__date-separator {
+    display: block;
+    font-weight: 500;
+    @include typescale('xl');
+    padding: $spacing-xs 0;
+  }
+
+  @media (min-width: (map_get($breakpoint-stages, 'tablet-wide') + 5rem)) {
+    margin-left: $spacing-5xl;
+
+    .card__date {
+      left: -$spacing-5xl;
+      width: $spacing-5xl;
+    }
+
+    .card__day {
+      @include typescale('5xl');
+    }
+  }
+}
+
+.card--with-logo {
+  border: 0;
+
+  & .card__content {
+    max-width: 80%;
+    background-color: $offwhite;
+    padding: $spacing-xl $spacing-xl $spacing-2xl $spacing-xl;
+  }
+
+  & a:hover,& a:hover .card__content p {
+    text-decoration: none;
+  }
+
+  & img {
+    float: right;
+    margin-top: -$spacing-xl;
+    max-height: 100px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    background: #FFF;
+  }
+
+}
+
+.card__video.card__figure {
+  @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    padding-bottom: 50%;
+    position: relative;
+    height: 0;
+  }
+  & iframe {
+    width: 100%;
+    height: 100%;
+    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      padding-bottom: 50%;
+      position: absolute;
+    }
+  }
+}
+
+.card--virtual-tour {
+    min-height: 20rem;
+    position: relative;
+    overflow: hidden;
+    flex-direction:  row;
+    background-color: $offwhite;
+    background-size: cover;
+    background-position: center center;
+    border-left: none;
+
+    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      background-image: none!important;
+      background-color: $offwhite!important;
+    }
+
+    .card__content {
+      margin-top: $spacing-2xl;
+      max-width: 25rem;
+      z-index: 1;
+
+      p:first-of-type {
+        background-color: #FFF;
+        padding: $spacing-xl;
+        margin: -$spacing-2xl 0;
+      }
+
+      > :last-child {
+        margin-top: $spacing-md;
+      }
+
+      > .title {
+        margin-left: $spacing-xs;
+      }
+    }
+}
+
+.grid-2-cols\@tablet {
+  &  .card__video {
+    &.card__figure {
+      padding-bottom: 50%;
+      position: relative;
+      height: 0;
+      & iframe {
+        position: absolute;
+      }
+    }
+  }
+}

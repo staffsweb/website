@@ -1,0 +1,1 @@
+{"version":3,"sources":["clearing-banner/clearing-banner.scss"],"names":[],"mappings":"AAAA,mBACI,kBAAkB,EAClB,mBAAmB,EACnB,WAAW,EAAA","file":"clearing-banner.css","sourcesContent":[".clearing-banner {\r\n    text-align: center;\r\n    background: #970048;\r\n    color: #FFF;\r\n}"]}

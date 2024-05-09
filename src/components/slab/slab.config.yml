@@ -1,0 +1,38 @@
+name: Slab
+status: wip
+collated: false
+context:
+  text: 'This is a slab'
+  background: []
+  modifiers: []
+handle: slab
+
+variants:
+  - name: offwhite
+    label: "Background: Offwhite"
+    context:
+      background: offwhite
+      text: 'This is an offwhite slab'
+
+  - name: slate
+    label: "Background: Slate"
+    context:
+      background: slate
+      text: 'This is a slate slab'
+
+  - name: dark-blue
+    label: "Background: Dark blue"
+    context:
+      background: dark-blue
+      text: 'This is a dark blue slab'
+
+  - name: bg-img
+    label: "Background Image"
+    hidden: true
+    context:
+      background: img
+      text: 'This is a slab with background image'
+
+  - name: ldn
+    label: 'London Variants'
+    preview: '@preview--ldn'

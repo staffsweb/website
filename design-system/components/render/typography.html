@@ -1,0 +1,135 @@
+
+
+<div class="title  title--has-tail">
+  <h1 class="title__highlight">Typography</h1>
+</div>
+
+<h2>Typeface</h2>
+<p>One typeface is used for the web, there is no secondary typeface:</p>
+<ul>
+  <li><span class="font-primary">Plus Jakarta Sans - Primary typeface</span>: is the default for body copy and headings</li>
+  
+</ul>
+
+
+
+<h2>Heading Levels</h2>
+
+<p>Use semantic heading level elements (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) for content, do <strong>not</strong> use these elements for their visual appearance.</p>
+<p>To make a non-heading element appear in a heading style (including font-family), a class of <code>h1</code>-<code>h6</code> can be applied. eg. <code>&lt;div class="h3"&gt;</code></p>
+<p>Semantic heading elements can be sized by applying these classes, eg. <code>&lt;h2 class="h1"&gt;</code>.</p>
+<p>Headings are assigned <strong>two</strong> Typescale sizes in <code>__vars/_typography.scss</code>, one for smallscreen, and one for larger screens.</p>
+
+<ul class="list--unbulleted">
+  <li><div class="h1">h1 Default: 4xl / 6xl</div></li>
+  <li><div class="h2">h2 Default: 3xl / 5xl</div></li>
+  <li><div class="h3">h3 Default: 2xl / 4xl</div></li>
+  <li><div class="h4">h4 Default: xl / 2xl</div></li>
+  <li><div class="h5">h5 Default: lg / xl</div></li>
+  <li><div class="h6">h6 Default: md / lg</div></li>
+</ul>
+
+<h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h1>
+<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
+<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+<h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+<h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h5>
+<h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h6>
+
+<hr/>
+
+<h2>Typescale</h2>
+
+<p>The following sizes are defined in <code>__vars/_typography.scss</code> to set a typescale.</p>
+<p>This will <strong>only</strong> change the <strong>font-size</strong>, and will change it at <strong>all breakpoints</strong>.</p>
+<div class="title">
+  <p class="title__highlight"><strong>VERY IMPORTANT:</strong> Sizes above 3xl should not be used as classes in HTML, only use these in Sass at larger screen widths, they are too big for mobile! (Example below)</p>
+</div>
+
+<ul class="list--unbulleted">
+  <li class="font-6xl">6xl: The biggest font-size <span class="font-caption">4 (rem)</span></li>
+  <li class="font-5xl">5xl: The second biggest size <span class="font-caption">3 (rem)</span></li>
+  <li class="font-4xl">4xl: The quick brown fox jumps over the lazy dog <span class="font-caption">2.5 (rem)</span></li>
+  <li class="font-3xl">3xl: The quick brown fox jumps over the lazy dog <span class="font-caption">2 (rem)</span></li>
+  <li class="font-2xl">2xl: The quick brown fox jumps over the lazy dog <span class="font-caption">1.75 (rem)</span></li>
+  <li class="font-xl">xl: The quick brown fox jumps over the lazy dog <span class="font-caption">1.5 (rem)</span></li>
+  <li class="font-lg">lg: The quick brown fox jumps over the lazy dog <span class="font-caption">1.2 (rem)</span></li>
+  <li class="font-md">md: The quick brown fox jumps over the lazy dog <span class="font-caption">1 (rem)</span></li>
+  <li class="font-sm">sm: The quick brown fox jumps over the lazy dog <span class="font-caption">0.875 (rem)</span></li>
+  <li class="font-xs">xs: The quick brown fox jumps over the lazy dog <span class="font-caption">0.75 (rem)</span></li>
+  <li class="font-2xs">2xs: The quick brown fox jumps over the lazy dog <span class="font-caption">0.6875 (rem)</span></li>
+</ul>
+
+<p>They can be used using a class of <code>font-<em>[sizename]</em></code>, eg. <code>font-sm</code><br/>
+  or in Sass using <code>@include typescale('<em>[sizename]</em>');</code>, eg. <code>@include typescale('4xl');</code></p>
+
+<p>As mentioned, headings have two set sizes to utilise 4xl+ at larger screen widths, in <code>__vars/typography</code> you'll see a <code>$headings-smallscreen-map</code>, a <code>$headings-map</code> (for large screens), and something like:</p>
+
+<pre>@mixin h3 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h3'));
+  font-weight: 500;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h3'));
+  }
+}</pre>
+
+<p>If for example you wanted to create a ludicrously large text element utilising 5xl at desktop, you should do this in Sass, not using HTML classes. Consider something like:</p>
+
+<pre>.ludicrously-large-text-element {
+  @include typescale('3xl');
+
+  @media (min-width: $breakpoint-largescreen-typography) {
+    @include typescale('5xl');
+  }
+}</pre>
+
+<hr/>
+
+<p class="intro">The founders of an immersive storytelling app have returned to their university stomping ground to film their latest episode. Staffordshire University is going global with a programme packed full of free events to start the new decade.</p>
+<p>Staffordshire University is going global with a programme packed full of free events to start the new decade.</p>
+
+<h2>Graduates give Staffs Uni star role in popular app</h2>
+<p><strong>The founders of an immersive storytelling app have returned to their university stomping ground to film their latest episode. This is an emboldened paragraph.</strong></p>
+<p>2020 marks the International Year of the Nurse and Midwife, and Staffordshire University is joining colleagues across the globe to shine a spotlight on the sector. Celebrations kick off with a talk this week by Visiting Professor Ann-Marie Cannaby, Chief Nurse at the Royal Wolverhampton Hospital, at the University’s Centre of Excellence in Healthcare Education, Stafford.Two hundred years may have passed since the birth of Florence Nightingale, but patient care and safety remain the most important influencing factors within the fields of nursing and midwifery. Professor Cannaby will use her keynote presentation to explore curriculum developments.</p>
+<p>This <a href="">link goes somewhere</a>, but this sentence doesn't, it only exists to show how a link works. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+<p><strong>£2600</strong> is an amount of money that I've wrapped some <code>&lt;strong&gt;</code> tags around, while <strong>4 weeks</strong> – a length of time – also has had the same treatment for the purposes of just <em>testing</em>
+  how typography appears on the page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p><a class="button" href="">Find out how links are made into buttons</a></p>
+
+<h2>Header Level 2</h2>
+<p>The founders of an immersive storytelling app have returned to their university stomping ground to film their latest episode.</p>
+<p>2020 marks the International Year of the Nurse and Midwife, and Staffordshire University is joining colleagues across the globe to shine a spotlight on the sector. Celebrations kick off with a talk this week by Visiting Professor Ann-Marie Cannaby, Chief Nurse at the Royal Wolverhampton Hospital, at the University’s Centre of Excellence in Healthcare Education, Stafford.Two hundred years may have passed since the birth of Florence Nightingale, but patient care and safety remain the most important influencing factors within the fields of nursing and midwifery. Professor Cannaby will use her keynote presentation to explore curriculum developments.</p>
+
+<h3>Header Level 3</h3>
+<p><strong>Enjoying the View? How computer games can help evaluate landscapes</strong></p>
+<p>Staffordshire University is going global with a programme packed full of free events to start the new decade.</p>
+<p>These <a href="">are hyperlinks in paragraphs</a> where they're needed the most, right in a demo page.</p>
+<p><strong>£2600</strong> is an amount of money that I've wrapped some <code>&lt;strong&gt;</code> tags around, while <strong>4 weeks</strong> – a length of time – also has had the same treatment for the purposes of just <em>testing</em>
+  how typography appears on the page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h4>Header Level 4</h4>
+<p>Staffordshire University is going global with a programme packed full of free events to start the new decade. These <a href="">are hyperlinks in paragraphs</a> where they're needed the most, right in a demo page.</p>
+<p><strong>£2600</strong> is an amount of money that I've wrapped some <code>&lt;strong&gt;</code> tags around, while <strong>4 weeks</strong> – a length of time – also has had the same treatment for the purposes of just <em>testing</em>
+  how typography appears on the page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h5>Header Level 5</h5>
+<p>Staffordshire University is going global with a programme packed full of free events to start the new decade. These <a href="">are hyperlinks in paragraphs</a> where they're needed the most, right in a demo page.</p>
+<p><strong>£2600</strong> is an amount of money that I've wrapped some <code>&lt;strong&gt;</code> tags around, while <strong>4 weeks</strong> – a length of time – also has had the same treatment for the purposes of just <em>testing</em>
+  how typography appears on the page. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h6>Header Level 6</h6>
+<p>Staffordshire University is going global with a programme packed full of free events to start the new decade.</p>
+<p>These <a href="">are hyperlinks in paragraphs</a> where they're needed the most, right in a demo page. <strong>£2600</strong> is an amount of money that I've wrapped some <code>&lt;strong&gt;</code> tags around, while <strong>4
+    weeks</strong> – a length of time – also has had the same treatment for the purposes of just <em>testing</em> how typography appears on the page.</p>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2>Blockquote</h2>
+<blockquote>
+  <q>I’m delighted for Staffordshire University to be shortlisted for Best Educational Institution and all the staff are incredibly proud that our students have been recognised for their game Pair Up. It is a well-deserved honour.</q>
+  <footer>
+    <cite>Dr Bobbie Fletcher Head of Department Games and Visual Effects</cite>
+  </footer>
+</blockquote>
+

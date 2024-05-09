@@ -1,0 +1,209 @@
+.list--unbulleted,
+.list--unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--spaced {
+  > li {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.list--inline {
+  padding: 0;
+
+  li {
+    display: inline;
+    margin-right: $spacing-xs;
+  }
+}
+
+.list--links {
+  @include line-height('normal');
+
+  li {
+    margin-bottom: $spacing-sm;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.list--icon-bullets {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding-left: 1.5em;
+  }
+
+  .icon {
+    float: left;
+    top: 0.5em;
+    margin-left: -1.5em;
+  }
+
+  a {
+    display: inline-table; // prevents icon/text wrapping line
+  }
+
+  &.list--inline {
+    li {
+      margin-right: 1em;
+    }
+  }
+
+  &.list--links {
+    .icon {
+      top: 0.2em;
+    }
+  }
+}
+
+.list--icon-bullets {
+
+}
+
+.list--inline-bulleted {
+  padding: 0;
+
+  li {
+    display: inline;
+    margin-right: $spacing-xs;
+
+    &:before {
+      content: '•';
+      margin-right: $spacing-xs;
+      font-weight: bold;
+      color: $primary;
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.list--inline-floated {
+  padding-left: 0;
+
+  li {
+    float: left;
+    margin-left: 1.5rem;
+  }
+
+}
+
+.list--steps {
+  $number-accent-colors: (
+    'red': $red,
+    'pink': $pink,
+    'maroon': $maroon,
+    'slate': $slate,
+    'blue-ldn': $blue--deep-ldn,
+  );
+
+  list-style: none;
+  padding-inline-start: $spacing-3xl;
+  counter-reset: list--steps;
+  margin-bottom: $spacing-4xl;
+
+  > li {
+    position: relative;
+    border-left: $border-accent-width solid $neutral--primary;
+    border-color: var(--accent-color, #{$neutral--primary});
+    padding-left: $spacing-lg;
+    margin-bottom: $spacing-2xl;
+
+    &::before {
+      content: counter(list--steps);
+      counter-increment: list--steps;
+      display: block;
+      float: left;
+      clear: left;
+      margin-left: -#{$spacing-3xl + $spacing-lg + $border-accent-width/2};
+      width: $spacing-3xl;
+      padding: $spacing-2xs 0;
+      background: var(--accent-color, #{$neutral--primary});
+      color: white;
+      @include typescale('3xl');
+      font-weight: 500;
+      line-height: 1.4; // matches .title
+      text-align: center;
+    }
+
+  }
+
+  &__box {
+    background: $greyblue--superlight;
+    padding: calc(#{$spacing-sm} + 2.5%);
+    margin-left: -$spacing-lg;
+  }
+
+  &__title {
+  }
+
+  &__cta {
+    .button:only-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //--  ACCENT THEMES
+  @each $name, $value in $number-accent-colors {
+    &-accent-#{$name} {
+      --accent-color: #{$value};
+    }
+  }
+
+
+  //--
+
+  &.accordion {
+    // component fusion, like Jazz fusion; not sure if this is a wonderful or terrible idea (probably terrible)
+
+    border-bottom: 0;
+
+    > li {
+      border-color: $primary;
+      border-color: var(--accent-color, #{$primary});
+
+      &::before {
+        background-color: $primary;
+        background-color: var(--accent-color, #{$primary});
+      }
+    }
+
+    .accordion__title {
+      background: $greyblue--superlight;
+    }
+
+    .accordion__title,
+    .accordion__content {
+      padding-left: calc(#{$spacing-sm} + 2.5%);
+    }
+
+    .accordion__item {
+      border-top: none;
+      margin-left: -$spacing-lg;
+    }
+
+    .accordion__toggle {
+      padding-left: 0;
+
+      &:before {
+        float: right;
+        margin: 0 0 0 $spacing-md;
+      }
+    }
+  }
+
+}

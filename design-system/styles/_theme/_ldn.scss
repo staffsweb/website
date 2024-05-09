@@ -1,0 +1,59 @@
+.theme-ldn {
+  // NB: The majority of changes should be taken care of by simply
+  // setting colours for components to inherit in main-ldn.scss
+  // See that file, and the docs on colour and theming before adding overrides here.
+
+
+  // This file just contains scoped overrides we haven't done more nicely,
+  // becuase the alternate theme was a fairly last-minute addition
+
+
+  .header-site {
+    &__flexContainer {
+      align-items: center;
+    }
+
+    .site-logo {
+      width: 35%;
+      min-width: 90px;
+      //max-width: 12.5em;
+      @media (min-width: 70rem) {
+        max-width: 250px;
+      }
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  .footer-site {
+    background: $granite--ldn;
+
+    &__logo {
+      margin: $spacing-md 0;
+
+      img {
+        width: 12.5em;
+      }
+    }
+  }
+
+  .course-listing {
+    &__header {
+      display: flex;
+
+      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+          justify-content: space-between;
+      }
+    }
+
+    &__icon img {
+      height: calc(100% - 1.5rem);
+    }
+  }
+
+  .card__clearing-flag {
+    background-color: $purple--deep-ldn;
+  }
+}

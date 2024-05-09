@@ -1,0 +1,1 @@
+If used more than once on a page, adjust the IDs of the \<section\>s, the IDs can be anything you like (from a semantic name, to a randomised string) as long as they're unique, and the href attribute for the corresponding nav tabs__link points to it.

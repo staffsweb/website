@@ -1,0 +1,19 @@
+name: Tile
+status: wip
+context:
+  classes: []
+  image: 'masthead.jpg'
+  link: '#'
+  title: 'This is the tile title'
+  date: '24th January 2020'
+  content: 'This is the text content of the tile...'
+  button: 'Book now'
+handle: tile
+
+variants:
+  - name: accent-colours
+    label: 'Accent Colours'
+
+  - name: accent-colours-ldn
+    label: 'Accent Colours (LDN)'
+    preview: '@preview--ldn'

@@ -1,0 +1,9 @@
+.access-able-link { display: table; }
+
+.access-able-link > div { display: table-cell; vertical-align: middle; }
+
+.access-able-link__logo > img { margin-right: 10px; min-width: 32px; }
+
+.access-able-link__link { font-weight: 300; line-height: 1.5rem; }
+
+/*# sourceMappingURL=specialist-items.css.map */

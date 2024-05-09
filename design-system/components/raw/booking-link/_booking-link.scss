@@ -1,0 +1,33 @@
+.booking-link {
+    --accent-color: #{$primary};
+    margin-bottom: $spacing-xl;
+    color: $neutral--primary;
+    text-decoration: none;
+    padding: 0 calc(#{$spacing-sm} + 2.5%) 0;
+    border-left: $border-accent-width solid $primary;
+    border-left: $border-accent-width solid var(--accent-color);
+  
+    &__title {
+      display: table;
+      position: relative;
+      margin-bottom: $spacing-md;
+      padding-right: 1em;
+      word-break: break-word;
+    }
+  
+    &__content {
+      padding: $spacing-xs 0;
+  
+      > :first-child {
+        margin-top: 0;
+      }
+  
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    p {
+      color: $neutral--primary;
+    }
+  }

@@ -1,0 +1,9 @@
+.sitewide-message {
+    background-color: #FFD91C;
+    padding: $spacing-xs $spacing-sm;
+
+    &__text {
+        margin: 0;
+        line-height: 1.5;
+    }
+}

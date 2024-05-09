@@ -1,0 +1,159 @@
+
+// at the moment this is used for 'anything we want to repeat / include in places'
+// it could probably use refactoring out into more specifically named/categorised files
+
+
+@mixin button {
+  position: relative;
+  display: inline-block;
+  font-size: inherit; // overrides WP Block
+  margin: 0 0.25rem 1rem 0;
+  padding: 0.75em 1.5em;
+  border: 0; // for input[type=button] / button element
+  line-height: 1.15; // matches normalized inputs
+  vertical-align: baseline;
+  text-decoration: none;
+  text-align: center;
+  transition: background 150ms ease-out, color 150ms ease-out;
+  box-sizing: border-box;
+  border-radius: 0.25rem; // explicitly set this for inputs on iOS
+  font-weight: 600;
+
+  background-color: $neon;
+  background-image: linear-gradient(to left, $neon 50%, black 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat; // needed for Chrome bug
+  color: black;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: rgba(white, 1);
+    background-position: 0% bottom;
+  }
+}
+
+@mixin button--disabled {
+  opacity: 0.75;
+  border-color: #ccc;
+  background: #ccc;
+  background-position: 0% bottom;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+
+
+@mixin button--xs {
+  @include typescale('xs', 'em');
+}
+
+@mixin button--sm {
+  @include typescale('sm', 'em');
+}
+
+@mixin button--lg {
+  @include typescale('lg', 'em');
+}
+
+@mixin button--xl {
+  @include typescale('xl', 'em');
+}
+
+@mixin button--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@mixin button--pointy {
+  &:after {
+    content: '\25B6\FE0E';
+    padding-left: 0.5em;
+    transition: transform 200ms;
+  }
+}
+
+@mixin button--dark-blue {
+  background-image: linear-gradient(to left, $dark-blue 50%, black 50%);
+  color: white;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+@mixin button--granite {
+  background-image: linear-gradient(to left, $granite--ldn 50%, black 50%);
+  color: white;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+@mixin button--outline {
+  color: black;
+  border: 0.2em solid $tertiary;
+  padding: 0.6em 2em;
+  background-color: transparent;
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, $neon 50%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+}
+
+@mixin button--outline-slate {
+  color: black;
+  border: 0.2em solid $slate;
+  padding: 0.6em 2em;
+  background-color: transparent;
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, $slate 50%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+  }
+}
+
+@mixin button--outline-white {
+  color: white;
+  border: 0.1em solid white;
+  padding: 0.6em 2em;
+  background-color: transparent;
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, white 50%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+}
+
+// ----
+
+
+@mixin boxed {
+  background: $secondary-tint-10;
+  border-left: 0.75em solid $secondary-tint-30;
+}
+
+@mixin boxed__padding {
+  padding: $spacing-md;
+}
+
+@mixin boxed__radius {
+  border-radius: 0.5em 2em;
+}
+
+// --
+
+
+// --

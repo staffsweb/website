@@ -1,0 +1,9 @@
+name: megaNav
+label: 'MegaNav'
+status: wip
+handle: 'megaNav'
+
+variants:
+  - name: ldn
+    label: "LDN"
+    preview: '@preview--ldn-raw'

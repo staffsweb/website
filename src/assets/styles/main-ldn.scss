@@ -1,0 +1,168 @@
+@import "__vars/_all";
+
+// REMINDER ONLY
+/*
+$blue--deep-ldn:              $blue--deep-ldn;
+$blue--ldn:                   $blue--ldn;
+$magenta--ldn:                $magenta--ldn;
+$purple--deep-ldn:            $purple--deep-ldn;
+*/
+
+// Theme Colours OVERWRITE:
+
+$primary:                     $blue--deep-ldn;
+$secondary:                   $purple--deep-ldn;
+$tertiary:                    $magenta--ldn;
+$neutral--primary:            $granite--ldn;
+$neutral--light:              $granite--light-ldn;
+
+/// Referencable colours OVERWRITE
+
+$link-color--hover:           $primary;
+$table-accent:                $neutral--primary;
+$table-accent--light:         $neutral--light;
+
+$slate--light:                #fff;
+
+// Utilities Classes OVERWRITE
+// these are output by the loops in _utils/utils.scss (included by main)
+
+$utils-bg-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'grey-light': $grey--light,
+  'offwhite': $offwhite,
+  'offblack': $offblack,
+  'white': white,
+);
+
+$utils-text-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'white': white,
+  'black': black,
+  'offwhite': $offwhite,
+  'offblack': $offblack,
+);
+
+// Component Theme Variants OVERWRITE
+// these are used by components' partials to create colour variants
+// they live here (for the time being) so they can be overridden before components are imported for themes (London)
+
+$theme-colours: (
+  'primary' : $blue--ldn,
+  'secondary' : $blue--deep-ldn,
+  'tertiary' : $magenta--ldn
+);
+
+$card-accent-colors: (
+  'blue-ldn': $blue--ldn,
+  'blue-deep-ldn': $blue--deep-ldn,
+  'magenta-ldn': $magenta--ldn,
+  'purple-deep-ldn': $purple--deep-ldn,
+);
+
+$tile-accent-colors: (
+  'blue-ldn': $blue--ldn,
+  'blue-deep-ldn': $blue--deep-ldn,
+  'magenta-ldn': $magenta--ldn,
+  'purple-deep-ldn': $purple--deep-ldn,
+  'tef-gold': $gold--tef,
+);
+
+$icon-accent-colors: (
+  'blue-ldn': $blue--ldn,
+  'blue-deep-ldn': $blue--deep-ldn,
+  'magenta-ldn': $magenta--ldn,
+);
+
+$title-bg-colors: (
+  'white': 'white',
+  'blue-ldn': $blue--ldn,
+  'blue-deep-ldn': $blue--deep-ldn,
+  'magenta-ldn': $magenta--ldn,
+  'purple-deep-ldn': $purple--deep-ldn,
+  'tef-gold': $gold--tef,
+);
+
+$slab-bg-colors: (
+  'offwhite': $offwhite,
+  'granite': $granite--ldn,
+  'granite-light': $granite--light-ldn,
+  'slate-light': $slate--light,
+  'blue-ldn': $blue--deep-ldn,
+);
+
+$icon-box-colors: (
+  'blue-ldn': $blue--ldn,
+  'blue-deep-ldn': $blue--deep-ldn,
+  'magenta-ldn': $magenta--ldn,
+  'purple-deep-ldn': $purple--deep-ldn,
+  'slate': $slate
+);
+
+
+// IMPORT COMPONENTS!
+
+@import "_vendor/normalize";
+
+@import "_global/typography";
+@import "../../components/forms/forms";
+
+@import "_grid/grid";
+@import "_grid/title-grid";
+
+@import "_global/layout";
+@import "_global/site-header";
+@import "_global/site-footer";
+
+//@import "../../components/*/*";
+@import "../../components/accordion/accordion";
+@import "../../components/banner/banner";
+@import "../../components/booking-link/booking-link";
+@import "../../components/box/boxes";
+@import "../../components/breadcrumbs/breadcrumbs";
+@import "../../components/button/buttons";
+@import "../../components/card/cards";
+@import "../../components/feature-link/feature-link";
+@import "../../components/hr/hr";
+@import "../../components/icons/icons";
+@import "../../components/iconBox/iconBox";
+@import "../../components/list/lists";
+@import "../../components/loading-spinner/loading-spinner";
+@import "../../components/masthead/masthead";
+@import "../../components/megaNav/megaNav";
+@import "../../components/meta/meta";
+@import "../../components/page-nav/page-nav";
+@import "../../components/pager/pager";
+@import "../../components/quote/quotes";
+@import "../../components/quote-banner/quote-banner";
+@import "../../components/ratio/ratio";
+@import "../../components/section-header/section-header";
+@import "../../components/side-navigation/side-navigation";
+@import "../../components/sitewide-message/sitewide-message";
+@import "../../components/slab/slab";
+@import "../../components/slider/slider";
+@import "../../components/social-links/social-links";
+@import "../../components/table/tables";
+@import "../../components/tabs/tabs";
+@import "../../components/tile/tile";
+@import "../../components/tile/tile-group";
+@import "../../components/feature-tiles/feature-tiles"; // this is out of alpha order deliberately, so it comes after tile
+@import "../../components/title/title";
+@import "../../components/zebra/zebra";
+
+@import "_utils/utils";
+
+@import "_theme/ldn";
+
+
+//Overrides
+@import "../../components/masthead/ldn/masthead";
+@import "../../components/megaNav/ldn/megaNav";
+@import "../../components/feature-link/ldn/feature-link";
+
+//Custom
+@import "../../components/modal/modal";
+@import "../../components/news/_news.scss";

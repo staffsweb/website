@@ -1,0 +1,37 @@
+name: Box
+status: ready
+collated: false
+context:
+  text: 'This is a box'
+  background: []
+  modifiers: []
+handle: box
+
+variants:
+
+  - name: has-shadow
+    label: "Style: Has Shadow"
+    context:
+      modifiers: ['has-shadow']
+      text: 'This is a box with a shadow'
+
+  - name: offwhite
+    label: "Background: Offwhite"
+    context:
+      background: offwhite
+      text: 'This is an offwhite box'
+
+  - name: greyblue-superlight
+    label: "Background: Superlight Greyblue"
+    context:
+      background: greyblue-superlight
+      text: 'This is an Superlight Greyblue box'
+
+#  - name: offwhite-gradient
+#    label: "Background: Offwhite Gradient"
+#    context:
+#      background: offwhite-gradient
+#      text: 'This is a box with an offwhite gradient (from banners)'
+
+  - name: open-day-dates
+    label: "Open day dates"

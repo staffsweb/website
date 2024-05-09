@@ -1,0 +1,21 @@
+<div class="card">
+  {% if figureImg %}
+    <figure class="card__figure">
+    </figure>
+  {% endif %}
+  <div class="card__content">
+    <h3 class="h4 card__title"><a href="#" class="">Card Title (linked)</a></h3>
+    <p>In addition to the recommendation from your Assessment Centre report:. If you are blind or have a visual impairment we can refer you for specialist support.</p>
+    <p>{{ lorem }}</p>
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="card__content">
+    <h3 class="h4 card__title"><a href="#" class="link--stretched">Card Title (with <code>link--stretched</code>)</a></h3>
+    <p>This cards has a class of <code>link--stretched</code> on its link so the linked area fills the entire card. <strong>NB: This will not work if using a link inside <code>title__highlight</code> style, as these require relative positioning for reasons.</strong>
+    <p>{{ lorem }}</p>
+  </div>
+</div>

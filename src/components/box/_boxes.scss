@@ -1,0 +1,110 @@
+.box {
+  position: relative;
+  background: white;
+  color: $text-color;
+  margin: 0 0 $spacing-xl;
+
+  &__figure {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding: calc(#{$spacing-sm} + 2.5%);
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    color: $dark-blue;
+
+    a {
+      text-decoration: none;
+    }
+
+  }
+
+  &__footer {
+    padding: $spacing-md calc(#{$spacing-sm} + 2.5%);
+    background: #c0bbce;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  //--
+
+  &--padded {
+    padding: calc(#{$spacing-sm} + 2.5%);
+  }
+
+  //-
+
+  &--has-shadow {
+    box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15);
+  }
+
+  //-
+
+  &--bg-offwhite {
+    background-color: $grey--shadow;
+  }
+
+  &--bg-greyblue-superlight {
+    background-color: $greyblue--superlight;
+  }
+
+  &--bg-slate {
+    background-color: $slate;
+    color: #fff;
+
+    & a.link--standard {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 0!important;
+      }
+    }
+  }
+
+  &--bg-offwhite-gradient {
+    background: radial-gradient(45% 660% at 50% 50%, mix(#e3e3e3, white, 30%) 0%, mix(#ccc, white, 30%) 100%);
+  }
+}
+
+// -- VARIANTS
+
+.box--with-abstitle {
+  // absolutely positioned title
+
+  .box__content:first-child {
+    padding-top: calc(#{$spacing-3xl} + 2.5%);;
+  }
+
+  .box__abstitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// CG: Avoid "share this story" box clashing with long quotes in news stories
+.box--share {
+  clear: right;
+}

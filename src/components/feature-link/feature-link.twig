@@ -1,0 +1,14 @@
+{% set className = image ? 'feature-link--with-image' : 'feature-link--no-image' %}
+
+<a class="feature-link  {{ className }}" href="{{ link }}">
+  {% if image %}
+    <figure class="feature-link__figure">
+      <img src="{{ image }}" alt=""/>
+    </figure>
+  {% endif %}
+
+  <div class="feature-link__content">
+    <h3 class="h4 feature-link__title">{{ title }}</h3>
+    <p>{{ body }}</p>
+  </div>
+</a>

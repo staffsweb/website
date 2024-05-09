@@ -1,0 +1,73 @@
+
+blockquote,
+.blockquote {
+  @include blockquote;
+
+  footer {
+    margin-top: $spacing-lg;
+    @include typescale('sm');
+  }
+}
+
+cite,
+.cite {
+  @include cite;
+}
+
+.blockquote--large,
+.blockquote--short {
+  @include typescale('2xl', 'em');
+  @include line-height('headings');
+
+  @media (min-width: $breakpoint-largescreen-typography) {
+    @include typescale('4xl', 'em');
+  }
+}
+
+.blockquote--small,
+.blockquote--long {
+  @include typescale('lg', 'em');
+
+  @media (min-width: $breakpoint-largescreen-typography) {
+    @include typescale('xl', 'em');
+  }
+}
+
+.blockquote__title {
+  color: $primary;
+  color: var(--accent-color, #{$primary});
+
+  @include typescale('2xl');
+
+  @media (min-width: $breakpoint-largescreen-typography) {
+    @include typescale('3xl');
+  }
+}
+
+.blockquote__highlight {
+  color: $primary;
+  color: var(--accent-color, #{$primary});
+}
+
+.blockquote__footer {
+  margin-top: $spacing-lg;
+  @include typescale('md');
+}
+
+.blockquote__prose {
+  margin: $spacing-lg 0;
+  @include typescale('md');
+  @include line-height('spaced');
+}
+
+.blockquote__figure {
+  shape-outside: circle(60%) padding-box;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    max-height: 40vmin;
+    width: auto;
+  }
+}

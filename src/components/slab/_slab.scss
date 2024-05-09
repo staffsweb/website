@@ -1,0 +1,79 @@
+.slab {
+  position: relative;
+  $border-color: $grey--light;
+  padding: $spacing-4xl 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__title {
+    margin-top: $spacing-md;
+  }
+
+  &__header {
+    margin-top: -#{$spacing-4xl};
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  //--
+
+  &--border-bottom {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &--border-top {
+    border-bottom: 1px solid $border-color;
+  }
+
+  //--
+
+  @each $name, $value in $slab-bg-colors {
+    &--bg-#{$name} {
+      background-color: #{$value};
+      @if (choose-contrast-color($value) == white) {
+        color: white;
+        & h2 {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &--bg-blue-ldn {
+    & a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 0;
+      }
+    }
+
+    & svg * {
+      fill: currentColor; // CG: Correct the path colours if SVGs are used here
+    }
+  }
+
+  &--bg-granite, &--bg-slate {
+    & svg * {
+      fill: currentColor;
+    }
+
+    & a:not(.button) {
+      color: inherit;
+    }
+  }
+}

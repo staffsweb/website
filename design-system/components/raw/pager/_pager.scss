@@ -1,0 +1,54 @@
+.pager {
+  @include line-height('normal');
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin: 0 $spacing-2xs $spacing-2xs 0;
+  }
+
+  &__link,
+  &__current,
+  &__ellipsis {
+    display: inline-block;
+    min-width: 1em;
+    padding: $spacing-xs $spacing-md;
+    text-align: center;
+    border: 1px solid $grey--light;
+    box-sizing: border-box;
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__current {
+    font-weight: 500;
+    cursor: default;
+
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+
+  &__ellipsis {
+    border-color: transparent;
+  }
+
+  &__next,
+  &__prev {
+    border-color: $primary;
+    background: $primary;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+
+// Staffs Palette
+
+//$red:                           #d70a26;
+$maroon:					              #970048;
+$pink:					                #d5035e;
+$slate:					                #394851;
+$slate--light:                  #616d74;
+$offblack:                      #1d1d1b;
+$grey--dark:                    #444;
+$grey--shadow:                  #e0dfe7;
+$grey--light:                   #dddddd;
+$greyblue--light:               #e8ebed;
+$greyblue--superlight:          #f0f1f2;
+$greyblue--supersuperlight:     mix(#f0f1f2, #fff);
+$offwhite:                      #f1f1f1;
+//$yellow:                        #ffd91b;
+$gold--tef:                     #dd9200;
+
+$blue:                          #0000cc;
+$blue--light:                   #8888cc;
+
+// 2024 Brand palette
+$red: #ef4a3b;
+// Grounded colours
+$burgundy: #8a0045;
+$digital-blue: #304dfc;
+$dark-blue: #170d38;
+$grey: #c2bfd2;
+// Elevated colours
+$teal: #006b82;
+$pale-blue: #bdf7e3;
+$neon: #c4ff36;
+$yellow: #ffff58;
+$yellow-light: #ffffae;
+$peach: #febea5;
+$lavender: #d18fff;
+
+
+
+// Third-Party Palette
+
+$blue--twitter:                 #1da1f2;
+$blue--facebook:                #3b5998;
+$blue--linkedIn:                #0e76a8;
+$blue--instagram:               #3f729b;
+$red--youtube:                  #c4302b;
+$grey--tiktok:                  #000000;
+$grey--x:                       #000000;
+
+// London Palette
+
+$blue--deep-ldn:                rgb(20, 65, 150);
+$blue--ldn:                     rgb(0, 130, 200);
+$magenta--ldn:                  rgb(185, 15, 130);
+$purple--deep-ldn:              rgb(130, 30, 130);
+$granite--ldn:                  rgb(65, 70, 75);
+$granite--light-ldn:            mix($granite--ldn, white, 85%);
+
+// Theme Colours:
+
+$primary:                       $red;
+$secondary:                     $dark-blue;
+$tertiary:                      $digital-blue;
+$neutral--primary:              $dark-blue;
+$neutral--light:                $grey;
+
+/// Referencable colours
+
+$page-bg:                       white;
+$text-color:                    black;
+$link-color:                    $teal;
+$link-color--hover:             $primary;
+$heading-color:                 black;
+$table-accent:                  $neutral--primary;
+$table-accent--light:           $neutral--light;
+
+
+// Utilities Classes Setup
+// these are output by the loops in _utils/utils.scss (included by main)
+
+$utils-bg-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'grey-light': $grey--light,
+  'offwhite': $offwhite,
+  'offblack': $offblack,
+  'white': white,
+);
+
+$utils-text-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'white': white,
+  'black': black,
+  'offwhite': $offwhite,
+  'offblack': $offblack,
+);
+
+// Component Theme Variants Setup
+// these are used by components' partials to create colour variants
+// they live here (for the time being) so they can be overridden before components are imported for themes (London)
+
+$theme-colours: (
+  'primary' : $red,
+  'secondary' : $pink,
+  'tertiary' : $maroon
+);
+
+$card-accent-colors: (
+  'red': $red,
+  'pink': $pink,
+  'maroon': $maroon,
+  'slate': $slate,
+  'blue-ldn': $blue--deep-ldn,
+  // CG: New for 2024
+  'burgundy': $burgundy,
+  'digital-blue': $digital-blue,
+  'dark-blue': $dark-blue,
+  'grey': $grey
+
+);
+
+$tile-accent-colors: (
+  'red': $red,
+  'pink': $pink,
+  'maroon': $maroon,
+  'slate': $slate,
+  'tef-gold': $gold--tef,
+  'blue-ldn': $blue--deep-ldn,
+);
+
+$title-bg-colors: (
+  'white': 'white',
+  'red': $red,
+  'pink': $pink,
+  'maroon': $maroon,
+  'slate': $slate,
+  'tef-gold': $gold--tef,
+  'blue-ldn': $blue--deep-ldn,
+);
+
+$slab-bg-colors: (
+  'offwhite': $offwhite,
+  'slate': $slate,
+  'slate-light': $slate--light,
+  'dark-blue': $dark-blue
+);
+
+$banner-bg-colors: (
+  'burgundy': $burgundy,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue,
+  'teal': $teal
+);
+
+$icon-box-colors: (
+  'red': $red,
+  'pink': $pink,
+  'maroon': $maroon,
+  'tef-gold': $gold--tef,
+  'slate': $slate,
+  'offwhite': $offwhite
+);
+
+$tag-bg-colors: (
+  'red': $red,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue,
+  'neon': $neon,
+  'burgundy': $burgundy,
+);
+
+$callout-bg-colors: (
+  'dark-blue': $dark-blue,
+  'neon': $neon,
+  'burgundy': $burgundy,
+);
+
+$socialmedia-prime-colours: (
+  'facebook' : $blue--facebook,
+  'twitter'  : $grey--x,
+  'linkedIn' : $blue--linkedIn,
+  'instagram' : $blue--instagram,
+  'youtube' : $red--youtube,
+  'tiktok' : $grey--tiktok
+);

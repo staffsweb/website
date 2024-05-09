@@ -1,0 +1,20 @@
+@import "__vars/_all";
+
+@import "_global/typography";
+@import "../../components/button/buttons";
+
+html {
+  font-size: 100%;
+  text-size-adjust: 100%;
+}
+
+//Accordion
+
+.accordion .sys_placeholder-accordionRow {
+  border: 2px solid #394851!important;
+}
+
+/* Single Col */
+div[class*="-12"].column {
+  padding: 0 0.75rem;
+}

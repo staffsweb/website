@@ -1,0 +1,204 @@
+@import '../../assets/js/vendor/slick-1.8.1/slick/slick.scss';
+
+.slick-slider {
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: $page-gutter-small*2;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  text-indent: -999em;
+  background: transparent;
+  color: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 2;
+  overflow: hidden; // prevents odd outline shape
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (min-width: $wrap-large-gutter-width) {
+    font-size: $page-gutter-large*2;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    background: $neutral--primary url('#{$image-theme-directory-icon}/icon-gt-white.svg') no-repeat 55% 50%;
+    background-size: 30%;
+    border-radius: 100%;
+  }
+}
+
+.slick-next {
+  right: -#{$page-gutter-small/1.1};
+
+  @media (min-width: $wrap-large-gutter-width) {
+    right: -#{$page-gutter-large};
+  }
+
+  @media (min-width: $wrap-full-gutter-width) {
+    right: -#{$page-gutter-full};
+  }
+}
+
+.slick-prev {
+  left: -#{$page-gutter-small/1.1};
+
+  @media (min-width: $wrap-large-gutter-width) {
+    left: -#{$page-gutter-large};
+  }
+
+  @media (min-width: $wrap-full-gutter-width) {
+    left: -#{$page-gutter-full};
+  }
+
+  &:before {
+    transform: rotate(180deg);
+  }
+}
+
+.slick-disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// --
+
+.slider {
+
+}
+
+.slider--tiles {
+  .slick-slide {
+    // these are sized in JS,
+    // see sliderInit() in app.js for .js-facility-slider
+    // not ideal as they're pixel based not (r)em, but will do for now.
+  }
+}
+
+.slider--event-cards {
+  .slick-slide {
+    margin: 0 $grid-gutter 0 0;
+  }
+}
+
+.accolade-slider {
+  &__item {
+    text-align: center;
+    margin: 0 $grid-gutter;
+  }
+
+  &__item-title {
+    margin-bottom: $spacing-xs;
+    border-bottom: 1px solid #FFF;
+    padding-bottom: $spacing-xs;
+    color: #FFF;
+  }
+
+  &__item-description {
+    @include typescale('sm');
+    @include line-height('normal');
+  }
+
+  &__item-img {
+    margin: auto;
+    width: auto;
+    max-height: 2em;
+  }
+
+  &__item-figure {
+    margin-left: auto!important;
+    margin-right: auto!important;
+    margin: 0 0 1rem 0;
+
+    & svg {
+      max-height: 100px;
+    }
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.js-slider--responsive {
+  .slick-slide {
+    margin: 0 $grid-gutter 0;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+}
+
+
+.slider--modules {
+  // these are sized in JS,
+  // see sliderInit() in app.js for .js-slider--variable
+
+  .slick-slide {
+    max-width: 80vw;
+    margin: 0 $grid-gutter-small;
+
+    @media (min-width: $wrap-width) {
+      max-width: $wrap-width - 15rem;
+    }
+  }
+}
+
+.slider--gallery {
+
+  &__nav {
+
+    @at-root .no-js & {
+      display: none;
+    }
+
+    img {
+      box-sizing: border-box;
+      border: $spacing-2xs solid transparent;
+    }
+
+    .slick-current {
+      img {
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+.js-slider--logos {
+
+  .slick-slide {
+    padding: 0 1rem;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo { margin: 0 10%; }
+  .logo--low-aspect-ratio { margin: 0 25%; }
+}

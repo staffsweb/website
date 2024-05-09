@@ -1,0 +1,80 @@
+.zebra {
+  $zebra-inline-breakpoint: 50rem;
+  $zebra-overlap: 5%;
+
+  margin: $spacing-md 0 $spacing-xl;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: $offwhite;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      background-color: white;
+
+      .zebra__body {
+        background-color: $offwhite;
+
+        @media (min-width: $zebra-inline-breakpoint) {
+          // this is a weird exception because it was designed so the reverse row has no margin on the left,
+          // while the offwhite background row does, because it looks better
+          // it's done in a particular way so IE likes it.
+          flex: 1 0 50%; // IE.
+          left: $zebra-overlap;
+          margin-left: -#{$zebra-overlap};
+        }
+      }
+    }
+  }
+
+  &__figure {
+    position: relative;
+    margin: 0;
+    flex: 1 0 50%;
+    align-self: stretch;
+    z-index: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    @supports (object-fit: cover) {
+      align-items: stretch;
+    }
+
+    @media (min-width: $zebra-inline-breakpoint) {
+      flex: 0 0 50%; // IE.
+    }
+
+    img {
+      @supports (object-fit: cover) {
+        object-fit: cover;
+        object-position: center center;
+        height: 100%;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    flex: 1 1 20em;
+    min-width: 50%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: $spacing-md;
+    z-index: 0;
+
+    @media (min-width: $zebra-inline-breakpoint) {
+      flex: 0 0 45%; // IE.
+      margin: $spacing-4xl auto $spacing-2xl;
+      left: -#{$zebra-overlap};
+    }
+  }
+
+  &__title {
+    margin-top: -#{$spacing-xl};
+    margin-right: $spacing-md;
+  }
+}

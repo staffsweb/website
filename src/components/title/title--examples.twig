@@ -1,0 +1,87 @@
+<div class="box  box--bg-slate">
+  <div class="box__content">
+    {% include '@title' with {
+      text: 'This is an H1 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h1'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H2 styled as an H3',
+      textElement: 'h2',
+      textElementStyle: 'h3'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is a paragraph on white with a tail',
+      modifiers: ['bg-white', 'has-tail'],
+      textElement: 'p'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H2 on pink',
+      modifiers: ['bg-pink'],
+      textElement: 'h2'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H4 on slate',
+      modifiers: ['bg-slate'],
+      textElement: 'h4'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is a paragraph on maroon with a tail',
+      modifiers: ['bg-maroon', 'has-tail'],
+      textElement: 'p'
+    } %}
+  </div>
+</div>
+
+<div class="box  box--bg-offwhite">
+  <div class="box__content">
+
+    {% include '@title' with {
+      text: 'This is an H1 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h1'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H2 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h2'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H3 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h3'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H4 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h4'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H5 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h5'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is an H6 with a tail',
+      modifiers: ['has-tail'],
+      textElement: 'h6'
+    } %}
+
+    {% include '@title' with {
+      text: 'This is a paragraph on white with a tail',
+      modifiers: ['bg-white', 'has-tail'],
+      textElement: 'p'
+    } %}
+
+  </div>
+</div>

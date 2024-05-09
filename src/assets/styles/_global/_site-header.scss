@@ -1,0 +1,113 @@
+
+.header-site {
+  padding: 0;
+  margin: 0;
+
+  &.has-solid-bg {
+    background: black;
+  }
+
+  &--dashboard {
+    background: $red;
+  }
+
+  @media (min-width: $body-border-breakpoint) {
+    left: $body-border-width--wide;
+  }
+
+  &__flexContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media (min-width: $megaNav-full-breakpoint) {
+      position: relative;
+    }
+  }
+
+  .site-logo {
+    justify-self: flex-start;
+    margin-right: auto;
+    width: 30%;
+    max-width: 210px;
+    min-width: 166px;
+
+    img {
+      transition: all 200ms;
+
+      @media (min-width: $megaNav-full-breakpoint) {
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+
+  @at-root .has-expanded-nav {
+
+    .header-site {
+      .site-logo {
+        img {
+          //height: 3.5em;
+          //opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.toggle-megaNav,
+.toggle-search-site {
+  display: block;
+  justify-self: flex-end;
+  align-self: center;
+  height: $spacing-3xl;
+  width: $spacing-3xl;
+  margin: $spacing-sm 0 $spacing-sm $spacing-sm;
+  padding: 0;
+  border: 0;
+  z-index: 2;
+  cursor: pointer;
+
+  &.is-toggled {
+    opacity: 0.5;
+  }
+
+  &__label {
+    display: block;
+    text-align: center;
+    @include typescale('2xs');
+    padding-top: 1.75rem;
+  }
+}
+
+input.search-site {
+  background: #FEFEFE;
+  width: 6rem;
+  transition: all 200ms;
+
+  &.is-open {
+    width: 100%;
+  }
+
+  @media (min-width: $megaNav-full-breakpoint) {
+    height: $spacing-xl;
+    order: 3;
+
+    &__label {
+      display: block;
+      position: absolute;
+      left: -9999em;
+      clip: rect(0 0 0 0);
+    }
+  }
+}
+
+.toggle-megaNav {
+  background: url('#{$image-theme-directory-icon}/icon-hamburger.svg') center $spacing-2xs no-repeat;
+  background-size: $spacing-lg $spacing-lg;
+
+  @media (min-width: $megaNav-full-breakpoint) {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+{% set classString = '' %}
+{% for modifier in modifiers %}
+  {% set classString = classString ~ '  title--' ~ modifier %}
+{% endfor %}
+
+<hr{{ classString ? ' class="' ~ classString ~ '"' }}/>

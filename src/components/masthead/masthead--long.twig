@@ -1,0 +1,43 @@
+<div class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__bg">
+      {% if bgImg %}
+        {{ bgImg }}
+      {% else %}
+        <img src="{{ ('/img/masthead' ~ random(9) ~ '.jpg') | path }}"/>
+      {% endif %}
+    </div>
+    <div class="wrap">
+      <nav class="breadcrumbs">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Courses</a>
+          </li>
+          <li>
+            <a href="#">Medium Length Third Level</a>
+          </li>
+          <li>
+            <a href="#">Relatively Long Fourth Level</a>
+          </li>
+        </ul>
+      </nav>
+
+      {% include '@title' with {
+        text: 'Computer Gameplay Design, Production and Programming',
+        modifiers: ['has-tail'],
+        textElement: 'h1',
+        textElementStyle: 'h1',
+        animate: true
+      } %}
+      {% include '@title' with {
+        text: '(If long, consider using h2 textElementStyle)',
+        modifiers: ['bg-white', 'has-tail'],
+        textElement: 'h6',
+        animate: true
+      } %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+.tabs {
+  $tabs-inline-breakpoint: 65rem;
+
+  margin-bottom: $spacing-xl;
+  border-bottom: $spacing-2xs solid $neutral--primary;
+  padding-bottom: $spacing-sm;
+
+  &__nav {
+    margin: 0 -1px 0 0;
+    border-bottom: 3px solid $neutral--primary;
+    text-align: center;
+
+    @media (min-width: $tabs-inline-breakpoint) {
+      overflow: hidden;
+      overflow-x: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
+
+    @media (min-width: $tabs-inline-breakpoint) {
+      flex-wrap: nowrap;
+      margin: 0;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0 $spacing-2xs $spacing-xs;
+
+    @media (min-width: $tabs-inline-breakpoint) {
+      margin: 0 1px 0 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 500;
+    border-radius: 1em;
+    padding: 0.2em 1em;
+    background: $greyblue--light;
+
+    &:hover {
+      color: $neutral--primary;
+    }
+
+    @media (min-width: $tabs-inline-breakpoint) {
+      padding: 0.5em 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 8em;
+      border-radius: 0.2em 0.2em 0 0;
+    }
+
+    @media (min-width: $tabs-inline-breakpoint + 10rem) {
+      padding: 0.75em 2em;
+    }
+
+    &.is-selected {
+      background: $neutral--primary;
+      color: white;
+    }
+  }
+
+  &__section {
+    padding-top: $spacing-4xl;
+  }
+
+}

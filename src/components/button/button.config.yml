@@ -1,0 +1,79 @@
+name: Button
+status: wip
+collated: false
+context:
+  text: 'Regular button'
+  icon: null
+  link: '#'
+  classes: []
+handle: button
+
+variants:
+  - name: xs
+    label: "Size: XS"
+    context:
+      classes: ['button--xs']
+      text: 'A teeny tiny button'
+
+  - name: small
+    label: "Size: Small"
+    context:
+      classes: ['button--sm']
+      text: 'Small button'
+
+  - name: large
+    label: "Size: Large"
+    context:
+      classes: ['button--lg']
+      text: 'A big button'
+
+  - name: xl
+    label: "Size: XL"
+    context:
+      classes: ['button--xl']
+      text: 'Huge button!'
+
+  - name: pointy
+    label: "Style: Pointy"
+    context:
+      classes: ['button--pointy']
+      text: 'Button with pointy arrow'
+
+  - name: caps
+    label: "Style: Caps"
+    context:
+      classes: ['button--caps']
+      text: 'Button with uppercase/caps: note this poses accessibility concerns - avoid long copy'
+    notes: '<strong>NB:</strong> This poses accessibility concerns - avoid long copy'
+
+
+  - name: dark-blue
+    label: "Color: Dark Blue"
+    context:
+      classes: ['button--dark-blue']
+      text: 'Dark Blue Coloured Button'
+
+  - name: outline
+    label: "Style: Outline"
+    context:
+      classes: ['button--outline']
+      text: 'Outline Style Button'
+
+  - name: outline-slate
+    label: "Style: Outline Slate"
+    context:
+      classes: ['button--outline-slate']
+      text: 'Slate Outline Style Button'
+
+  - name: outline-white
+    label: "Style: Outline White (LDN)"
+    context:
+      classes: ['button--outline-white']
+      text: 'Button with white outline'
+    preview: '@preview--ldn-blue'
+
+  - name: block
+    label: "Style: Block-level Element"
+    context:
+      classes: ['button--block']
+      text: "Block-level Element Button"

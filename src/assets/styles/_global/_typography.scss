@@ -1,0 +1,107 @@
+
+//@include font-face;
+
+html {
+  position: relative;
+  //font-size: 90%;
+  text-decoration-skip-ink: auto;
+
+  @supports (font: -apple-system-body) {
+    font: -apple-system-body;
+    //text-size-adjust: 80%;
+  }
+
+  @media (min-width: 47.5em) {
+    //font-size: 85%;
+  }
+
+  @media (min-width: 90em) and (min-height: 50em) {
+    //font-size: 95%;
+  }
+
+  @media (min-width: 120em) and (min-height: 60em) {
+    //font-size: 110%;
+  }
+}
+
+body {
+  @include body;
+}
+
+::selection {
+  background: rgba($primary, 0.2);
+}
+
+@include base-elements;
+
+@each $name, $size in $typescale-map {
+  .font-#{$name} {
+    @include typescale($name, $important: true);
+  }
+}
+
+.font-primary {
+  @include font-primary;
+}
+
+//.font-secondary {
+//  @include font-secondary;
+//}
+
+main,
+article {
+  p:not([class]) {
+    max-width: $line-length-max-rem;
+  }
+
+  ul:not([class]),
+  ol:not([class]) {
+    max-width: calc(#{$line-length-max-rem} - 1.5em); // subtract base ul left hand padding to match p width
+  }
+}
+
+hgroup,
+.hgroup {
+  margin: 0 0 $spacing-xl;
+
+  #{headings()} {
+    margin: 0 0 $spacing-xs;
+  }
+}
+
+
+.caps {
+  @include caps;
+}
+
+.tag {
+  @include tag;
+}
+
+a.tag {
+  &:hover {
+    @include tag--hover;
+  }
+}
+
+.url {
+  // has break-word in @mixin base-elements
+  color: $text-color;
+  text-decoration: underline;
+}
+
+.link-access,
+.visually-hidden,
+.screen-reader-text {
+  display: block;
+  position: absolute;
+  left: -9999em;
+  clip: rect(0 0 0 0);
+
+  &:focus {
+    position: static;
+    left: auto;
+    clip: none;
+  }
+}
+

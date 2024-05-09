@@ -1,0 +1,19 @@
+status: wip
+label: 'Sliders'
+
+variants:
+  - name: default
+    hidden: true
+  - name: accolades
+    label: "Accolade Slider"
+  - name: event-cards
+    label: "Event Cards Slider"
+  - name: logos
+    label: "Logo slider"
+    notes: "Because different logos often have different aspect ratios, an additional class called '.logo--low-aspect-ratio' can be used here to try and keep logos inline."
+  - name: tiles
+    label: "Tiles Slider"
+  - name: tiles-gallery
+    label: "Tiles (Gallery)"
+  - name: gallery
+    label: "Gallery Slider"

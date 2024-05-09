@@ -1,0 +1,46 @@
+.breadcrumbs {
+  background: $grey;
+  backdrop-filter: blur(1em);
+  display: inline-block;
+  color: #000;
+  margin: 0 0 $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+
+  &.has-solid-bg {
+    background: black;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    @include typescale('sm');
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 $spacing-2xs;
+
+    &:before {
+      content: '/ ';
+      display: inline-block;
+      margin: 0 $spacing-xs 0 0;
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+
+    a, a:visited, a:not([class]) {
+      color: #000;
+      font-weight: 500;
+      border-bottom: 0;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

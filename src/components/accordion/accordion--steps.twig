@@ -1,0 +1,45 @@
+<ol class="accordion  list--steps  list--steps-accent-pink">
+  <li>
+    {% include '@accordion--item' with {
+      titleElement: 'h2',
+      title: 'Take Action',
+      content: '
+      <div class="list--steps__content">
+        <p>If you are at home, in University-managed residences, or in shared private accommodation when you experience COVID-19 symptoms, stay there and do not come onto campus. If you are on campus, make sure you maintain two-metre social distancing, wear your face covering, apply hand gel and
+          head home immediately.</p>
+      </div>
+      <div class="list--steps__cta">
+        <a href="" class="button">Check your symptoms</a>
+      </div>',
+      open: true
+    } %}
+  </li>
+  <li>
+    {% include '@accordion--item' with {
+      titleElement: 'h2',
+      title: 'Start Isolating',
+      content: '<div class=""><p>If you have symptoms, you must immediately self-isolate. Email your tutor to let them know that you will not be able to attend your face-to-face classes. You can visit the NHS website for more information in how to self-isolate.</p></div><a href="" class="button">Find out more <span class="visually-hidden">about isolating</span></a>'
+    } %}
+  </li>
+  <li>
+    {% include '@accordion--item' with {
+      titleElement: 'h2',
+      title: 'Book a Test',
+      content: '<p>Some content inside</p><p>Some content</p><a href="" class="button">Call to action</a>'
+    } %}
+  </li>
+  <li>
+    {% include '@accordion--item' with {
+      titleElement: 'h2',
+      title: 'Following a positive result',
+      content: '<p>Some content inside</p><p>Some content</p><a href="" class="button">Call to action</a>'
+    } %}
+  </li>
+  <li>
+    {% include '@accordion--item' with {
+      titleElement: 'h2',
+      title: 'Alert the University',
+      content: '<p>Some content inside</p><p>Some content</p><a href="" class="button">Call to action</a>'
+    } %}
+  </li>
+</ol>

@@ -1,0 +1,87 @@
+table {
+  // there are some base styles set on this element in the 'base-elements' mixin,
+  // in __vars/typography
+}
+
+.table {
+}
+
+.table--modules {
+  thead {
+    th {
+      background: $yellow-light;
+      color: $dark-blue;
+    }
+  }
+
+  &__credits {
+    text-align: center;
+    background: $dark-blue;
+    color: white;
+  }
+}
+
+.table--apply {
+  font-size: 1em;
+
+  &,
+  tr,
+  th {
+    background: none; // reasons: this normally sits on a dark bg box
+    color: inherit; // reasons: this normally sits on a dark bg box
+    text-align: left;
+  }
+
+  thead, tr {
+    border-bottom-color: rgba(#888, 0.2);
+  }
+
+  tr {
+  }
+
+  .button {
+    margin: $spacing-sm 0;
+    white-space: pre; // this is a bit strong, but we really want to avoid this wrapping
+  }
+
+  @media (max-width: 60rem) {
+    // a MAX WIDTH media query? Not mobile-first?!
+    // Yeah, I know. Tables are inherently horrible and not mobile-first.
+    // This is an exception. *slaps own wrist*
+
+    tr {
+      width: 100%;
+      padding: $spacing-sm 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    thead {
+      display: none;
+    }
+
+    [data-label] {
+      &:before {
+        content: attr(data-label) ":";
+        font-weight: 500;
+        padding-right: 0.5em;
+      }
+    }
+
+    &__buttonCell {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.pathway-container .slick-slide {
+  padding-right: 20px;
+
+  & .modules-link {
+    &.align-right {
+      max-width: none;
+    }
+  } 
+}

@@ -1,0 +1,85 @@
+@import 'spacing';
+
+// grid gutters are set in __vars/_layout :)
+
+$grid-cols: (
+    2,
+    3,
+    4,
+    5,
+    6,
+  //  7,
+  //  8,
+  //   9,
+ 10
+  //   11,
+  //   12,
+);
+
+// ------------
+
+$offsets: false;
+$complex-offsets: false;
+
+// The following will enable ALL complex grid options below
+$complex-fractions: true;
+
+// toggle 'complex' fractions - 3/5, 5/6, 3/7, 5/8, 7/9, 3/10, 7/11, 5/12... etc.
+$complex-5ths: true;
+$complex-6ths: true;
+$complex-7ths: false;
+$complex-8ths: false;
+$complex-9ths: false;
+$complex-10ths: true;
+$complex-11ths: false;
+$complex-12ths: false;
+
+
+@function gcd($a, $b){
+    // greatest common denominator
+    @if $b == 0 {
+        @return $a;
+    } @else {
+        @return gcd($b, $a%$b);
+    }
+}
+
+@mixin offset-left($n,$d) {
+    @if (round(($n * 100%) / $d) == (($n * 100%) / $d)) {
+        margin-left: ((($n * 100%) / $d));
+    } @else {
+        margin-left: ((($n * 100%) / $d) - 0.001);
+    }
+}
+
+@mixin offset-right($n,$d) {
+    @if (round(($n * 100%) / $d) == (($n * 100%) / $d)) {
+        margin-right: ((($n * 100%) / $d));
+    } @else {
+        margin-right: ((($n * 100%) / $d) - 0.001);
+    }
+}
+
+@mixin grid-col($n:1,$d:1) {
+    @if (round(($n * 100%) / $d) == (($n * 100%) / $d)) {
+        width: ((($n * 100%) / $d));
+    } @else {
+        width: ((($n * 100%) / $d) - 0.001);
+    }
+    &:nth-child(n) {
+        clear: none;
+    }
+    &:nth-child(#{$d}n + #{$d+1}) {
+        clear: left;
+    }
+}
+
+@mixin col($n:1,$d:1) {
+    &:nth-child(n) {
+        @if (round(($n * 100%) / $d) == (($n * 100%) / $d)) {
+            width: ((($n * 100%) / $d));
+        } @else {
+            width: ((($n * 100%) / $d) - 0.001);
+        }
+    }
+}

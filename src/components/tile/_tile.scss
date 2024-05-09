@@ -1,0 +1,105 @@
+.tile {
+  // $tile-accent-colors: see __vars/colours
+
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: 1px solid $grey--light;
+  box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15);
+  min-height: 10em;
+
+  &__figure {
+    position: relative;
+    margin: 0;
+    z-index: 0;
+
+    img {
+      transition: filter 250ms;
+    }
+
+    @supports (object-fit: cover) {
+      img {
+        height: 100%;
+        max-height: 75vmin;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-right: 2rem;
+    max-height: 90%;
+    padding: 0 $spacing-md 1px;
+    background: white;
+    box-sizing: border-box;
+    z-index: 1;
+
+    &-body {
+      @include typescale('sm');
+      @include line-height('normal');
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-right: 2rem;
+    max-height: 90%;
+    z-index: 1;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    .title:only-child {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-top: -$spacing-md!important;
+  }
+
+  @each $name, $value in $tile-accent-colors {
+    &--accent-#{$name} {
+      --accent-color: #{$value};
+    }
+  }
+
+  &--no-shadow {
+    box-shadow: none;
+  }
+}
+
+a.tile {
+  //.tile__figure {
+  //  img {
+  //    filter: grayscale(100%);
+  //  }
+  //}
+
+  &:hover,
+  &:focus {
+    color: $neutral--primary;
+
+    //.tile__figure {
+    //  img {
+    //    filter: grayscale(0);
+    //  }
+    //}
+  }
+
+  &:focus {
+    outline-width: 3px;
+    outline-color: $primary;
+    z-index: 2;
+  }
+}
+
+.has-cta .tile {
+  min-height: 30em;
+}

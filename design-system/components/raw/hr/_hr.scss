@@ -1,0 +1,79 @@
+$hr-tri-size: 1em;
+
+hr {
+  position: relative;
+  // see base-elements in vars/_typography
+}
+
+.hr--primary {
+  border-top-width: 2px;
+  border-color: $primary;
+}
+
+// Spacing
+
+.hr--compact {
+  margin: $spacing-xl auto;
+}
+
+.hr--spaced {
+  margin: $spacing-5xl auto;
+}
+
+.hr--invisible {
+  border-color: transparent;
+}
+
+// Styled variants
+
+[class*='hr--tri-'] {
+  border-color: $primary;
+  //border-width: 2px;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+}
+
+.hr--tri-above-left {
+  &:before {
+    bottom: 0;
+    left: 0;
+    border-width: $hr-tri-size 0 0 $hr-tri-size;
+    border-color: transparent transparent transparent $primary;
+  }
+}
+
+.hr--tri-below-left {
+  &:before {
+    top: 0;
+    left: 0;
+    border-width: $hr-tri-size $hr-tri-size 0 0;
+    border-color: $primary transparent transparent transparent;
+  }
+}
+
+.hr--tri-above-right {
+  &:after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 0 $hr-tri-size $hr-tri-size;
+    border-color: transparent transparent $primary transparent;
+  }
+}
+
+.hr--tri-below-right {
+  &:after {
+    top: 0;
+    right: 0;
+    border-width: 0 $hr-tri-size $hr-tri-size 0;
+    border-color: transparent $primary transparent transparent;
+  }
+}

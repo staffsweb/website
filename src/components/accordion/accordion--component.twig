@@ -1,0 +1,13 @@
+{% set titleElement = titleElement ?: 'span' %}
+
+{% if items %}
+  <div class="accordion">
+    {% for item in items %}
+      {% include '@accordion--item' with {
+        titleElement: titleElement,
+        title: item.title,
+        content: item.content
+      } %}
+    {% endfor %}
+  </div>
+{% endif %}

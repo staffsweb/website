@@ -1,0 +1,19 @@
+{{ spaceless }}
+{% set classString = '' %}
+{% for modifier in modifiers %}
+  {% set classString = classString ~ '  slab--' ~ modifier %}
+{% endfor %}
+{% if background %}
+  {% set classString = classString ~ '  slab--bg-' ~ background %}
+{% endif %}
+
+<div class="slab{{ classString }}">
+  <div class="wrap">
+    <h2 class="h3 slab__title">{{ text }}</h2>
+    <p>{{ loremLong }}</p>
+  </div>
+</div>
+{{ endspaceless }}
+
+
+

@@ -1,0 +1,21 @@
+{{ spaceless }}
+{% set classString = '' %}
+{% for modifier in modifiers %}
+  {% set classString = classString ~ '  box--' ~ modifier %}
+{% endfor %}
+{% if background %}
+  {% set classString = classString ~ '  box--bg-' ~ background %}
+{% endif %}
+
+<div class="box{{ classString }}">
+  <div class="box__content">
+    <div class="box__title  title">
+      <h2 class="h4  title__highlight">{{ text }}</h2>
+    </div>
+    <p>{{ lorem }}</p>
+  </div>
+  <footer class="box__footer">
+    <a href="" class="button  align-center">Book Now</a>
+  </footer>
+</div>
+{{ endspaceless }}

@@ -1,0 +1,526 @@
+//@mixin font-face ($prefix: '..') {
+//}
+$typescale-map: (
+  '6xl': 3,
+  '5xl': 2.5,
+  '4xl': 2,
+  '3xl': 1.75,
+  '2xl': 1.5,
+  'xl': 1.25,
+  'lg': 1.1,
+  'md': 1,
+  'sm': 0.875,
+  'xs': 0.75,
+  '2xs': 0.6875,
+);
+
+$headings-smallscreen-map: (
+  'h1': '4xl',
+  'h2': '3xl',
+  'h3': '2xl',
+  'h4': 'xl',
+  'h5': 'lg',
+  'h6': 'md',
+);
+$headings-map: (
+  'h1': '6xl',
+  'h2': '5xl',
+  'h3': '4xl',
+  'h4': '2xl',
+  'h5': 'xl',
+  'h6': 'lg',
+);
+
+$line-height-map: (
+  'spaced': 1.8,
+  'normal': 1.6,
+  'headings': 1.3,
+  'compact': 0.8,
+);
+
+$border-accent-width: $spacing-2xs;
+
+@mixin font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+//@mixin font-sans-secondary {
+//  font-family: 'Museo Sans', 'Tahoma', sans-serif;
+//}
+//
+//@mixin font-serif {
+//  font-family: 'Ashbury', serif;
+//}
+
+@mixin font-primary {
+  @include font-sans;
+}
+
+//@mixin font-secondary {
+//  @include font-sans-secondary;
+//}
+//
+//@mixin font-tertiary {
+//  @include font-serif;
+//}
+
+
+@mixin line-height($size) {
+  @if map-has-key($line-height-map, $size) {
+    line-height: map-get($line-height-map, $size);
+  } @else {
+    @warn 'This is not a step of the line-height scale';
+  }
+}
+
+@mixin typescale($size, $unit: 'rem', $important: false) {
+  @if map-has-key($typescale-map, $size) {
+    @if $important {
+      font-size: map-get($typescale-map, $size)+unquote($unit)+unquote(' !important');
+    } @else {
+      font-size: map-get($typescale-map, $size)+unquote($unit);
+    }
+    //@if (map-get($typescale-map, $size) > 2) {
+    //  @include line-height('compact');
+    //}
+  } @else {
+    @warn 'This is not a step of the Type Scale!';
+  }
+}
+
+@function headings($from:1, $to:6) {
+  @if $from == $to {
+    @return 'h#{$from}, .h#{$from}';
+  } @else {
+    @return 'h#{$from}, .h#{$from},' + headings($from+1, $to);
+  }
+}
+
+@mixin body {
+  @include font-primary;
+  @include line-height('normal');
+  color: $text-color;
+  background: #fff;
+  font-weight: 400;
+  font-variant-ligatures: none;
+  tap-highlight-color: transparentize($primary, 0.75);
+}
+
+@mixin base-elements {
+  a { color: $link-color; cursor: pointer; }
+  a:hover { color: $link-color--hover }
+  a img {	border: 0px; }
+  a[href^="mailto"], .url { word-break: break-word; }
+
+  //a {
+  //  @supports (text-decoration-thickness: 1px) {
+  //    border-bottom: none;
+  //    text-decoration: underline;
+  //    text-decoration-color: $grey-shadow;
+  //    text-decoration-thickness: 1px;
+  //  }
+  //}
+
+  p, li, td, dd
+  {
+    & a:not([class]), & a[class*="sys_"] {
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid $grey--light
+    }
+  }
+
+  .link--standard {
+    font-weight: 500!important;
+    border-bottom: 1px solid $grey--light!important;
+
+    &:hover {
+      text-decoration: none!important;
+    }
+  }
+
+
+  //nav, ul, ol, table {
+  //  a {
+  //    @supports (text-decoration-thickness: 1px) {
+  //      text-decoration-color: revert;
+  //      text-decoration-thickness: revert;
+  //    }
+  //  }
+  //}
+
+  #{headings()} {
+    @include line-height('headings');
+    font-weight: 600;
+
+    //a, a & {
+    //  color: black;
+    //}
+  }
+
+  h2 {
+    color: $burgundy;
+  }
+
+  h1, h2 {
+    margin: 0 0 $spacing-lg;
+  }
+
+  h3, h4, h5, h6 {
+    margin: 0 0 $spacing-xs;
+  }
+
+  h1 + h2,
+  h2 + h3,
+  h3 + h4,
+  h4 + h5,
+  h5 + h6 {
+    margin-top: 0;
+  }
+
+  @each $name, $size in $headings-smallscreen-map {
+    #{$name}, .#{$name} {
+      @include typescale($size);
+    }
+  }
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @each $name, $size in $headings-map {
+      #{$name}, .#{$name} {
+        @include typescale($size);
+      }
+    }
+  }
+
+  p {
+    margin: 0 0 1.5em;
+
+    &:empty {
+      margin: 0;
+    }
+  }
+
+  acronym, abbr {
+    border-bottom: 1px dotted #333;
+  }
+
+  strong,
+  .strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  li {
+    margin-bottom: $spacing-xs;
+  }
+
+  ul {
+    margin: 0 0 $spacing-lg;
+    list-style-type: square;
+    padding-left: 1.5em;
+  }
+
+  ol {
+    margin: 0 0 $spacing-lg;
+    padding-left: 2em;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  dl {
+    margin: 0 0 $spacing-lg;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  hr {
+    clear: both;
+    height: 0;
+    border: 0;
+    border-top: 1px solid $grey--light;
+    margin: $spacing-4xl auto;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+  figure {
+    position: relative;
+    margin: 0 0 $spacing-xl;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    @include figcaption;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  pre {
+    clear: both;
+    @include typescale('sm', 'em');
+    @include line-height('normal');
+    margin: $spacing-lg 0;
+    padding: 1em;
+    tab-size: 2;
+    background: black;
+    color: #fff;
+    max-width: 100%;
+    overflow: auto;
+
+    &::selection {
+      background: rgba($primary, 0.75);
+      color: white;
+    }
+  }
+
+  code {
+    display: inline-block;
+    @include line-height('normal');
+    @include typescale('xs', 'em');
+    background: rgba($primary, 0.05);
+    padding: 0 0.2em;
+    color: $primary;
+    border: 1px rgba($primary, 0.25) solid;
+    border-radius: 0.2em;
+  }
+
+  table {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 0 0 $spacing-xl;
+    //border: 1px solid $offwhite;
+    border-spacing: 0;
+    border-collapse: collapse;
+    @include line-height('normal');
+  }
+
+  caption {
+    text-align: left;
+  }
+
+  thead {
+    border-bottom: 2px solid $neutral--primary;
+
+    td, th {
+      background: #fff;
+      vertical-align: bottom;
+    }
+  }
+
+  tr {
+    background: rgba($offwhite, 0.5);
+    border-bottom: 1px solid $offwhite;
+
+    &:nth-child(even) {
+      background: #fff;
+    }
+  }
+
+  td, th {
+    padding: 1em;
+  }
+
+  th {
+    color: $neutral--primary;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  //details {
+    .accordion__title {
+      margin: $spacing-sm 0;
+      padding: $spacing-xs;
+    }
+
+    .accordion__toggle {
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  //}
+
+  .intro,
+  .is-style-intro {
+    @include typescale('lg');
+    @include line-height('normal');
+    max-width: $line-length-max-rem;
+    color: $secondary;
+    font-weight: 500;
+
+    @media (min-width: 40em) {
+      @include typescale('xl', 'em');
+    }
+  }
+
+  .stat {
+    @include typescale('2xl', 'em');
+    font-weight: 600;
+    color: $primary;
+    text-decoration: none;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin h1 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h1'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h1'));
+  }
+}
+
+@mixin h2 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h2'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h2'));
+  }
+}
+
+@mixin h3 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h3'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h3'));
+  }
+}
+
+@mixin h4 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h4'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h4'));
+  }
+}
+
+@mixin h5 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h5'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include typescale(map-get($headings-map, 'h5'));
+  }
+}
+
+@mixin h6 {
+  @include line-height('headings');
+  @include typescale(map-get($headings-smallscreen-map, 'h6'));
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    @include map-get($headings-map, 'h6');
+  }
+}
+
+@mixin blockquote {
+  position: relative;
+  display: table;
+  margin: $spacing-xl 0;
+  padding: 0;
+  @include typescale('xl', 'em');
+  @include line-height('normal');
+
+  @media (min-width: $breakpoint-largescreen-typography) {
+    @include typescale('2xl', 'em');
+    margin-bottom: $spacing-xl;
+  }
+
+  p {
+    font-size: 1em;
+    margin: 0 0 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin cite {
+  @include font-primary;
+  @include typescale('lg');
+  font-style: normal;
+  font-weight: 600;
+  display: block;
+  margin: $spacing-lg 0 $spacing-xs;
+}
+
+@mixin figcaption {
+  margin: 0;
+  padding: $spacing-sm 0;
+  background: #fff;
+  color: $text-color;
+  border-bottom: 1px solid $grey--light;
+  line-height: normal;
+}
+
+@mixin tag {
+  display: inline-block;
+  @include typescale('xs', 'em');
+  color: $text-color;
+  background: $offwhite;
+  padding: 0.35em 1.5em;
+  line-height: 1;
+  border-radius: 0.35em;
+  text-decoration: none;
+  text-decoration-color: revert;
+  text-decoration-thickness: revert;
+}
+
+@mixin tag--hover {
+  text-decoration: underline;
+  color: $text-color;
+}
+
+@mixin caps {
+  text-transform: uppercase;
+}

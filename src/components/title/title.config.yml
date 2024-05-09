@@ -1,0 +1,41 @@
+name: Title
+status: wip
+collated: false
+context:
+  text: 'This is a title'
+  background: []
+  modifiers: []
+  animate: false
+handle: title
+
+variants:
+  - name: white
+    label: "White"
+    context:
+      background: white
+      text: 'This is a white highlighted title'
+
+  - name: slate
+    label: "Slate"
+    context:
+      background: slate
+      text: 'This is a slate highlighted title'
+
+  - name: maroon
+    label: "Maroon"
+    context:
+      background: maroon
+      text: 'This is a maroon highlighted title'
+
+  - name: pink
+    label: "Pink"
+    context:
+      background: pink
+      text: 'This is a pink highlighted title'
+
+  - name: examples
+    label: "Examples"
+
+  - name: ldn-examples
+    label: "Examples (LDN)"
+    preview: '@preview--ldn'

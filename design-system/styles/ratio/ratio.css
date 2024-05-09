@@ -1,0 +1,13 @@
+.ratio { position: relative; height: 0; overflow: hidden; }
+
+.ratio > * { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.ratio--16x9 { padding-bottom: 56.25%; /* CG: 16:9 as a percentage (9 / 16 = 0.5625 or 56.25%) */ }
+
+.ratio--4x3 { padding-bottom: 75%; /* CG: 16:9 as a percentage (3 / 4 = 0.75 or 75%) */ }
+
+.ratio-a4-portrait { padding-bottom: 141.4%; }
+
+.ratio-a4-landscape { padding-bottom: 70.72%; }
+
+/*# sourceMappingURL=ratio.css.map */

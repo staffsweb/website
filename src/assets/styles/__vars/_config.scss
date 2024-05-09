@@ -1,0 +1,29 @@
+$image-theme-directory: '../img/'; //www.staffs.ac.uk/site/images'; // this is overridden if using a theme which requires different images (eg. London)
+$image-theme-directory-icon: '#{$image-theme-directory}';//'#{$image-theme-directory}/icons';
+$image-theme-directory-ldn: '//www.staffs.ac.uk/microsites/london/images'; // CG: A new variable to allow for the fact that London is a microsite
+$image-theme-directory-icon-ldn: '#{$image-theme-directory-icon}/london';
+
+$link-image-hover-opacity: 0.9;
+
+//Social Media Icons
+$facebook-icon : '#{$image-theme-directory-icon}/icon-facebook-white.svg';
+$twitter-icon : '#{$image-theme-directory-icon}/icon-twitter-white.svg';
+$youtube-icon : '#{$image-theme-directory-icon}/icon-youtube-white.svg';
+$pinterest-icon : '#{$image-theme-directory-icon}/icon-pinterest-white.svg';
+$snapchat-icon : '#{$image-theme-directory-icon}/icon-snapchat-white.svg';
+$instagram-icon : '#{$image-theme-directory-icon}/icon-instagram-white.svg';
+$linkedin-icon : '#{$image-theme-directory-icon}/icon-linkedin-white.svg';
+$tiktok-icon : '#{$image-theme-directory-icon}/icon-tiktok-white.svg';
+$x-icon : '#{$image-theme-directory-icon}/icon-x-white.svg';
+
+$social-media-icons: (
+  'facebook': $facebook-icon,
+  'twitter': $twitter-icon,
+  'youtube': $youtube-icon,
+  'pinterest': $pinterest-icon,
+  'snapchat': $snapchat-icon,
+  'instagram': $instagram-icon,
+  'linkedin': $linkedin-icon,
+  'tiktok': $tiktok-icon,
+  'x' : $x-icon
+);

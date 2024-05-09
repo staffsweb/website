@@ -1,0 +1,224 @@
+.debug {
+  * {
+    box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.75), inset 0 0 0.5em rgba(0, 255, 0, 0.75) !important;
+  }
+}
+
+@each $name, $value in $utils-bg-colors {
+  .bg-#{$name} {
+    background: $value !important;
+
+    //@if (lightness($value) < 50) {
+    //color: #fff;
+    //}
+  }
+}
+
+@each $name, $value in $utils-text-colors {
+  .text-color-#{$name} {
+    color: $value !important;
+  }
+}
+
+
+.text-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center !important;
+}
+
+.text-left {
+  margin-right: auto;
+  text-align: left !important;
+}
+
+.text-right {
+  margin-left: auto;
+  text-align: right !important;
+}
+
+.text-columns {
+  columns: 25em;
+  column-gap: $grid-gutter;
+
+  p {
+    break-inside: avoid;
+  }
+}
+
+@each $name, $value in $utils-margin-sizes {
+  .margin-y-#{$name} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+
+  .margin-top-#{$name} {
+    margin-top: $value !important;
+  }
+
+  .margin-bottom-#{$name} {
+    margin-bottom: $value !important;
+  }
+}
+
+.margin-top-none,
+.margin-y-none {
+  margin-top: 0 !important;
+}
+
+.margin-bottom-none,
+.margin-y-none {
+  margin-bottom: 0 !important;
+}
+
+.overflow-x {
+  max-width: 100%;
+  overflow: auto;
+  overflow-scrolling: touch;
+}
+
+.js .js-hidden, .hidden {
+  display: none!important;
+}
+
+// CG: Hide only visually, but have it available for screen readers: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+.link--stretched {
+  position: static;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    // Just in case `pointer-events: none` is set on a parent
+    pointer-events: all;
+    content: "";
+    // IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.source-outline {
+  border: 2px solid #F00!important;
+  padding: 0 1rem;
+  color: #000;
+}
+#source-indicator {
+  background-color: #333;
+  padding: 5px 8px;
+  font-size: 18px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  position:  absolute;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+  z-index: 2000;
+}
+#source-indicator__source, #source-indicator__field { display: block; }
+#source-indicator__source { font-size: 14px; }
+.element-outline {
+  border: 2px dotted #F00;
+  min-height: 22px;
+}
+.source-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  font-size: 12px;
+  color: #FFF;
+  background-color: $red;  
+  z-index: 200;
+  border: 1px solid #FFF;
+}
+
+.course-details_usp.element-outline .column {
+  width: 28%;
+}
+
+.unistats-embed {
+  width: 100%;
+  height: 160px;
+  border: 0;
+}
+
+.accreditation-logos {
+  margin-bottom: $spacing-2xl;
+
+  & > img {
+    display: inline-block;
+  }
+}
+
+.system-info {
+  text-align: right;
+  font-size: 90%;
+}
+
+.note {
+  &--validation {
+    color: $red;
+    font-weight: 500;
+  }
+}
+
+.pie-chart {
+  width: 200px; 
+
+  .pie { transform: rotate(-90deg); width: 200px; height: 200px; background: #F4F4F4; border-radius: 50%; margin-bottom: 2rem; }
+
+  .pie circle { fill: none; stroke: #F4F4F4; stroke-width: 99; -webkit-animation: rotate 1.5s ease-in; animation: rotate 1.5s ease-in; }
+
+  .pie .circle-1 { stroke: #D20052; }
+
+  .pie .circle-2 { stroke: #394851; }
+
+  .pie .circle-3 { stroke: #C3C1C1; }
+
+  .pie-chart_key { margin: 0.5rem 0; }
+
+  .pie-chart_key .key-color { display: inline-block; width: 17px; height: 17px; margin-right: 0.5rem; }
+
+  .pie-chart_key .key-color.key-1 { background: #D20052; }
+
+  .pie-chart_key .key-color.key-2 { background: #394851; }
+
+  .pie-chart_key .key-color.key-3 { background: #C3C1C1; }
+
+}
+
+.theme-ldn {
+  .pie .circle-1 { stroke: $magenta--ldn; }
+  .pie .circle-2 { stroke: $blue--deep-ldn; }
+  .pie .circle-3 { stroke: $blue--ldn; }
+  .pie-chart_key .key-color.key-1 { background: $magenta--ldn; }
+  .pie-chart_key .key-color.key-2 { background: $blue--deep-ldn; }
+  .pie-chart_key .key-color.key-3 { background: $blue--ldn; }
+}
+
+p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: none; }
+
+/* CG: Utility classes for showing / hiding content at specific breakpoints */
+@media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+  .visible-mobile-down {
+    display: block!important;
+  }
+  .hidden-mobile-down {
+    display: none!important;
+  }
+}
+
+@media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+  .visible-mobile-down {
+    display: none!important;
+  }
+}

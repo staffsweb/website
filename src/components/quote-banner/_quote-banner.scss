@@ -1,0 +1,46 @@
+.quote-banner {
+  position: relative;
+  overflow: hidden;
+
+  @each $name, $value in $banner-bg-colors {
+    &--bg-#{$name} {
+      background: #{$value};
+    }
+  }
+
+  &__flexContainer {
+    margin: 0 -#{$grid-gutter};
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &--reverse {
+    .quote-banner__flexContainer {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__figure {
+    margin: $spacing-xl $grid-gutter;
+    flex: 1 1 40%;
+
+    &--align-bottom {
+      margin: 0 $grid-gutter;
+      align-self: flex-end;
+    }
+
+    img {
+      margin: auto;
+      max-height: 75vh;
+      width: auto;
+    }
+  }
+
+  &__quoteContainer {
+    margin: $spacing-xl $grid-gutter;
+    flex: 1 1 20em;
+  }
+}

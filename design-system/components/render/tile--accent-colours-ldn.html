@@ -1,0 +1,198 @@
+
+
+<p>In the LDN theme, the default tile uses the <code>$primary</code> colour, as in the main theme.</p>
+<p>These can be styled with a modifier, which will cascade to the <code>title__highlight</code></p>
+<p>Like other LDN themed component variants, the modifiers are in a map in <code>main-ldn.scss</code>, consider this the source of truth, but at the time of typing, they're currently:</p>
+
+<ul>
+  <li><code>accent-blue-ldn</code></li>
+  <li><code>accent-blue-deep-ldn</code></li>
+  <li><code>accent-magenta-ldn</code></li>
+  <li><code>accent-purple-deep-ldn</code></li>
+  <li><code>accent-tef-gold</code></li>
+</ul>
+
+For example:
+
+<pre>&lt;div class=&quot;tile  tile--accent-blue-deep-ldn&quot;&gt;&lt;/div&gt;</pre>
+
+<p>As the map is overwritten, colours from the main site are not available unless explicitly added to the map in Sass.</p>
+
+<div class="grid  grid--flush  grid-2-cols@mobile-wide  grid-3-cols@tablet-wide">
+  <div>
+    <a class="tile  tile--accent-blue-deep-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=1" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-blue-deep-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Reach your full potential with our postgraduate courses.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-blue-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=2" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-blue-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Study with us, no matter where in the world you come from.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-magenta-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=3" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-magenta-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Study Esports, Computer Games Design, Cyber Security, and more, with us in London.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-purple-deep-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=4" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-purple-deep-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Apply for a full-time undergraduate degree at Staffordshire University and get guaranteed accommodation.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-tef-gold" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=5" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-tef-gold</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Apply for a full-time undergraduate degree at Staffordshire University and get guaranteed accommodation.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<hr/>
+
+<p><code>tile-group</code> can still be applied for a grouped hover effect, as follows:</p>
+
+
+<div class="grid  grid--flush  grid-2-cols@mobile-wide  grid-3-cols@tablet-wide  tile-group">
+  <div>
+    <a class="tile" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=6" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile (no modifier)</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Reach your full potential with our postgraduate courses.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-blue-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=7" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-blue-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Study with us, no matter where in the world you come from.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-magenta-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=8" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-magenta-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Study Esports, Computer Games Design, Cyber Security, and more, with us in London.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-purple-deep-ldn" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=9" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-purple-deep-ldn</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Apply for a full-time undergraduate degree at Staffordshire University and get guaranteed accommodation.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div>
+    <a class="tile  tile--accent-tef-gold" href="">
+      <figure class="tile__figure">
+        <img src="https://picsum.photos/500/500?random=2" class="tile__img" alt=""/>
+      </figure>
+
+      <div class="tile__content">
+        <div class="title tile__title">
+          <h3 class="h4  title__highlight">tile--accent-tef-gold</h3>
+        </div>
+        <div class="tile__content-body">
+          <p>Apply for a full-time undergraduate degree at Staffordshire University and get guaranteed accommodation.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

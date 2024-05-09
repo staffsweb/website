@@ -1,0 +1,28 @@
+.tile-group {
+  a.tile {
+    transition: transform 200ms;
+
+    &:hover {
+      transform: scale(1.025);
+      z-index: 2;
+    }
+  }
+
+  &:hover {
+    a.tile {
+      .tile__figure {
+        img {
+          filter: grayscale(1);
+        }
+      }
+
+      &:hover {
+        .tile__figure {
+          img {
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+}

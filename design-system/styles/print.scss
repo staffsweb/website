@@ -1,0 +1,25 @@
+@import "__vars/_all";
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1em;
+}
+
+nav,
+menu,
+*[type='submit'],
+button,
+.button,
+.js-print {
+  display: none !important;
+}
+
+details,
+details *,
+.accordion-content,
+.js-accordion-content {
+  display: block !important;
+}

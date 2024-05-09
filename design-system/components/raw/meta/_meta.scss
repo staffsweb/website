@@ -1,0 +1,59 @@
+.meta {
+  @include line-height('normal');
+
+  dt {
+    margin-bottom: $spacing-2xs;
+  }
+
+  &__item {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.meta--inline-dd {
+  dd {
+    display: inline;
+    margin-right: $spacing-xs;
+
+    &:before {
+      content: '•';
+      margin-right: $spacing-xs;
+      font-weight: bold;
+      color: $secondary;
+    }
+
+    &:first-of-type {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.meta--inline {
+  .meta__item {
+    margin-bottom: $spacing-xs;
+  }
+
+  dt, dd {
+    display: inline-block;
+    margin-right: $spacing-xs;
+  }
+
+  dd {
+    display: inline;
+
+    &:before {
+      content: '•';
+      margin-right: $spacing-xs;
+      font-weight: bold;
+      color: $secondary;
+    }
+
+    &:first-of-type {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

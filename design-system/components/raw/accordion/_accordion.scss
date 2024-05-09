@@ -1,0 +1,91 @@
+// See also: fusion with list--steps in _lists.scss
+
+.accordion {
+  clear: both;
+  margin-bottom: $spacing-4xl;
+  border-bottom: 1px solid $grey--light;
+}
+
+.accordion__item {
+  border-top: 1px solid $grey--light;
+
+  &[open] {
+    .accordion__title {
+      font-weight: 500;
+      background: $greyblue--superlight;
+    }
+
+    .accordion__toggle:before {
+      content: '';
+      transform: rotate(0deg);
+      background: $neutral--primary url('#{$image-theme-directory-icon}/icon-minus-white.svg') no-repeat center center;
+      background-size: 50%;
+    }
+  }
+}
+
+.accordion__title {
+  display: block;
+  margin: 0;
+  padding: $spacing-lg $spacing-sm;
+  font-weight: normal;
+  @include line-height('headings');
+  list-style: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0.1em solid rgba($neutral--primary, 0.5);
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (min-width: 40em) {
+    padding: $spacing-lg $spacing-lg;
+  }
+}
+
+.accordion__toggle {
+  display: block;
+  padding-left: 1.5em;
+
+  &:before {
+    display: inline-block;
+    float: left;
+    content: '';
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    padding: 0;
+    margin-left: -1.5em;
+    background: $neutral--primary url('#{$image-theme-directory-icon}/icon-plus-white.svg') no-repeat center center;
+    background-size: 50%;
+    text-align: center;
+    border-radius: 50%;
+    vertical-align: middle;
+    box-sizing: border-box;
+  }
+}
+
+.accordion__content {
+  padding: $spacing-sm;
+  background: $greyblue--supersuperlight;
+  border-top: 1px solid $grey--light;
+
+  @media (min-width: 40em) {
+    padding: $spacing-lg $spacing-lg;
+  }
+}
+
+.accordion--transparent {
+
+  & .accordion__item[open] .accordion__title {
+    background: none;
+  }
+
+  & .accordion__content {
+    background: none;
+    border-top: 0;
+  }
+}

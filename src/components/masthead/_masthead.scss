@@ -1,0 +1,125 @@
+.masthead {
+  $overlay-breakpoint: $third-breakpoint + 10rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $offwhite;
+  box-sizing: border-box;
+  position: relative;
+
+  & h1 {
+    background-color: $dark-blue;
+    padding: $spacing-sm;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      @supports (object-fit: cover) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 65vmin;
+    padding: 12rem 0 $spacing-xl;
+    align-self: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+    @media (min-width: $overlay-breakpoint) {
+      position: static;
+    }
+  }
+
+  &__overlay {
+    align-self: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    padding: $spacing-lg 0 0;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+    z-index: 1;
+
+    @media (min-width: $overlay-breakpoint) {
+      background: none;
+      padding: 0;
+      margin-bottom: $spacing-lg;
+
+      &Inner {
+        margin: 0 -#{$grid-gutter};
+        padding: $spacing-lg $grid-gutter 0;
+        background: rgba(black, 0.75);
+        @supports (backdrop-filter: blur(1em)) {
+          background: rgba(black, 0.6);
+          /*min-height: 340px;*/
+        }
+        backdrop-filter: blur(1em);
+
+        & .meta--inline dd::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .wrap {
+    position: relative;
+    align-self: flex-end;
+    z-index: 0;
+  }
+
+  &--shallow {
+    .masthead__inner {
+      min-height: 40vh;
+    }
+  }
+
+  & .title {
+    color: white;
+  }
+
+  @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    &--profile {
+      .masthead__inner {
+        padding: $spacing-6xl 0 $spacing-xl;
+        figure {
+          margin: 2rem 0 2rem;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  & a.masthead__school-link {
+    color: white;
+    border-bottom: 1px solid white!important;
+
+    &:hover {
+      border-bottom: none!important;
+      text-decoration: none;
+    }
+  }
+}

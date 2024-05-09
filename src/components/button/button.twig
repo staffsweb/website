@@ -1,0 +1,13 @@
+{{ spaceless }}
+{% set classString = '' %}
+{% for class in classes %}
+  {% set classString = classString ~ '  ' ~ class %}
+{% endfor %}
+
+<a href="{{ link }}" class="button{% if classString %}{{ classString }}{% endif %}">
+  {% if icon %}
+    <i class="icon | icon-{{ icon }}"></i>
+  {% endif %}
+  {{ text }}
+</a>
+{{ endspaceless }}

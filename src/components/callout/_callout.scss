@@ -1,0 +1,20 @@
+.callout {
+    text-align: center;
+    padding: $spacing-md;
+
+    & p, & h2 {
+        margin: 0;
+    }
+
+    @each $name, $value in $callout-bg-colors {
+        &--bg-#{$name} {
+          background-color: #{$value};
+          @if (choose-contrast-color($value) == white) {
+            color: white;
+            & h2 {
+              color: white;
+            }
+          }
+        }
+      }
+}

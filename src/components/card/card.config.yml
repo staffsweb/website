@@ -1,0 +1,42 @@
+label: Cards
+status: wip
+
+variants:
+  - name: red
+    label: "Theme: Red"
+  - name: burgundy
+    label: "Theme: Burgundy"
+  - name: digital-blue
+    label: "Theme: Digital blue"
+  - name: grey
+    label: "Theme: Grey"
+  - name: blue-ldn
+    label: "Theme: Blue (LDN)"
+
+  - name: ldn-variants
+    label: "LDN Variants"
+    preview: '@preview--ldn'
+
+  - name: ksp
+    label: "KSP (Key Selling Points)"
+  - name: ksp-light
+    label: "KSP (Light on Dark)"
+
+  - name: ksp-ldn-variants
+    label: "KSP (LDN)"
+    preview: '@preview--ldn'
+
+  - name: pullquote
+    label: "Pullquote"
+  - name: pullquote-ldn
+    label: "Pullquote (LDN)"
+    preview: '@preview--ldn'
+
+  - name: testimonial
+    label: "Testimonial"
+  - name: testimonial-ldn
+    label: "Testimonial (LDN)"
+    preview: '@preview--ldn'
+
+  - name: with-logo
+    label: "With logo"

@@ -1,0 +1,14 @@
+.tag--narrow {
+    padding: 0.35em 0.5em;
+}
+
+.tag--not-rounded {
+    border-radius: 0;
+}
+
+@each $name, $value in $tag-bg-colors {
+    .tag--#{$name} {
+        background-color: #{$value};
+        color: white;
+    }
+}

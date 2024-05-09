@@ -1,0 +1,25 @@
+.side-nav {
+    @media (min-width: map-get($breakpoint-stages, 'tablet')) {
+        margin-left: $spacing-md;
+    }
+
+    &__list {
+        border-bottom: 2px solid $primary;
+        border-top: 2px solid $primary;
+        padding: $spacing-lg 0;
+    }
+
+    &__current {
+        font-weight: 500;
+    }
+
+    & .title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        line-height: $spacing-lg;
+    }
+
+    & h2 {
+        margin-bottom: $spacing-xs;
+    }
+}

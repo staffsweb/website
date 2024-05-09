@@ -1,0 +1,57 @@
+{% set bgClasses = ['offwhite', 'granite', 'granite-light', 'blue-ldn', 'slate-light'] %}
+
+{% for bgClass in bgClasses %}
+  <div class="slab  slab--bg-{{bgClass}}">
+    <div class="wrap">
+      <div class="hgroup">
+        {% include '@title' with {
+          text: 'Slab',
+          tail: false,
+          textElement: 'h2'
+        } %}
+        {% include '@title' with {
+          text: 'This is a white title with tail',
+          tail: true,
+          background: 'white',
+          textElement: 'h3',
+          textElementStyle: 'h6'
+        } %}
+      </div>
+
+      <p>The background is '{{bgClass}}'</p>
+      <p>{{ loremLong }}</p>
+
+    </div>
+  </div>
+
+  <div class="margin-bottom-2xl"></div>
+
+  <div class="slab  slab--bg-{{bgClass}}  align-full">
+    <div class="wrap">
+      <div class="hgroup">
+        {% include '@title' with {
+          text: 'Fully aligned slab',
+          tail: false,
+          textElement: 'h2'
+        } %}
+        {% include '@title' with {
+          text: 'This is a white title with tail',
+          tail: true,
+          background: 'white',
+          textElement: 'h3',
+          textElementStyle: 'h6'
+        } %}
+      </div>
+
+      <p>The background is '{{bgClass}}'</p>
+      <p>{{ loremLong }}</p>
+
+    </div>
+  </div>
+
+  <div class="margin-bottom-2xl"></div>
+{% endfor %}
+
+
+
+

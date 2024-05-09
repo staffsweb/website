@@ -1,0 +1,18 @@
+name: Horizontal Rule
+status: wip
+handle: hr
+context:
+  modifiers: []
+
+variants:
+  - name: colours
+    label: 'Colours'
+  - name: spacing
+    label: 'Spacing'
+  - name: triangles
+    label: 'Triangles'
+    handle: 'hr--triangles'
+
+  - name: ldn
+    label: 'Triangles (LDN)'
+    preview: '@preview--ldn'

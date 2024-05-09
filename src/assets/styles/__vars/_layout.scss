@@ -1,0 +1,134 @@
+
+$grid-gutter: $spacing-lg;
+$grid-gutter-small: $spacing-sm;
+$grid-gutter-large: $spacing-3xl;
+
+$page-gutter-small: $grid-gutter/1.25;
+$page-gutter-large: $grid-gutter-large/2;
+$page-gutter-full: 5%;
+
+$wrap-width: 86rem;
+
+$wrap-large-gutter-width: 40rem;
+$wrap-full-gutter-width: 40rem;
+
+$line-length-max: 50em;
+$line-length-max-rem: 50rem;
+
+$breakpoint-largescreen-typography: $quart-breakpoint + 5rem;
+$breakpoint-largescreen-typography-height: 40rem;
+
+$align-size-xs: calc(25% - #{$grid-gutter});
+$align-size-sm: calc(33% - #{$grid-gutter});
+$align-size-md: calc(50% - #{$grid-gutter});
+$align-size-lg: calc(66% - #{$grid-gutter});
+$align-min-breakpoint: 32.5rem;
+//$align-right-offset-breakpoint: $wrap-width + 10rem;
+
+$body-border-width: $spacing-xs;
+$body-border-width--wide: $spacing-md;
+$body-border-breakpoint: $wrap-full-gutter-width;
+
+$megaNav-full-breakpoint: 70rem; // if you change this, you'll need to update the corresponding matchMedia (megaNavFullBreakpoint) in app.js
+
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $page-gutter-small;
+  max-width: $wrap-width;
+  box-sizing: border-box;
+
+  @media (min-width: $wrap-large-gutter-width) { // these are currently the same, but leave both in case one changes.
+    padding: 0 $page-gutter-large;
+  }
+
+  @media (min-width: $wrap-full-gutter-width) { // these are currently the same, but leave both in case one changes.
+    padding: 0 $page-gutter-full;
+  }
+}
+
+@mixin wrap-content {
+  @include clearfix;
+  max-width: $line-length-max;
+}
+
+@mixin align-left {
+  float: none;
+
+  @media (min-width: $align-min-breakpoint) {
+    float: left;
+    max-width: $align-size-md;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-top: $spacing-2xs;
+    margin-right: $grid-gutter-large;
+    margin-bottom: $spacing-lg;
+  }
+
+  @media (min-width: $third-breakpoint) {
+    max-width: $align-size-sm;
+  }
+}
+
+@mixin align-right {
+  float: none;
+
+  @media (min-width: $align-min-breakpoint) {
+    float: right;
+    clear: right;
+    max-width: $align-size-md;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-top: $spacing-2xs;
+    margin-left: $grid-gutter-large;
+    margin-bottom: $spacing-lg;
+  }
+
+  @media (min-width: $third-breakpoint) {
+    max-width: $align-size-sm;
+  }
+}
+
+/*@mixin align-wide {
+  max-width: none;
+  width: calc(100vw - #{$page-gutter-small*2});
+  margin-left: calc(-50vw + 50% + #{$page-gutter-small});
+  margin-right: calc(-50vw + 50% + #{$page-gutter-small});
+
+  @media (min-width: $wrap-full-gutter-width) {
+    width: calc(90vw);
+    margin-left: calc(-45vw + 50%);
+    margin-right: calc(-45vw + 50%);
+  }
+
+  @media (min-width: $wrap-width + 10rem) {
+    width: $wrap-width;
+    margin-left: calc(-#{$wrap-width/2} + 50%);
+    margin-right: calc(-#{$wrap-width/2} + 50%);
+  }
+}*/
+
+@mixin align-full {
+  // between scrollbars and the body-border on the left,
+  // this doesn't work as well as it should,
+  // consider tweaking, or just close off the wrapper rather than trying to bleed it
+  
+  max-width: none;
+  width: calc(100vw - #{$body-border-width});
+  margin-left: calc(-50vw + 50% + #{$body-border-width/2});
+  margin-right: calc(-50vw + 50%);
+
+  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+    width: calc(100vw - #{$body-border-width--wide*2});
+    margin-left: calc(-50vw + 50% + #{$body-border-width--wide});
+  }
+}

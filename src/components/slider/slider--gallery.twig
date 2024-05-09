@@ -1,0 +1,59 @@
+<div class="slider--gallery  js-slider--gallery">
+  {% for i in 1..3 %}
+    <div>
+      <div class="tile">
+        <figure class="tile__figure">
+          <img src="https://picsum.photos/id/304/1600/800" class="" alt=""/>
+
+          <figcaption class="tile__caption">
+            <div class="title">
+              <p class="h6  title__highlight">Studying in the lab</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div>
+      <div class="tile">
+        <figure class="tile__figure">
+          <img src="https://picsum.photos/id/3/1600/800" class="" alt=""/>
+
+          <figcaption class="tile__caption">
+            <div class="title">
+              <p class="h6  title__highlight">{{ placeholderHeadline }}</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div>
+      <div class="tile">
+        <figure class="tile__figure">
+          <img src="https://picsum.photos/id/22/1600/800" class="" alt=""/>
+
+          <figcaption class="tile__caption">
+            <div class="title">
+              <p class="h6  title__highlight">{{ loremShort }}</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="slider--gallery__nav  js-slider--gallery__nav">
+  {% for i in 1..3 %}
+    <div>
+      <img src="https://picsum.photos/id/304/300/300" class="" alt=""/>
+    </div>
+    <div>
+      <img src="https://picsum.photos/id/3/300/300" class="" alt=""/>
+    </div>
+    <div>
+      <img src="https://picsum.photos/id/22/300/300" class="" alt=""/>
+    </div>
+  {% endfor %}
+</div>

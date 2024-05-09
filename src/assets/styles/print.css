@@ -1,0 +1,30 @@
+/** Calculate the luminance for a color. See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests */
+/** Calculate the contrast ratio between two colors. See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests */
+/** Determine whether to use dark or light text on top of given color. Returns black for dark text and white for light text. */
+/*@mixin align-wide {
+  max-width: none;
+  width: calc(100vw - 2.4rem);
+  margin-left: calc(-50vw + 50% + 1.2rem);
+  margin-right: calc(-50vw + 50% + 1.2rem);
+
+  @media (min-width: $wrap-full-gutter-width) {
+    width: calc(90vw);
+    margin-left: calc(-45vw + 50%);
+    margin-right: calc(-45vw + 50%);
+  }
+
+  @media (min-width: $wrap-width + 10rem) {
+    width: $wrap-width;
+    margin-left: calc(-43rem + 50%);
+    margin-right: calc(-43rem + 50%);
+  }
+}*/
+html { font-size: 10px; }
+
+body { font-size: 1em; }
+
+nav, menu, *[type='submit'], button, .button, .js-print { display: none !important; }
+
+details, details *, .accordion-content, .js-accordion-content { display: block !important; }
+
+/*# sourceMappingURL=print.css.map */

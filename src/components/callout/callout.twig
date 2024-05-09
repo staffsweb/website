@@ -1,0 +1,11 @@
+{% set bgClasses = ['neon', 'dark-blue', 'burgundy'] %}
+<div class="grid  grid-4-cols">
+    {% for bgClass in bgClasses %}
+    <div>
+        <article class="callout  callout--bg-{{ bgClass }}">
+            <h2 class="callout__title">BBC</h2>
+            <p class="callout__content">112 UCAS points</p>
+        </article>
+    </div>
+    {% endfor %}
+</div>
