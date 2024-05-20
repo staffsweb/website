@@ -14,17 +14,23 @@ variants:
       background: offwhite
       text: 'This is an offwhite slab'
 
-  - name: slate
-    label: "Background: Slate"
-    context:
-      background: slate
-      text: 'This is a slate slab'
-
   - name: dark-blue
     label: "Background: Dark blue"
     context:
       background: dark-blue
       text: 'This is a dark blue slab'
+
+  - name: neon
+    label: "Background: Neon"
+    context:
+      background: neon
+      text: 'This is a neon slab'
+
+  - name: slate
+    label: "Legacy: Slate"
+    context:
+      background: slate
+      text: 'Slate slabs will become dark blue'
 
   - name: bg-img
     label: "Background Image"

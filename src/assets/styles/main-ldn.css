@@ -1846,8 +1846,6 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab { position: relative; padding: 4rem 0; background-size: cover; background-repeat: no-repeat; }
 
-.slab__title { margin-top: 1rem; }
-
 .slab__header { margin-top: -4rem; }
 
 .slab__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; }
