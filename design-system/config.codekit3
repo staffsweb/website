@@ -100,6 +100,14 @@
 		"oAP": "/fonts/Roboto-Medium.ttf",
 		"oF": 0
 		},
+	"/fonts/PlusJakartaSans-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/fonts/PlusJakartaSans-Regular.ttf",
+		"oF": 0
+		},
 	"/img/highlight.png": {
 		"ft": 32768,
 		"iS": 58620,

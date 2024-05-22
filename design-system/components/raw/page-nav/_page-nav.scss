@@ -99,7 +99,7 @@
   }
 
   &.is-waypoint-reached {
-    $background: $primary;
+    $background: $teal;
     --background: #{$background};
     --backgroundRGB: #{red($background)}, #{green($background)}, #{blue($background)};
 

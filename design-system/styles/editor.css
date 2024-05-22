@@ -23,7 +23,7 @@ html { position: relative; -webkit-text-decoration-skip: ink; text-decoration-sk
 
 @supports (font: -apple-system-body) { html { font: -apple-system-body; } }
 
-body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: black; background: #fff; font-weight: 300; tap-highlight-color: rgba(239, 74, 59, 0.25); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: black; background: #fff; font-weight: 400; -webkit-font-variant-ligatures: none; font-variant-ligatures: none; tap-highlight-color: rgba(239, 74, 59, 0.25); }
 
 ::-moz-selection { background: rgba(239, 74, 59, 0.2); }
 
@@ -43,9 +43,13 @@ p a:not([class]), p a[class*="sys_"], li a:not([class]), li a[class*="sys_"], td
 
 .link--standard:hover { text-decoration: none !important; }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.3; font-weight: 500; }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.3; font-weight: 600; }
 
-h1, h2, h3, h4, h5, h6 { margin: 0 0 1.5rem; }
+h2 { color: #8a0045; }
+
+h1, h2 { margin: 0 0 1.5rem; }
+
+h3, h4, h5, h6 { margin: 0 0 0.5rem; }
 
 h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 0; }
 
@@ -74,7 +78,7 @@ p:empty { margin: 0; }
 
 acronym, abbr { border-bottom: 1px dotted #333; }
 
-strong, .strong { font-weight: 500; }
+strong, .strong { font-weight: 600; }
 
 em { font-style: italic; }
 
@@ -90,7 +94,7 @@ nav a { text-decoration: none; }
 
 dl { margin: 0 0 1.5rem; }
 
-dt { font-weight: 500; }
+dt { font-weight: 600; }
 
 dd { margin: 0; }
 
@@ -130,7 +134,7 @@ tr:nth-child(even) { background: #fff; }
 
 td, th { padding: 1em; }
 
-th { color: #170d38; font-weight: 500; text-align: left; }
+th { color: #170d38; font-weight: 600; text-align: left; }
 
 td { vertical-align: middle; }
 
@@ -138,11 +142,11 @@ td { vertical-align: middle; }
 
 .accordion__toggle { margin: 0; display: inline-block; vertical-align: middle; }
 
-.intro, .is-style-intro { font-size: 1.1rem; line-height: 1.6; max-width: 50rem; color: #170d38; font-weight: 400; }
+.intro, .is-style-intro { font-size: 1.1rem; line-height: 1.6; max-width: 50rem; color: #170d38; font-weight: 500; }
 
 @media (min-width: 40em) { .intro, .is-style-intro { font-size: 1.25em; } }
 
-.stat { font-size: 1.5em; font-weight: 500; color: #ef4a3b; text-decoration: none; }
+.stat { font-size: 1.5em; font-weight: 600; color: #ef4a3b; text-decoration: none; }
 
 .stat a { color: #ef4a3b; text-decoration: none; }
 
@@ -211,6 +215,10 @@ a.tag:hover { text-decoration: underline; color: black; }
 .button--dark-blue { background-image: linear-gradient(to left, #170d38 50%, black 50%); color: white; }
 
 .button--dark-blue:hover, .button--dark-blue:focus { color: white; }
+
+.button--digital-blue { background-image: linear-gradient(to left, #304dfc 50%, black 50%); color: white; }
+
+.button--digital-blue:hover, .button--digital-blue:focus { color: white; }
 
 .button--granite { background-image: linear-gradient(to left, #41464b 50%, black 50%); color: white; }
 

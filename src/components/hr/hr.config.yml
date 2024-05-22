@@ -1,5 +1,5 @@
 name: Horizontal Rule
-status: wip
+status: ready
 handle: hr
 context:
   modifiers: []
@@ -9,10 +9,3 @@ variants:
     label: 'Colours'
   - name: spacing
     label: 'Spacing'
-  - name: triangles
-    label: 'Triangles'
-    handle: 'hr--triangles'
-
-  - name: ldn
-    label: 'Triangles (LDN)'
-    preview: '@preview--ldn'

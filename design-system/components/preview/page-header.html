@@ -1,488 +1,66 @@
-
-
 <!DOCTYPE html>
-<html class="no-js no-touch" lang="en">
-    <head>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
         
-<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="cleartype" content="on" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<link href="../../styles/main.css" rel="stylesheet" />
-<link media="print" href="../../styles/print.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div class="wrap  margin-top-xl">
-            <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
-
-<header class="header-site" id="header-site">
-  <div class="wrap">
-    <div class="header-site__flexContainer">
-      <a class="site-logo" title="Home" href="/">
-        <img src="../../img/logo.png" alt="Universityof Staffordshire Logo" class="no-lazy-load">
-      </a>
-
-      <button class="toggle-megaNav" id="toggle-megaNav" aria-controls="megaNav"><span class="toggle-megaNav__label">Menu</span></button>
-      <input class="search-site" id="search-site" type="search" placeholder="Search" />
-
-      <nav class="megaNav" id="megaNav" role="navigation">
-        <div class="megaNav__controls">
-          <button class="megaNav__close" id="megaNav__close"><span class="visually-hidden">Close</span></button>
-        </div>
-
-        <div class="megaNav__topLevel">
-          <ul class="megaNav__topLevel-list">
-            <li class="megaNav__topLevel-item has-children">
-              <a class="megaNav__topLevel-link  " href="">Courses</a>
-
-              <div class="megaNav__level  megaNav__secondLevel">
-                <div class="megaNav__levelHeader">
-                  <button class="megaNav__closeLevel">Back to Main menu</button>
-                </div>
-
-                <ul class="megaNav__levelList  megaNav__secondLevel-list">
-                  <li class="megaNav__secondLevel-item  has-children megaNav__secondLevel-item-has-fourthLevel">
-                    <a class="megaNav__secondLevel-link  " href="">Undergraduate</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Back to Courses</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Accounting and Finance</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Allied Health and Paramedic Science</a></li>
-                        <li class="megaNav__thirdLevel-item  has-children">
-                          <a class="megaNav__thirdLevel-link  " href="">Subject Areas</a>
-
-                          <div class="megaNav__level  megaNav__fourthLevel">
-                            <div class="megaNav__levelHeader">
-                              <button class="megaNav__closeLevel">Back to Undergraduate</button>
-                            </div>
-
-                            <ul class="megaNav__levelList  megaNav__fourthLevel-list">
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Accounting and Finance</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Allied Health and Paramedic Science</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Animation</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Art and Design</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Augmented and Virtual Realities</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Biological and Biomedical Sciences</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Business and Marketing</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Computer Science, AI and Robotics</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Drama, Performance and Theatre Studies</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Education</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Engineering</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">...</a></li>
-                            </ul>
-
-                            <div class="megaNav__levelMobileFooter">
-                              <button class="megaNav__closeLevel">Back</button>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="megaNav__thirdLevel-item  has-children">
-                          <a class="megaNav__thirdLevel-link  " href="">More Subject Areas</a>
-
-                          <div class="megaNav__level  megaNav__fourthLevel">
-                            <div class="megaNav__levelHeader">
-                              <button class="megaNav__closeLevel">Back to Undergraduate</button>
-                            </div>
-
-                            <ul class="megaNav__levelList  megaNav__fourthLevel-list">
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Accounting and Finance</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Allied Health and Paramedic Science</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Animation</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Art and Design</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Augmented and Virtual Realities</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Biological and Biomedical Sciences</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">Business and Marketing</a></li>
-                              <li class="megaNav__fourthLevel-item"><a class="megaNav__fourthLevel-link" href="">...</a></li>
-                            </ul>
-
-                            <div class="megaNav__levelMobileFooter">
-                              <button class="megaNav__closeLevel">Back</button>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Accounting and Finance</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Allied Health and Paramedic Science</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Animation</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">Art and Design</a></li>
-                      </ul>
-
-
-
-                      <div class="megaNav__levelMobileFooter">
-                        <button class="megaNav__closeLevel">Back</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="megaNav__secondLevel-item  has-children">
-                    <a class="megaNav__secondLevel-link  " href="">Postgraduate</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Back to Courses</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Accounting and Finance</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Allied Health and Paramedic Science</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Animation</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Art and Design</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Augmented and Virtual Realities</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Biological and Biomedical Sciences</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Business and Marketing</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Computer Science, AI and Robotics</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Drama, Performance and Theatre Studies</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Education</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Engineering</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG ...</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Accounting and Finance</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Allied Health and Paramedic Science</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Animation</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Art and Design</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Augmented and Virtual Realities</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Biological and Biomedical Sciences</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Business and Marketing</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Computer Science, AI and Robotics</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Drama, Performance and Theatre Studies</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Education</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG Engineering</a></li>
-                        <li class="megaNav__thirdLevel-item"><a class="megaNav__thirdLevel-link" href="">PG ...</a></li>
-                      </ul>
-
-                      <div class="megaNav__levelMobileFooter">
-                        <button class="megaNav__closeLevel">Back</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Professional</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Distance Leaning</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Partnerships</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Apprenticeships</a></li>
-                </ul>
-
-              </div>
-            </li>
-            <li class="megaNav__topLevel-item  has-children">
-              <a class="megaNav__topLevel-link  " href="">Student life</a>
-
-              <div class="megaNav__level  megaNav__secondLevel">
-                <div class="megaNav__levelHeader">
-                  <button class="megaNav__closeLevel">Back to Main menu</button>
-                </div>
-
-                <ul class="megaNav__levelList  megaNav__secondLevel-list">
-                  <li class="megaNav__secondLevel-item  has-children">
-                    <a class="megaNav__secondLevel-link  " href="">Accommodation</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Back to Student Life</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Stoke-on-Trent</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Stafford</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Shrewsbury</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Private accommodation</a></li>
-                      </ul>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">How to apply</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Guaranteed accommodation</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">International students</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Special requirements</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Frequently asked questions</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Campus and facilities</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Life in Staffordshire</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Getting involved</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Student support</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Life on campus</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Sport</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Chat to a Student</a></li>
-                </ul>
-
-              </div>
-            </li>
-            <li class="megaNav__topLevel-item">
-              <a class="megaNav__topLevel-link" href="">International</a>
-            </li>
-            <li class="megaNav__topLevel-item  has-children  has-simple-children">
-              <a class="megaNav__topLevel-link " href="">Research</a>
-
-              <div class="megaNav__level  megaNav__secondLevel">
-                <div class="megaNav__levelHeader">
-                  <button class="megaNav__closeLevel">Back to Main menu</button>
-                </div>
-
-                <ul class="megaNav__levelList  megaNav__secondLevel-list">
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                </ul>
-
-              </div>
-            </li>
-            <li class="megaNav__topLevel-item  has-children">
-              <a class="megaNav__topLevel-link " href="">Business</a>
-
-              <div class="megaNav__level  megaNav__secondLevel">
-                <div class="megaNav__levelHeader">
-                  <button class="megaNav__closeLevel">Business</button>
-                </div>
-
-                <ul class="megaNav__levelList  megaNav__secondLevel-list">
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item  has-children">
-                    <a class="megaNav__secondLevel-link  " href="">Test Item</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Test Item</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-
-              </div>
-            </li>
-            <li class="megaNav__topLevel-item  has-children">
-              <a class="megaNav__topLevel-link " href="">About us</a>
-
-              <div class="megaNav__level  megaNav__secondLevel">
-                <div class="megaNav__levelHeader">
-                  <button class="megaNav__closeLevel">About us</button>
-                </div>
-
-                <ul class="megaNav__levelList  megaNav__secondLevel-list">
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item  has-children">
-                    <a class="megaNav__secondLevel-link  " href="">Test Item</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Test Item</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                      </ul>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                      </ul>
-
-                      <div class="megaNav__levelMobileFooter">
-                        <button class="megaNav__closeLevel">Back</button>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item  has-children">
-                    <a class="megaNav__secondLevel-link  " href="">Test Item</a>
-
-                    <div class="megaNav__level  megaNav__thirdLevel">
-                      <div class="megaNav__levelHeader">
-                        <button class="megaNav__closeLevel">Test Item</button>
-                      </div>
-
-                      <ul class="megaNav__levelList  megaNav__thirdLevel-list">
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                        <li class="megaNav__thirdLevel-item"><a href="" class="megaNav__thirdLevel-link">Test Item</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                  <li class="megaNav__secondLevel-item"><a class="megaNav__secondLevel-link" href="">Test Item</a></li>
-                </ul>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<div class="global-search" id="global-search" role="form">
-    <button class="global-search__close" id="global-search__close" type="button">
-        <svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 16 16" id="icon-close-white" xmlns="http://www.w3.org/2000/svg"><title>Atoms/Iconography/close-white@2x</title><path d="M16 1.61L9.61 8 16 14.39 14.39 16 8 9.61 1.61 16 0 14.39 6.39 8 0 1.61 1.61 0 8 6.39 14.39 0z" fill="currentColor" fill-rule="evenodd"/></symbol></svg>
-        <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-close-white"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-white"></use></svg></span>
-        <span class="visually-hidden">Close search</span>
-    </button>
-    <div class="global-search__container">
-        <div id="global-search__options" class="grid  global-search__options">
-            <div class="col-1/4@tablet  col-full@mobile">
-                <input class="global-search__scope" id="global-search__scope--courses" name="cScope" type="radio" value="courses" checked="">
-                <label for="global-search__scope--courses">Search courses</label>
-                <br>
-                <input class="global-search__scope" id="global-search__scope--site" name="cScope" type="radio" value="wholeSite">
-                <label for="global-search__scope--site">Search staffs.ac.uk</label>
-            </div>
-            <div class="col-3/4@tablet  col-full@mobile">
-                <input class="global-search__keywords" id="global-search__keywords--courses" name="cQueryH" type="search" placeholder="Search courses">
-                <input class="global-search__keywords  visually-hidden" id="global-search__keywords-whole-site" name="cQueryH" type="search" placeholder="Search staffs.ac.uk">
-            </div>
-        </div>
-        <p class="global-search__hint">Hit enter to search or ESC to close</p>
-    </div>
-</div>
-<div class="masthead">
-  <div class="masthead__inner">
-    <div class="masthead__bg">
-      
-        <img src="../../img/masthead0.jpg"/>
-      
-    </div>
-    <div class="wrap">
-      <nav class="breadcrumbs">
-  <ul>
-    <li>
-      <a href="#">Home</a>
-    </li>
-    <li>
-      <a href="#">Level 1</a>
-    </li>
-    <li>
-      <a href="#">Level 2</a>
-    </li>
-  </ul>
-</nav>
-
-      
-
-
-
-  
-
-
-
-
-  
-
-
-
-<div class="title  title--has-tail  js-waypoint">
-  <h1 class="title__highlight  h1">
-  Page Title
-</h1>
-</div>
-
-
-
-
-
-
-
-
-
-      
-
-
-
-  
-
-  
-
-
-
-
-  
-
-
-
-<div class="title  title--bg-white  title--has-tail  js-waypoint">
-  <h6 class="title__highlight">
-  (If long, consider using h2 textElementStyle)
-</h6>
-</div>
-
-
-
-
-
-
-
-
-
-    </div>
-  </div>
-</div>
-
-
-        </div>
-
         
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../../dev/js/app.js"></script>
+        
+    }
+</style>
 
-    </body>
+<link rel="stylesheet" href="../../themes/mandelbrot/css/white.css?cachebust=1.9.4" type="text/css">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.9.4" type="text/css">
+
+
+<title>Error rendering component page-header | University of Staffordshire - 2024 Brand</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame Frame--full" id="frame">
+
+
+<div class="Error Error--render">
+    <h4 class="Error-title">Error rendering component</h4>
+    <div class="Error-message Prose">
+        <p>Error: Template @global-search not found</p>
+
+    </div>
+    
+    <code class="Error-stack">
+        <pre>Error: Error: Template @global-search not found
+    at c:\Users\cjg4\Documents\Pattern Library\2024design\node_modules\@frctl\twig\src\adapter.js:156:24
+    at new Promise (<anonymous>)
+    at TwigAdapter.render (c:\Users\cjg4\Documents\Pattern Library\2024design\node_modules\@frctl\twig\src\adapter.js:134:16)
+    at ComponentSource._renderVariant (c:\Users\cjg4\Documents\Pattern Library\2024design\node_modules\@frctl\fractal\src\api\components\source.js:212:30)
+    at _renderVariant.next (<anonymous>)
+    at onFulfilled (c:\Users\cjg4\Documents\Pattern Library\2024design\node_modules\co\index.js:65:19)</pre>
+    </code>
+    
+</div>
+
+
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.9.4"></script>
+
+
+
+</body>
 </html>

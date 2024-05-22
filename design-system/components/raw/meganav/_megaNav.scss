@@ -355,6 +355,10 @@
         border: 0;
       }
     }
+
+    .megaNav__topLevel-item > .megaNav__topLevel-link {
+      white-space: nowrap;
+    }
   }
 
   &__secondLevel {

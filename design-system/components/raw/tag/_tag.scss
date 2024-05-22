@@ -9,6 +9,10 @@
 @each $name, $value in $tag-bg-colors {
     .tag--#{$name} {
         background-color: #{$value};
-        color: white;
+        color: black;
+        @if (choose-contrast-color($value) == white) {
+            color: white;
+        }
+        
     }
 }

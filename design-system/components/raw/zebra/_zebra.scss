@@ -8,22 +8,34 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: $offwhite;
+    background-color: white;
+
+    .zebra__body {
+      background-color: $burgundy;
+    }
+
+    &:nth-child(odd) {
+      .zebra__body {
+        color: white;
+        & h2, & a:not(.button) {
+          color: white;
+        }
+      }
+    }
 
     &:nth-child(even) {
       flex-direction: row-reverse;
-      background-color: white;
+      background-color: $grey-50-pc;
 
       .zebra__body {
-        background-color: $offwhite;
+        background-color: white;
 
         @media (min-width: $zebra-inline-breakpoint) {
           // this is a weird exception because it was designed so the reverse row has no margin on the left,
-          // while the offwhite background row does, because it looks better
+          // while the grey-50-pc background row does, because it looks better
           // it's done in a particular way so IE likes it.
           flex: 1 0 50%; // IE.
           left: $zebra-overlap;
-          margin-left: -#{$zebra-overlap};
         }
       }
     }
@@ -63,7 +75,7 @@
     min-width: 50%;
     box-sizing: border-box;
     background-color: white;
-    padding: $spacing-md;
+    padding: $spacing-xl;
     z-index: 0;
 
     @media (min-width: $zebra-inline-breakpoint) {
@@ -71,10 +83,5 @@
       margin: $spacing-4xl auto $spacing-2xl;
       left: -#{$zebra-overlap};
     }
-  }
-
-  &__title {
-    margin-top: -#{$spacing-xl};
-    margin-right: $spacing-md;
   }
 }

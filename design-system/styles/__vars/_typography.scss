@@ -1,6 +1,5 @@
 //@mixin font-face ($prefix: '..') {
 //}
-
 $typescale-map: (
   '6xl': 3,
   '5xl': 2.5,
@@ -102,7 +101,8 @@ $border-accent-width: $spacing-2xs;
   @include line-height('normal');
   color: $text-color;
   background: #fff;
-  font-weight: 300;
+  font-weight: 400;
+  font-variant-ligatures: none;
   tap-highlight-color: transparentize($primary, 0.75);
 }
 
@@ -151,15 +151,23 @@ $border-accent-width: $spacing-2xs;
 
   #{headings()} {
     @include line-height('headings');
-    font-weight: 500;
+    font-weight: 600;
 
     //a, a & {
     //  color: black;
     //}
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h2 {
+    color: $burgundy;
+  }
+
+  h1, h2 {
     margin: 0 0 $spacing-lg;
+  }
+
+  h3, h4, h5, h6 {
+    margin: 0 0 $spacing-xs;
   }
 
   h1 + h2,
@@ -197,7 +205,7 @@ $border-accent-width: $spacing-2xs;
 
   strong,
   .strong {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   em {
@@ -235,7 +243,7 @@ $border-accent-width: $spacing-2xs;
   }
 
   dt {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   dd {
@@ -347,7 +355,7 @@ $border-accent-width: $spacing-2xs;
 
   th {
     color: $neutral--primary;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left;
   }
 
@@ -374,7 +382,7 @@ $border-accent-width: $spacing-2xs;
     @include line-height('normal');
     max-width: $line-length-max-rem;
     color: $secondary;
-    font-weight: 400;
+    font-weight: 500;
 
     @media (min-width: 40em) {
       @include typescale('xl', 'em');
@@ -383,7 +391,7 @@ $border-accent-width: $spacing-2xs;
 
   .stat {
     @include typescale('2xl', 'em');
-    font-weight: 500;
+    font-weight: 600;
     color: $primary;
     text-decoration: none;
 
@@ -397,7 +405,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h1 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h1'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include typescale(map-get($headings-map, 'h1'));
@@ -407,7 +415,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h2 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h2'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include typescale(map-get($headings-map, 'h2'));
@@ -417,7 +425,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h3 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h3'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include typescale(map-get($headings-map, 'h3'));
@@ -427,7 +435,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h4 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h4'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include typescale(map-get($headings-map, 'h4'));
@@ -437,7 +445,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h5 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h5'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include typescale(map-get($headings-map, 'h5'));
@@ -447,7 +455,7 @@ $border-accent-width: $spacing-2xs;
 @mixin h6 {
   @include line-height('headings');
   @include typescale(map-get($headings-smallscreen-map, 'h6'));
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
     @include map-get($headings-map, 'h6');
@@ -481,7 +489,7 @@ $border-accent-width: $spacing-2xs;
   @include font-primary;
   @include typescale('lg');
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   display: block;
   margin: $spacing-lg 0 $spacing-xs;
 }

@@ -216,6 +216,10 @@ a.tag:hover { text-decoration: underline; color: black; }
 
 .button--dark-blue:hover, .button--dark-blue:focus { color: white; }
 
+.button--digital-blue { background-image: linear-gradient(to left, #304dfc 50%, black 50%); color: white; }
+
+.button--digital-blue:hover, .button--digital-blue:focus { color: white; }
+
 .button--granite { background-image: linear-gradient(to left, #41464b 50%, black 50%); color: white; }
 
 .button--granite:hover, .button--granite:focus { color: white; }

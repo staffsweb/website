@@ -27,11 +27,14 @@ $burgundy: #8a0045;
 $digital-blue: #304dfc;
 $dark-blue: #170d38;
 $grey: #c2bfd2;
+$grey-50-pc: #E0DFE8;
 // Elevated colours
 $teal: #006b82;
 $pale-blue: #bdf7e3;
 $neon: #c4ff36;
+$neon-50-pc: #E1FF9A;
 $yellow: #ffff58;
+$yellow-light: #ffffae;
 $peach: #febea5;
 $lavender: #d18fff;
 
@@ -141,10 +144,13 @@ $title-bg-colors: (
 );
 
 $slab-bg-colors: (
-  'offwhite': $offwhite,
-  'slate': $slate,
+  'offwhite': $grey-50-pc,
+  'slate': $dark-blue,
   'slate-light': $slate--light,
-  'dark-blue': $dark-blue
+  'dark-blue': $dark-blue,
+  'neon': $neon-50-pc,
+  'digital-blue': $digital-blue,
+  'teal': $teal
 );
 
 $banner-bg-colors: (
@@ -165,9 +171,16 @@ $icon-box-colors: (
 
 $tag-bg-colors: (
   'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue,
+  'neon': $neon,
+  'burgundy': $burgundy,
+);
+
+$callout-bg-colors: (
+  'dark-blue': $dark-blue,
+  'neon': $neon,
+  'burgundy': $burgundy,
 );
 
 $socialmedia-prime-colours: (

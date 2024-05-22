@@ -8,15 +8,15 @@ table {
 
 .table--modules {
   thead {
-    td, th {
-      background: $table-accent;
-      color: white;
+    th {
+      background: $yellow-light;
+      color: $dark-blue;
     }
   }
 
   &__credits {
     text-align: center;
-    background: $table-accent--light;
+    background: $dark-blue;
     color: white;
   }
 }

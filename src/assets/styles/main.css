@@ -1404,7 +1404,11 @@ input.search-site.is-open { width: 100%; }
 
 .accordion--transparent .accordion__content { background: none; border-top: 0; }
 
-.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 1rem; background: url("../img//bg-knot.svg") no-repeat right bottom; padding: 1rem calc(0.75rem + 2.5%) 1rem; }
+.announcement { position: relative; padding: 2.5rem 0; background: #E0DFE8; }
+
+.slider--announcements .slick-slide { padding-right: 2rem; }
+
+.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 0.5rem; background: url("../img//bg-knot.svg") no-repeat right bottom; padding: 1rem calc(0.75rem + 2.5%) 1rem; }
 
 .banner--bg-burgundy { background: #8a0045; color: white; }
 
@@ -1525,6 +1529,10 @@ input.search-site.is-open { width: 100%; }
 .button--dark-blue { background-image: linear-gradient(to left, #170d38 50%, black 50%); color: white; }
 
 .button--dark-blue:hover, .button--dark-blue:focus { color: white; }
+
+.button--digital-blue { background-image: linear-gradient(to left, #304dfc 50%, black 50%); color: white; }
+
+.button--digital-blue:hover, .button--digital-blue:focus { color: white; }
 
 .button--granite { background-image: linear-gradient(to left, #41464b 50%, black 50%); color: white; }
 
@@ -1738,29 +1746,20 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .callout--bg-burgundy h2 { color: white; }
 
+.course-search { background: #170d38; padding: 4rem; }
+
+.course-search, .course-search a { color: white; }
+
+.course-search__keywords { display: block; margin-bottom: 1rem; }
+
 .course-search__keywords[type="search"] { max-width: 100%; -webkit-appearance: none; border-radius: 0.25rem; -webkit-border-radius: 0.25rem; }
-
-.course-search select { max-width: 100%; }
-
-.course-search__submit:hover { cursor: pointer; }
-
-.course-search__category { font-weight: bold; padding: 0 0.5rem; margin-bottom: 0; }
-
-.course-search__level { font-weight: bold; padding: 0 0.5rem; }
-
-.course-search section { margin: 0; }
 
 .course-search h3:not([class]) { margin: 1.5rem 0 1rem; }
 
 .course-search.slab--bg-slate .accordion__title:focus-visible { outline-color: #304dfc; }
 
 @media (min-width: 50rem) { .course-search__keywords[type="search"] { max-width: 60%; }
-  .course-search__submit { max-width: 10%; }
-  .course-search select { max-width: 29%; }
   .course-search__subject-list { -moz-column-count: 3; -moz-column-gap: 1rem; -webkit-column-count: 3; -webkit-column-gap: 1rem; column-count: 3; column-gap: 1rem; } }
-
-@media (max-width: 50rem) { .course-search__keywords { margin-bottom: 0.75rem; }
-  .course-search__submit { margin-top: 0.75rem; } }
 
 .ui-autocomplete { z-index: 1000; }
 
@@ -1798,25 +1797,13 @@ a.feature-link:hover .feature-link__figure { opacity: 0.9; }
 
 hr { position: relative; }
 
-.hr--primary { border-top-width: 2px; border-color: #170d38; }
+.hr--primary { border-top-width: 2px; border-color: #E0DFE8; }
 
 .hr--compact { margin: 2rem auto; }
 
 .hr--spaced { margin: 6rem auto; }
 
 .hr--invisible { border-color: transparent; }
-
-[class*='hr--tri-'] { border-color: #170d38; }
-
-[class*='hr--tri-']:before, [class*='hr--tri-']:after { position: absolute; content: ''; display: inline-block; width: 0; height: 0; border-style: solid; border-color: transparent; }
-
-.hr--tri-above-left:before { bottom: 0; left: 0; border-width: 1em 0 0 1em; border-color: transparent transparent transparent #170d38; }
-
-.hr--tri-below-left:before { top: 0; left: 0; border-width: 1em 1em 0 0; border-color: #170d38 transparent transparent transparent; }
-
-.hr--tri-above-right:after { bottom: 0; right: 0; border-width: 0 0 1em 1em; border-color: transparent transparent #170d38 transparent; }
-
-.hr--tri-below-right:after { top: 0; right: 0; border-width: 0 1em 1em 0; border-color: transparent #170d38 transparent transparent; }
 
 .icon { position: relative; display: inline-block; width: 1em; height: 1em; text-align: center; background-size: contain; background-position: center center; background-repeat: no-repeat; vertical-align: baseline; top: 0.1em; }
 
@@ -2766,13 +2753,19 @@ a.tile:focus { outline-width: 3px; outline-color: #ef4a3b; z-index: 2; }
 
 .zebra { margin: 1rem 0 2rem; }
 
-.zebra__row { display: flex; flex-wrap: wrap; align-items: center; background-color: #f1f1f1; }
+.zebra__row { display: flex; flex-wrap: wrap; align-items: center; background-color: white; }
 
-.zebra__row:nth-child(even) { flex-direction: row-reverse; background-color: white; }
+.zebra__row .zebra__body { background-color: #8a0045; }
 
-.zebra__row:nth-child(even) .zebra__body { background-color: #f1f1f1; }
+.zebra__row:nth-child(odd) .zebra__body { color: white; }
 
-@media (min-width: 50rem) { .zebra__row:nth-child(even) .zebra__body { flex: 1 0 50%; left: 5%; margin-left: -5%; } }
+.zebra__row:nth-child(odd) .zebra__body h2, .zebra__row:nth-child(odd) .zebra__body a:not(.button) { color: white; }
+
+.zebra__row:nth-child(even) { flex-direction: row-reverse; background-color: #E0DFE8; }
+
+.zebra__row:nth-child(even) .zebra__body { background-color: white; }
+
+@media (min-width: 50rem) { .zebra__row:nth-child(even) .zebra__body { flex: 1 0 50%; left: 5%; } }
 
 .zebra__figure { position: relative; margin: 0; flex: 1 0 50%; align-self: stretch; z-index: 0; box-sizing: border-box; display: flex; align-items: center; }
 
@@ -2782,11 +2775,9 @@ a.tile:focus { outline-width: 3px; outline-color: #ef4a3b; z-index: 2; }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .zebra__figure img { -o-object-fit: cover; object-fit: cover; -o-object-position: center center; object-position: center center; height: 100%; } }
 
-.zebra__body { position: relative; flex: 1 1 20em; min-width: 50%; box-sizing: border-box; background-color: white; padding: 1rem; z-index: 0; }
+.zebra__body { position: relative; flex: 1 1 20em; min-width: 50%; box-sizing: border-box; background-color: white; padding: 2rem; z-index: 0; }
 
 @media (min-width: 50rem) { .zebra__body { flex: 0 0 45%; margin: 4rem auto 2.5rem; left: -5%; } }
-
-.zebra__title { margin-top: -2rem; margin-right: 1rem; }
 
 .debug * { box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.75), inset 0 0 0.5em rgba(0, 255, 0, 0.75) !important; }
 

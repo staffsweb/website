@@ -3,13 +3,20 @@
   display: flex;
   margin-bottom: $spacing-xl;
   color: #fff;
-  border-radius: $spacing-md;
+  border-radius: $spacing-xs;
   background: url('#{$image-theme-directory}/bg-knot.svg') no-repeat right bottom;
   padding: #{$spacing-md} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
       background: #{$value};
+
+      @if (choose-contrast-color($value) == white) {
+        color: white;
+        & h2 {
+          color: white;
+        }
+      }
     }
   }
 

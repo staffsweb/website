@@ -10,6 +10,9 @@
 <div class="slab{{ classString }}">
   <div class="wrap">
     <h2 class="h3 slab__title">{{ text }}</h2>
+    {% if usageNote %}
+      <p><em>{{usageNote}}</em></p>
+    {% endif %}
     <p>{{ loremLong }}</p>
   </div>
 </div>

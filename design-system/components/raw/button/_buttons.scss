@@ -42,6 +42,10 @@
     @include button--dark-blue;
   }
 
+  &--digital-blue {
+    @include button--digital-blue;
+  }
+
   &--granite {
     @include button--granite;
   }

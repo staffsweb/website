@@ -1,5 +1,5 @@
 name: Slab
-status: wip
+status: ready
 collated: false
 context:
   text: 'This is a slab'
@@ -25,7 +25,21 @@ variants:
     context:
       background: neon
       text: 'This is a neon slab'
+      usageNote: 'Note that neon slabs should not be used with align-full'
 
+  - name: digital-blue
+    label: "Background: Digital blue"
+    context:
+      background: digital-blue
+      text: 'This is a digital blue slab'
+      usageNote: 'Note that digital blue slabs should not be used with align-full'
+
+  - name: teal
+    label: "Background: Teal"
+    context:
+      background: teal
+      text: 'This is a teal slab'
+      usageNote: 'Note that teal slabs should not be used with align-full'
   - name: slate
     label: "Legacy: Slate"
     context:
@@ -38,7 +52,3 @@ variants:
     context:
       background: img
       text: 'This is a slab with background image'
-
-  - name: ldn
-    label: 'London Variants'
-    preview: '@preview--ldn'
