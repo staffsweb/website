@@ -251,15 +251,30 @@ a.card {
 
 .card--ksp {
   color: $neutral--primary;
+  border-left: none;
 
-  &__icon {
+  &__icon-container {
+    display: table;
     margin-bottom: $card__internal-spacing * 2;
-    max-width: 100%;
-    height: auto!important;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
 
+  & .icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    
     img {
-      vertical-align: baseline !important; // this is horribly lazy but browsers, sorry
+      width: 60%;
+      height: 60%;
+      vertical-align: unset;
     }
+  }
+
+  & .card__title {
+    color: $neutral--primary;
   }
 
   &.card--light {
