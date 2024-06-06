@@ -1,5 +1,6 @@
 .course-search {
-    background: $dark-blue;
+    background: $dark-blue url('#{$image-theme-directory-icon}course-search-bg.svg') right top no-repeat;
+    background-size: 300px;
     padding: $spacing-4xl;
 
     &, & a {
@@ -26,11 +27,6 @@
 }
 @media (min-width: $third-breakpoint) {
     .course-search {
-        &__keywords {
-            &[type="search"] {
-                max-width: 60%;
-            }
-        } 
         &__subject-list {
             -moz-column-count: 3;
             -moz-column-gap: $spacing-md;

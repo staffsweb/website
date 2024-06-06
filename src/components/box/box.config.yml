@@ -1,5 +1,5 @@
 name: Box
-status: wip
+status: ready
 collated: false
 context:
   text: 'This is a box'
@@ -21,11 +21,11 @@ variants:
       background: offwhite
       text: 'This is an offwhite box'
 
-  - name: greyblue-superlight
-    label: "Background: Superlight Greyblue"
+  - name: dark-blue
+    label: "Background: Dark blue"
     context:
-      background: greyblue-superlight
-      text: 'This is an Superlight Greyblue box'
+      background: dark-blue
+      text: 'This is a Dark Blue box'
 
 #  - name: offwhite-gradient
 #    label: "Background: Offwhite Gradient"
@@ -35,3 +35,5 @@ variants:
 
   - name: open-day-dates
     label: "Open day dates"
+    context:
+      background: open-day-dates

@@ -380,8 +380,9 @@ a.card {
     overflow: hidden;
     flex-direction:  row;
     background-color: $offwhite;
-    background-size: cover;
+    background-size: cover!important;
     background-position: center center;
+    background-repeat: no-repeat;
     border-left: none;
 
     @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
@@ -391,21 +392,18 @@ a.card {
 
     .card__content {
       margin-top: $spacing-2xl;
+      margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
+      background-color: #FFF;
+      padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
 
-      p:first-of-type {
-        background-color: #FFF;
-        padding: $spacing-xl;
-        margin: -$spacing-2xl 0;
+      > .title {
+        color: $teal;
       }
 
       > :last-child {
         margin-top: $spacing-md;
-      }
-
-      > .title {
-        margin-left: $spacing-xs;
       }
     }
 }

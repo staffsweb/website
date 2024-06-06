@@ -960,11 +960,13 @@ input.search-site.is-open { width: 100%; }
 
 .box__content > :last-child { margin-bottom: 0; }
 
-.box__title { margin-top: 0; color: #170d38; }
+.box__title { margin-top: 0; }
+
+.box__title * { color: #170d38; }
 
 .box__title a { text-decoration: none; }
 
-.box__footer { padding: 1rem calc(0.75rem + 2.5%); background: #c0bbce; box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05); }
+.box__footer { padding: 1rem calc(0.75rem + 2.5%); background: #170d38; box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05); }
 
 .box__footer > :first-child { margin-top: 0; }
 
@@ -974,15 +976,21 @@ input.search-site.is-open { width: 100%; }
 
 .box--has-shadow { box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15); }
 
-.box--bg-offwhite { background-color: #e0dfe7; }
+.box--bg-offwhite { background: #E0DFE8; }
 
-.box--bg-greyblue-superlight { background-color: #f0f1f2; }
+.box--bg-offwhite .box__footer { background: #c2bfd2; }
 
-.box--bg-slate { background-color: #394851; color: #fff; }
+.box--bg-greyblue-superlight { background: #f0f1f2; }
 
-.box--bg-slate a.link--standard { color: #fff; text-decoration: none; }
+.box--bg-dark-blue, .box--bg-slate { background: #170d38; color: #fff; }
 
-.box--bg-slate a.link--standard:hover { border-bottom: 0 !important; }
+.box--bg-dark-blue .box__title *, .box--bg-slate .box__title * { color: #fff; }
+
+.box--bg-dark-blue a.link--standard, .box--bg-slate a.link--standard { color: #fff; text-decoration: none; }
+
+.box--bg-dark-blue a.link--standard:hover, .box--bg-slate a.link--standard:hover { border-bottom: 0 !important; }
+
+.box--bg-dark-blue .box__footer, .box--bg-slate .box__footer { background: #c2bfd2; }
 
 .box--bg-offwhite-gradient { background: radial-gradient(45% 660% at 50% 50%, #f7f7f7 0%, #f0f0f0 100%); }
 
@@ -1200,17 +1208,15 @@ a.card:hover .card__title { text-decoration: underline; }
 
 @media (max-width: 35rem) { .card__video.card__figure iframe { padding-bottom: 50%; position: absolute; } }
 
-.card--virtual-tour { min-height: 20rem; position: relative; overflow: hidden; flex-direction: row; background-color: #f1f1f1; background-size: cover; background-position: center center; border-left: none; }
+.card--virtual-tour { min-height: 20rem; position: relative; overflow: hidden; flex-direction: row; background-color: #f1f1f1; background-size: cover !important; background-position: center center; background-repeat: no-repeat; border-left: none; }
 
 @media (max-width: 35rem) { .card--virtual-tour { background-image: none !important; background-color: #f1f1f1 !important; } }
 
-.card--virtual-tour .card__content { margin-top: 2.5rem; max-width: 25rem; z-index: 1; }
+.card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; max-width: 25rem; z-index: 1; background-color: #FFF; padding: 2rem 2rem 0.5rem 2rem; }
 
-.card--virtual-tour .card__content p:first-of-type { background-color: #FFF; padding: 2rem; margin: -2.5rem 0; }
+.card--virtual-tour .card__content > .title { color: #006b82; }
 
 .card--virtual-tour .card__content > :last-child { margin-top: 1rem; }
-
-.card--virtual-tour .card__content > .title { margin-left: 0.5rem; }
 
 .grid-2-cols\@tablet .card__video.card__figure { padding-bottom: 50%; position: relative; height: 0; }
 
@@ -1686,9 +1692,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title { color: inherit; }
 
 .page-nav { min-height: 4rem; margin-bottom: 4rem; --background: white; --backgroundRGB: 255, 255, 255; }
 
-.page-nav__stickyContainer { top: 0; left: 0.5rem; right: 0; z-index: 9; background: white; box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.15); }
-
-@media (min-width: 40rem) { .page-nav__stickyContainer { left: 1rem; } }
+.page-nav__stickyContainer { top: 0; left: 0; right: 0; z-index: 9; background: white; box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.15); }
 
 .page-nav__inner { overflow: hidden; overflow-x: auto; overflow-scrolling: touch; background: linear-gradient(to right, white 30%, rgba(255, 255, 255, 0)), linear-gradient(to right, rgba(255, 255, 255, 0), white 70%) 0 100%, radial-gradient(farthest-side at 0% 50%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) 0 100%; background-repeat: no-repeat; background-size: 1em 100%, 1em 100%, 1em 100%, 1em 100%; background-position: 0 0, 100%, 0 0, 100%; background-attachment: local, local, scroll, scroll; }
 

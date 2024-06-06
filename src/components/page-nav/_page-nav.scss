@@ -15,14 +15,10 @@
     //position: sticky;
 
     top: 0;
-    left: $body-border-width;
+    left: 0;
     right: 0;
     z-index: 9;
     //transition: all 200ms;
-
-    @media (min-width: $body-border-breakpoint) {
-      left: $body-border-width--wide;
-    }
 
     background: $background;
     //background: var(--background);
