@@ -251,15 +251,30 @@ a.card {
 
 .card--ksp {
   color: $neutral--primary;
+  border-left: none;
 
-  &__icon {
+  &__icon-container {
+    display: table;
     margin-bottom: $card__internal-spacing * 2;
-    max-width: 100%;
-    height: auto!important;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
 
+  & .icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    
     img {
-      vertical-align: baseline !important; // this is horribly lazy but browsers, sorry
+      width: 60%;
+      height: 60%;
+      vertical-align: unset;
     }
+  }
+
+  & .card__title {
+    color: $neutral--primary;
   }
 
   &.card--light {
@@ -365,8 +380,9 @@ a.card {
     overflow: hidden;
     flex-direction:  row;
     background-color: $offwhite;
-    background-size: cover;
+    background-size: cover!important;
     background-position: center center;
+    background-repeat: no-repeat;
     border-left: none;
 
     @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
@@ -376,21 +392,18 @@ a.card {
 
     .card__content {
       margin-top: $spacing-2xl;
+      margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
+      background-color: #FFF;
+      padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
 
-      p:first-of-type {
-        background-color: #FFF;
-        padding: $spacing-xl;
-        margin: -$spacing-2xl 0;
+      > .title {
+        color: $teal;
       }
 
       > :last-child {
         margin-top: $spacing-md;
-      }
-
-      > .title {
-        margin-left: $spacing-xs;
       }
     }
 }

@@ -61,8 +61,12 @@
     fill: white;
   }
 
-  &--bg-offwhite {
-    color: inherit;
+  &--bg-offwhite, &--bg-neon {
+    color: $dark-blue;
+
+    & .iconBox__icon svg {
+      fill: $dark-blue;
+    }
   }
 }
 
@@ -75,7 +79,7 @@ a.iconBox {
       text-decoration: underline;
     }
 
-    &.iconBox--bg-offwhite
+    &.iconBox--bg-offwhite, &.iconBox--bg-neon
     {
       color: inherit;
 

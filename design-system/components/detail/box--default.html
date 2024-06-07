@@ -83,7 +83,7 @@
 
 <div class="Status Status--tag">
 
-<label class="Status-label" style="background-color: #ff9233; border-color: #ff9233;">WIP</label>
+<label class="Status-label" style="background-color: #29cc29; border-color: #29cc29;">Ready</label>
 
 </div>
 
@@ -271,7 +271,10 @@
 
   &amp;__title {
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+
+    &amp; * {
+      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+    }
 
     <span class="hljs-selector-tag">a</span> {
       <span class="hljs-attribute">text-decoration</span>: none;
@@ -281,7 +284,7 @@
 
   &amp;__footer {
     <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-md</span> calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
-    <span class="hljs-attribute">background</span>: <span class="hljs-number">#c0bbce</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
     <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.05</span>);
 
     &gt; <span class="hljs-selector-pseudo">:first</span>-child {
@@ -309,16 +312,24 @@
   <span class="hljs-comment">//-</span>
 
   &amp;--bg-offwhite {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey--shadow</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span>;
+
+    &amp; <span class="hljs-selector-class">.box__footer</span> {
+      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey</span>;
+    }
   }
 
   &amp;--bg-greyblue-superlight {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$greyblue--superlight</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--superlight</span>;
   }
 
-  &amp;--bg-slate {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$slate</span>;
+  &amp;--bg-dark-blue, &amp;--bg-slate {
+    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
     <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+
+    &amp; <span class="hljs-selector-class">.box__title</span> * {
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+      }
 
     &amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.link--standard</span> {
       <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
@@ -327,6 +338,10 @@
       &amp;<span class="hljs-selector-pseudo">:hover</span> {
         <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">0</span><span class="hljs-meta">!important</span>;
       }
+    }
+
+    &amp; <span class="hljs-selector-class">.box__footer</span> {
+      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey</span>;
     }
   }
 
@@ -370,7 +385,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.8 KB</span>
+                    <span class="Meta-value">2 KB</span>
                 </li>
             </ul>
         </div>
@@ -889,7 +904,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2209,7 +2224,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2235,7 +2250,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2261,7 +2276,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2278,8 +2293,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./box--greyblue-superlight.html" data-role="tree-link" data-pjax data-handle="box">
-                <span>Background: Superlight Greyblue</span>
+            <a class="Tree-entityLink" href="./box--dark-blue.html" data-role="tree-link" data-pjax data-handle="box">
+                <span>Background: Dark blue</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2287,7 +2302,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2313,7 +2328,7 @@
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>

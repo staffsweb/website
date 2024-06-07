@@ -530,15 +530,30 @@ a.card {
 
 .card--ksp {
   color: $neutral--primary;
+  border-left: none;
 
-  &amp;__icon {
+  &amp;__icon-container {
+    display: table;
     margin-bottom: $card__internal-spacing * 2;
-    max-width: 100%;
-    height: auto!important;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+  }
 
+  &amp; .icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    
     img {
-      vertical-align: baseline !important; // this is horribly lazy but browsers, sorry
+      width: 60%;
+      height: 60%;
+      vertical-align: unset;
     }
+  }
+
+  &amp; .card__title {
+    color: $neutral--primary;
   }
 
   &amp;.card--light {
@@ -644,8 +659,9 @@ a.card {
     overflow: hidden;
     flex-direction:  row;
     background-color: $offwhite;
-    background-size: cover;
+    background-size: cover!important;
     background-position: center center;
+    background-repeat: no-repeat;
     border-left: none;
 
     @media (max-width: map_get($breakpoint-stages, &#x27;mobile-wide&#x27;)) {
@@ -655,21 +671,18 @@ a.card {
 
     .card__content {
       margin-top: $spacing-2xl;
+      margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
+      background-color: #FFF;
+      padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
 
-      p:first-of-type {
-        background-color: #FFF;
-        padding: $spacing-xl;
-        margin: -$spacing-2xl 0;
+      &gt; .title {
+        color: $teal;
       }
 
       &gt; :last-child {
         margin-top: $spacing-md;
-      }
-
-      &gt; .title {
-        margin-left: $spacing-xs;
       }
     }
 }
@@ -701,7 +714,7 @@ a.card {
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">8 KB</span>
+                    <span class="Meta-value">8.3 KB</span>
                 </li>
             </ul>
         </div>
@@ -1220,7 +1233,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2540,7 +2553,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2566,7 +2579,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2592,7 +2605,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2609,8 +2622,8 @@ a.card {
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./box--greyblue-superlight.html" data-role="tree-link" data-pjax data-handle="box">
-                <span>Background: Superlight Greyblue</span>
+            <a class="Tree-entityLink" href="./box--dark-blue.html" data-role="tree-link" data-pjax data-handle="box">
+                <span>Background: Dark blue</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -2618,7 +2631,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2644,7 +2657,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>

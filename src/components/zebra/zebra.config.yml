@@ -1,1 +1,11 @@
+label: Zebra
 status: ready
+
+variants:
+  - name: burgundy
+    label: "Theme: Burgundy"
+  - name: digital-blue
+    label: "Theme: Digital blue"
+  - name: teal
+    label: "Theme: Teal"
+    

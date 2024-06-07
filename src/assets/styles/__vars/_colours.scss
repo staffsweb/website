@@ -162,12 +162,17 @@ $banner-bg-colors: (
 );
 
 $icon-box-colors: (
-  'red': $red,
+  'red': $digital-blue, // CG: Polyfill for legacy colour
+  'digital-blue': $digital-blue,
+  'dark-blue': $dark-blue,
+  'teal' : $teal,
   'pink': $pink,
-  'maroon': $maroon,
+  'neon': $neon,
+  'maroon': $burgundy, // CG: Polyfill for legacy colour
+  'burgundy': $burgundy,
   'tef-gold': $gold--tef,
-  'slate': $slate,
-  'offwhite': $offwhite
+  'slate': $dark-blue, // CG: Polyfill for legacy colour
+  'offwhite': $grey-50-pc
 );
 
 $tag-bg-colors: (
@@ -182,6 +187,12 @@ $callout-bg-colors: (
   'dark-blue': $dark-blue,
   'neon': $neon,
   'burgundy': $burgundy,
+);
+
+$zebra-bg-colors: (
+  'burgundy': $burgundy,
+  'digital-blue': $digital-blue,
+  'teal': $teal
 );
 
 $socialmedia-prime-colours: (

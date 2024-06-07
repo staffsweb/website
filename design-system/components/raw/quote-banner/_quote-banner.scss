@@ -1,6 +1,7 @@
 .quote-banner {
   position: relative;
   overflow: hidden;
+  color: white;
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
@@ -37,6 +38,10 @@
       max-height: 75vh;
       width: auto;
     }
+  }
+
+  & .blockquote__title {
+    color: white;
   }
 
   &__quoteContainer {

@@ -1,5 +1,5 @@
 name: Button
-status: wip
+status: ready
 collated: false
 context:
   text: 'Regular button'
@@ -65,18 +65,11 @@ variants:
       classes: ['button--outline']
       text: 'Outline Style Button'
 
-  - name: outline-slate
-    label: "Style: Outline Slate"
+  - name: outline-dark-blue
+    label: "Style: Outline Dark Blue"
     context:
-      classes: ['button--outline-slate']
-      text: 'Slate Outline Style Button'
-
-  - name: outline-white
-    label: "Style: Outline White (LDN)"
-    context:
-      classes: ['button--outline-white']
-      text: 'Button with white outline'
-    preview: '@preview--ldn-blue'
+      classes: ['button--outline-dark-blue']
+      text: 'Dark Blue Outline Style Button'
 
   - name: block
     label: "Style: Block-level Element"

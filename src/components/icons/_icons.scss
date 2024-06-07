@@ -8,6 +8,7 @@ $icons: (
   'pin': 'svg',
   'calendar': 'svg',
   'clock': 'svg',
+  'circle-padlock-white': 'svg',
   'pricetag': 'svg',
   'facebook-white': 'svg',
   'instagram': 'svg',
@@ -63,7 +64,7 @@ $icons: (
 
   @each $name, $extension in $icons {
     &--#{$name} {
-      background-image: url('#{$image-theme-directory}/icons/icon-#{$name}.#{$extension}');
+      background-image: url('#{$image-theme-directory}icon-#{$name}.#{$extension}');
     }
   }
 }
