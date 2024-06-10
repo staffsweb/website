@@ -1,11 +1,10 @@
 .booking-link {
-    --accent-color: #{$primary};
+    --accent-color: #{$teal};
     margin-bottom: $spacing-xl;
     color: $neutral--primary;
     text-decoration: none;
-    padding: 0 calc(#{$spacing-sm} + 2.5%) 0;
-    border-left: $border-accent-width solid $primary;
-    border-left: $border-accent-width solid var(--accent-color);
+    padding: $spacing-md calc(#{$spacing-sm} + 2.5%) 0;
+    background: $grey-50-pc;
   
     &__title {
       display: table;

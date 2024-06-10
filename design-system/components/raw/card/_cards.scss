@@ -255,7 +255,6 @@ a.card {
 
   &__icon-container {
     display: table;
-    margin-bottom: $card__internal-spacing * 2;
     border-radius: 50%;
     background-color: var(--accent-color);
   }
@@ -271,10 +270,15 @@ a.card {
       height: 60%;
       vertical-align: unset;
     }
+
+    svg {
+      fill: var(--accent-color);
+    }
   }
 
   & .card__title {
     color: $neutral--primary;
+    margin-top: $card__internal-spacing * 2;
   }
 
   &.card--light {
@@ -286,7 +290,7 @@ a.card {
   margin-left: $spacing-4xl;
 
   .card__figure {
-    margin-bottom: -#{$spacing-sm};
+    margin-bottom: #{$spacing-xs};
   }
 
   .card__date {
@@ -302,6 +306,14 @@ a.card {
     line-height: 1;
     text-align: center;
     box-sizing: border-box;
+  }
+
+  .link--stretched h2 {
+    color: $teal;
+  }
+
+  a.link--stretched:hover h2 {
+    color: $red;
   }
 
   .card__day {
@@ -384,6 +396,7 @@ a.card {
     background-position: center center;
     background-repeat: no-repeat;
     border-left: none;
+    border: $spacing-4xs solid $teal;
 
     @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
       background-image: none!important;
@@ -395,7 +408,7 @@ a.card {
       margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
-      background-color: #FFF;
+      background: rgba(255,255,255,0.9);
       padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
 
       > .title {

@@ -103,22 +103,6 @@
   }
 }
 
-// -- VARIANTS
-
-.box--with-abstitle {
-  // absolutely positioned title
-
-  .box__content:first-child {
-    padding-top: calc(#{$spacing-3xl} + 2.5%);;
-  }
-
-  .box__abstitle {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
 // CG: Avoid "share this story" box clashing with long quotes in news stories
 .box--share {
   clear: right;

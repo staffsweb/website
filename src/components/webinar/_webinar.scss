@@ -1,0 +1,5 @@
+@media (min-width: map_get($breakpoint-stages, 'tablet')) {
+    .webinar__video {
+        border-right: $spacing-4xs solid $grey-50-pc;
+    }
+}

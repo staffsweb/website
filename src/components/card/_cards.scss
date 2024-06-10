@@ -290,7 +290,7 @@ a.card {
   margin-left: $spacing-4xl;
 
   .card__figure {
-    margin-bottom: -#{$spacing-sm};
+    margin-bottom: #{$spacing-xs};
   }
 
   .card__date {
@@ -306,6 +306,14 @@ a.card {
     line-height: 1;
     text-align: center;
     box-sizing: border-box;
+  }
+
+  .link--stretched h2 {
+    color: $teal;
+  }
+
+  a.link--stretched:hover h2 {
+    color: $red;
   }
 
   .card__day {

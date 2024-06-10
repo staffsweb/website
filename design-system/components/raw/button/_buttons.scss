@@ -58,12 +58,12 @@
     }
   }
 
-  &--outline-slate {
-    @include button--outline-slate;
+  &--outline-dark-blue {
+    @include button--outline-dark-blue;
   }
 
-  &--outline-white {
-    @include button--outline-white;
+  &--outline-slate {
+    @include button--outline-dark-blue;
   }
 
   &[disabled] {

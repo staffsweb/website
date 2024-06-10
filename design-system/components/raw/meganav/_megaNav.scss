@@ -34,7 +34,7 @@
     margin: 0 0 0 5%;
   }
 
-  @media (min-width: $megaNav-full-breakpoint + 10rem) {
+  @media (min-width: calc($megaNav-full-breakpoint + 10rem)) {
     font-size: 1.1em;
   }
 

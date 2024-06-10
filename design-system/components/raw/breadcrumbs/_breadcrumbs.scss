@@ -1,5 +1,4 @@
 .breadcrumbs {
-  background: $grey;
   backdrop-filter: blur(1em);
   display: inline-block;
   color: #000;
@@ -7,7 +6,7 @@
   padding: $spacing-xs $spacing-sm;
 
   &.has-solid-bg {
-    background: black;
+    background: $grey-50-pc;
   }
 
   ul {
@@ -33,7 +32,7 @@
     }
 
     a, a:visited, a:not([class]) {
-      color: #000;
+      color: $dark-blue;
       font-weight: 500;
       border-bottom: 0;
   

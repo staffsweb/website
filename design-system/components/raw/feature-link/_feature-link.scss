@@ -23,7 +23,7 @@
       width: 1em;
       height: 2.5em;
       margin-left: $spacing-2xs;
-      background: url('#{$image-theme-directory-icon}/icon-gt-primary.svg') center center no-repeat;
+      background: url('#{$image-theme-directory}/icon-gt-red.svg') center center no-repeat;
       background-size: 40%;
       vertical-align: text-bottom;
       transition: transform 75ms ease-out;
@@ -59,6 +59,10 @@
   &--no-image &__title {
     border-bottom: $spacing-3xs solid $red;
     padding-bottom: $spacing-md;
+
+    &::after {
+      right: 0;
+    }
   }
 
   &--with-image &__title:after {

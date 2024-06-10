@@ -4,7 +4,6 @@
   margin-bottom: $spacing-xl;
   color: #fff;
   border-radius: $spacing-xs;
-  background: url('#{$image-theme-directory}/bg-knot.svg') no-repeat right bottom;
   padding: #{$spacing-md} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
 
   @each $name, $value in $banner-bg-colors {
@@ -29,6 +28,18 @@
   }
 
   &__bg {
+    max-width: 50%;
+    overflow-x: hidden;
+
+    & img {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__theme {
     position: absolute;
     right: 0;
     bottom: 0;
