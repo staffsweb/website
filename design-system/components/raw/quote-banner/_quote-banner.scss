@@ -2,6 +2,8 @@
   position: relative;
   overflow: hidden;
   color: white;
+  background: $burgundy url('#{$image-theme-directory}bg-knot-whole-red.svg') no-repeat right center;
+  background-size: 55%;
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
@@ -25,7 +27,7 @@
   }
 
   &__figure {
-    margin: $spacing-xl $grid-gutter;
+    margin: $spacing-xl $grid-gutter 0;
     flex: 1 1 40%;
 
     &--align-bottom {

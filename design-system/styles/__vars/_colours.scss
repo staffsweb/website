@@ -1,7 +1,6 @@
 
 // Staffs Palette
 
-//$red:                           #d70a26;
 $maroon:					              #970048;
 $pink:					                #d5035e;
 $slate:					                #394851;
@@ -121,8 +120,10 @@ $card-accent-colors: (
   'digital-blue': $digital-blue,
   'dark-blue': $dark-blue,
   'teal': $teal,
-  'grey': $grey
-
+  'grey': $grey,
+  // CG: The following will most likely be used for KSPs
+  'pale-blue': $pale-blue,
+  'neon': $neon
 );
 
 $tile-accent-colors: (

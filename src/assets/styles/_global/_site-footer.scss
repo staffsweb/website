@@ -3,7 +3,7 @@
   color: #fff;
   clear: both;
   position: relative;
-  padding: 0 0 $spacing-6xl;
+  padding: 0 0 $spacing-xl;
   z-index: 0;
 
   a:not(.button) {
@@ -17,25 +17,27 @@
     font-weight: 300;
   }
 
+  li::marker {
+    color: $red;
+  }
+
   h6 {
     margin-top: $spacing-lg;
   }
 
+  & .list--links li {
+    margin-bottom: 0.25rem;
+  }
+
   &__logo {
     display: inline-block;
-    margin: 0 0 $spacing-lg;
-
-    img {
-      display: block;
-      margin: auto;
-      width: 7.5em;
-      max-width: 25vmin;
-    }
+    float: right;
+    max-width: 125px;
   }
 
   &__social-list {
     .icon {
-      @include typescale('4xl');
+      @include typescale('3xl');
       margin-right: $spacing-sm;
       max-height: 100%;
       vertical-align: middle;

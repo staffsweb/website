@@ -178,7 +178,7 @@
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-90e674aae4207e6695e6fab48bd63ec6-panel-html">
     <code class="Code Code--lang-html hljs">
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner  quote-banner--bg-burgundy  align-full&quot;</span>&gt;</span>
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner  align-full&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner__flexContainer&quot;</span>&gt;</span>
@@ -208,18 +208,18 @@
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-90e674aae4207e6695e6fab48bd63ec6-panel-view">
     <code class="Code Code--lang-twig hljs">
-        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner  quote-banner--bg-burgundy  align-full&quot;</span>&gt;</span>
+        <pre><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner  align-full&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner__flexContainer&quot;</span>&gt;</span>
 
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner__quoteContainer&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;blockquote--large&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">q</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;blockquote__title&quot;</span>&gt;</span>After coming to Staffs, it feels like my future looks different, very bright in fact.<span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">q</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;blockquote__title&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{ quoteText }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span>
 
           <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;blockquote__footer&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">cite</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cite&quot;</span>&gt;</span>Zenith Shaileshkumar Vaghasiya<span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>MA Sports Journalism graduate, 2020<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">cite</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cite&quot;</span>&gt;</span></span><span class="hljs-template-variable">{{ quoteSource }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span class="hljs-template-variable">{{ quoteQualification }}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -263,6 +263,8 @@
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">overflow</span>: hidden;
   <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
+  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">55%</span>;
 
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$banner-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
@@ -286,7 +288,7 @@
   }
 
   &amp;__figure {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$grid-gutter</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">40%</span>;
 
     &amp;--align-<span class="hljs-attribute">bottom</span> {
@@ -325,7 +327,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">883 Bytes</span>
+                    <span class="Meta-value">1 KB</span>
                 </li>
             </ul>
         </div>
@@ -4766,8 +4768,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./quote-banner--alternate-image.html" data-role="tree-link" data-pjax data-handle="quote-banner">
-                <span>Alternate Image</span>
+            <a class="Tree-entityLink" href="./quote-banner--alternate-image-reverse.html" data-role="tree-link" data-pjax data-handle="quote-banner">
+                <span>Alternate Image Reverse</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -4792,8 +4794,8 @@
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./quote-banner--alternate-image-reverse.html" data-role="tree-link" data-pjax data-handle="quote-banner">
-                <span>Alternate Image Reverse</span>
+            <a class="Tree-entityLink" href="./quote-banner--colours.html" data-role="tree-link" data-pjax data-handle="quote-banner">
+                <span>Colours</span>
                 
 
 <div class="Status Status--unlabelled">
