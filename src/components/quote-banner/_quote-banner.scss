@@ -7,8 +7,24 @@
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
-      background: #{$value};
+
+      @if $name == 'digital-blue' {
+        background: #{$value} url('#{$image-theme-directory}bg-knot-whole-neon.svg') no-repeat right center;
+      }
+
+      @else if $name == 'teal' {
+        background: #{$value} url('#{$image-theme-directory}bg-knot-whole-neon.svg') no-repeat right center;
+      }
+
+      @else {
+        background: #{$value} url('#{$image-theme-directory}bg-knot-whole-red.svg') no-repeat right center;
+      }
+
     }
+  }
+
+  .card {
+    border: 0;
   }
 
   &__flexContainer {

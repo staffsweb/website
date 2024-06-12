@@ -8,10 +8,6 @@ variants:
   - name: no-image
     notes: "Optionally add classes of <code>has-solid-bg</code> to <code>.header-site</code> and <code>.breadcrumbs</code> to give them solid back backgrounds, rather than semitransparent."
 
-  - name: no-image-ldn
-    label: "No Image (LDN)"
-    preview: '@preview--ldn-raw'
-
   - name: course
     context:
       title: 'Computer Gameplay Design, Production and Programming'

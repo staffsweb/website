@@ -29,11 +29,11 @@
     .course-search {
         &__subject-list {
             -moz-column-count: 3;
-            -moz-column-gap: $spacing-md;
+            -moz-column-gap: $spacing-xl;
             -webkit-column-count: 3;
-            -webkit-column-gap: $spacing-md;
+            -webkit-column-gap: $spacing-xl;
             column-count: 3;
-            column-gap: $spacing-md;
+            column-gap: $spacing-xl;
         }
     }
 }

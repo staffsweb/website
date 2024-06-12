@@ -19,12 +19,11 @@ variants:
 
   - name: ksp
     label: "KSP (Key Selling Points)"
+    status: ready
+
   - name: ksp-light
     label: "KSP (Light on Dark)"
-
-  - name: ksp-ldn-variants
-    label: "KSP (LDN)"
-    preview: '@preview--ldn'
+    status: ready
 
   - name: pullquote
     label: "Pullquote"

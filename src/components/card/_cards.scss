@@ -277,7 +277,7 @@ a.card {
   }
 
   & .card__title {
-    color: $neutral--primary;
+    color: inherit;
     margin-top: $card__internal-spacing * 2;
   }
 

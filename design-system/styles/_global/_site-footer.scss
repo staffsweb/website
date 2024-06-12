@@ -3,7 +3,7 @@
   color: #fff;
   clear: both;
   position: relative;
-  padding: 0 0 $spacing-xl;
+  padding: $spacing-xl 0;
   z-index: 0;
 
   a:not(.button) {
@@ -29,7 +29,18 @@
     margin-bottom: 0.25rem;
   }
 
+  &__links {
+    display: flex;
+    & > div {
+      width: 25%;
+    }
+  }
+
   &__logo {
+    vertical-align: bottom;
+  }
+
+  &__logo-img {
     display: inline-block;
     float: right;
     max-width: 125px;
