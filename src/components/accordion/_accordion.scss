@@ -49,6 +49,7 @@
 .accordion__toggle {
   display: block;
   padding-left: 1.5em;
+  color: $dark-blue;
 
   &:before {
     display: inline-block;

@@ -1,6 +1,6 @@
 name: megaNav
 label: 'MegaNav'
-status: wip
+status: ready
 handle: 'megaNav'
 
 variants:

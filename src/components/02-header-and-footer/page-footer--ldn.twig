@@ -1,81 +1,86 @@
-<footer class="footer-site">
+<footer class="footer-site" aria-label="Page footer">
   <div class="wrap">
-    <a class="footer-site__logo" title="Home" href="/">
-      <img src="{{ '/img/theme-ldn/logo-ldn.svg' | path }}" alt="Digital Institute London Logo" class="no-lazy-load">
-    </a>
 
-    <div class="footer-site__main">
+    <div class="grid">
+      <div class="footer-site__map  col-1/6@tablet">
+        <img src="{{ '/img/uk-map-with-uos-campuses.svg' | path }}" alt="" />
+      </div>
+      <div class="col-5/6@tablet">
 
-      <div class="grid  grid--spaced">
-        <div class="col-3/5  col-reverse">
-          <div class="grid  grid--spaced  grid-2-cols">
-            <div>
-              <h6>Courses</h6>
-              <ul class="list--unstyled  list--links">
-                <li><a href="">Computer Science</a></li>
-                <li><a href="">Concept Art for Games and Film</a></li>
-                <li><a href="">Computer Games Design</a></li>
-                <li><a href="">Esports</a></li>
-                <li><a href="">Games PR, and Community Management</a></li>
-                <li><a href="">Cyber Security</a></li>
-              </ul>
-            </div>
+        <ul class="list--unstyled  margin-top-xl">
+          <li><i class="icon  icon--pin-red"></i> University of Staffordshire London, Here East, Queen Elizabeth Olympic Park, East London, E20 3BS</li>
+          <li><i class="icon  icon--pin-red"></i> University of Staffordshire, College Road, University Quarter, Stoke-on-Trent, ST4 2DE</li>
+          <li><i class="icon  icon--pin-red"></i> University of Staffordshire Centre for Health Innovation, Blackheath Lane, Stafford, ST18 0YB</li>
+        </ul>
 
-{#            <div>#}
-{#              <h6>Information for</h6>#}
-{#              <ul class="list--unstyled  list--links">#}
-{#                <li><a href="">Current students</a></li>#}
-{#                <li><a href="">Current staff</a></li>#}
-{#                <li><a href="">Schools and colleges</a></li>#}
-{#                <li><a href="">Alumni</a></li>#}
-{#              </ul>#}
-{#            </div>#}
+        <div class="grid">
 
-{#            <div>#}
-{#              <h6>Also see</h6>#}
-{#              <ul class="list--unstyled  list--links">#}
-{#                <li><a href="">News</a></li>#}
-{#                <li><a href="">Events</a></li>#}
-{#                <li><a href="">Legal</a></li>#}
-{#              </ul>#}
-{#            </div>#}
-
-            <div>
-              <h6>Connect with us</h6>
-              <ul class="list--inline  footer-site__social-list">
-                <li><a href=""><i class="icon"><img src="{{ '/img/icon-facebook-white.svg' | path }}" alt="Facebook"/></i></a></li>
-                <li><a href=""><i class="icon"><img src="{{ '/img/icon-twitter-white.svg' | path }}" alt="Twitter"/></i></a></li>
-                {#            <li><a href=""><i class="icon"><img src="{{ '/img/icon-youtube-white.svg' | path }}" alt="YouTube"/></i></a></li>#}
-                {#            <li><a href=""><i class="icon"><img src="{{ '/img/icon-pinterest-white.svg' | path }}" alt="Pinterest"/></i></a></li>#}
-                {#            <li><a href=""><i class="icon"><img src="{{ '/img/icon-linkedin-white.svg' | path }}" alt="LinkedIn"/></i></a></li>#}
-                <li><a href=""><i class="icon"><img src="{{ '/img/icon-instagram-white.svg' | path }}" alt="Instagram"/></i></a></li>
-                {#            <li><a href=""><i class="icon"><img src="{{ '/img/icon-snapchat-white.svg' | path }}" alt="Snapchat"/></i></a></li>#}
-              </ul>
-            </div>
+          <div class="col-1/4@tablet">
+            <p>+44 (0)1782 294000</p>
           </div>
 
-        </div>
+          <div class="col-1/4@tablet">
+            <p><a href="">Contact us</a></p>
+          </div>
 
-        <div class="col-2/5">
-          <h6><strong>Staffordshire University London</strong></h6>
+          <div class="col-1/2@tablet">
+            <section aria-label="Connect with us">
+              <ul class="list--inline  footer-site__social-list">
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-facebook-white.svg' | path }}" alt="Facebook"/></i></a></li>
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-x-white.svg' | path }}" alt="X"/></i></a></li>
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-instagram-white.svg' | path }}" alt="Instagram"/></i></a></li>
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-youtube-white.svg' | path }}" alt="YouTube"/></i></a></li>
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-tiktok-white.svg' | path }}" alt="TikTok"/></i></a></li>
+                <li><a href=""><i class="icon"><img src="{{ '/img/icon-linkedin-white.svg' | path }}" alt="LinkedIn"/></i></a></li>
+              </ul>
+            </section>
+          </div>
 
-          <p>
-            Here East<br/>
-            Queen Elizabeth Olympic Park<br/>
-            East London<br/>
-            E20 3BS<br/>
-          </p>
-
-          <p>+44 (0)1782 294000</p>
-          <p><a href="">Contact us</a></p>
-          <p>&copy; Staffordshire University London 2024</p>
-
-        </div>
       </div>
     </div>
 
 
-  </div>
+    <div class="footer-site__links">
+      <div>
+        <h6>Study</h6>
+        <ul class="list--links">
+          <li><a href="">Undergraduate</a></li>
+          <li><a href="">Postgraduate</a></li>
+          <li><a href="">Short courses and CPD</a></li>
+          <li><a href="">Distance learning</a></li>
+          <li><a href="">Two-year accelerated degrees</a></li>
+          <li><a href="">Partnerships</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h6>Information for</h6>
+        <ul class="list--links">
+          <li><a href="">Current students</a></li>
+          <li><a href="">Current staff</a></li>
+          <li><a href="">Alumni</a></li>
+          <li><a href="">Schools and colleges</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h6>Also see</h6>
+        <ul class="list--links">
+          <li><a href="">News</a></li>
+          <li><a href="">Events</a></li>
+          <li><a href="">Job vacancies</a></li>
+          <li><a href="">Legal</a></li>
+          <li><a href="">Accessibility</a></li>
+          <li><a href="">Transparency return</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-site__logo">
+        <img class="footer-site__logo-img" src="{{ '/img/logo-tef-silver.png' | path }}" alt="TEF Silver" />
+      </div>
+    </div>
+
+    <p class="align-right">&copy; Staffordshire University 2024</p>
 </footer>
 
 

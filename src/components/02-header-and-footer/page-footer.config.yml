@@ -1,3 +1,3 @@
+status: ready
 variants:
   - name: ldn
-    preview: '@preview--ldn-raw'

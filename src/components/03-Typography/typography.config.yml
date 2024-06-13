@@ -1,2 +1,5 @@
 status: reference
 preview: '@preview--raw'
+variants:
+  - name: examples
+    status: reference

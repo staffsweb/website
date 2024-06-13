@@ -25,14 +25,35 @@
     margin-top: $spacing-lg;
   }
 
+  &__links {
+    margin-top: $spacing-xl;
+    border-top: 1px solid $grey-50-pc;
+  }
+
   & .list--links li {
     margin-bottom: 0.25rem;
   }
 
-  &__links {
-    display: flex;
-    & > div {
-      width: 25%;
+  @media (min-width: $third-breakpoint) {
+    &__links {
+      display: flex;
+      & > div {
+        width: 25%;
+      }
+    }
+
+    &__logo-img {
+      margin: $spacing-4xl 0;
+    }
+  }
+
+  @media (max-width: $third-breakpoint) {
+    &__map {
+      display: none;
+    }
+
+    &__logo-img {
+      margin: 0 0 $spacing-lg;
     }
   }
 

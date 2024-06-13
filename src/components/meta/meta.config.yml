@@ -1,5 +1,5 @@
 label: Meta
-status: wip
+status: ready
 
 variants:
   - name: inline-dd
