@@ -199,7 +199,7 @@
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
             <span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner__figure  quote-banner__figure--align-bottom&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../img/placeholder-transparent-person.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;person smiling&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/placeholder-transparent-person.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;person smiling&quot;</span> /&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
@@ -233,7 +233,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
       <span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;quote-banner__figure  quote-banner__figure--align-bottom&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{ &#x27;/img/placeholder-transparent-person.png&#x27; | path }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;person smiling&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{{ &#x27;/images/placeholder-transparent-person.png&#x27; | path }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;person smiling&quot;</span> /&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
@@ -271,22 +271,22 @@
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">overflow</span>: hidden;
   <span class="hljs-attribute">color</span>: white;
-  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
+  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
   <span class="hljs-attribute">background-size</span>: <span class="hljs-number">55%</span>;
 
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$banner-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
 
       <span class="hljs-keyword">@if</span> <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;digital-blue&#x27;</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
       }
 
       <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;teal&#x27;</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
       }
 
       <span class="hljs-keyword">@else</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
       }
 
     }

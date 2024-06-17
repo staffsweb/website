@@ -65,7 +65,7 @@ $icons: (
 
   @each $name, $extension in $icons {
     &--#{$name} {
-      background-image: url('#{$image-theme-directory}icon-#{$name}.#{$extension}');
+      background-image: url('#{$image-theme-directory-icon}/icon-#{$name}.#{$extension}');
     }
   }
 }

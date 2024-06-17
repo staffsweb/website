@@ -271,22 +271,22 @@
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">overflow</span>: hidden;
   <span class="hljs-attribute">color</span>: white;
-  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
+  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
   <span class="hljs-attribute">background-size</span>: <span class="hljs-number">55%</span>;
 
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$banner-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
 
       <span class="hljs-keyword">@if</span> <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;digital-blue&#x27;</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
       }
 
       <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;teal&#x27;</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>) no-repeat right center;
       }
 
       <span class="hljs-keyword">@else</span> {
-        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
+        <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>} url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>) no-repeat right center;
       }
 
     }
