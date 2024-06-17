@@ -1813,7 +1813,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .feature-link__title { display: table; position: relative; margin-bottom: 0.5rem; padding-right: 1em; word-break: break-word; font-weight: 500; width: calc(100% - 1rem); }
 
-.feature-link__title:after { content: ''; position: absolute; bottom: 0.05em; display: inline-block; width: 1em; height: 2.5em; margin-left: 0.25rem; background: url("../images/icon-gt-red.svg") center center no-repeat; background-size: 40%; vertical-align: text-bottom; transition: -webkit-transform 75ms ease-out; transition: transform 75ms ease-out; transition: transform 75ms ease-out, -webkit-transform 75ms ease-out; }
+.feature-link__title:after { content: ''; position: absolute; bottom: 0.05em; display: inline-block; width: 1em; height: 2.5em; margin-left: 0.25rem; background: url("../images/icons/icon-gt-red.svg") center center no-repeat; background-size: 40%; vertical-align: text-bottom; transition: -webkit-transform 75ms ease-out; transition: transform 75ms ease-out; transition: transform 75ms ease-out, -webkit-transform 75ms ease-out; }
 
 .feature-link__figure { border-bottom: 0.25rem solid white; margin-bottom: 0.25rem; transition: all 125ms; }
 
@@ -2184,7 +2184,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .megaNav li:last-child > a { border-bottom: 0; }
 
-.megaNav .has-children > a:after { content: ''; position: absolute; display: block; right: 0; top: 0.4em; width: 2em; height: 2em; background: url("../images/iconsicon-gt-primary.svg") no-repeat center center; background-size: 0.5em; }
+.megaNav .has-children > a:after { content: ''; position: absolute; display: block; right: 0; top: 0.4em; width: 2em; height: 2em; background: url("../images/icons/icon-gt-primary.svg") no-repeat center center; background-size: 0.5em; }
 
 @media (min-width: 70rem) { .megaNav .has-simple-children { position: relative; }
   .megaNav .has-simple-children .megaNav__levelFooter { display: none; }
@@ -2202,7 +2202,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @media (min-width: 70rem) { .megaNav__controls { display: none; } }
 
-.megaNav__close { content: ''; border: 0; box-sizing: border-box; display: block; width: 4rem; height: 4rem; margin-top: 0.1em; background: url("../images/iconsicon-x-primary.svg") no-repeat center center; background-size: 1rem; cursor: pointer; }
+.megaNav__close { content: ''; border: 0; box-sizing: border-box; display: block; width: 4rem; height: 4rem; margin-top: 0.1em; background: url("../images/icons/icon-x-primary.svg") no-repeat center center; background-size: 1rem; cursor: pointer; }
 
 .megaNav__level { position: absolute; visibility: hidden; background: #e8ebed; top: 0; right: 0; left: 0; height: 0; min-height: 0; padding-bottom: 12rem; overflow: hidden; -webkit-transform: translateX(100%); transform: translateX(100%); padding-left: 1.5rem; box-sizing: border-box; z-index: 1; transition: visibility 100ms, -webkit-transform 100ms; transition: transform 100ms, visibility 100ms; transition: transform 100ms, visibility 100ms, -webkit-transform 100ms; }
 
@@ -2216,7 +2216,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .megaNav__closeLevel:active { color: #ef4a3b; }
 
-.megaNav__closeLevel:before { content: ''; position: absolute; display: block; left: 0; top: 0.75em; width: 1em; height: 2em; background: url("../images/iconsicon-gt-primary.svg") no-repeat center center; background-size: 0.5em; -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+.megaNav__closeLevel:before { content: ''; position: absolute; display: block; left: 0; top: 0.75em; width: 1em; height: 2em; background: url("../images/icons/icon-gt-primary.svg") no-repeat center center; background-size: 0.5em; -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 
 .megaNav__levelMobileFooter .megaNav__closeLevel { text-align: left; }
 
@@ -2255,7 +2255,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .megaNav__secondLevel-link { position: relative; font-weight: 500; line-height: 1.5; }
 
-.megaNav__secondLevel.has-children > a:after { content: ''; position: absolute; display: block; right: 0; top: 0.4em; width: 2em; height: 2em; background: url("../images/iconsicon-gt-primary.svg") no-repeat center center; background-size: 0.5em; }
+.megaNav__secondLevel.has-children > a:after { content: ''; position: absolute; display: block; right: 0; top: 0.4em; width: 2em; height: 2em; background: url("../images/icons/icon-gt-primary.svg") no-repeat center center; background-size: 0.5em; }
 
 @media (min-width: 70rem) { .megaNav__thirdLevel, .megaNav__fourthLevel { font-size: 0.85em; left: 100%; right: -300%; top: 0; bottom: 0; background: #fff; padding: 2rem; max-height: 100%; overflow: auto !important; box-sizing: border-box; }
   .megaNav__thirdLevel-list, .megaNav__fourthLevel-list { -webkit-columns: 2; -moz-columns: 2; columns: 2; -webkit-column-gap: 2rem; -moz-column-gap: 2rem; column-gap: 2rem; }
