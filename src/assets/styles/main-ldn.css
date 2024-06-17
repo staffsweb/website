@@ -1578,7 +1578,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @media (min-width: 70rem) { .megaNav { top: auto; width: 100%; -webkit-transform: none; transform: none; transition: none; font-size: 1em; position: static; overflow: visible; background: none; margin: 0 0 0 5%; } }
 
-@media (min-width: calc($megaNav-full-breakpoint + 10rem)) { .megaNav { font-size: 1.1em; } }
+@media (min-width: calc(70rem + 10rem)) { .megaNav { font-size: 1.1em; } }
 
 .no-js .megaNav ul ul { padding-left: 0.75rem; }
 
