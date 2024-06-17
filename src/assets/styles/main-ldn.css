@@ -835,7 +835,7 @@ iframe { border: none; }
 
 .toggle-megaNav__label, .toggle-search-site__label { display: block; text-align: center; font-size: 0.6875rem; padding-top: 1.75rem; }
 
-input.search-site { width: 7rem; transition: all 200ms; background-color: #E0DFE8; background-image: url(../../images/bg-search-box.svg); background-repeat: no-repeat; background-size: 1rem; background-position: 0.25rem center; padding-left: 1.5rem; margin-left: 1rem; }
+input.search-site { width: 7rem; transition: all 200ms; background-color: #E0DFE8; background-image: url(../images/bg-search-box.svg); background-repeat: no-repeat; background-size: 1rem; background-position: 0.25rem center; padding-left: 1.5rem; margin-left: 1rem; }
 
 input.search-site.is-open { width: 100%; }
 
