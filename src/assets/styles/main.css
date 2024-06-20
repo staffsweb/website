@@ -1815,7 +1815,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .feature-link__title:after { content: ''; position: absolute; bottom: 0.05em; display: inline-block; width: 1em; height: 2.5em; margin-left: 0.25rem; background: url("../images/icons/icon-gt-red.svg") center center no-repeat; background-size: 40%; vertical-align: text-bottom; transition: -webkit-transform 75ms ease-out; transition: transform 75ms ease-out; transition: transform 75ms ease-out, -webkit-transform 75ms ease-out; }
 
-.feature-link__figure { border-bottom: 0.25rem solid white; margin-bottom: 0.25rem; transition: all 125ms; }
+.feature-link__figure { border-bottom: 0.25rem solid rgba(0, 0, 0, 0); margin-bottom: 0.25rem; transition: all 125ms; }
 
 .feature-link:hover .feature-link__figure { border-bottom: 0.25rem solid #ef4a3b; }
 

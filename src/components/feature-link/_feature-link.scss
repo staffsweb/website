@@ -31,7 +31,7 @@
   }
 
   &__figure {
-    border-bottom: $spacing-2xs solid white;
+    border-bottom: $spacing-2xs solid rgba(0,0,0,0);
     margin-bottom: $spacing-2xs;
     transition: all 125ms;
   }
