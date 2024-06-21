@@ -1363,7 +1363,7 @@ hr { position: relative; }
 
 .tile__icon { width: 43%; margin-top: 5%; }
 
-.iconBox { display: flex; flex-wrap: wrap; align-items: flex-start; padding: calc(1rem + 2.5%) 0.5rem; margin: 0 0 1rem; background: #41464b; color: white; text-decoration: none; }
+.iconBox { display: flex; flex-wrap: wrap; align-items: flex-start; padding: calc(1rem + 2.5%) 0.5rem; margin: 0 0 1rem; background: #41464b; color: white; text-decoration: none; border-radius: 0.25rem; font-weight: 600; }
 
 .iconBox__icon { flex: 1 1 3rem; padding: 0 calc(0.5rem + 1.25%); box-sizing: border-box; font-size: 1.75rem; text-align: center; }
 
@@ -1377,17 +1377,17 @@ hr { position: relative; }
 
 .iconBox__title { margin: 0 0 0.75rem; opacity: 0.75; }
 
-.iconBox--facebook { background: #3b5998; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--facebook { background: #3b5998; color: white; }
 
-.iconBox--twitter { background: #000000; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--twitter { background: #000000; color: white; }
 
-.iconBox--linkedIn { background: #2867B2; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--linkedIn { background: #2867B2; color: white; }
 
-.iconBox--instagram { background: #D300C5; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--instagram { background: #D300C5; color: white; }
 
-.iconBox--youtube { background: #FF0000; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--youtube { background: #FF0000; color: white; }
 
-.iconBox--tiktok { background: #FE2858; color: white; border-radius: 0.25rem; font-weight: 600; }
+.iconBox--tiktok { background: #FE2858; color: white; }
 
 .iconBox--bg-blue-ldn { background: #0082c8; }
 

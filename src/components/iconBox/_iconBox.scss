@@ -7,6 +7,8 @@
   background: $neutral--primary;
   color: white;
   text-decoration: none;
+  border-radius: 0.25rem;
+  font-weight: 600;
 
   // --
 
@@ -48,8 +50,6 @@
     &--#{$name} {
       background: #{$value};
       color: white;
-      border-radius: 0.25rem;
-      font-weight: 600;
     }
   }
 
