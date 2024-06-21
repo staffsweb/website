@@ -133,6 +133,16 @@
   }
 }
 
+@mixin button--grey {
+  background-image: linear-gradient(to left, $grey-50-pc 50%, black 50%);
+  color: black;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
 @mixin button--outline-white {
   color: white;
   border: 0.1em solid white;

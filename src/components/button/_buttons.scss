@@ -50,6 +50,10 @@
     @include button--granite;
   }
 
+  &--grey {
+    @include button--grey;
+  }
+
   &--outline {
     @include button--outline;
 
