@@ -1013,7 +1013,7 @@ input.search-site.is-open { width: 100%; }
 
 .box--share { clear: right; }
 
-.breadcrumbs { -webkit-backdrop-filter: blur(1em); backdrop-filter: blur(1em); display: inline-block; color: #000; margin: 0 0 0.5rem; padding: 0.5rem 0.75rem; }
+.breadcrumbs { display: inline-block; color: #000; margin: 0 0 0.5rem; padding: 0.5rem 0.75rem; }
 
 .breadcrumbs.has-solid-bg { background: #E0DFE8; }
 
@@ -1544,15 +1544,21 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 @keyframes lds-spinner { 0% { opacity: 1; }
   100% { opacity: 0; } }
 
-.masthead { display: flex; flex-wrap: wrap; background-color: #f1f1f1; box-sizing: border-box; position: relative; }
+.masthead { background-color: #f1f1f1; box-sizing: border-box; position: relative; }
 
-.masthead h1 { background-color: #170d38; padding: 0.75rem; }
+.masthead h1 { padding: 0.75rem; }
 
 .masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead__inner { display: flex; flex-wrap: wrap; min-height: 65vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
+.masthead__knot { position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__knot img { position: absolute; top: 0; right: 0; -o-object-fit: contain; object-fit: contain; } }
+
+.masthead__lower { background: #304dfc; z-index: 1; }
+
+.masthead__inner { display: flex; flex-wrap: wrap; min-height: 85vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
 
 @media (min-width: 60rem) { .masthead__inner { position: static; } }
 

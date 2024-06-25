@@ -7,14 +7,18 @@
         <img src="{{ ('/images/masthead0.jpg') | path }}" style="object-position: 55% 20%"/>
       {% endif %}
     </div>
+    {% include '@title' with {
+      text: 'Shortlisted for "University of the year"',
+      modifiers: ['has-tail'],
+      textElement: 'h1',
+      textElementStyle: 'h2',
+      animate: true
+    } %}
+    <!--<div class="masthead__knot">
+        <img src="{{ ('/images/masthead-knot.svg') | path }}"/>
+    </div>-->
+    <div class="masthead__lower">
     <div class="wrap">
-      {% include '@title' with {
-        text: 'Shortlisted for "University of the year"',
-        modifiers: ['has-tail'],
-        textElement: 'h1',
-        textElementStyle: 'h2',
-        animate: true
-      } %}
       {% include '@title' with {
         text: '- The Times and The Sunday Times Good University Guide 2020',
         modifiers: ['bg-white', 'has-tail'],
@@ -26,4 +30,6 @@
       } %}
     </div>
   </div>
+  </div>
+    
 </div>

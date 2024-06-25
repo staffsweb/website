@@ -1,14 +1,10 @@
 .masthead {
   $overlay-breakpoint: $third-breakpoint + 10rem;
-
-  display: flex;
-  flex-wrap: wrap;
   background-color: $offwhite;
   box-sizing: border-box;
   position: relative;
 
   & h1 {
-    background-color: $dark-blue;
     padding: $spacing-sm;
   }
 
@@ -36,10 +32,33 @@
     }
   }
 
+  &__knot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    img {
+      @supports (object-fit: cover) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__lower {
+    background: $digital-blue;
+    z-index: 1;
+  }
+
   &__inner {
     display: flex;
     flex-wrap: wrap;
-    min-height: 65vmin;
+    min-height: 85vmin;
     padding: 12rem 0 $spacing-xl;
     align-self: flex-end;
     align-content: flex-end;
