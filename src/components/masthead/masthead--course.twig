@@ -1,95 +1,74 @@
 {% set slabBg = slabBg ? 'slab--bg-' ~ slabBg : 'slab--bg-slate' %}
 {% set bgImgURL = bgImg is not empty ?: ('/images/masthead' ~ random(5) ~ '.jpg') %}
 
-<div class="masthead  masthead--has-blurredBg">
-  <div class="masthead__bg  masthead__bg--blurred">
-    {% if bgImg %}
-      {{ bgImg }}
-    {% else %}
-      <img src="{{ bgImgURL | path }}"/>
-    {% endif %}
-  </div>
-  <div class="masthead__inner">
-    <div class="masthead__bg">
+<div class="masthead  masthead--course">
+  <div class="masthead__course-divider">
+    <div class="masthead__course-info">
+      <h1 class="title">Esports <span class="masthead__award-type  font-md">BA (Hons)</span></h1>
+      <p class="masthead__ucas-code"><strong>UCAS code</strong> S101</p>
+      <!-- Begin new cols -->
+      <div class="grid  grid-2-cols  grid--spaced">
+        <div>
+          <label for="study-option-selector">Study options</label>
+          <select id="study-option-selector" title="Study Options">
+            <option>Full-time, Stoke-on-Trent campus</option>
+            <option>Full-time, City of Stoke-On-Trent Sixth Form College, with a foundation year</option>
+            <option>Full-time, Stoke-On-Trent campus, with a placement year</option>
+          </select>
+        </div>
+        <div>
+          <label for="year-of-study-selector">Year of study</label>
+          <select id="year-of-study-selector" title="Year of study">
+            <option>2024/25</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid  grid-2-cols  grid--spaced">
+        <div>
+          <label for="location-selector">Location</label>
+          <select id="location-selector" title="Location">
+            <option>London campus</option>
+            <option>Stoke-on-Trent campus</option>
+          </select>
+        </div>
+        <div>
+          <label for="award-type-selector">Award</label>
+          <select id="award-type-selector" title="Award Type">
+            <option>MSci</option>
+            <option>BSc (Hons)</option>
+          </select>
+        </div>
+      </div>
+      <!-- End new cols -->
+
+      <h2 class="h4  title">Duration</h2>
+      <p>4 years</p>
+
+      <h2 class="h4  title">Entry requirements</h2>
+      <p>112 - 120 UCAS points, plus GCSE Mathematics grade 5 or above</p>
+
+      <ul class="list--inline">
+        <li>
+          {% include '@button' with {
+            text: 'Apply now',
+            classes: ['button--caps']
+          } %}
+        </li>
+        <li>
+          {% include '@button' with {
+            text: 'book an open day',
+            classes: ['button--caps', 'button--grey']
+          } %}
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="masthead__course-img">
       {% if bgImg %}
         {{ bgImg }}
       {% else %}
         <img src="{{ bgImgURL | path }}"/>
       {% endif %}
     </div>
-    <div class="wrap">
-      {% include '@title' with {
-        text: title,
-        modifiers: ['has-tail'],
-        textElement: 'h1',
-        textElementStyle: 'h1',
-        animate: true
-      } %}
-      {% include '@title' with {
-        text: 'MSci',
-        modifiers: ['bg-white', 'has-tail'],
-        textElement: 'h6',
-        animate: true
-      } %}
-    </div>
-  </div>
-
-  <div class="masthead__overlay">
-    <div class="wrap">
-
-      <div class="masthead__overlayInner">
-        <div class="grid  grid-3-cols">
-          <div>
-            <div class="card  card--light">
-              <div class="card__content">
-                <select title="Study Options">
-                  <div class="form__item">
-                    <option>Full-time, Stoke-on-Trent campus</option>
-                    <option>Full-time, City of Stoke-On-Trent Sixth Form College, with a foundation year</option>
-                    <option>Full-time, Stoke-On-Trent campus, with a placement year</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card  card--light">
-              <div class="card__content">
-                <select title="Award Type">
-                    <option>MSci</option>
-                    <option>BSc (Hons)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card  card--light">
-              <div class="card__content">
-                <h2 class="h4  card__title">Key Facts</h2>
-                <dl class="meta  meta--inline">
-                  <div class="meta__item">
-                    <dt>UCAS code:</dt>
-                    <dd>I621</dd>
-                  </div>
-                  <div class="meta__item">
-                    <dt>Location:</dt>
-                    <dd>Stoke-on-Trent campus</dd>
-                  </div>
-                  <div class="meta__item">
-                    <dt>Duration:</dt>
-                    <dd>3 Years</dd>
-                  </div>
-                  <div class="meta__item">
-                    <dt>Start date:</dt>
-                    <dd>21 September 2024</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

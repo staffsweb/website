@@ -2167,6 +2167,26 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead .title { color: white; }
 
+.masthead--course { background: #170d38; color: white; }
+
+.masthead--course .title { color: #c4ff36; padding-left: 0; }
+
+.masthead__award-type { color: white; }
+
+.masthead__ucas-code strong { color: #c4ff36; margin-right: 1rem; }
+
+.masthead__course-divider { display: flex; justify-content: flex-end; }
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__course-divider img { position: absolute; top: 0; right: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
+
+.masthead__course-img { width: 50%; position: relative; }
+
+.masthead__course-info { padding: 0 2rem 0 5%; max-width: 43rem; }
+
+.masthead__course-info label { margin: 1.5rem 0 0.75rem; }
+
+.masthead__course-info .title { margin: 2.5rem 0 0 0; }
+
 @media (max-width: 35rem) { .masthead--profile .masthead__inner { padding: 8rem 0 2rem; }
   .masthead--profile .masthead__inner figure { margin: 2rem 0 2rem; } }
 
