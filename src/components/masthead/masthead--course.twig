@@ -6,43 +6,30 @@
     <div class="masthead__course-info">
       <h1 class="title">Esports <span class="masthead__award-type  font-md">BA (Hons)</span></h1>
       <p class="masthead__ucas-code"><strong>UCAS code</strong> S101</p>
-      <!-- Begin new cols -->
-      <div class="grid  grid-2-cols  grid--spaced">
-        <div>
-          <label for="study-option-selector">Study options</label>
-          <select id="study-option-selector" title="Study Options">
-            <option>Full-time, Stoke-on-Trent campus</option>
-            <option>Full-time, City of Stoke-On-Trent Sixth Form College, with a foundation year</option>
-            <option>Full-time, Stoke-On-Trent campus, with a placement year</option>
-          </select>
-        </div>
-        <div>
-          <label for="year-of-study-selector">Year of study</label>
-          <select id="year-of-study-selector" title="Year of study">
-            <option>2024/25</option>
-          </select>
-        </div>
-      </div>
-      <div class="grid  grid-2-cols  grid--spaced">
-        <div>
-          <label for="location-selector">Location</label>
-          <select id="location-selector" title="Location">
-            <option>London campus</option>
-            <option>Stoke-on-Trent campus</option>
-          </select>
-        </div>
-        <div>
-          <label for="award-type-selector">Award</label>
-          <select id="award-type-selector" title="Award Type">
-            <option>MSci</option>
-            <option>BSc (Hons)</option>
-          </select>
-        </div>
-      </div>
-      <!-- End new cols -->
 
-      <h2 class="h4  title">Duration</h2>
-      <p>4 years</p>
+      <label for="study-option-selector">Study options</label>
+      <select id="study-option-selector" title="Study Options">
+        <option selected>Full-time, Stoke-on-Trent campus</option>
+        <option>Full-time, City of Stoke-On-Trent Sixth Form College, with a foundation year</option>
+        <option>Full-time, Stoke-On-Trent campus, with a placement year</option>
+      </select>
+
+      <label for="award-type-selector">Award</label>
+      <select id="award-type-selector" title="Award Type">
+        <option selected>BA (Hons)</option>
+        <option>BSc (Hons)</option>
+      </select>
+
+      <div class="grid  grid-2-cols">
+        <div>
+          <h2 class="h4  title">Location</h2>
+          <p>Stoke-on-Trent campus</p>
+        </div>
+        <div>
+          <h2 class="h4  title">Duration</h2>
+          <p>4 years</p>
+        </div>
+      </div>
 
       <h2 class="h4  title">Entry requirements</h2>
       <p>112 - 120 UCAS points, plus GCSE Mathematics grade 5 or above</p>
@@ -50,14 +37,13 @@
       <ul class="list--inline">
         <li>
           {% include '@button' with {
-            text: 'Apply now',
-            classes: ['button--caps']
+            text: 'Apply now'
           } %}
         </li>
         <li>
           {% include '@button' with {
-            text: 'book an open day',
-            classes: ['button--caps', 'button--grey']
+            text: 'Book an open day',
+            classes: ['button--grey']
           } %}
         </li>
       </ul>

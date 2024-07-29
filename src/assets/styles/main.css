@@ -2181,7 +2181,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead__course-img { width: 50%; position: relative; }
 
-.masthead__course-info { padding: 0 2rem 0 5%; max-width: 43rem; }
+.masthead__course-info { padding: 0 2rem 0 10%; max-width: 43rem; }
 
 .masthead__course-info label { margin: 1.5rem 0 0.75rem; }
 

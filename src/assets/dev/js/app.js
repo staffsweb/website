@@ -7617,18 +7617,26 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   };
 
   var toggleVariantInit = function toggleVariantInit() {
-    $('input[name=award-type]').on('change', function (e) {
+    $("#study-option-selector").on("change", function () {
       if (stopFlag == false) {
-        var newId = $(this).val();
-        var activeAward = $('*[data-award="' + newId + '"]');
-        console.log("Award = " + $(this).val());
-        $('*[data-award]').not(activeAward.show()).hide();
-        $('*[data-award] input').prop('checked', false);
-        $(this).prop('checked', true);
-        var studyOptionElm = $('[data-award="' + newId + '"] input[name=study-option]').first();
-        studyOptionElm.trigger('change'); // CG: Reset the  assessment tabs
+        var activeOption = $(this).find(":selected").val();
+        console.log("Mode of study = " + activeOption);
+        var activeMode = $('*[data-mode="' + activeOption + '"]');
+        $('*[data-mode]').not(activeMode.show()).hide(); // Refresh sliders         
 
-        $('a[href="#teachingOverview"]').trigger('click');
+        $(".slick-slider").each(function () {
+          $(this).slick('reinit');
+        }); // CG: Reset the assessment tabs
+
+        $('a[href="#teachingOverview"]').trigger('click'); // CG: Alter the Clearing button link to reflect the chosen variant
+
+        var regex = /course=.*?#/gm;
+        var clearingButtonUrl = $('#offer-calculator-link').attr('href');
+
+        if (clearingButtonUrl != null) {
+          var result = clearingButtonUrl.replace(regex, 'course=' + $(this).attr('data-clearing-display-name') + '#');
+          $('#offer-calculator-link').attr('href', result);
+        }
       }
 
       stopFlag = false;
