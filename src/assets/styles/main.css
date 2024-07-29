@@ -1777,7 +1777,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .grid-2-cols\@tablet .card__video.card__figure iframe { position: absolute; }
 
-.callout { text-align: center; padding: 1rem; }
+.callout { text-align: center; padding: 1rem; margin-bottom: 1.5rem; }
 
 .callout p, .callout h2 { margin: 0; }
 
@@ -1785,7 +1785,15 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .callout--bg-dark-blue h2 { color: white; }
 
+.callout--bg-digital-blue { background-color: #304dfc; color: white; }
+
+.callout--bg-digital-blue h2 { color: white; }
+
 .callout--bg-neon { background-color: #c4ff36; }
+
+.callout--bg-teal { background-color: #006b82; color: white; }
+
+.callout--bg-teal h2 { color: white; }
 
 .callout--bg-burgundy { background-color: #8a0045; color: white; }
 
