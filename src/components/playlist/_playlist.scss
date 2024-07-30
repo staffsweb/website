@@ -1,0 +1,21 @@
+h2.playlist__title {
+    color: $neon!important;
+}
+
+a.playlist__link {
+    display: block;
+    padding: $spacing-sm;
+    text-decoration: none;
+    color: white;
+    transition: all 125ms;
+
+    &.selected {
+        color: $dark-blue;
+        background: $neon;
+    }
+
+    &:hover {
+        color: $dark-blue;
+        background: $grey-50-pc;
+    }
+}
