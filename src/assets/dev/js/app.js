@@ -7294,10 +7294,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   };
 
   var waypointsInit = function waypointsInit() {
-    // CG Apply the "highlight" and "tail" styles to the appropriate headings in the page body automatically, ready for the animation to be added
-    $("#page-body__content > h2, #page-body__content section h2, .mini-template-grid__column:first-child > h2, .slab > .wrap > h2").not(".title__highlight--no-tail").wrap("<div class='title  title--has-tail  js-waypoint'></div>").addClass("title__highlight");
-    $(".mini-template-grid__column:not(:first-child) > h2").wrap("<div class='title'></div>").addClass("title__highlight"); // Potential Refactor: in an ideal world, using Intersection Observer might be better for this
-
+    // Potential Refactor: in an ideal world, using Intersection Observer might be better for this
     $('.js-waypoint').each(function () {
       var el = $(this);
       el.waypoint(function (direction) {

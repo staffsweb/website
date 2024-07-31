@@ -23,6 +23,26 @@
   }
 }
 
+.title__highlight {
+  position: relative;
+  display: inline;
+  left: $spacing-xs;
+  padding: 0.25rem;
+  line-height: 1.4;
+  background: $primary;
+  background: var(--background, #{$primary});
+  color: white;
+  color: var(--color);
+  box-shadow: -$spacing-xs 0 0 0 #{$primary}, $spacing-xs 0 0 0 #{$primary};
+  box-shadow: -$spacing-xs 0 0 0 var(--background, #{$primary}), $spacing-xs 0 0 0 var(--background, #{$primary});
+  box-decoration-break: clone;
+
+  a {
+    color: white;
+    color: var(--color);
+  }
+}
+
 
 @each $name, $value in $title-bg-colors {
   .title--bg-#{$name} {

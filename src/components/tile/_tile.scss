@@ -64,6 +64,10 @@
     margin-top: -$spacing-md!important;
   }
 
+  .title__highlight {
+    --background: var(--accent-color);
+  }
+
   @each $name, $value in $tile-accent-colors {
     &--accent-#{$name} {
       --accent-color: #{$value};
