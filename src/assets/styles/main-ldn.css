@@ -1915,9 +1915,9 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab__header { margin-top: -4rem; }
 
-.slab__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; }
+.slab__bg { position: absolute; right: 0; bottom: 0; left: 0; z-index: -1; }
 
-.slab__bg img { height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; }
+.slab__bg img { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
 
 .slab--border-bottom { border-bottom: 1px solid #dddddd; }
 
