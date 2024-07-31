@@ -7,8 +7,7 @@ $card__internal-spacing: $spacing-sm;
   position: relative;
   --accent-color: #{$primary};
   margin-bottom: $spacing-xl;
-  border-left: $border-accent-width solid $primary;
-  border-color: var(--accent-color);
+
   @include clearfix;
 
   a:not(.button) {
@@ -246,7 +245,14 @@ a.card {
 }
 
 .card--profile {
-  // this exists, but doesn't need anything specific (yet)
+  & .card__content {
+    background: $grey-50-pc;
+  }
+
+  & figure {
+    border-bottom: $spacing-2xs solid $red;
+    margin-top: -5rem;
+  }
 }
 
 .card--ksp {
