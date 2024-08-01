@@ -2,6 +2,7 @@
 // the loop at the bottom of the file will create classes for them
 
 $icons: (
+  '360' : 'svg',
   'envelope': 'svg',
   'phone': 'svg',
   'facebook': 'svg',
@@ -16,6 +17,7 @@ $icons: (
   'instagram-white': 'svg',
   'linkedin': 'svg',
   'linkedin-white': 'svg',
+  'more' : 'svg',
   'pinterest': 'svg',
   'pinterest-white': 'svg',
   'play-circle-red': 'svg',
@@ -30,6 +32,7 @@ $icons: (
   'form' : 'svg',
   'globe' : 'svg',
   'person' : 'svg',
+  'video' : 'svg',
   'x' : 'svg',
   'x-white' : 'svg'
 );
@@ -72,25 +75,18 @@ $icons: (
 }
 
 .facility-icons {
-  max-width: 12rem;
   font-weight: 500;
     
   &__item {
       float: left;
       position: relative;
-      width: 30%;
       padding-bottom: 30%; // CG: = width for a 1:1 aspect ratio
       margin: 1.66%;
       overflow: hidden;
-      color: #FFF;
+      background-color: $grey--light;
       text-transform: uppercase;
       margin-bottom: 1rem;
 
-      @each $name, $value in $icon-accent-colors {
-        &--#{$name} {
-          background-color: #{$value};
-        }
-      }
   }
   &__content {
       position: absolute;

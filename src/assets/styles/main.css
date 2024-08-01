@@ -1873,6 +1873,8 @@ hr { position: relative; }
 
 .icon:before { font-size: 1em; display: inline-block; }
 
+.icon--360 { background-image: url("../images/icons/icon-360.svg"); }
+
 .icon--envelope { background-image: url("../images/icons/icon-envelope.svg"); }
 
 .icon--phone { background-image: url("../images/icons/icon-phone.svg"); }
@@ -1900,6 +1902,8 @@ hr { position: relative; }
 .icon--linkedin { background-image: url("../images/icons/icon-linkedin.svg"); }
 
 .icon--linkedin-white { background-image: url("../images/icons/icon-linkedin-white.svg"); }
+
+.icon--more { background-image: url("../images/icons/icon-more.svg"); }
 
 .icon--pinterest { background-image: url("../images/icons/icon-pinterest.svg"); }
 
@@ -1929,21 +1933,15 @@ hr { position: relative; }
 
 .icon--person { background-image: url("../images/icons/icon-person.svg"); }
 
+.icon--video { background-image: url("../images/icons/icon-video.svg"); }
+
 .icon--x { background-image: url("../images/icons/icon-x.svg"); }
 
 .icon--x-white { background-image: url("../images/icons/icon-x-white.svg"); }
 
-.facility-icons { max-width: 12rem; font-weight: 500; }
+.facility-icons { font-weight: 500; }
 
-.facility-icons__item { float: left; position: relative; width: 30%; padding-bottom: 30%; margin: 1.66%; overflow: hidden; color: #FFF; text-transform: uppercase; margin-bottom: 1rem; }
-
-.facility-icons__item--red { background-color: #ef4a3b; }
-
-.facility-icons__item--pink { background-color: #d5035e; }
-
-.facility-icons__item--maroon { background-color: #970048; }
-
-.facility-icons__item--slate { background-color: #394851; }
+.facility-icons__item { float: left; position: relative; padding-bottom: 30%; margin: 1.66%; overflow: hidden; background-color: #dddddd; text-transform: uppercase; margin-bottom: 1rem; }
 
 .facility-icons__content { position: absolute; height: 90%; width: 90%; padding: 5%; text-align: center; }
 
