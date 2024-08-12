@@ -1063,7 +1063,7 @@ input.search-site.is-open { width: 100%; }
 
 .button--grey:hover, .button--grey:focus { color: white; }
 
-.button--outline { color: black; border: 0.2em solid #c4ff36; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #c4ff36 50%); }
+.button--outline { color: #c4ff36; border: 0.2em solid #c4ff36; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #c4ff36 50%); }
 
 .button--outline:hover, .button--outline:focus, .button--outline:active { color: black; }
 
@@ -1183,9 +1183,25 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--contact ul.list--icon-bullets li a { text-decoration: none !important; border-bottom: 1px solid #dddddd; }
 
-.card--profile .card__content { background: #E0DFE8; }
+.card--profile { padding: 1rem; /* Needs: grey and teal grey and burgundy teal and neon burgundy and neon */ }
 
-.card--profile figure { border-bottom: 0.25rem solid #ef4a3b; margin-top: -5rem; }
+.card--profile.card--grey-with-teal { background: #f0f1f2; border-bottom: 0.25rem solid #006b82; margin-left: 2.5rem; }
+
+.card--profile.card--grey-with-burgundy { background: #f0f1f2; border-bottom: 0.25rem solid #8a0045; margin-left: 2.5rem; }
+
+.card--profile.card--teal-with-neon { background: #006b82; border-bottom: 0.25rem solid #c4ff36; margin-left: 2.5rem; color: white; }
+
+.card--profile.card--teal-with-neon h3, .card--profile.card--teal-with-neon .strong { color: #c4ff36; }
+
+.card--profile.card--burgundy-with-neon { background: #8a0045; border-bottom: 0.25rem solid #c4ff36; margin-left: 2.5rem; color: white; }
+
+.card--profile.card--burgundy-with-neon h3, .card--profile.card--burgundy-with-neon .strong { color: #c4ff36; }
+
+.card--profile.card--flex { flex-direction: row; }
+
+.card--profile .card__figure { margin-left: -2.5rem; max-width: 15rem; }
+
+.card--profile .title { margin-bottom: 0; }
 
 .card--ksp { color: #41464b; border-left: none; }
 

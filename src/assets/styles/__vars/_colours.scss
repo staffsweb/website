@@ -105,8 +105,8 @@ $utils-text-colors: (
 
 $theme-colours: (
   'primary' : $red,
-  'secondary' : $pink,
-  'tertiary' : $maroon
+  'secondary' : $dark-blue,
+  'tertiary' : $digital-blue
 );
 
 $card-accent-colors: (
@@ -124,6 +124,25 @@ $card-accent-colors: (
   // CG: The following will most likely be used for KSPs
   'pale-blue': $pale-blue,
   'neon': $neon
+);
+
+$profile-card-themes: (
+  "grey-with-teal": (
+    "background": $greyblue--superlight,
+    "accent-color": $teal
+  ),
+  "grey-with-burgundy": (
+    "background": $greyblue--superlight,
+    "accent-color": $burgundy
+  ),
+  "teal-with-neon": (
+    "background": $teal,
+    "accent-color": $neon
+  ),
+  "burgundy-with-neon": (
+    "background": $burgundy,
+    "accent-color": $neon
+  )
 );
 
 $tile-accent-colors: (

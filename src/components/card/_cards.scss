@@ -245,13 +245,41 @@ a.card {
 }
 
 .card--profile {
-  & .card__content {
-    background: $grey-50-pc;
+  padding: $spacing-md;
+
+  /* Needs:
+    grey and teal
+    grey and burgundy
+    teal and neon
+    burgundy and neon
+  */
+  @each $name, $value in $profile-card-themes {
+    &.card--#{$name} {
+      background: map_get($value, "background");
+      border-bottom: $spacing-2xs solid map_get($value, "accent-color");
+      margin-left: $spacing-2xl;
+
+      @if (choose-contrast-color(map_get($value, "background")) == white) {
+        color: white;
+
+        & h3, & .strong {
+          color: map_get($value, "accent-color");
+        }
+      }
+    }
   }
 
-  & figure {
-    border-bottom: $spacing-2xs solid $red;
-    margin-top: -5rem;
+  &.card--flex {
+    flex-direction: row;
+  }
+
+  & .card__figure {
+    margin-left: -$spacing-2xl;
+    max-width: 15rem;
+  }
+
+  & .title {
+    margin-bottom: 0;
   }
 }
 
