@@ -43,7 +43,7 @@ p a:not([class]), p a[class*="sys_"], li a:not([class]), li a[class*="sys_"], td
 
 .link--standard:hover { text-decoration: none !important; }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.3; font-weight: 600; }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.2; font-weight: 600; }
 
 h2, h2 > a { color: #8a0045; }
 

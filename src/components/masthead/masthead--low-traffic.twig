@@ -1,19 +1,15 @@
-{% include '@meganav' with {
-  solidBg: true
-} %}
-
 <div class="masthead  masthead--shallow  masthead--no-bg">
   <div class="masthead__inner">
     <div class="wrap">
-      {% include '@breadcrumbs--has-solid-background' %}
-
       {% include '@title' with {
-        text: 'Masthead With No Image (Shallow)',
-        modifiers: ['has-tail'],
+        text: 'Professional training and development',
         textElement: 'h1',
-        textElementStyle: 'h1',
         animate: true
       } %}
     </div>
   </div>
+</div>
+
+<div class="wrap">
+  {% include '@breadcrumbs' %}
 </div>

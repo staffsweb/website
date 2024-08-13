@@ -159,7 +159,7 @@ p a:not([class]), p a[class*="sys_"], li a:not([class]), li a[class*="sys_"], td
 
 .link--standard:hover { text-decoration: none !important; }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.3; font-weight: 600; }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { line-height: 1.2; font-weight: 600; }
 
 h2, h2 > a { color: #8a0045; }
 
@@ -901,7 +901,7 @@ input.search-site.is-open { width: 100%; }
 
 .accordion__item[open] .accordion__toggle:before { content: ''; -webkit-transform: rotate(0deg); transform: rotate(0deg); background: #41464b url("../images/icons/icon-minus-white.svg") no-repeat center center; background-size: 50%; }
 
-.accordion__title { display: block; margin: 0; padding: 1.5rem 0.75rem; font-weight: normal; line-height: 1.3; list-style: none; cursor: pointer; }
+.accordion__title { display: block; margin: 0; padding: 1.5rem 0.75rem; font-weight: normal; line-height: 1.2; list-style: none; cursor: pointer; }
 
 .accordion__title:focus { outline: 0.1em solid rgba(65, 70, 75, 0.5); }
 
@@ -1566,13 +1566,15 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 @keyframes lds-spinner { 0% { opacity: 1; }
   100% { opacity: 0; } }
 
-.masthead { background-color: #f1f1f1; box-sizing: border-box; position: relative; }
+.masthead { background-color: #170d38; box-sizing: border-box; position: relative; }
 
-.masthead h1 { padding: 0.75rem; }
+.masthead--burgundy { background-color: #8a0045; }
 
 .masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
+
+.masthead .title { color: white; max-width: 30rem; }
 
 .masthead__knot { position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
 
@@ -1580,7 +1582,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead__lower { background: #304dfc; z-index: 1; }
 
-.masthead__inner { display: flex; flex-wrap: wrap; min-height: 85vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
+.masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
 
 @media (min-width: 60rem) { .masthead__inner { position: static; } }
 
@@ -1593,9 +1595,11 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead .wrap { position: relative; align-self: flex-end; z-index: 0; }
 
-.masthead--shallow .masthead__inner { min-height: 40vh; }
+.masthead--shallow { background: #E0DFE8 url("../images/masthead-shallow-bg.svg") no-repeat; background-size: cover; }
 
-.masthead .title { color: white; }
+.masthead--shallow .title { color: #170d38; }
+
+.masthead--shallow .masthead__inner { min-height: 20vh; padding-top: 8rem; }
 
 .masthead--course { background: #170d38; color: white; }
 
@@ -1835,7 +1839,7 @@ blockquote footer, .blockquote footer { margin-top: 1.5rem; font-size: 0.875rem;
 
 cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-style: normal; font-weight: 600; display: block; margin: 1.5rem 0 0.5rem; }
 
-.blockquote--large, .blockquote--short { font-size: 1.5em; line-height: 1.3; }
+.blockquote--large, .blockquote--short { font-size: 1.5em; line-height: 1.2; }
 
 @media (min-width: 70rem) { .blockquote--large, .blockquote--short { font-size: 2em; } }
 
