@@ -13,7 +13,3 @@ handle: tile
 variants:
   - name: accent-colours
     label: 'Accent Colours'
-
-  - name: accent-colours-ldn
-    label: 'Accent Colours (LDN)'
-    preview: '@preview--ldn'

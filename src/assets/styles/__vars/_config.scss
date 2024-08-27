@@ -1,7 +1,5 @@
 $image-theme-directory: '../images'; //www.staffs.ac.uk/site/images'; // this is overridden if using a theme which requires different images (eg. London)
 $image-theme-directory-icon: '#{$image-theme-directory}/icons';
-$image-theme-directory-ldn: '//www.staffs.ac.uk/microsites/london/images'; // CG: A new variable to allow for the fact that London is a microsite
-$image-theme-directory-icon-ldn: '#{$image-theme-directory-icon}/london';
 
 $link-image-hover-opacity: 0.9;
 

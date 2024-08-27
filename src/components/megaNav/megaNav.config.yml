@@ -2,8 +2,3 @@ name: megaNav
 label: 'MegaNav'
 status: ready
 handle: 'megaNav'
-
-variants:
-  - name: ldn
-    label: "LDN"
-    preview: '@preview--ldn-raw'

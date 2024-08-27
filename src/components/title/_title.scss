@@ -47,7 +47,7 @@
 @each $name, $value in $title-bg-colors {
   .title--bg-#{$name} {
     --background: #{$value};
-    @if ($value == 'white') {
+    @if (choose-contrast-color($value) == black) {
       // we should probably be using choose-contrast-color($value) in the if here,
       // but someone wanted $gold--tef text to be white ¯\_(ツ)_/¯
       --color: black;

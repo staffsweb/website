@@ -15,27 +15,17 @@ variants:
       background: white
       text: 'This is a white highlighted title'
 
-  - name: slate
-    label: "Slate"
+  - name: digital-blue
+    label: "Digital blue"
     context:
-      background: slate
-      text: 'This is a slate highlighted title'
+      background: digital-blue
+      text: 'This is a digital blue highlighted title'
 
-  - name: maroon
-    label: "Maroon"
+  - name: dark-blue
+    label: "Dark blue"
     context:
-      background: maroon
-      text: 'This is a maroon highlighted title'
-
-  - name: pink
-    label: "Pink"
-    context:
-      background: pink
-      text: 'This is a pink highlighted title'
+      background: dark-blue
+      text: 'This is a dark blue highlighted title'
 
   - name: examples
     label: "Examples"
-
-  - name: ldn-examples
-    label: "Examples (LDN)"
-    preview: '@preview--ldn'

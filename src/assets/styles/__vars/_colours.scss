@@ -150,17 +150,16 @@ $tile-accent-colors: (
   'neon' : $neon,
   'neon-light': $neon-50-pc,
   'yellow-light': $yellow-light,
-  'blue-ldn': $blue--deep-ldn,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue
 );
 
 $title-bg-colors: (
-  'white': 'white',
+  'white': white,
   'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate,
-  'tef-gold': $gold--tef,
-  'blue-ldn': $blue--deep-ldn,
+  'neon': $neon,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue
 );
 
 $slab-bg-colors: (
@@ -189,7 +188,6 @@ $icon-box-colors: (
   'neon': $neon,
   'maroon': $burgundy, // CG: Polyfill for legacy colour
   'burgundy': $burgundy,
-  'tef-gold': $gold--tef,
   'slate': $dark-blue, // CG: Polyfill for legacy colour
   'offwhite': $grey-50-pc
 );
