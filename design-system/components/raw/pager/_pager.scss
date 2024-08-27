@@ -30,6 +30,7 @@
   &__current {
     font-weight: 500;
     cursor: default;
+    background: $grey-50-pc;
 
     &:hover {
       color: $text-color;

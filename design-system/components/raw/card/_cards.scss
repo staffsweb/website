@@ -7,8 +7,7 @@ $card__internal-spacing: $spacing-sm;
   position: relative;
   --accent-color: #{$primary};
   margin-bottom: $spacing-xl;
-  border-left: $border-accent-width solid $primary;
-  border-color: var(--accent-color);
+
   @include clearfix;
 
   a:not(.button) {
@@ -246,7 +245,42 @@ a.card {
 }
 
 .card--profile {
-  // this exists, but doesn't need anything specific (yet)
+  padding: $spacing-md;
+
+  /* Needs:
+    grey and teal
+    grey and burgundy
+    teal and neon
+    burgundy and neon
+  */
+  @each $name, $value in $profile-card-themes {
+    &.card--#{$name} {
+      background: map_get($value, "background");
+      border-bottom: $spacing-2xs solid map_get($value, "accent-color");
+      margin-left: $spacing-2xl;
+
+      @if (choose-contrast-color(map_get($value, "background")) == white) {
+        color: white;
+
+        & h3, & .strong {
+          color: map_get($value, "accent-color");
+        }
+      }
+    }
+  }
+
+  &.card--flex {
+    flex-direction: row;
+  }
+
+  & .card__figure {
+    margin-left: -$spacing-2xl;
+    max-width: 15rem;
+  }
+
+  & .title {
+    margin-bottom: 0;
+  }
 }
 
 .card--ksp {

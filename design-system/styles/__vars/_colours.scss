@@ -14,7 +14,6 @@ $greyblue--superlight:          #f0f1f2;
 $greyblue--supersuperlight:     mix(#f0f1f2, #fff);
 $offwhite:                      #f1f1f1;
 //$yellow:                        #ffd91b;
-$gold--tef:                     #dd9200;
 
 $blue:                          #0000cc;
 $blue--light:                   #8888cc;
@@ -105,8 +104,8 @@ $utils-text-colors: (
 
 $theme-colours: (
   'primary' : $red,
-  'secondary' : $pink,
-  'tertiary' : $maroon
+  'secondary' : $dark-blue,
+  'tertiary' : $digital-blue
 );
 
 $card-accent-colors: (
@@ -126,23 +125,40 @@ $card-accent-colors: (
   'neon': $neon
 );
 
+$profile-card-themes: (
+  "grey-with-teal": (
+    "background": $greyblue--superlight,
+    "accent-color": $teal
+  ),
+  "grey-with-burgundy": (
+    "background": $greyblue--superlight,
+    "accent-color": $burgundy
+  ),
+  "teal-with-neon": (
+    "background": $teal,
+    "accent-color": $neon
+  ),
+  "burgundy-with-neon": (
+    "background": $burgundy,
+    "accent-color": $neon
+  )
+);
+
 $tile-accent-colors: (
-  'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate,
-  'tef-gold': $gold--tef,
-  'blue-ldn': $blue--deep-ldn,
+  'pale-blue' : $pale-blue,
+  'neon' : $neon,
+  'neon-light': $neon-50-pc,
+  'yellow-light': $yellow-light,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue
 );
 
 $title-bg-colors: (
-  'white': 'white',
+  'white': white,
   'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate,
-  'tef-gold': $gold--tef,
-  'blue-ldn': $blue--deep-ldn,
+  'neon': $neon,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue
 );
 
 $slab-bg-colors: (
@@ -171,7 +187,6 @@ $icon-box-colors: (
   'neon': $neon,
   'maroon': $burgundy, // CG: Polyfill for legacy colour
   'burgundy': $burgundy,
-  'tef-gold': $gold--tef,
   'slate': $dark-blue, // CG: Polyfill for legacy colour
   'offwhite': $grey-50-pc
 );
@@ -187,7 +202,9 @@ $tag-bg-colors: (
 
 $callout-bg-colors: (
   'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue,
   'neon': $neon,
+  'teal': $teal,
   'burgundy': $burgundy,
 );
 

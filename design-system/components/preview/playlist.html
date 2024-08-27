@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="en">
+    <head>
+        
+<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="../../styles/main.css" rel="stylesheet" />
+<link media="print" href="../../styles/print.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrap  margin-top-xl">
+            <section class="slab  slab--bg-dark-blue  align-full">
+    <div class="wrap">
+        <article class="playlist">
+            <h2 class="playlist__title">Video playlist</h2>
+            <div class="grid">
+                <section class="playlist__list  col-1/4@tablet">
+                    <ol class="list--unstyled">
+                        <li><a class="playlist__link  selected" href="#" data-url="https://www.youtube.com/embed/0ctsZ8w2sQI"><i class="icon  icon--play-circle-red  font-3xl"></i> Esports hub tour</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/9cHyGKVYuYs"><i class="icon  icon--play-circle-red  font-3xl"></i> Games development showreel 2023</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/fiiB4p6ORsc"><i class="icon  icon--play-circle-red  font-3xl"></i> Esports Arena London</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/h7A-Xyx50HI"><i class="icon  icon--play-circle-red  font-3xl"></i> Luke Seagrove - BA (Hons) Esports</a></li>
+                    </ol>
+                </section>
+                <section class="playlist__video  col-3/4@tablet">
+                    <div class="ratio  ratio--16x9">
+                        <iframe id="playlist__iframe" src="https://www.youtube.com/embed/0ctsZ8w2sQI" allowfullscreen></iframe>
+                    </div>
+                </section>
+            </div>
+            <script>
+                $(".playlist__link").on("click", function(e) {
+                    e.preventDefault();
+                    $(".playlist__link").removeClass("selected");
+                    $("#playlist__iframe").attr("src", $(this).attr("data-src"));
+                    $(this).addClass("selected");
+                });
+            </script>
+        </article>
+    </div>
+</section>
+        </div>
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../dev/js/app.js"></script>
+
+    </body>
+</html>

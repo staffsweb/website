@@ -1,11 +1,11 @@
 .masthead {
   $overlay-breakpoint: $third-breakpoint + 10rem;
-  background-color: $offwhite;
+  background-color: $dark-blue;//$offwhite;
   box-sizing: border-box;
   position: relative;
 
-  & h1 {
-    padding: $spacing-sm;
+  &--burgundy {
+    background-color: $burgundy;
   }
 
   &__bg {
@@ -30,6 +30,11 @@
         object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
       }
     }
+  }
+
+  & .title {
+    color: white;
+    max-width: 30rem;
   }
 
   &__knot {
@@ -58,7 +63,7 @@
   &__inner {
     display: flex;
     flex-wrap: wrap;
-    min-height: 85vmin;
+    min-height: 35vmin;
     padding: 12rem 0 $spacing-xl;
     align-self: flex-end;
     align-content: flex-end;
@@ -110,13 +115,71 @@
   }
 
   &--shallow {
+    background: $grey-50-pc url('../images/masthead-shallow-bg.svg') no-repeat;
+    background-size: cover;
+
+    & .title {
+      color: $dark-blue;
+    }
+
     .masthead__inner {
-      min-height: 40vh;
+      min-height: 20vh;
+      padding-top: 8rem;
     }
   }
 
-  & .title {
+  &--course {
+    background: $dark-blue;
     color: white;
+
+    & .title {
+      color: $neon;
+      padding-left: 0;
+    }
+  }
+
+  &__award-type {
+    color: white;
+  }
+
+  &__ucas-code strong {
+    color: $neon;
+    margin-right: $spacing-md;
+  }
+
+  &__course-divider {
+    display: flex;
+    justify-content: flex-end;
+
+    & img {
+      @supports (object-fit: cover) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+      }
+    }
+  }
+
+  &__course-img {
+    width: 50%;
+    position: relative;
+  }
+
+  &__course-info {
+    padding: 0 2rem 0 10%;
+    max-width: 43rem;
+
+    & label {
+      margin: $spacing-lg 0 $spacing-sm;
+    }
+
+    & .title {
+      margin: $spacing-2xl 0 0 0;
+    }
   }
 
   @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
