@@ -1817,7 +1817,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .pager__link:hover { text-decoration: underline; }
 
-.pager__current { font-weight: 500; cursor: default; }
+.pager__current { font-weight: 500; cursor: default; background: #E0DFE8; }
 
 .pager__current:hover { color: black; text-decoration: none; }
 
