@@ -925,6 +925,16 @@ if(anchorTarget == "#courses__postgraduate")
     });
   };
 
+  let playlistInit = function() {
+    $(".playlist__link").on("click", function(e) {
+      e.preventDefault();
+      $(".playlist__link").removeClass("selected");
+      $(this).addClass("selected");
+      $("#playlist__item").remove();
+      $('<iframe id=playlist__item frameborder="0" allowfullscreen></iframe>').attr("src", $(this).attr("data-url")).appendTo("#playlist__item-container");
+    });
+  };
+
   let removeExistingSvgFills = function(parentClass) {
     var pathElms = document.querySelectorAll(parentClass + " svg path" + ", " + parentClass + " svg g");
 
@@ -1188,6 +1198,7 @@ if(anchorTarget == "#courses__postgraduate")
     toggleVariantInit();
     visualizerInit();
     toggleSlide('[data-course-modules-trigger]', scrollToTop);
+    playlistInit();
     countrySubmit();
     crmFormsInit();
     leadGenInit();

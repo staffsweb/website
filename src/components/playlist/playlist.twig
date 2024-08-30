@@ -12,19 +12,11 @@
                     </ol>
                 </section>
                 <section class="playlist__video  col-3/4@tablet">
-                    <div class="ratio  ratio--16x9">
-                        <iframe id="playlist__iframe" src="https://www.youtube.com/embed/0ctsZ8w2sQI" allowfullscreen></iframe>
+                    <div id="playlist__item-container" class="ratio  ratio--16x9">
+                        <iframe id="playlist__item" src="https://www.youtube.com/embed/0ctsZ8w2sQI" allowfullscreen></iframe>
                     </div>
                 </section>
             </div>
-            <script>
-                $(".playlist__link").on("click", function(e) {
-                    e.preventDefault();
-                    $(".playlist__link").removeClass("selected");
-                    $("#playlist__iframe").attr("src", $(this).attr("data-src"));
-                    $(this).addClass("selected");
-                });
-            </script>
         </article>
     </div>
 </section>
