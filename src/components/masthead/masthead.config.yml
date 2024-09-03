@@ -5,7 +5,7 @@ preview: '@preview--raw'
 notes:  "<p>Use an inline style on the <code>&lt;img&gt;</code> element to add a focal point to your responsive image, to stop subjects from being cropped on resize.</p><p>eg. <code> style=\"object-position: 60% 20%\"</code> would indicate the focal point is approximately 60% along the x-axis <strong>from the left</strong>, and 20% <strong>down</strong> the y-axis <strong>from the top</strong>.</p><p><strong>Use <code>srcset</code> to serve smaller images to smaller screens, this is right at the top of the page, and will affect performance.</strong></p>"
 
 variants:
-  - name: high-traffic
+  - name: key-page
     notes: "Optionally add classes of <code>has-solid-bg</code> to <code>.header-site</code> and <code>.breadcrumbs</code> to give them solid back backgrounds, rather than semitransparent."
 
   - name: course

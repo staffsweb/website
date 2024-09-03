@@ -1,0 +1,93 @@
+<div class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__bg">
+      {% if bgImg %}
+        {{ bgImg }}
+      {% else %}
+        <img src="{{ ('/images/masthead-knot.svg') | path }}"/>
+      {% endif %}
+    </div>
+    <div class="wrap">
+      <div class="grid">
+        <div class="col-3/4@tablet">
+          {% include '@title' with {
+            text: 'Undergraduate courses',
+            textElement: 'h1',
+            textElementStyle: 'h1',
+            animate: true
+          } %}
+          {% include '@title' with {
+            text: '(If long, consider using h2 textElementStyle)',
+            textElement: 'h6',
+            animate: true
+          } %}
+        </div>
+        <div class="col-1/4@tablet">
+          <img class="masthead__img" src="{{ ('/images/masthead-square-0.jpg') | path }}" alt="" />
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  {% include '@breadcrumbs' %}
+</div>
+
+<hr />
+
+<div class="masthead  masthead--burgundy">
+  <div class="masthead__inner">
+    <div class="masthead__bg">
+      {% if bgImg %}
+        {{ bgImg }}
+      {% else %}
+        <img src="{{ ('/images/masthead-knot.svg') | path }}"/>
+      {% endif %}
+    </div>
+    <div class="wrap">
+      {% include '@title' with {
+        text: 'Undergraduate courses',
+        textElement: 'h1',
+        textElementStyle: 'h1',
+        animate: true
+      } %}
+      {% include '@title' with {
+        text: '(If long, consider using h2 textElementStyle)',
+        textElement: 'h6',
+        animate: true
+      } %}
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  {% include '@breadcrumbs' %}
+</div>
+
+<hr />
+
+<div class="masthead  masthead--grey">
+  <div class="masthead__inner">
+    <div class="masthead__bg">
+        <img src="{{ ('/images/masthead-knot-grey.svg') | path }}"/>
+    </div>
+    <div class="wrap">
+      {% include '@title' with {
+        text: 'Undergraduate courses',
+        textElement: 'h1',
+        textElementStyle: 'h1',
+        animate: true
+      } %}
+      {% include '@title' with {
+        text: '(If long, consider using h2 textElementStyle)',
+        textElement: 'h6',
+        animate: true
+      } %}
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  {% include '@breadcrumbs' %}
+</div>

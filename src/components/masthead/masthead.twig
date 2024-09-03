@@ -1,26 +1,15 @@
-<div class="masthead">
+<div class="masthead  masthead--shallow  masthead--no-bg">
   <div class="masthead__inner">
-    <div class="masthead__bg">
-      {% if bgImg %}
-        {{ bgImg }}
-      {% else %}
-        <img src="{{ ('/images/masthead4.jpg') | path }}"/>
-      {% endif %}
-    </div>
     <div class="wrap">
-      {% include '@breadcrumbs' %}
-
       {% include '@title' with {
-        text: 'Page Title',
+        text: 'Professional training and development',
         textElement: 'h1',
-        textElementStyle: 'h1',
-        animate: true
-      } %}
-      {% include '@title' with {
-        text: '(If long, consider using h2 textElementStyle)',
-        textElement: 'h6',
         animate: true
       } %}
     </div>
   </div>
+</div>
+
+<div class="wrap">
+  {% include '@breadcrumbs' %}
 </div>

@@ -2169,9 +2169,15 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead--burgundy { background-color: #8a0045; }
 
+.masthead--grey { background-color: #E0DFE8; }
+
+.masthead--grey .title { color: #170d38 !important; }
+
 .masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
+
+.masthead__img { margin-bottom: -3rem; }
 
 .masthead .title { color: white; max-width: 30rem; }
 

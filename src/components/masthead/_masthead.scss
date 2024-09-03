@@ -8,6 +8,14 @@
     background-color: $burgundy;
   }
 
+  &--grey {
+    background-color: $grey-50-pc;
+
+    & .title {
+      color: $dark-blue!important;
+    }
+  }
+
   &__bg {
     position: absolute;
     top: 0;
@@ -30,6 +38,10 @@
         object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
       }
     }
+  }
+
+  &__img {
+    margin-bottom: -$spacing-3xl;
   }
 
   & .title {
