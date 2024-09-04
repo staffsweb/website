@@ -169,6 +169,7 @@
 
   &__course-info {
     background:  $dark-blue;
+    padding-right: $spacing-xl;
 
     & label {
       margin: $spacing-lg 0 $spacing-sm;
@@ -177,6 +178,12 @@
     & .title {
       margin: $spacing-2xl 0 0 0;
     }
+
+    & select.one-item {
+      background: white;
+    }
+
+
   }
 
   @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
