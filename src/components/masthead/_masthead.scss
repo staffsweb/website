@@ -159,31 +159,16 @@
     margin-right: $spacing-md;
   }
 
-  &__course-divider {
-    display: flex;
-    justify-content: flex-end;
-
-    & img {
-      @supports (object-fit: cover) {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
-      }
-    }
-  }
-
-  &__course-img {
-    width: 50%;
-    position: relative;
+  &__course-hero {
+    height: 100%;
+    position: absolute;
+    max-width: none;
+    left: 50%;
+    z-index: -1;
   }
 
   &__course-info {
-    padding: 0 2rem 0 10%;
-    max-width: 43rem;
+    background:  $dark-blue;
 
     & label {
       margin: $spacing-lg 0 $spacing-sm;
