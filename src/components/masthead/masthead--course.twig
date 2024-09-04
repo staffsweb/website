@@ -3,7 +3,7 @@
 
 <div class="masthead  masthead--course">
   <div class="wrap">
-    <div class="grid  grid-2-cols">
+    <div class="grid  grid--flexbox  grid-2-cols">
       <div class="masthead__course-info">
         <h1 class="title">Esports <span class="masthead__award-type  font-md">BA (Hons)</span></h1>
         <p class="masthead__ucas-code"><strong>UCAS code</strong> S101</p>
@@ -50,11 +50,11 @@
         </ul>
       </div>
 
-      <div>
+      <div class="masthead__course-hero">
         {% if bgImg %}
           {{ bgImg }}
         {% else %}
-          <img class="masthead__course-hero" src="{{ bgImgURL | path }}"/>
+          <img src="{{ bgImgURL | path }}"/>
         {% endif %}
       </div>
     </div>

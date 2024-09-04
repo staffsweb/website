@@ -159,12 +159,20 @@
     margin-right: $spacing-md;
   }
 
-  &__course-hero {
-    height: 100%;
-    position: absolute;
-    max-width: none;
-    left: 50%;
-    z-index: -1;
+  @media (max-width: map_get($breakpoint-stages, 'mobile')) {
+    &--course  .grid--flexbox {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media (min-width: map_get($breakpoint-stages, 'mobile')) {
+    &__course-hero img {
+      height: 100%;
+      position: absolute;
+      max-width: none;
+      left: 50%;
+      z-index: -1;
+    }
   }
 
   &__course-info {
