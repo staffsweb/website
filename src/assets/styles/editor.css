@@ -4,12 +4,29 @@
 /*$primary:                       $dark-blue;
 $secondary:                     $burgundy;
 $tertiary:                      $grey;*/
-/*@mixin align-wide { max-width: none; width: calc(100vw - 2.4rem); margin-left: calc(-50vw + 50% + 1.2rem); margin-right: calc(-50vw + 50% + 1.2rem); @media (min-width: $wrap-full-gutter-width) { width: calc(90vw); margin-left: calc(-45vw + 50%); margin-right: calc(-45vw + 50%); } @media (min-width: $wrap-width + 10rem) { width: $wrap-width; margin-left: calc(-43rem + 50%); margin-right: calc(-43rem + 50%); } }*/
+/*@mixin align-wide {
+  max-width: none;
+  width: calc(100vw - 2.4rem);
+  margin-left: calc(-50vw + 50% + 1.2rem);
+  margin-right: calc(-50vw + 50% + 1.2rem);
+
+  @media (min-width: $wrap-full-gutter-width) {
+    width: calc(90vw);
+    margin-left: calc(-45vw + 50%);
+    margin-right: calc(-45vw + 50%);
+  }
+
+  @media (min-width: $wrap-width + 10rem) {
+    width: $wrap-width;
+    margin-left: calc(-43rem + 50%);
+    margin-right: calc(-43rem + 50%);
+  }
+}*/
 html { position: relative; -webkit-text-decoration-skip: ink; text-decoration-skip-ink: auto; }
 
 @supports (font: -apple-system-body) { html { font: -apple-system-body; } }
 
-body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: black; background: #fff; font-weight: 400; font-variant-ligatures: none; tap-highlight-color: rgba(239, 74, 59, 0.25); }
+body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: black; background: #fff; font-weight: 400; -webkit-font-variant-ligatures: none; font-variant-ligatures: none; tap-highlight-color: rgba(239, 74, 59, 0.25); }
 
 ::-moz-selection { background: rgba(239, 74, 59, 0.2); }
 
@@ -194,7 +211,7 @@ a.tag:hover { text-decoration: underline; color: black; }
 
 .button--block { display: block; width: 100%; text-align: center; line-height: 1.5; }
 
-.button--pointy:after { content: '\25B6\FE0E'; padding-left: 0.5em; transition: transform 200ms; }
+.button--pointy:after { content: '\25B6\FE0E'; padding-left: 0.5em; transition: -webkit-transform 200ms; transition: transform 200ms; transition: transform 200ms, -webkit-transform 200ms; }
 
 .button--caps { text-transform: uppercase; }
 
