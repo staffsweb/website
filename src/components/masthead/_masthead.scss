@@ -40,8 +40,10 @@
     }
   }
 
-  &__img {
-    margin-bottom: -$spacing-3xl;
+  @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+    &__img {
+      margin-bottom: -$spacing-3xl;
+    }
   }
 
   & .title {
@@ -159,23 +161,38 @@
     margin-right: $spacing-md;
   }
 
-  @media (max-width: map_get($breakpoint-stages, 'mobile')) {
-    &--course  .grid--flexbox {
-      flex-direction: row-reverse;
-    }
-  }
-
-  @media (min-width: map_get($breakpoint-stages, 'mobile')) {
-    &__course-hero img {
-      height: 100%;
-      position: absolute;
-      max-width: none;
-      left: 50%;
-      z-index: -1;
-    }
-  }
-
   &__course-info {
+    display: flex;
+  }
+
+  @media (max-width: map_get($breakpoint-stages, 'tablet')) {
+    &__course-info {
+      flex-direction:column-reverse;
+    }
+
+    &__course-hero {
+      margin-left: -$spacing-xl;
+      margin-right: -$spacing-xl;
+    }
+  }
+
+  @media (min-width: map_get($breakpoint-stages, 'tablet')) {
+    &__course-info {  
+      & > div {
+        width: 50%;
+      }
+
+      & img {
+        height: 100%;
+        position: absolute;
+        max-width: none;
+        left: 15%;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__course-options {
     background:  $dark-blue;
     padding-right: $spacing-xl;
 
@@ -203,6 +220,16 @@
         }
       }
     }
+  }
+}
+
+.masthead--with-image {
+  & .masthead__inner {
+    padding: 2rem 0 $spacing-xl;
+  }
+
+  & h1 {
+    margin-top: 8rem;
   }
 }
 

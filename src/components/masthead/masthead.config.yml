@@ -6,7 +6,6 @@ notes:  "<p>Use an inline style on the <code>&lt;img&gt;</code> element to add a
 
 variants:
   - name: key-page
-    notes: "Optionally add classes of <code>has-solid-bg</code> to <code>.header-site</code> and <code>.breadcrumbs</code> to give them solid back backgrounds, rather than semitransparent."
 
   - name: course
     context:

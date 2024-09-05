@@ -2177,7 +2177,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead__img { margin-bottom: -3rem; }
+@media (min-width: 65rem) { .masthead__img { margin-bottom: -3rem; } }
 
 .masthead .title { color: white; max-width: 30rem; }
 
@@ -2214,20 +2214,28 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead__ucas-code strong { color: #c4ff36; margin-right: 1rem; }
 
-@media (max-width: 20rem) { .masthead--course .grid--flexbox { flex-direction: row-reverse; } }
+.masthead__course-info { display: flex; }
 
-@media (min-width: 20rem) { .masthead__course-hero img { height: 100%; position: absolute; max-width: none; left: 50%; z-index: -1; } }
+@media (max-width: 45rem) { .masthead__course-info { flex-direction: column-reverse; }
+  .masthead__course-hero { margin-left: -2rem; margin-right: -2rem; } }
 
-.masthead__course-info { background: #170d38; padding-right: 2rem; }
+@media (min-width: 45rem) { .masthead__course-info > div { width: 50%; }
+  .masthead__course-info img { height: 100%; position: absolute; max-width: none; left: 15%; z-index: -1; } }
 
-.masthead__course-info label { margin: 1.5rem 0 0.75rem; }
+.masthead__course-options { background: #170d38; padding-right: 2rem; }
 
-.masthead__course-info .title { margin: 2.5rem 0 0 0; }
+.masthead__course-options label { margin: 1.5rem 0 0.75rem; }
 
-.masthead__course-info select.one-item { background: white; }
+.masthead__course-options .title { margin: 2.5rem 0 0 0; }
+
+.masthead__course-options select.one-item { background: white; }
 
 @media (max-width: 35rem) { .masthead--profile .masthead__inner { padding: 8rem 0 2rem; }
   .masthead--profile .masthead__inner figure { margin: 2rem 0 2rem; } }
+
+.masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
+
+.masthead--with-image h1 { margin-top: 8rem; }
 
 .card a.masthead__school-link { color: white; border-bottom: 1px solid white !important; }
 
