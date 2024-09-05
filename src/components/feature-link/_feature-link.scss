@@ -86,3 +86,29 @@ a.feature-link {
     }
   }
 }
+
+[class *= 'bg-dark-blue'], [class *= 'bg-teal'], [class *= 'bg-digital-blue'] {
+  & .feature-link {
+    color: white;
+
+    & p {
+      color: white;
+    }
+  }
+
+  & a.feature-link .feature-link__title {
+    color: white;
+  }
+}
+
+[class *= 'bg-teal'], [class *= 'bg-digital-blue'] {
+  .feature-link--no-image .feature-link__title,
+  .feature-link__figure,
+  .feature-link:hover .feature-link__figure {
+    border-color: white;
+  }
+
+  .feature-link .feature-link__title:after {
+    background-image: url('#{$image-theme-directory-icon}/icon-gt-white.svg');
+  }
+}
