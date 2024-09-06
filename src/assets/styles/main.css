@@ -1836,6 +1836,8 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .course-search.slab--bg-slate .accordion__title:focus-visible { outline-color: #304dfc; }
 
+.course-search a.button:hover { cursor: pointer; }
+
 @media (min-width: 50rem) { .course-search__subject-list { -moz-column-count: 3; -moz-column-gap: 2rem; -webkit-column-count: 3; -webkit-column-gap: 2rem; column-count: 3; column-gap: 2rem; } }
 
 .ui-autocomplete { z-index: 1000; }
