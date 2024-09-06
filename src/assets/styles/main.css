@@ -1424,7 +1424,7 @@ input.search-site.is-open { width: 100%; }
 
 .slider--announcements .slick-slide { padding-right: 2rem; }
 
-.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 0.5rem; padding: 1rem calc(0.75rem + 2.5%) 1rem; }
+.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 0.5rem; padding: 2rem calc(0.75rem + 2.5%) 1rem; }
 
 .banner--bg-burgundy { background: #8a0045; color: white; }
 
