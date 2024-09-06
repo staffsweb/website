@@ -1,4 +1,5 @@
 status: ready
+notes: "These require a class of 'feature-link--no-image' or 'feature-link--with-image' as appropriate."
 context:
   title: 'Life in Staffordshire'
   image: null
