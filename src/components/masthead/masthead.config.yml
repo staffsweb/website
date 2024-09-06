@@ -1,4 +1,4 @@
-status: wip
+status: ready
 context:
   text: 'Click me'
 preview: '@preview--raw'
