@@ -1446,13 +1446,15 @@ input.search-site.is-open { width: 100%; }
 
 .banner--bg-dark-blue .banner__title { color: #c4ff36; }
 
-.banner__bg { max-width: 50%; overflow-x: hidden; }
+.banner--bg-dark-blue .banner__theme svg, .banner--bg-neon .banner__theme svg { fill: #c4ff36; }
+
+.banner__bg { max-width: 50%; overflow-x: hidden; margin-right: 1.5rem; }
 
 .banner__bg img { display: block; width: auto; height: 100%; max-height: 100%; }
 
 .banner__theme { position: absolute; right: 0; bottom: 0; width: 30%; height: 70%; overflow: hidden; z-index: 0; }
 
-.banner__theme svg { height: 100%; width: 100%; -o-object-position: right bottom; object-position: right bottom; -o-object-fit: contain; object-fit: contain; }
+.banner__theme svg { height: 100%; width: 100%; -o-object-position: right bottom; object-position: right bottom; -o-object-fit: contain; object-fit: contain; fill: white; }
 
 .banner__body { position: relative; align-self: flex-end; box-sizing: border-box; width: 70%; z-index: 1; }
 
