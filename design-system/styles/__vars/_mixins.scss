@@ -106,7 +106,7 @@
 }
 
 @mixin button--outline {
-  color: $neon;
+  color: black;
   border: 0.2em solid $neon;
   padding: 0.6em 2em;
   background-color: transparent;
@@ -115,7 +115,7 @@
   &:hover,
   &:focus,
   &:active {
-    color: black;
+    color: $dark-blue;
   }
 }
 
