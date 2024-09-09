@@ -2952,6 +2952,8 @@ a.tile:focus { outline-width: 3px; outline-color: #ef4a3b; z-index: 2; }
 
 @media (min-width: 50rem) { .zebra__body { flex: 0 0 45%; margin: 4rem auto 2.5rem; left: -5%; } }
 
+.zebra__title h2.title__highlight { background: none; color: #8a0045; box-shadow: none; left: inherit; padding: 0; }
+
 .debug * { box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.75), inset 0 0 0.5em rgba(0, 255, 0, 0.75) !important; }
 
 .bg-primary { background: #ef4a3b !important; }

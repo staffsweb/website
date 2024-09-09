@@ -101,3 +101,12 @@
     }
   }
 }
+
+// CG: Override for existing Contensis templates
+.zebra__title h2.title__highlight {
+  background: none;
+  color: $burgundy;
+  box-shadow: none;
+  left: inherit;
+  padding: 0;
+}
