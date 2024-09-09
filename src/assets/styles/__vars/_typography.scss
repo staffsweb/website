@@ -172,10 +172,13 @@ $border-accent-width: $spacing-2xs;
 
   h1 + h2,
   h2 + h3,
-  h3 + h4,
   h4 + h5,
   h5 + h6 {
     margin-top: 0;
+  }
+
+  h3 + h4 {
+    margin-top: $spacing-lg;
   }
 
   @each $name, $size in $headings-smallscreen-map {
