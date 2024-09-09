@@ -4,18 +4,22 @@ h2.playlist__title {
 
 a.playlist__link {
     display: block;
-    padding: $spacing-sm;
+    padding: $spacing-sm $spacing-sm $spacing-sm $spacing-3xl;
     text-decoration: none;
     color: white;
     transition: all 125ms;
+    background-image: url(#{$image-theme-directory-icon}/icon-play-circle-red.svg);
+    background-position: $spacing-xs center;
+    background-repeat: no-repeat;
+    background-size: $spacing-xl;
 
     &.selected {
-        color: $dark-blue;
-        background: $neon;
+        color: $dark-blue!important;
+        background-color: $neon;
     }
 
     &:hover {
-        color: $dark-blue;
-        background: $grey-50-pc;
+        color: $dark-blue!important;
+        background-color: $grey-50-pc;
     }
 }

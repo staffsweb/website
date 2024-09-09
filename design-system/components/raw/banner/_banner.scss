@@ -4,7 +4,7 @@
   margin-bottom: $spacing-xl;
   color: #fff;
   border-radius: $spacing-xs;
-  padding: #{$spacing-md} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
+  padding: #{$spacing-xl} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
@@ -27,9 +27,14 @@
     color: $neon;
   }
 
+  &--bg-dark-blue &__theme svg, &--bg-neon &__theme svg {
+    fill: $neon;
+  }
+
   &__bg {
     max-width: 50%;
     overflow-x: hidden;
+    margin-right: $spacing-lg;
 
     & img {
       display: block;
@@ -53,6 +58,7 @@
       width: 100%;
       object-position: right bottom;
       object-fit: contain;
+      fill: white;
     }  
   }
 

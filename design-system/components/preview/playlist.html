@@ -26,26 +26,18 @@
             <div class="grid">
                 <section class="playlist__list  col-1/4@tablet">
                     <ol class="list--unstyled">
-                        <li><a class="playlist__link  selected" href="#" data-url="https://www.youtube.com/embed/0ctsZ8w2sQI"><i class="icon  icon--play-circle-red  font-3xl"></i> Esports hub tour</a></li>
-                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/9cHyGKVYuYs"><i class="icon  icon--play-circle-red  font-3xl"></i> Games development showreel 2023</a></li>
-                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/fiiB4p6ORsc"><i class="icon  icon--play-circle-red  font-3xl"></i> Esports Arena London</a></li>
-                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/h7A-Xyx50HI"><i class="icon  icon--play-circle-red  font-3xl"></i> Luke Seagrove - BA (Hons) Esports</a></li>
+                        <li><a class="playlist__link  selected" href="#" data-url="https://www.youtube.com/embed/0ctsZ8w2sQI">Esports hub tour</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/9cHyGKVYuYs">Games development showreel 2023</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/fiiB4p6ORsc">Esports Arena London</a></li>
+                        <li><a class="playlist__link" href="#" data-url="https://www.youtube.com/embed/h7A-Xyx50HI">Luke Seagrove - BA (Hons) Esports</a></li>
                     </ol>
                 </section>
                 <section class="playlist__video  col-3/4@tablet">
-                    <div class="ratio  ratio--16x9">
-                        <iframe id="playlist__iframe" src="https://www.youtube.com/embed/0ctsZ8w2sQI" allowfullscreen></iframe>
+                    <div id="playlist__item-container" class="ratio  ratio--16x9">
+                        <iframe id="playlist__item" src="https://www.youtube.com/embed/0ctsZ8w2sQI" allowfullscreen></iframe>
                     </div>
                 </section>
             </div>
-            <script>
-                $(".playlist__link").on("click", function(e) {
-                    e.preventDefault();
-                    $(".playlist__link").removeClass("selected");
-                    $("#playlist__iframe").attr("src", $(this).attr("data-src"));
-                    $(this).addClass("selected");
-                });
-            </script>
         </article>
     </div>
 </section>

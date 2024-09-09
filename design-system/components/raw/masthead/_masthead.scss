@@ -8,6 +8,14 @@
     background-color: $burgundy;
   }
 
+  &--grey {
+    background-color: $grey-50-pc;
+
+    & .title {
+      color: $dark-blue!important;
+    }
+  }
+
   &__bg {
     position: absolute;
     top: 0;
@@ -29,6 +37,12 @@
         object-fit: cover;
         object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
       }
+    }
+  }
+
+  @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+    &__img {
+      margin-bottom: -$spacing-3xl;
     }
   }
 
@@ -147,31 +161,40 @@
     margin-right: $spacing-md;
   }
 
-  &__course-divider {
+  &__course-info {
     display: flex;
-    justify-content: flex-end;
+  }
 
-    & img {
-      @supports (object-fit: cover) {
-        position: absolute;
-        top: 0;
-        right: 0;
+  @media (max-width: map_get($breakpoint-stages, 'tablet')) {
+    &__course-info {
+      flex-direction:column-reverse;
+    }
+
+    &__course-hero {
+      margin-left: -$spacing-xl;
+      margin-right: -$spacing-xl;
+    }
+  }
+
+  @media (min-width: map_get($breakpoint-stages, 'tablet')) {
+    &__course-info {  
+      & > div {
+        width: 50%;
+      }
+
+      & img {
         height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+        position: absolute;
+        max-width: none;
+        left: 15%;
+        z-index: -1;
       }
     }
   }
 
-  &__course-img {
-    width: 50%;
-    position: relative;
-  }
-
-  &__course-info {
-    padding: 0 2rem 0 10%;
-    max-width: 43rem;
+  &__course-options {
+    background:  $dark-blue;
+    padding-right: $spacing-xl;
 
     & label {
       margin: $spacing-lg 0 $spacing-sm;
@@ -180,6 +203,12 @@
     & .title {
       margin: $spacing-2xl 0 0 0;
     }
+
+    & select.one-item {
+      background: white;
+    }
+
+
   }
 
   @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
@@ -191,6 +220,16 @@
         }
       }
     }
+  }
+}
+
+.masthead--with-image {
+  & .masthead__inner {
+    padding: 2rem 0 $spacing-xl;
+  }
+
+  & h1 {
+    margin-top: 8rem;
   }
 }
 

@@ -1,6 +1,9 @@
 /** Calculate the luminance for a color. See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests */
 /** Calculate the contrast ratio between two colors. See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests */
 /** Determine whether to use dark or light text on top of given color. Returns black for dark text and white for light text. */
+/*$primary:                       $dark-blue;
+$secondary:                     $burgundy;
+$tertiary:                      $grey;*/
 /*@mixin align-wide {
   max-width: none;
   width: calc(100vw - 2.4rem);
@@ -51,7 +54,9 @@ h1, h2 { margin: 0 0 1.5rem; }
 
 h3, h4, h5, h6 { margin: 0 0 0.5rem; }
 
-h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 0; }
+h1 + h2, h2 + h3, h4 + h5, h5 + h6 { margin-top: 0; }
+
+h3 + h4 { margin-top: 1.5rem; }
 
 h1, .h1 { font-size: 2rem; }
 
@@ -228,7 +233,7 @@ a.tag:hover { text-decoration: underline; color: black; }
 
 .button--grey:hover, .button--grey:focus { color: white; }
 
-.button--outline { color: #c4ff36; border: 0.2em solid #c4ff36; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #c4ff36 50%); }
+.button--outline { color: black; border: 0.2em solid #c4ff36; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #c4ff36 50%); }
 
 .button--outline:hover, .button--outline:focus, .button--outline:active { color: black; }
 

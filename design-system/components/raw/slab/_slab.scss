@@ -40,7 +40,7 @@
       background-color: #{$value};
       @if (choose-contrast-color($value) == white) {
         color: white;
-        & h2 {
+        & a:not(.button), & h2 {
           color: white;
         }
       }

@@ -2,7 +2,7 @@
   display: inline-block;
   color: #000;
   margin: 0 0 $spacing-xs;
-  padding: $spacing-xs $spacing-sm;
+  padding: $spacing-xs $spacing-sm $spacing-xs 0;
 
   &.has-solid-bg {
     background: $grey-50-pc;
