@@ -2458,11 +2458,11 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 h2.playlist__title { color: #c4ff36 !important; }
 
-a.playlist__link { display: block; padding: 0.75rem; text-decoration: none; color: white; transition: all 125ms; }
+a.playlist__link { display: block; padding: 0.75rem 0.75rem 0.75rem 3rem; text-decoration: none; color: white; transition: all 125ms; background-image: url(../images/icons/icon-play-circle-red.svg); background-position: 0.5rem center; background-repeat: no-repeat; background-size: 2rem; }
 
-a.playlist__link.selected { color: #170d38; background: #c4ff36; }
+a.playlist__link.selected { color: #170d38 !important; background-color: #c4ff36; }
 
-a.playlist__link:hover { color: #170d38; background: #E0DFE8; }
+a.playlist__link:hover { color: #170d38 !important; background-color: #E0DFE8; }
 
 blockquote, .blockquote { position: relative; display: table; margin: 2rem 0; padding: 0; font-size: 1.25em; line-height: 1.6; }
 
