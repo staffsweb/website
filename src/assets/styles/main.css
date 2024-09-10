@@ -1830,7 +1830,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .course-search { background: #170d38 url("../images/course-search-bg.svg") right top no-repeat; background-size: 300px; padding: 4rem; }
 
-.course-search, .course-search a { color: white; }
+.course-search, .course-search a, .course-search h2 { color: white; }
 
 .course-search__keywords { display: block; margin-bottom: 1rem; }
 
