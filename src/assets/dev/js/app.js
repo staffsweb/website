@@ -7024,6 +7024,25 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
         });
       }
     });
+    $(searchField).on('keyup', function (e) {
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=' + searchField.val();
+
+        if (window.location != window.parent.location) {
+          window.parent.location = targetUrl;
+        } else {
+          window.location = targetUrl;
+        }
+      }
+
+      e.preventDefault();
+    });
   };
 
   var courseSearchInit = function courseSearchInit() {
