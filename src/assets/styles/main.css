@@ -1326,10 +1326,6 @@ iframe { border: none; }
 
 .header-site .site-logo { justify-self: flex-start; margin-right: auto; width: 30%; max-width: 210px; min-width: 166px; }
 
-.header-site .site-logo img { transition: all 200ms; }
-
-@media (min-width: 70rem) { .header-site .site-logo img { position: relative; z-index: 100; } }
-
 .toggle-megaNav, .toggle-search-site { display: block; justify-self: flex-end; align-self: center; height: 3rem; width: 3rem; margin: 0.75rem 0 0.75rem 0.75rem; padding: 0; border: 0; z-index: 2; cursor: pointer; }
 
 .toggle-megaNav.is-toggled, .toggle-search-site.is-toggled { opacity: 0.5; }
