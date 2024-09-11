@@ -369,7 +369,7 @@
     @media (min-width: $megaNav-full-breakpoint) {
       display: flex;
       flex-wrap: wrap;
-      top: 100%;
+      top: 92%;
       box-shadow: 0 1em 1em rgba(black, 0.15);
 
       &-item {
@@ -395,7 +395,7 @@
       &-list {
         position: relative;
         margin: 0;
-        padding: $spacing-5xl 0 $spacing-md $spacing-md;
+        padding: $spacing-xl 0 $spacing-md $spacing-md;
         min-height: 70vh;
         width: 25%; // yeah I really don't like this either (pt.1), please do feel free to think of a better way of doing this.
         box-sizing: border-box;
@@ -540,7 +540,7 @@
 
           &-list {
             margin: 0;
-            padding: $spacing-5xl 0 $spacing-md $spacing-md;
+            padding: $spacing-xl 0 $spacing-md $spacing-md;
             min-height: 60vh;
             box-sizing: border-box;
             columns: unset;
@@ -586,7 +586,7 @@
     //display: none;
 
     @media (min-width: $megaNav-full-breakpoint) {
-      padding-top: 6.7rem;
+      //padding-top: 6.7rem;
     }
 
   }
@@ -598,7 +598,7 @@
       left: 100%;
       right: 0;
       width: 200%;
-      padding-top: 6.7rem;
+      //padding-top: 6.7rem;
     }
 
   }
