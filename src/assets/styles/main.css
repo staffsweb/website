@@ -1332,12 +1332,20 @@ iframe { border: none; }
 
 .toggle-megaNav__label, .toggle-search-site__label { display: block; text-align: center; font-size: 0.6875rem; padding-top: 1.75rem; }
 
-input.search-site { width: 7rem; transition: all 200ms; background-color: #E0DFE8; background-image: url(../images/bg-search-box.svg); background-repeat: no-repeat; background-size: 1rem; background-position: 0.25rem center; padding-left: 1.5rem; margin-left: 1rem; }
+input.search-site { background-color: #E0DFE8; background-image: url(../images/bg-search-box.svg); background-repeat: no-repeat; background-size: 1rem; background-position: 0.25rem center; padding-left: 1.5rem; margin-left: 1rem; width: 100%; }
 
-input.search-site.is-open { width: 100%; }
-
-@media (min-width: 70rem) { input.search-site { height: 2rem; order: 3; }
+@media (min-width: 70rem) { input.search-site { height: 2rem; }
   input.search-site__label { display: block; position: absolute; left: -9999em; clip: rect(0 0 0 0); } }
+
+.site-search { position: relative; width: 7rem; transition: all 200ms; }
+
+.site-search__options { position: absolute; right: -9999em; top: 0; }
+
+.site-search.is-open { width: 100%; }
+
+.site-search.is-open .site-search__options { right: 0; }
+
+@media (min-width: 70rem) { .site-search { order: 3; } }
 
 .toggle-megaNav { background: url("../images/icons/icon-hamburger.svg") center 0.25rem no-repeat; background-size: 1.5rem 1.5rem; }
 

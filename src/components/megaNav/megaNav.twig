@@ -2,11 +2,18 @@
   <div class="wrap">
     <div class="header-site__flexContainer">
       <a class="site-logo" title="Home" href="/">
-        <img src="{{ '/images/logo-uos.png' | path }}" alt="Universityof Staffordshire Logo" class="no-lazy-load">
+        <img src="{{ '/images/logo-uos.png' | path }}" alt="University of Staffordshire Logo" class="no-lazy-load">
       </a>
 
       <button class="toggle-megaNav" id="toggle-megaNav" aria-controls="megaNav"><span class="toggle-megaNav__label">Menu</span></button>
-      <input class="search-site" id="search-site" type="search" placeholder="Search" />
+      
+      <div id="site-search" class="site-search">
+        <input class="search-site" id="search-site" type="search" placeholder="Search" />
+        <div class="site-search__options">
+          <input name="site-search__collection" type="radio" checked />Courses
+          <input name="site-search__collection" type="radio" />all of staffs.ac.uk
+        </div>
+      </div>
 
       <nav class="megaNav" id="megaNav" role="navigation">
         <div class="megaNav__controls">
