@@ -2832,7 +2832,7 @@ a.tile:focus { outline-width: 3px; outline-color: #ef4a3b; z-index: 2; }
 
 .tile-group:hover a.tile:hover .tile__figure img { -webkit-filter: grayscale(0); filter: grayscale(0); }
 
-.title { position: relative; --background: #ef4a3b; --color: white; max-width: 42em; margin-bottom: 1.5rem; margin-right: 1rem; }
+.title { position: relative; --background: #170d38; --color: white; max-width: 42em; margin-bottom: 1.5rem; margin-right: 1rem; }
 
 .title + .title { margin-top: -1rem; }
 
@@ -2840,9 +2840,13 @@ a.tile:focus { outline-width: 3px; outline-color: #ef4a3b; z-index: 2; }
 
 .slab .title, .mini-template-grid .title { margin-top: 0; }
 
-.title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #ef4a3b; background: var(--background, #ef4a3b); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #ef4a3b, 0.5rem 0 0 0 #ef4a3b; box-shadow: -0.5rem 0 0 0 var(--background, #ef4a3b), 0.5rem 0 0 0 var(--background, #ef4a3b); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.tile .title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #170d38; background: var(--background, #170d38); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #170d38, 0.5rem 0 0 0 #170d38; box-shadow: -0.5rem 0 0 0 var(--background, #170d38), 0.5rem 0 0 0 var(--background, #170d38); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
-.title__highlight a { color: white; color: var(--color); }
+.tile .title__highlight a { color: white; color: var(--color); }
+
+.side-nav .title__highlight { --background: #ef4a3b; --color: white; position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #ef4a3b; background: var(--background, #ef4a3b); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #ef4a3b, 0.5rem 0 0 0 #ef4a3b; box-shadow: -0.5rem 0 0 0 var(--background, #ef4a3b), 0.5rem 0 0 0 var(--background, #ef4a3b); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+.side-nav .title__highlight a { color: white; color: var(--color); }
 
 .title--bg-white { --background: white; --color: black; }
 
