@@ -7010,7 +7010,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   var siteSearchInit = function siteSearchInit() {
     var megaNav = $('#megaNav');
     var searchField = $('#search-site');
-    searchField.on('focus focusout', function () {
+    searchField.on('focus focusout', function (e) {
       var searchIsOpen = $('#site-search').hasClass('is-open');
 
       if (searchIsOpen) {
@@ -7023,6 +7023,10 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
           $('#site-search').addClass('is-open');
         });
       }
+    });
+    $('#site-search__collection--courses', '#site-search__collection--main').on('click change', function () {
+      searchField.focus().select();
+      alert('Clicked!');
     });
     $(searchField).on('keyup', function (e) {
       var keycode = e.keyCode ? e.keyCode : e.which;

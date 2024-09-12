@@ -411,19 +411,24 @@ if(anchorTarget == "#courses__postgraduate")
     let megaNav = $('#megaNav');
     let searchField = $('#search-site');
 
-    searchField.on('focus focusout', function () {
-        var searchIsOpen = $('#site-search').hasClass('is-open');
+    searchField.on('focus focusout', function (e) {
+      var searchIsOpen = $('#site-search').hasClass('is-open');
 
-        if(searchIsOpen) {
-          $('#site-search').removeClass('is-open');
-          setTimeout(function() {
-            megaNav.fadeIn(500);
-          }, 200);
-        } else {
-          megaNav.fadeOut(500, function() {
-            $('#site-search').addClass('is-open');
-          });
-        }
+      if(searchIsOpen) {
+        $('#site-search').removeClass('is-open');
+        setTimeout(function() {
+          megaNav.fadeIn(500);
+        }, 200);
+      } else {
+        megaNav.fadeOut(500, function() {
+          $('#site-search').addClass('is-open');
+        });
+      }
+    });
+
+    $('#site-search__collection--courses', '#site-search__collection--main').on('click change', function() {
+      searchField.focus().select();
+      alert('Clicked!');
     });
 
     $(searchField).on('keyup', function (e) {
