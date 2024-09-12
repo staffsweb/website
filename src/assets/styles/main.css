@@ -2000,7 +2000,7 @@ hr { position: relative; }
 
 .iconBox__content > :last-child { margin-bottom: 0; }
 
-.iconBox__title { margin: 0 0 0.75rem; opacity: 0.75; }
+.iconBox__title { margin: 0 0 0.75rem; }
 
 .iconBox--facebook { background: #3b5998; color: white; }
 
