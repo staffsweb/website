@@ -24,7 +24,6 @@ $card__internal-spacing: $spacing-sm;
   }
 
   &__content {
-    padding: 0 calc(#{$card__internal-spacing} + 2.5%);
 
     > :first-child {
       margin-top: 0;
