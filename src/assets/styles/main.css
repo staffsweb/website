@@ -1688,6 +1688,8 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--testimonial { padding-bottom: 0.75rem; }
 
+.card--testimonial .blockquote__figure img { border-bottom: 0.25rem solid var(--accent-color); }
+
 .card--pullquote { padding-bottom: 0.75rem; margin-left: 5%; }
 
 .card--pullquote:before { content: ''; display: block; float: left; width: 5%; height: 0; padding-bottom: 5%; margin-left: -5%; background: #fff url("../images/icons/icon-quote-primary.svg") no-repeat center center; background-size: contain; }

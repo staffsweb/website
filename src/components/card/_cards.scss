@@ -184,6 +184,10 @@ a.card {
 
 .card--testimonial {
   padding-bottom: $card__internal-spacing;
+
+  .blockquote__figure img {
+    border-bottom: $spacing-2xs solid var(--accent-color);
+  }
 }
 
 .card--pullquote {
