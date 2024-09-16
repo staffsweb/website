@@ -1600,6 +1600,8 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card p { margin-bottom: 0.75rem; }
 
+.card__content { padding: 0 calc(0.75rem + 2.5%); }
+
 .card__content > :first-child { margin-top: 0; }
 
 .card__content > :last-child { margin-bottom: 0; }
