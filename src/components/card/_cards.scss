@@ -199,10 +199,11 @@ a.card {
     display: block;
     float: left;
     width: 5%;
+    margin-right: 1%;
     height: 0;
     padding-bottom: 5%;
     margin-left: -5%;
-    background: #fff url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
+    background: url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
     background-size: contain;
   }
 

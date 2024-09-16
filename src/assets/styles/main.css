@@ -1626,13 +1626,13 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--red { --accent-color: #ef4a3b; }
 
-.card--pink { --accent-color: #d5035e; }
+.card--pink { --accent-color: #170d38; }
 
-.card--maroon { --accent-color: #970048; }
+.card--maroon { --accent-color: #8a0045; }
 
-.card--slate { --accent-color: #394851; }
+.card--slate { --accent-color: #170d38; }
 
-.card--blue-ldn { --accent-color: #144196; }
+.card--blue-ldn { --accent-color: #170d38; }
 
 .card--burgundy { --accent-color: #8a0045; }
 
@@ -1692,7 +1692,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--pullquote { padding-bottom: 0.75rem; margin-left: 5%; }
 
-.card--pullquote:before { content: ''; display: block; float: left; width: 5%; height: 0; padding-bottom: 5%; margin-left: -5%; background: #fff url("../images/icons/icon-quote-primary.svg") no-repeat center center; background-size: contain; }
+.card--pullquote:before { content: ''; display: block; float: left; width: 5%; margin-right: 1%; height: 0; padding-bottom: 5%; margin-left: -5%; background: url("../images/icons/icon-quote-primary.svg") no-repeat center center; background-size: contain; }
 
 .card--pullquote.card--red:before { background: #fff url("../images/icons/icon-quote-red.svg") no-repeat center center; background-size: contain; }
 
