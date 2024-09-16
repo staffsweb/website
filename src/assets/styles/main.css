@@ -1432,7 +1432,7 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .slider--announcements .slick-slide { padding-right: 2rem; }
 
-.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 0.5rem; padding: 2rem calc(0.75rem + 2.5%) 1rem; }
+.banner { position: relative; display: flex; margin-bottom: 2rem; color: #fff; border-radius: 0.5rem; }
 
 .banner--bg-burgundy { background: #8a0045; color: white; }
 
@@ -1456,15 +1456,17 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .banner--bg-dark-blue .banner__theme svg, .banner--bg-neon .banner__theme svg { fill: #c4ff36; }
 
-.banner__bg { max-width: 50%; overflow-x: hidden; margin-right: 1.5rem; }
+.banner--with-image { border-radius: 0; }
 
-.banner__bg img { display: block; width: auto; height: 100%; max-height: 100%; }
+.banner--with-image .banner__body { width: 50%; }
+
+.banner__bg { width: 50%; background-size: cover; background-position: right top; }
 
 .banner__theme { position: absolute; right: 0; bottom: 0; width: 30%; height: 70%; overflow: hidden; z-index: 0; }
 
 .banner__theme svg { height: 100%; width: 100%; -o-object-position: right bottom; object-position: right bottom; -o-object-fit: contain; object-fit: contain; fill: white; }
 
-.banner__body { position: relative; align-self: flex-end; box-sizing: border-box; width: 70%; z-index: 1; }
+.banner__body { position: relative; align-self: flex-end; box-sizing: border-box; width: 70%; z-index: 1; padding: 2rem calc(0.75rem + 2.5%) 1rem; }
 
 .banner .wrap .banner__body { padding-left: 0; padding-right: 0; }
 

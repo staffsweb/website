@@ -4,7 +4,6 @@
   margin-bottom: $spacing-xl;
   color: #fff;
   border-radius: $spacing-xs;
-  padding: #{$spacing-xl} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
@@ -31,17 +30,18 @@
     fill: $neon;
   }
 
-  &__bg {
-    max-width: 50%;
-    overflow-x: hidden;
-    margin-right: $spacing-lg;
-
-    & img {
-      display: block;
-      width: auto;
-      height: 100%;
-      max-height: 100%;
+  &--with-image {
+    border-radius: 0;
+    
+    .banner__body {
+      width: 50%;
     }
+  }
+
+  &__bg {
+    width: 50%;
+    background-size: cover;
+    background-position: right top;
   }
 
   &__theme {
@@ -68,6 +68,7 @@
     box-sizing: border-box;
     width: 70%;
     z-index: 1;
+    padding: #{$spacing-xl} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
   }
 
   .wrap {
