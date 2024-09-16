@@ -1668,6 +1668,12 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--light svg { fill: white; }
 
+.card--bg-offwhite { background-color: #f1f1f1; }
+
+.card--bg-offwhite .card__content { padding: 1.5rem; }
+
+.card--bg-offwhite .card__figure { margin-bottom: 0; }
+
 a.card { text-decoration: none; }
 
 a.card .card__title { color: #170d38; color: var(--accent-color); }

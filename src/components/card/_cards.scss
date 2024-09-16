@@ -127,6 +127,18 @@ $card__internal-spacing: $spacing-sm;
     }
 
   }
+
+  &--bg-offwhite {
+    background-color: $offwhite;
+
+    & .card__content {
+      padding: $card__internal-spacing * 2;
+    }
+
+    & .card__figure {
+      margin-bottom: 0;
+    }
+  }
 }
 
 a.card {
