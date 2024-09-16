@@ -59,8 +59,8 @@ $granite--light-ldn:            mix($granite--ldn, white, 85%);
 
 // Theme Colours:
 
-$primary:                       $red;
-$secondary:                     $dark-blue;
+$primary:                       $dark-blue;
+$secondary:                     $burgundy;
 $tertiary:                      $digital-blue;
 /*$primary:                       $dark-blue;
 $secondary:                     $burgundy;
@@ -106,8 +106,8 @@ $utils-text-colors: (
 // they live here (for the time being) so they can be overridden before components are imported for themes (London)
 
 $theme-colours: (
-  'primary' : $red,
-  'secondary' : $dark-blue,
+  'primary' : $dark-blue,
+  'secondary' : $burgundy,
   'tertiary' : $digital-blue
 );
 
