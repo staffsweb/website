@@ -1,32 +1,24 @@
-<div class="masthead">
+<div class="masthead  masthead--home">
+  <div class="masthead__knot"></div>
   <div class="masthead__inner">
     <div class="masthead__bg">
       {% if bgImg %}
         {{ bgImg }}
       {% else %}
-        <img src="{{ ('/images/masthead0.jpg') | path }}" style="object-position: 55% 20%"/>
+        <img src="{{ ('/images/masthead-home-ldn.jpg') | path }}" style="object-position: 55% 20%"/>
       {% endif %}
     </div>
-    {% include '@title' with {
-      text: 'Shortlisted for "University of the year"',
-      modifiers: ['has-tail'],
-      textElement: 'h1',
-      textElementStyle: 'h2',
-      animate: true
-    } %}
-    <div class="masthead__lower">
-    <div class="wrap">
-      {% include '@title' with {
-        text: '- The Times and The Sunday Times Good University Guide 2020',
-        modifiers: ['bg-white', 'has-tail'],
-        textElement: 'h6',
-        animate: true
-      } %}
-      {% include '@button' with {
-        text: 'Book an open day',
-      } %}
+  </div>
+  <div class="masthead__lower">
+      <div class="wrap">
+        <div class="title">
+          <h1>Your place of possibility</h1>
+        </div>
+        <p>University of Staffordshire London is a lively ecosystem designed for the curious, the bold, and the ambitious.</p>
+
+        <a href="" class="button">
+            Book an open day
+        </a>
+      </div>
     </div>
-  </div>
-  </div>
-    
 </div>

@@ -2168,23 +2168,9 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead--grey .title { color: #170d38 !important; }
 
-.masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
-
-@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
-
 @media (min-width: 65rem) { .masthead__img { margin-bottom: -3rem; } }
 
 .masthead .title { color: white; max-width: 30rem; }
-
-.masthead__knot { position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
-
-@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__knot img { position: absolute; top: 0; right: 0; -o-object-fit: contain; object-fit: contain; } }
-
-.masthead__lower { background: #304dfc; z-index: 1; }
-
-.masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
-
-@media (min-width: 60rem) { .masthead__inner { position: static; } }
 
 .masthead__overlay { align-self: flex-end; align-content: flex-end; width: 100%; padding: 1.5rem 0 0; box-sizing: border-box; background: black; color: white; z-index: 1; }
 
@@ -2227,6 +2213,26 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @media (max-width: 35rem) { .masthead--profile .masthead__inner { padding: 8rem 0 2rem; }
   .masthead--profile .masthead__inner figure { margin: 2rem 0 2rem; } }
+
+.masthead--home { min-height: 350px; position: relative; }
+
+.masthead--home .masthead__inner { position: relative; }
+
+.masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
+
+.masthead__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 1; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: contain; }
+
+.masthead__knot .title { position: absolute; bottom: 5%; width: 60%; right: 10%; }
+
+.masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
+
+@media (min-width: 60rem) { .masthead__inner { position: static; } }
+
+.masthead__lower { width: 100%; position: relative; background: #304dfc; padding-top: 1.5rem; color: white; z-index: 2; }
+
+.masthead__lower .title { text-transform: uppercase; }
 
 .masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
 
