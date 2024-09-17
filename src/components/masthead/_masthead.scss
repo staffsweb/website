@@ -193,7 +193,7 @@
     }
   }
 
-  &__knot {
+  &__knot-overlay {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -227,7 +227,7 @@
     }
   }
 
-  &__lower {
+  &__story {
     width: 100%;
     position: relative;
     background: $digital-blue;

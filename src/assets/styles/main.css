@@ -2224,17 +2224,17 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 1; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: contain; }
+.masthead__knot-overlay { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 1; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: contain; }
 
-.masthead__knot .title { position: absolute; bottom: 5%; width: 60%; right: 10%; }
+.masthead__knot-overlay .title { position: absolute; bottom: 5%; width: 60%; right: 10%; }
 
 .masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
 
 @media (min-width: 60rem) { .masthead__inner { position: static; } }
 
-.masthead__lower { width: 100%; position: relative; background: #304dfc; padding-top: 1.5rem; color: white; z-index: 2; }
+.masthead__story { width: 100%; position: relative; background: #304dfc; padding-top: 1.5rem; color: white; z-index: 2; }
 
-.masthead__lower .title { text-transform: uppercase; }
+.masthead__story .title { text-transform: uppercase; }
 
 .masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
 
