@@ -57,7 +57,7 @@
   &--outline {
     @include button--outline;
 
-    .slab--bg-slate & {
+    .slab--bg-slate &, .slab--bg-teal & {
       color: white;
     }
   }
