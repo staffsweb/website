@@ -1701,6 +1701,8 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--contact ul.list--icon-bullets li a { text-decoration: none !important; border-bottom: 1px solid #dddddd; }
 
+.card--course { border-left: 0.25rem solid #170d38; border-color: var(--accent-color); }
+
 .card--profile { padding: 1rem; /* Needs: grey and teal grey and burgundy teal and neon burgundy and neon */ }
 
 .card--profile.card--grey-with-teal { background: #f0f1f2; border-bottom: 0.25rem solid #006b82; margin-left: 2.5rem; }

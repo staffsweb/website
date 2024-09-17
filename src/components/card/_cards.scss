@@ -254,7 +254,8 @@ a.card {
 }
 
 .card--course {
-  // this exists, but doesn't need anything specific (yet)
+  border-left: $border-accent-width solid $primary;
+  border-color: var(--accent-color);
 }
 
 .card--result {
