@@ -32,16 +32,54 @@
 
   &--with-image {
     border-radius: 0;
-    
-    .banner__body {
-      width: 50%;
+
+    & .title__highlight {
+      position: relative;
+      display: inline;
+      padding: $spacing-2xs $spacing-sm;
+      line-height: 1.4;
+      background: white;
+    }
+
+    & .banner__cta, & .hgroup {
+      text-align: center;
+    }
+
+    @each $name, $value in $banner-bg-colors {
+      &.banner--bg-#{$name} {  
+        & .title__highlight {
+          color: #{$value};
+        }
+      }
+    }
+
+    @media (min-width: map_get($breakpoint-stages, 'tablet')) {  
+      .banner__body {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: map_get($breakpoint-stages, 'tablet')) {  
+      display: block;
+
+      .hgroup {
+        margin-top: -$spacing-2xl;
+      }
+
+      .banner__body {
+        width: 100%;
+      }
+      .banner__bg {
+        width: 100%;
+        height: 200px;
+      }
     }
   }
 
   &__bg {
     width: 50%;
     background-size: cover;
-    background-position: right top;
+    background-position: center center;
   }
 
   &__theme {
