@@ -1,25 +1,21 @@
-<div class="masthead  masthead--home">
-  <div class="masthead__knot-overlay">
-  </div>
-  <div class="masthead__inner">
-    <div class="masthead__bg">
-      {% if bgImg %}
-        {{ bgImg }}
-      {% else %}
-        <img src="{{ ('/images/masthead-home-ldn.jpg') | path }}" style="object-position: 55% 20%"/>
-      {% endif %}
-    </div>
-  </div>
-  <div class="masthead__story">
-      <div class="wrap">
-        <div class="title">
-          <h1>Your place of possibility</h1>
-        </div>
-        <p>University of Staffordshire London is a lively ecosystem designed for the curious, the bold, and the ambitious.</p>
+<article class="masthead-home">
 
-        <a href="" class="button">
-            Book an open day
-        </a>
+  <div class="masthead-home__knot"></div>
+
+  <div class="masthead-home__hero">
+      <img src="{{ ('/images/masthead-home-ldn.jpg') | path }}" style="object-position: 55% 20%"/>
+  </div>
+
+  <div class="masthead-home__story">
+    <div class="wrap">
+      <div class="title">
+        <h1>Your place of possibility</h1>
       </div>
+      <p>University of Staffordshire London is a lively ecosystem designed for the curious, the bold, and the ambitious.</p>
+
+      <a href="" class="button">
+          Book an open day
+      </a>
     </div>
-</div>
+  </div>
+</article>

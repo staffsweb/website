@@ -2216,25 +2216,31 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 @media (max-width: 35rem) { .masthead--profile .masthead__inner { padding: 8rem 0 2rem; }
   .masthead--profile .masthead__inner figure { margin: 2rem 0 2rem; } }
 
-.masthead--home { min-height: 350px; position: relative; }
+.masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
 
-.masthead--home .masthead__inner { position: relative; }
+@media (min-width: 60rem) { .masthead__inner { position: static; } }
 
 .masthead__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; overflow: hidden; }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead__knot-overlay { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 1; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: contain; }
+.masthead-home { display: flex; }
 
-.masthead__knot-overlay .title { position: absolute; bottom: 5%; width: 60%; right: 10%; }
+.masthead-home .masthead__inner { position: relative; }
 
-.masthead__inner { display: flex; flex-wrap: wrap; min-height: 35vmin; padding: 12rem 0 2rem; align-self: flex-end; align-content: flex-end; width: 100%; position: relative; box-sizing: border-box; }
+.masthead-home__hero { height: 25vw; min-height: 200px; max-height: 300px; }
 
-@media (min-width: 60rem) { .masthead__inner { position: static; } }
+@supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead-home__hero img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead__story { width: 100%; position: relative; background: #304dfc; padding-top: 1.5rem; color: white; z-index: 2; }
+.masthead-home__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 5; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: cover; /*@media (min-width: map_get($breakpoint-stages, 'tablet-wide')) { background-size: contain; }*/ }
 
-.masthead__story .title { text-transform: uppercase; }
+.masthead-home .no-show { opacity: 0; }
+
+.masthead-home__story { width: 100%; padding-top: 1.5rem; color: white; margin-top: 40vw; z-index: 30; background: #304dfc; }
+
+.masthead-home__story .title { text-transform: uppercase; }
+
+.masthead-home__story .title > h1 { font-weight: 800; }
 
 .masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
 

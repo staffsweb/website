@@ -159,13 +159,19 @@
     }
   }
 
-  // CG: For home page styles
-  &--home {
-    min-height: 350px;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 35vmin;
+    padding: 12rem 0 $spacing-xl;
+    align-self: flex-end;
+    align-content: flex-end;
+    width: 100%;
     position: relative;
+    box-sizing: border-box;
 
-    .masthead__inner {
-      position: relative;
+    @media (min-width: $overlay-breakpoint) {
+      position: static;
     }
   }
 
@@ -193,50 +199,68 @@
     }
   }
 
-  &__knot-overlay {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: url('../images/masthead-knot-homepage.svg') right bottom no-repeat;
-    background-size: contain;
-
-    .title {
-        position: absolute;
-        bottom: 5%;
-        width: 60%;
-        right: 10%;
-    }
-  }
-
-  &__inner {
+  // CG: For home page masthead
+  &-home {
     display: flex;
-    flex-wrap: wrap;
-    min-height: 35vmin;
-    padding: 12rem 0 $spacing-xl;
-    align-self: flex-end;
-    align-content: flex-end;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-
-    @media (min-width: $overlay-breakpoint) {
-      position: static;
+    
+    .masthead__inner {
+      position: relative;
     }
-  }
 
-  &__story {
-    width: 100%;
-    position: relative;
-    background: $digital-blue;
-    padding-top: $spacing-lg;
-    color: white;
-    z-index: 2;
+    &__hero {
+      height: 25vw;
+      min-height: 200px;
+      max-height: 300px;
 
-    & .title {
-      text-transform: uppercase;
+      img {
+        @supports (object-fit: cover) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+        }
+      }
+    }
+
+    &__knot {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      background: url('../images/masthead-knot-homepage.svg') right bottom no-repeat;
+      background-size: cover;
+
+      /*@media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        background-size: contain;
+      }*/
+    }
+
+    .no-show {
+      opacity: 0;
+    }
+
+    &__story {
+      width: 100%;
+      padding-top: $spacing-lg;
+      color: white;
+      margin-top: 40vw;
+      z-index: 30;
+      background: $digital-blue;
+
+      & .title {
+        text-transform: uppercase;
+
+        & > h1 {
+          font-weight: 800;
+        }
+      }
     }
   }
 }
