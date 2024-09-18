@@ -280,9 +280,22 @@ a.card {
       @if (choose-contrast-color(map_get($value, "background")) == white) {
         color: white;
 
-        & h3, & .strong {
-          color: map_get($value, "accent-color");
+        & .button {
+          color: white;
         }
+      }
+
+      & .button--outline {
+        color: map_get($value, "accent-color");
+        border-color: map_get($value, "accent-color");
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      & .title, & .strong {
+        color: map_get($value, "accent-color");
       }
     }
   }
@@ -292,8 +305,13 @@ a.card {
   }
 
   & .card__figure {
-    margin-left: -$spacing-2xl;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 15rem;
+
+    /*@media (max-width: (map_get($breakpoint-stages, 'tablet-wide'))) {
+      flex: 1 1 25%;
+    }*/
   }
 
   & .title {
