@@ -2237,7 +2237,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
   .masthead__course-hero { margin-left: -2rem; margin-right: -2rem; } }
 
 @media (min-width: 45rem) { .masthead__course-info > div { width: 50%; }
-  .masthead__course-info img { height: 100%; position: absolute; max-width: none; left: 15%; z-index: -1; } }
+  .masthead__course-info img { height: 100%; position: absolute; max-width: none; left: 40%; z-index: -1; } }
 
 .masthead__course-options { background: #170d38; padding-right: 2rem; }
 
