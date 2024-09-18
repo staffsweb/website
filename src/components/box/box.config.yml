@@ -37,3 +37,6 @@ variants:
     label: "Open day dates"
     context:
       background: open-day-dates
+
+  - name: abstitle
+    label: "AbsPos Title"

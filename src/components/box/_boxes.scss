@@ -73,7 +73,7 @@
   }
 
   &--bg-greyblue-superlight {
-    background: $greyblue--superlight;
+    background: $grey-50-pc;
   }
 
   &--bg-dark-blue, &--bg-slate {
@@ -100,6 +100,46 @@
 
   &--bg-offwhite-gradient {
     background: radial-gradient(45% 660% at 50% 50%, mix(#e3e3e3, white, 30%) 0%, mix(#ccc, white, 30%) 100%);
+  }
+}
+
+// -- VARIANTS
+
+.box--with-abstitle {
+  // absolutely positioned title
+
+  .box__content:first-child {
+    padding-top: calc(#{$spacing-3xl} + 2.5%);;
+  }
+
+  .box__abstitle {
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+  }
+
+  .title__highlight {
+    position: relative;
+    display: inline;
+    left: $spacing-xs;
+    padding: 0.25rem;
+    line-height: 1.4;
+    background: $dark-blue;
+    background: var(--background, #{$dark-blue});
+    color: $neon;
+    box-shadow: -$spacing-xs 0 0 0 #{$dark-blue}, $spacing-xs 0 0 0 #{$dark-blue};
+    box-shadow: -$spacing-xs 0 0 0 var(--background, #{$dark-blue}), $spacing-xs 0 0 0 var(--background, #{$dark-blue});
+    box-decoration-break: clone;
+
+    a {
+      color: $neon;
+    }
+  }
+
+  a {
+    color: black;
+    font-weight: 600;
+    border-color: #ccc!important;
   }
 }
 
