@@ -201,16 +201,25 @@
 
   // CG: For home page masthead
   &-home {
-    display: flex;
-    
+    position: relative;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
     .masthead__inner {
       position: relative;
     }
 
     &__hero {
-      height: 25vw;
-      min-height: 200px;
-      max-height: 300px;
+      height: 400px;
+      @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        height: 500px;
+      }
+
+      width: 100%;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
 
       img {
         @supports (object-fit: cover) {
@@ -233,33 +242,51 @@
       bottom: 0;
       top: 0;
       left: 0;
-      z-index: 5;
-      background: url('../images/masthead-knot-homepage.svg') right bottom no-repeat;
-      background-size: cover;
+      z-index: 3;
+      background: url('../images/bg-knot.svg') right top no-repeat;
+      background-size: 50%;
 
-      /*@media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+      @media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        background-size: 70%;
+      }
+
+      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        background-position: right bottom;
         background-size: contain;
-      }*/
+      }
     }
 
     .no-show {
       opacity: 0;
+      z-index: -1;
     }
 
     &__story {
       width: 100%;
       padding-top: $spacing-lg;
       color: white;
-      margin-top: 40vw;
-      z-index: 30;
-      background: $digital-blue;
 
       & .title {
         text-transform: uppercase;
+        max-width: 70%;
 
         & > h1 {
           font-weight: 800;
         }
+      }
+
+      &--background {
+        position: relative;
+        background: $digital-blue;
+      }
+
+      &--content {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
       }
     }
   }

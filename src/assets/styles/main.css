@@ -2258,23 +2258,33 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead__bg img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead-home { display: flex; }
+.masthead-home { position: relative; max-width: 1920px; margin-left: auto; margin-right: auto; }
 
 .masthead-home .masthead__inner { position: relative; }
 
-.masthead-home__hero { height: 25vw; min-height: 200px; max-height: 300px; }
+.masthead-home__hero { height: 400px; width: 100%; background-position: center top; background-repeat: no-repeat; background-size: cover; }
+
+@media (min-width: 65rem) { .masthead-home__hero { height: 500px; } }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead-home__hero img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead-home__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 5; background: url("../images/masthead-knot-homepage.svg") right bottom no-repeat; background-size: cover; /*@media (min-width: map_get($breakpoint-stages, 'tablet-wide')) { background-size: contain; }*/ }
+.masthead-home__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 3; background: url("../images/bg-knot.svg") right top no-repeat; background-size: 50%; }
 
-.masthead-home .no-show { opacity: 0; }
+@media (max-width: 65rem) { .masthead-home__knot { background-size: 70%; } }
 
-.masthead-home__story { width: 100%; padding-top: 1.5rem; color: white; margin-top: 40vw; z-index: 30; background: #304dfc; }
+@media (max-width: 35rem) { .masthead-home__knot { background-position: right bottom; background-size: contain; } }
 
-.masthead-home__story .title { text-transform: uppercase; }
+.masthead-home .no-show { opacity: 0; z-index: -1; }
+
+.masthead-home__story { width: 100%; padding-top: 1.5rem; color: white; }
+
+.masthead-home__story .title { text-transform: uppercase; max-width: 70%; }
 
 .masthead-home__story .title > h1 { font-weight: 800; }
+
+.masthead-home__story--background { position: relative; background: #304dfc; }
+
+.masthead-home__story--content { position: absolute; z-index: 10; right: 0; bottom: 0; top: 0; left: 0; }
 
 .masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
 
