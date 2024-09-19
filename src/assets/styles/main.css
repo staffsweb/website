@@ -2268,7 +2268,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) { .masthead-home__hero img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100%; width: 100%; -o-object-fit: cover; object-fit: cover; -o-object-position: 60% 35%; object-position: 60% 35%; } }
 
-.masthead-home__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 3; background: url("../images/bg-knot.svg") right top no-repeat; background-size: 50%; }
+.masthead-home__knot { position: absolute; right: 0; bottom: 0; top: 0; left: 0; z-index: 3; background: url("../images/bg-knot-blue.svg") right top no-repeat; background-size: 50%; }
 
 @media (max-width: 65rem) { .masthead-home__knot { background-size: 70%; } }
 
