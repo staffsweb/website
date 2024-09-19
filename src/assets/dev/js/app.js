@@ -7050,6 +7050,24 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   };
 
   var courseSearchInit = function courseSearchInit() {
+    var searchField = $('#course-search__keywords');
+    $(searchField).on('keyup', function (e) {
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&query=' + searchField.val();
+
+        if (window.location != window.parent.location) {
+          window.parent.location = targetUrl;
+        } else {
+          window.location = targetUrl;
+        }
+      }
+    });
     $('#course-search__submit--ug').on('click', function () {
       var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=undergraduate&query=' + $('#course-search__keywords').val();
 
