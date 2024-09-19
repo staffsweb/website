@@ -411,7 +411,7 @@ if(anchorTarget == "#courses__postgraduate")
     let megaNav = $('#megaNav');
     let searchField = $('#search-site');
 
-    searchField.on('focus focusout', function (e) {
+    searchField.on('focus', function (e) {
       var searchIsOpen = $('#site-search').hasClass('is-open');
 
       if(searchIsOpen) {

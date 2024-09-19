@@ -7010,7 +7010,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   var siteSearchInit = function siteSearchInit() {
     var megaNav = $('#megaNav');
     var searchField = $('#search-site');
-    searchField.on('focus focusout', function (e) {
+    searchField.on('focus', function (e) {
       var searchIsOpen = $('#site-search').hasClass('is-open');
 
       if (searchIsOpen) {

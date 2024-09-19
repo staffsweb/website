@@ -72,6 +72,11 @@
   }
 }
 
+.toggle-search-site {
+  background: url(#{$image-theme-directory-icon}/icon-search.svg) center center no-repeat;
+  background-size: 1.5rem 1.5rem;
+}
+
 input.search-site {
   background-color: $grey-50-pc;
   background-image: url(#{$image-theme-directory}/bg-search-box.svg);
