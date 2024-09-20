@@ -7007,28 +7007,50 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
     }
   };
 
-  var siteSearchInit = function siteSearchInit() {
-    var megaNav = $('#megaNav');
-    var searchField = $('#search-site');
-    searchField.on('focus', function (e) {
-      var searchIsOpen = $('#site-search').hasClass('is-open');
+  var globalSearchInit = function searchInit() {
+    // CG: Show / hide the global search as appropriate
+    $("#global-search-open, #global-search__close").on("click", function (e) {
+      $("#global-search").toggleClass("global-search--open");
+    });
+    $(document).on("keyup", function (e) {
+      if (e.keyCode == 27) {
+        $("#global-search").removeClass("global-search--open");
+      }
+    }); // CG: Show / hide the appropriate global search field
 
-      if (searchIsOpen) {
-        $('#site-search').removeClass('is-open');
-        setTimeout(function () {
-          megaNav.fadeIn(500);
-        }, 200);
+    $("#global-search__options .global-search__scope").on("change", function (e) {
+      var scope = $("#global-search__options .global-search__scope:checked").val();
+
+      if (scope == "courses") {
+        // Show the course search field
+        $("#global-search__keywords--courses").removeClass("visually-hidden");
+        $("#global-search__keywords--whole-site").addClass("visually-hidden");
       } else {
-        megaNav.fadeOut(500, function () {
-          $('#site-search').addClass('is-open');
-        });
+        $("#global-search__keywords--whole-site").removeClass("visually-hidden");
+        $("#global-search__keywords--courses").addClass("visually-hidden");
       }
     });
-    $('#site-search__collection--courses', '#site-search__collection--main').on('click change', function () {
-      searchField.focus().select();
-      alert('Clicked!');
-    });
-    $(searchField).on('keyup', function (e) {
+    /* CG: Build search URLs */
+
+    function courseSearchUrl(query) {
+      var collection = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "staffordshire-coursetitles";
+      var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      if (level == "postgraduate") {
+        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=postgraduate+(taught)&f.Level%7CV=postgraduate+(research)&query=" + query;
+      } else if (level == "undergraduate") {
+        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=undergraduate&query=" + query;
+      }
+
+      return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&query=" + query;
+    }
+
+    function siteSearchUrl(query) {
+      return "https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=" + query;
+    }
+
+    $("#global-search__keywords--whole-site").keyup(function (e) {
+      // CG: Detect ENTER being pressed
       var keycode = e.keyCode ? e.keyCode : e.which;
 
       if (keycode == '13') {
@@ -7036,13 +7058,21 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
           e.preventDefault();
         });
         e.stopImmediatePropagation();
-        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=' + searchField.val();
+        window.location.href = siteSearchUrl($(this).val());
+      }
 
-        if (window.location != window.parent.location) {
-          window.parent.location = targetUrl;
-        } else {
-          window.location = targetUrl;
-        }
+      e.preventDefault();
+    });
+    $("#global-search__keywords--courses").keyup(function (e) {
+      // CG: Detect ENTER being pressed
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        window.location.href = courseSearchUrl($(this).val());
       }
 
       e.preventDefault();
@@ -7788,7 +7818,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   $(document).ready(function () {
     megaNavMobile();
     megaNavInit();
-    siteSearchInit();
+    globalSearchInit();
     courseSearchInit();
     tabsInit();
     sliderInit();

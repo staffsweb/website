@@ -1907,6 +1907,28 @@ a.feature-link:hover .feature-link__figure { opacity: 0.9; }
 
 [class*='bg-teal'] .feature-link .feature-link__title:after, [class*='bg-digital-blue'] .feature-link .feature-link__title:after { background-image: url("../images/icons/icon-gt-white.svg"); }
 
+.global-search { opacity: 0; transition: opacity 0.5s; position: fixed; z-index: -1; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); text-align: right; }
+
+.global-search__container { margin: 4rem auto; padding: 2rem; }
+
+@media (min-width: 80rem) { .global-search__container { max-width: 60%; } }
+
+.global-search__options { font-size: 0.875rem; color: #FFF; background-color: #006b82; padding: 1.5rem; text-align: left; }
+
+@media (min-width: 80rem) { .global-search__options { font-size: 1rem; } }
+
+.global-search__options label { clear: right; }
+
+.global-search__keywords[type='search'] { max-width: 100%; }
+
+.global-search__hint { color: #FFF; }
+
+.global-search--open { opacity: 1; pointer-events: auto; z-index: 999; }
+
+.global-search__close { background: none; border: 0; color: #FFF; font-size: 1.75rem; padding: 1.5rem; }
+
+.global-search__close:hover { cursor: pointer; }
+
 hr { position: relative; }
 
 .hr--primary { border-top-width: 2px; border-color: #E0DFE8; }
