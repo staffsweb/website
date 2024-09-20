@@ -1173,7 +1173,7 @@ if(anchorTarget == "#courses__postgraduate")
   };
 
   var toggleVariantInit = function toggleVariantInit() {
-    $("#study-option-selector").on("change", function() {
+    $(".masthead__study-option-selector").on("change", function() {
 
       if (stopFlag == false) {        
           var activeOption = $(this).find(":selected").val();
@@ -1182,7 +1182,7 @@ if(anchorTarget == "#courses__postgraduate")
           $('*[data-mode]').not(activeMode.show()).hide();
           // Refresh sliders         
           $(".slick-slider").each(function() {
-              $(this).slick('reinit');          
+              $(this).slick('reinit');
           });
   
           // CG: Reset the assessment tabs
@@ -1199,9 +1199,18 @@ if(anchorTarget == "#courses__postgraduate")
         }
   
         stopFlag = false;
-  });
+      }
+    );
 
-  $('input[name=study-option]').on('change', function () {
+    $("#award-selector").on("change", function() {
+      var activeOption = $(this).find(":selected").val();
+      // CG: Show / hide the relevant award selector
+      $('.masthead__study-option-selector').not($('.masthead__study-option-selector[data-award="' + activeOption + '"]').show()).hide();
+      // CG: Switch to the first item, and trigger "change"
+      $('.masthead__study-option-selector[data-award="' + activeOption + '"]').prop('selectedIndex',0).trigger('change');
+    });
+
+    $('input[name=study-option]').on('change', function () {
       if (stopFlag == false) {        
           var activeOption = $(this).val();
           console.log("Mode of study = " + activeOption);
@@ -1216,9 +1225,11 @@ if(anchorTarget == "#courses__postgraduate")
 
           // CG: Reset the  assessment tabs
           $('a[href="#teachingOverview"]').trigger('click');
+        }
+
+        stopFlag = false;
       }
-      stopFlag = false;
-  });
+    );
   };
 
   var visualizerInit = function visualizerInit() {

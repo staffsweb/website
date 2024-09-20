@@ -7716,7 +7716,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   };
 
   var toggleVariantInit = function toggleVariantInit() {
-    $("#study-option-selector").on("change", function () {
+    $(".masthead__study-option-selector").on("change", function () {
       if (stopFlag == false) {
         var activeOption = $(this).find(":selected").val();
         console.log("Mode of study = " + activeOption);
@@ -7739,6 +7739,13 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
       }
 
       stopFlag = false;
+    });
+    $("#award-selector").on("change", function () {
+      var activeOption = $(this).find(":selected").val(); // CG: Show / hide the relevant award selector
+
+      $('.masthead__study-option-selector').not($('.masthead__study-option-selector[data-award="' + activeOption + '"]').show()).hide(); // CG: Switch to the first item, and trigger "change"
+
+      $('.masthead__study-option-selector[data-award="' + activeOption + '"]').prop('selectedIndex', 0).trigger('change');
     });
     $('input[name=study-option]').on('change', function () {
       if (stopFlag == false) {
