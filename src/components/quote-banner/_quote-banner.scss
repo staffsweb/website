@@ -2,22 +2,22 @@
   position: relative;
   overflow: hidden;
   color: white;
-  background: $burgundy url('#{$image-theme-directory}/bg-knot-whole-red.svg') no-repeat right center;
+  background: $burgundy url('#{$image-theme-directory}/bg-knot-whole-red.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
   background-size: 55%;
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
 
       @if $name == 'digital-blue' {
-        background: #{$value} url('#{$image-theme-directory}/bg-knot-whole-neon.svg') no-repeat right center;
+        background-color: #{$value};
+        background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
       @else if $name == 'teal' {
-        background: #{$value} url('#{$image-theme-directory}/bg-knot-whole-neon.svg') no-repeat right center;
-      }
-
-      @else {
-        background: #{$value} url('#{$image-theme-directory}/bg-knot-whole-red.svg') no-repeat right center;
+        background-color: #{$value};
+        background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
     }

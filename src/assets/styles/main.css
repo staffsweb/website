@@ -2535,15 +2535,11 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .blockquote__figure img { margin-left: auto; margin-right: auto; max-height: 40vmin; width: auto; }
 
-.quote-banner { position: relative; overflow: hidden; color: white; background: #8a0045 url("../images/bg-knot-whole-red.svg") no-repeat right center; background-size: 55%; }
+.quote-banner { position: relative; overflow: hidden; color: white; background: #8a0045 url("../images/bg-knot-whole-red.svg"); background-repeat: no-repeat; background-position: right center; background-size: 55%; }
 
-.quote-banner--bg-burgundy { background: #8a0045 url("../images/bg-knot-whole-red.svg") no-repeat right center; }
+.quote-banner--bg-digital-blue { background-color: #304dfc; background-image: url("../images/bg-knot-whole-neon.svg"); }
 
-.quote-banner--bg-dark-blue { background: #170d38 url("../images/bg-knot-whole-red.svg") no-repeat right center; }
-
-.quote-banner--bg-digital-blue { background: #304dfc url("../images/bg-knot-whole-neon.svg") no-repeat right center; }
-
-.quote-banner--bg-teal { background: #006b82 url("../images/bg-knot-whole-neon.svg") no-repeat right center; }
+.quote-banner--bg-teal { background-color: #006b82; background-image: url("../images/bg-knot-whole-neon.svg"); }
 
 .quote-banner .card { border: 0; }
 
