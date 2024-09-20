@@ -129,7 +129,7 @@ $card__internal-spacing: $spacing-sm;
   }
 
   &--bg-offwhite {
-    background-color: $offwhite;
+    background-color: $grey-50-pc;
 
     & .card__content {
       padding: $card__internal-spacing * 2;
@@ -422,7 +422,7 @@ a.card {
 
   & .card__content {
     max-width: 80%;
-    background-color: $offwhite;
+    background-color: $grey-50-pc;
     padding: $spacing-xl $spacing-xl $spacing-2xl $spacing-xl;
   }
 
@@ -461,7 +461,7 @@ a.card {
     position: relative;
     overflow: hidden;
     flex-direction:  row;
-    background-color: $offwhite;
+    background-color: $grey-50-pc;
     background-size: cover!important;
     background-position: center center;
     background-repeat: no-repeat;
@@ -470,7 +470,7 @@ a.card {
 
     @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
       background-image: none!important;
-      background-color: $offwhite!important;
+      background-color: $grey-50-pc!important;
     }
 
     .card__content {

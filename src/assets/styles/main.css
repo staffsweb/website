@@ -1645,7 +1645,7 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--light svg { fill: white; }
 
-.card--bg-offwhite { background-color: #f1f1f1; }
+.card--bg-offwhite { background-color: #E0DFE8; }
 
 .card--bg-offwhite .card__content { padding: 1.5rem; }
 
@@ -1795,7 +1795,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--with-logo { border: 0; }
 
-.card--with-logo .card__content { max-width: 80%; background-color: #f1f1f1; padding: 2rem 2rem 2.5rem 2rem; }
+.card--with-logo .card__content { max-width: 80%; background-color: #E0DFE8; padding: 2rem 2rem 2.5rem 2rem; }
 
 .card--with-logo a:hover, .card--with-logo a:hover .card__content p { text-decoration: none; }
 
@@ -1807,9 +1807,9 @@ a.card:hover .card__title { text-decoration: underline; }
 
 @media (max-width: 35rem) { .card__video.card__figure iframe { padding-bottom: 50%; position: absolute; } }
 
-.card--virtual-tour { min-height: 20rem; position: relative; overflow: hidden; flex-direction: row; background-color: #f1f1f1; background-size: cover !important; background-position: center center; background-repeat: no-repeat; border-left: none; border: 0.0625rem solid #006b82; }
+.card--virtual-tour { min-height: 20rem; position: relative; overflow: hidden; flex-direction: row; background-color: #E0DFE8; background-size: cover !important; background-position: center center; background-repeat: no-repeat; border-left: none; border: 0.0625rem solid #006b82; }
 
-@media (max-width: 35rem) { .card--virtual-tour { background-image: none !important; background-color: #f1f1f1 !important; } }
+@media (max-width: 35rem) { .card--virtual-tour { background-image: none !important; background-color: #E0DFE8 !important; } }
 
 .card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; max-width: 25rem; z-index: 1; background: rgba(255, 255, 255, 0.9); padding: 2rem 2rem 0.5rem 2rem; }
 
