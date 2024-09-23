@@ -1681,29 +1681,29 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--pullquote:before { content: ''; display: block; float: left; width: 5%; margin-right: 1%; height: 0; padding-bottom: 5%; margin-left: -5%; background: url("../images/icons/icon-quote-primary.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--red:before { background: #fff url("../images/icons/icon-quote-red.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--red:before { background: transparent url("../images/icons/icon-quote-red.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--pink:before { background: #fff url("../images/icons/icon-quote-pink.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--pink:before { background: transparent url("../images/icons/icon-quote-pink.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--maroon:before { background: #fff url("../images/icons/icon-quote-maroon.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--maroon:before { background: transparent url("../images/icons/icon-quote-maroon.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--slate:before { background: #fff url("../images/icons/icon-quote-slate.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--slate:before { background: transparent url("../images/icons/icon-quote-slate.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--blue-ldn:before { background: #fff url("../images/icons/icon-quote-blue-ldn.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--blue-ldn:before { background: transparent url("../images/icons/icon-quote-blue-ldn.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--burgundy:before { background: #fff url("../images/icons/icon-quote-burgundy.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--burgundy:before { background: transparent url("../images/icons/icon-quote-burgundy.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--digital-blue:before { background: #fff url("../images/icons/icon-quote-digital-blue.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--digital-blue:before { background: transparent url("../images/icons/icon-quote-digital-blue.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--dark-blue:before { background: #fff url("../images/icons/icon-quote-dark-blue.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--dark-blue:before { background: transparent url("../images/icons/icon-quote-dark-blue.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--teal:before { background: #fff url("../images/icons/icon-quote-teal.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--teal:before { background: transparent url("../images/icons/icon-quote-teal.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--grey:before { background: #fff url("../images/icons/icon-quote-grey.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--grey:before { background: transparent url("../images/icons/icon-quote-grey.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--pale-blue:before { background: #fff url("../images/icons/icon-quote-pale-blue.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--pale-blue:before { background: transparent url("../images/icons/icon-quote-pale-blue.svg") no-repeat center center; background-size: contain; }
 
-.card--pullquote.card--neon:before { background: #fff url("../images/icons/icon-quote-neon.svg") no-repeat center center; background-size: contain; }
+.card--pullquote.card--neon:before { background: transparent url("../images/icons/icon-quote-neon.svg") no-repeat center center; background-size: contain; }
 
 .card--contact ul.list--inline { padding-left: 1.5em; }
 

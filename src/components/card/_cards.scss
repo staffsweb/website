@@ -228,7 +228,7 @@ a.card {
   @each $name, $value in $card-accent-colors {
     &.card--#{$name} {
       &:before {
-        background: #fff url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
+        background: transparent url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
         background-size: contain;
       }
     }
