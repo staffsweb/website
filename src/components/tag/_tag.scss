@@ -10,7 +10,10 @@
     .tag--#{$name} {
         background-color: #{$value};
         color: black;
-        @if (choose-contrast-color($value) == white) {
+        @if ($name == 'red') {
+            color: white;
+        }
+        @else if (choose-contrast-color($value) == white) {
             color: white;
         }
         

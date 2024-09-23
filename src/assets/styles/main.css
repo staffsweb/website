@@ -2825,7 +2825,7 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .tag--not-rounded { border-radius: 0; }
 
-.tag--red { background-color: #ef4a3b; color: black; }
+.tag--red { background-color: #ef4a3b; color: black; color: white; }
 
 .tag--dark-blue { background-color: #170d38; color: black; color: white; }
 
