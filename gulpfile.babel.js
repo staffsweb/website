@@ -32,8 +32,8 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI
 
 
 // Give it a name
-fractal.set('project.title', 'University of Staffordshire - 2024 Brand (commercially sensitive - not for distribution)');
-fractal.set('project.version', '0.8');
+fractal.set('project.title', 'University of Staffordshire Pattern Library');
+fractal.set('project.version', '2.0');
 fractal.set('project.author', 'Chris Goostry');
 
 // Setup Twig Adapter
