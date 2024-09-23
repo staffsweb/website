@@ -5,7 +5,7 @@ variants:
     label: "Demo"
 
   - name: component
-#    status: wip
+#    status: ready
     label: "Accordion Component"
     context:
       titleElement: 'h3'
@@ -22,7 +22,7 @@ variants:
     handle: 'accordion--component'
 
   - name: item
-#    status: wip
+#    status: ready
     label: "Single Accordion Item"
     context:
       titleElement: 'h4'

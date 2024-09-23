@@ -1,5 +1,5 @@
 label: Cards
-status: wip
+status: ready
 
 variants:
   - name: red

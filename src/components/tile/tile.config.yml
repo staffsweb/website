@@ -1,5 +1,5 @@
 name: Tile
-status: wip
+status: ready
 context:
   classes: []
   image: 'masthead.jpg'

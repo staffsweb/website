@@ -1,5 +1,5 @@
 label: Quotes
-status: wip
+status: ready
 
 variants:
   - name: long
