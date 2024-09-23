@@ -287,7 +287,10 @@
     <span class="hljs-selector-class">.tag--</span>#{<span class="hljs-variable">$name</span>} {
         <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
         <span class="hljs-attribute">color</span>: black;
-        <span class="hljs-keyword">@if</span> (choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
+        <span class="hljs-keyword">@if</span> (<span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;red&#x27;</span>) {
+            <span class="hljs-attribute">color</span>: white;
+        }
+        <span class="hljs-keyword">@else</span> if (choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
             <span class="hljs-attribute">color</span>: white;
         }
         
@@ -308,7 +311,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">334 Bytes</span>
+                    <span class="Meta-value">409 Bytes</span>
                 </li>
             </ul>
         </div>
