@@ -30,16 +30,19 @@
         <p class="masthead__ucas-code"><strong>UCAS code</strong> S101</p>
 
         <label for="study-option-selector">Study options</label>
-        <select id="study-option-selector" title="Study Options">
+        <select id="study-option-selector--bsc-hons" class="masthead__study-option-selector" data-award="bsc-hons" title="Study Options">
           <option selected>Full-time, Stoke-on-Trent campus</option>
           <option>Full-time, City of Stoke-On-Trent Sixth Form College, with a foundation year</option>
           <option>Full-time, Stoke-On-Trent campus, with a placement year</option>
         </select>
+        <select id="study-option-selector--msci" class="masthead__study-option-selector  one-item" style="display: none;" data-award="msci" title="Study Options">
+          <option selected>Full-time</option>
+        </select>
 
         <label for="award-type-selector">Award</label>
-        <select id="award-type-selector" title="Award Type">
-          <option selected>BA (Hons)</option>
-          <option>BSc (Hons)</option>
+        <select id="award-selector" class="masthead__award-selector" title="Award">
+            <option value="bsc-hons">BSc (Hons)</option>
+            <option value="msci">MSci</option>
         </select>
 
         <div class="grid  grid-2-cols">
@@ -86,7 +89,7 @@
 
       <div class="masthead__course-hero">
         
-          <img src="../../images/masthead1.jpg"/>
+          <img src="../../images/masthead0.jpg"/>
         
       </div>
     </div>

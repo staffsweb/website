@@ -1,5 +1,8 @@
 @import "../__vars/layout";
 
+html {
+  overflow-x: hidden; // this is for align-full's 100vw "bug"
+}
 body {
   overflow-x: hidden; // this is for align-full's 100vw "bug"
 

@@ -16,30 +16,6 @@
     }
   }
 
-  &__bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    overflow: hidden;
-
-    img {
-      @supports (object-fit: cover) {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
-      }
-    }
-  }
-
   @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
     &__img {
       margin-bottom: -$spacing-3xl;
@@ -49,45 +25,6 @@
   & .title {
     color: white;
     max-width: 30rem;
-  }
-
-  &__knot {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-
-    img {
-      @supports (object-fit: cover) {
-        position: absolute;
-        top: 0;
-        right: 0;
-        object-fit: contain;
-      }
-    }
-  }
-
-  &__lower {
-    background: $digital-blue;
-    z-index: 1;
-  }
-
-  &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 35vmin;
-    padding: 12rem 0 $spacing-xl;
-    align-self: flex-end;
-    align-content: flex-end;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-
-    @media (min-width: $overlay-breakpoint) {
-      position: static;
-    }
   }
 
   &__overlay {
@@ -186,7 +123,7 @@
         height: 100%;
         position: absolute;
         max-width: none;
-        left: 15%;
+        left: 40%;
         z-index: -1;
       }
     }
@@ -221,6 +158,138 @@
       }
     }
   }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 35vmin;
+    padding: 12rem 0 $spacing-xl;
+    align-self: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+    @media (min-width: $overlay-breakpoint) {
+      position: static;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      @supports (object-fit: cover) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+      }
+    }
+  }
+
+  // CG: For home page masthead
+  &-home {
+    position: relative;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .masthead__inner {
+      position: relative;
+    }
+
+    &__hero {
+      height: 400px;
+      @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        height: 500px;
+      }
+
+      width: 100%;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img {
+        @supports (object-fit: cover) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+        }
+      }
+    }
+
+    &__knot {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      background: url('../images/bg-knot-blue.svg') right top no-repeat;
+      background-size: 50%;
+
+      @media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        background-size: 70%;
+      }
+
+      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        background-position: right bottom;
+        background-size: contain;
+      }
+    }
+
+    .no-show {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &__story {
+      width: 100%;
+      padding-top: $spacing-lg;
+      color: white;
+
+      & .title {
+        text-transform: uppercase;
+        max-width: 70%;
+
+        & > h1 {
+          font-weight: 800;
+        }
+      }
+
+      &--background {
+        position: relative;
+        background: $digital-blue;
+      }
+
+      &--content {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 }
 
 .masthead--with-image {
@@ -243,4 +312,5 @@
       text-decoration: none;
     }
   }
+
 }

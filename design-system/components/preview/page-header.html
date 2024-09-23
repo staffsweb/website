@@ -25,11 +25,10 @@
   <div class="wrap">
     <div class="header-site__flexContainer">
       <a class="site-logo" title="Home" href="/">
-        <img src="../../images/logo-uos.png" alt="Universityof Staffordshire Logo" class="no-lazy-load">
+        <img src="../../images/logo-uos.png" alt="University of Staffordshire Logo" class="no-lazy-load">
       </a>
 
       <button class="toggle-megaNav" id="toggle-megaNav" aria-controls="megaNav"><span class="toggle-megaNav__label">Menu</span></button>
-      <input class="search-site" id="search-site" type="search" placeholder="Search" />
 
       <nav class="megaNav" id="megaNav" role="navigation">
         <div class="megaNav__controls">
@@ -368,10 +367,36 @@
           </ul>
         </div>
       </nav>
+
+      <button class="toggle-search-site" id="global-search-open" aria-controls="search-site" aria-label="Open search form" type="button">
+      </button>
     </div>
   </div>
 </header>
 
+<div class="global-search" id="global-search" role="form">
+    <button class="global-search__close" id="global-search__close" type="button">
+        <svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 16 16" id="icon-close-white" xmlns="http://www.w3.org/2000/svg"><title>Atoms/Iconography/close-white@2x</title><path d="M16 1.61L9.61 8 16 14.39 14.39 16 8 9.61 1.61 16 0 14.39 6.39 8 0 1.61 1.61 0 8 6.39 14.39 0z" fill="currentColor" fill-rule="evenodd"/></symbol></svg>
+        <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-close-white"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close-white"></use></svg></span>
+        <span class="visually-hidden">Close search</span>
+    </button>
+    <div class="global-search__container">
+        <div id="global-search__options" class="grid  global-search__options">
+            <div class="col-1/4@tablet  col-full@mobile">
+                <input class="global-search__scope" id="global-search__scope--courses" name="cScope" type="radio" value="courses" checked="">
+                <label for="global-search__scope--courses">Search courses</label>
+                <br>
+                <input class="global-search__scope" id="global-search__scope--site" name="cScope" type="radio" value="wholeSite">
+                <label for="global-search__scope--site">Search staffs.ac.uk</label>
+            </div>
+            <div class="col-3/4@tablet  col-full@mobile">
+                <input class="global-search__keywords" id="global-search__keywords--courses" name="cQueryH" type="search" placeholder="Search courses">
+                <input class="global-search__keywords  visually-hidden" id="global-search__keywords--whole-site" name="cQueryH" type="search" placeholder="Search staffs.ac.uk">
+            </div>
+        </div>
+        <p class="global-search__hint">Hit enter to search or ESC to close</p>
+    </div>
+</div>
 <div class="masthead  masthead--shallow  masthead--no-bg">
   <div class="masthead__inner">
     <div class="wrap">

@@ -98,37 +98,15 @@ $megaNav-full-breakpoint: 70rem; // if you change this, you'll need to update th
   }
 }
 
-/*@mixin align-wide {
-  max-width: none;
-  width: calc(100vw - #{$page-gutter-small*2});
-  margin-left: calc(-50vw + 50% + #{$page-gutter-small});
-  margin-right: calc(-50vw + 50% + #{$page-gutter-small});
-
-  @media (min-width: $wrap-full-gutter-width) {
-    width: calc(90vw);
-    margin-left: calc(-45vw + 50%);
-    margin-right: calc(-45vw + 50%);
-  }
-
-  @media (min-width: $wrap-width + 10rem) {
-    width: $wrap-width;
-    margin-left: calc(-#{$wrap-width/2} + 50%);
-    margin-right: calc(-#{$wrap-width/2} + 50%);
-  }
-}*/
-
 @mixin align-full {
-  // between scrollbars and the body-border on the left,
-  // this doesn't work as well as it should,
-  // consider tweaking, or just close off the wrapper rather than trying to bleed it
   
   max-width: none;
-  width: calc(100vw - #{$body-border-width});
-  margin-left: calc(-50vw + 50% + #{$body-border-width/2});
+  width: calc(100vw);
+  margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 
   @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    width: calc(100vw - #{$body-border-width--wide*2});
-    margin-left: calc(-50vw + 50% + #{$body-border-width--wide});
+    width: calc(100vw);
+    margin-left: calc(-50vw + 50%);
   }
 }

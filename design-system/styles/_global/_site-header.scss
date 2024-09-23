@@ -31,15 +31,6 @@
     width: 30%;
     max-width: 210px;
     min-width: 166px;
-
-    img {
-      transition: all 200ms;
-
-      @media (min-width: $megaNav-full-breakpoint) {
-        position: relative;
-        z-index: 100;
-      }
-    }
   }
 
   @at-root .has-expanded-nav {
@@ -81,25 +72,23 @@
   }
 }
 
+.toggle-search-site {
+  background: url(#{$image-theme-directory-icon}/icon-search.svg) center center no-repeat;
+  background-size: 1.5rem 1.5rem;
+}
+
 input.search-site {
-  width: 7rem;
-  transition: all 200ms;
   background-color: $grey-50-pc;
-  //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill-rule='evenodd'%3E%3Cpath d='M16.036 18.455l2.404-2.405 5.586 5.587-2.404 2.404zM8.5 2C12.1 2 15 4.9 15 8.5S12.1 15 8.5 15 2 12.1 2 8.5 4.9 2 8.5 2zm0-2C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zM15 16a1 1 0 1 1 2 0 1 1 0 1 1-2 0'%3E%3C/path%3E%3C/svg%3E");
   background-image: url(#{$image-theme-directory}/bg-search-box.svg);
   background-repeat: no-repeat;
   background-size: 1rem;
   background-position: $spacing-2xs center;
   padding-left: $spacing-lg;
   margin-left: $spacing-md;
-
-  &.is-open {
-    width: 100%;
-  }
+  width: 100%;
 
   @media (min-width: $megaNav-full-breakpoint) {
     height: $spacing-xl;
-    order: 3;
 
     &__label {
       display: block;
@@ -107,6 +96,30 @@ input.search-site {
       left: -9999em;
       clip: rect(0 0 0 0);
     }
+  }
+}
+
+.site-search {
+  position: relative;
+  width: 7rem;
+  transition: all 200ms;
+
+  &__options {
+    position: absolute;
+    right: -9999em;
+    top: 0;
+  }
+
+  &.is-open {
+    width: 100%;
+
+    .site-search__options {
+      right: 0;
+    }
+  }
+
+  @media (min-width: $megaNav-full-breakpoint) {
+    order: 3;
   }
 }
 

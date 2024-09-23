@@ -59,8 +59,8 @@ $granite--light-ldn:            mix($granite--ldn, white, 85%);
 
 // Theme Colours:
 
-$primary:                       $red;
-$secondary:                     $dark-blue;
+$primary:                       $dark-blue;
+$secondary:                     $burgundy;
 $tertiary:                      $digital-blue;
 /*$primary:                       $dark-blue;
 $secondary:                     $burgundy;
@@ -106,17 +106,17 @@ $utils-text-colors: (
 // they live here (for the time being) so they can be overridden before components are imported for themes (London)
 
 $theme-colours: (
-  'primary' : $red,
-  'secondary' : $dark-blue,
+  'primary' : $dark-blue,
+  'secondary' : $burgundy,
   'tertiary' : $digital-blue
 );
 
 $card-accent-colors: (
   'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate,
-  'blue-ldn': $blue--deep-ldn,
+  'pink': $dark-blue,
+  'maroon': $burgundy,
+  'slate': $dark-blue,
+  'blue-ldn': $dark-blue,
   // CG: New for 2024
   'burgundy': $burgundy,
   'digital-blue': $digital-blue,

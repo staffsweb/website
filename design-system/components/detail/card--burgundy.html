@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.9.4" type="text/css">
 
 
-<title>Cards: Theme: Burgundy | University of Staffordshire - 2024 Brand (commercially sensitive - not for distribution)</title>
+<title>Cards: Theme: Burgundy | University of Staffordshire Pattern Library</title>
 
 </head>
 <body>
@@ -50,7 +50,7 @@
 
         </div>
     </button>
-    <a href="../../index.html" class="Header-title" data-pjax>University of Staffordshire - 2024 Brand (commercially sensitive - not for distribution)</a>
+    <a href="../../index.html" class="Header-title" data-pjax>University of Staffordshire Pattern Library</a>
 </div>
 
     </div>
@@ -83,7 +83,7 @@
 
 <div class="Status Status--tag">
 
-<label class="Status-label" style="background-color: #ff9233; border-color: #ff9233;">WIP</label>
+<label class="Status-label" style="background-color: #29cc29; border-color: #29cc29;">Ready</label>
 
 </div>
 
@@ -232,311 +232,347 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre>$card__internal-spacing: $spacing-sm;
+                                <pre><span class="hljs-variable">$card__internal-spacing</span>: <span class="hljs-variable">$spacing-sm</span>;
 
-.card {
-  // $theme-colours: see __vars/colours
+<span class="hljs-selector-class">.card</span> {
+  <span class="hljs-comment">// $theme-colours: see __vars/colours</span>
 
-  display: block;
-  position: relative;
-  --accent-color: #{$primary};
-  margin-bottom: $spacing-xl;
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">position</span>: relative;
+  --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xl</span>;
 
-  @include clearfix;
+  <span class="hljs-keyword">@include</span> clearfix;
 
-  a:not(.button) {
-    text-decoration: none;
-    border-bottom: none;
+  <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not</span>(.button) {
+    <span class="hljs-attribute">text-decoration</span>: none;
+    <span class="hljs-attribute">border-bottom</span>: none;
 
-    &amp;:hover {
-      text-decoration: underline;
+    &amp;<span class="hljs-selector-pseudo">:hover</span> {
+      <span class="hljs-attribute">text-decoration</span>: underline;
     }
   }
 
-  p {
-    margin-bottom: $card__internal-spacing;
+  <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$card__internal-spacing</span>;
   }
 
   &amp;__content {
-    padding: 0 calc(#{$card__internal-spacing} + 2.5%);
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{<span class="hljs-variable">$card__internal-spacing</span>} + <span class="hljs-number">2.5%</span>);
 
-    &gt; :first-child {
-      margin-top: 0;
+    &gt; <span class="hljs-selector-pseudo">:first</span>-child {
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
     }
 
-    &gt; :last-child {
-      margin-bottom: 0;
+    &gt; <span class="hljs-selector-pseudo">:last-child</span> {
+      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
     }
   }
 
   &amp;__title {
-    margin-top: 0;
-    margin-bottom: $spacing-md;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-md</span>;
 
-    a {
-      color: #{$primary};
-      color: var(--accent-color);
+    <span class="hljs-selector-tag">a</span> {
+      <span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
+      <span class="hljs-attribute">color</span>: var(--accent-color);
     }
   }
 
   &amp;__figure {
-    &amp;--video {
-      position: relative;
-      background-color: #CCC;
+    &amp;--<span class="hljs-selector-tag">video</span> {
+      <span class="hljs-attribute">position</span>: relative;
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#CCC</span>;
 
-      &amp;:hover {
-        cursor: pointer;
+      &amp;<span class="hljs-selector-pseudo">:hover</span> {
+        <span class="hljs-attribute">cursor</span>: pointer;
       }
 
       &amp;:after {
-        content: &#x27;&#x27;;
-        position: absolute;
-        width: $spacing-4xl;
-        height: $spacing-4xl;
-        max-width: 50%;
-        max-height: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: url(&#x27;#{$image-theme-directory-icon}/icon-play-circle-neutral-light.svg&#x27;) no-repeat center center;
-        background-size: contain;
-        z-index: 1;
-        pointer-events: none;
+        content: <span class="hljs-string">&#x27;&#x27;</span>;
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-variable">$spacing-4xl</span>;
+        <span class="hljs-attribute">max-width</span>: <span class="hljs-number">50%</span>;
+        <span class="hljs-attribute">max-height</span>: <span class="hljs-number">50%</span>;
+        <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+        <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+        <span class="hljs-attribute">transform</span>: translate(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);
+        <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-play-circle-neutral-light.svg&#x27;</span>) no-repeat center center;
+        <span class="hljs-attribute">background-size</span>: contain;
+        <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">pointer-events</span>: none;
       }
 
-      &amp; img {
-        color: #CCC;
+      &amp; <span class="hljs-selector-tag">img</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#CCC</span>;
       }
     }
   }
 
   &amp;__clearing-flag {
-    background-color: $red;
-    color: #FFF;
-    padding: 0.25rem 0.5rem;
-    font-weight: 400;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$red</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#FFF</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span> <span class="hljs-number">0.5rem</span>;
+    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
   }
 
-  // CG: A card across multiple days will clash with the one below if there is no image, so add a minimum height if necessary
+  <span class="hljs-comment">// CG: A card across multiple days will clash with the one below if there is no image, so add a minimum height if necessary</span>
   &amp;--multiple-days {
-    min-height: 210px;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">210px</span>;
   }
 
-  //--  Child elements affected by accent colour
+  <span class="hljs-comment">//--  Child elements affected by accent colour</span>
 
-  .blockquote__title {
-    color: var(--accent-color);
+  <span class="hljs-selector-class">.blockquote__title</span> {
+    <span class="hljs-attribute">color</span>: var(--accent-color);
   }
 
-  .meta--inline-dd,
-  .meta--inline {
-    dd:before {
+  <span class="hljs-selector-class">.meta--inline-dd</span>,
+  <span class="hljs-selector-class">.meta--inline</span> {
+    <span class="hljs-selector-tag">dd</span>:before {
       color: var(--accent-color);
     }
   }
 
-  //--  ACCENT THEMES
-  @each $name, $value in $card-accent-colors {
-    &amp;--#{$name} {
-      --accent-color: #{$value};
+  <span class="hljs-comment">//--  ACCENT THEMES</span>
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$card-accent-colors</span> {
+    &amp;--#{<span class="hljs-variable">$name</span>} {
+      --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$value</span>};
     }
   } 
 
-  @each $name, $value in $theme-colours {
-    &amp;--#{$name} {
-      --accent-color: #{$value};
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$theme-colours</span> {
+    &amp;--#{<span class="hljs-variable">$name</span>} {
+      --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$value</span>};
 
       svg {
-          fill: #{$value};
+          fill: #{<span class="hljs-variable">$value</span>};
       }
     }
   }
 
   &amp;--light {
-    --accent-color: #{rgba(white, 0.5)};
-    color: white;
+    --accent-<span class="hljs-attribute">color</span>: #{rgba(white, <span class="hljs-number">0.5</span>)};
+    <span class="hljs-attribute">color</span>: white;
 
     svg {
       fill: white;
     }
 
   }
-}
 
-a.card {
-  text-decoration: none;
+  &amp;--bg-offwhite {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
 
-  .card__title {
-    color: #{$primary};
-    color: var(--accent-color);
-  }
+    &amp; <span class="hljs-selector-class">.card__content</span> {
+      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$card__internal-spacing</span> * <span class="hljs-number">2</span>;
+    }
 
-  &amp;:hover {
-    color: $text-color;
-
-    .card__title {
-      text-decoration: underline;
+    &amp; <span class="hljs-selector-class">.card__figure</span> {
+      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
     }
   }
 }
 
-//--  VARIANTS
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.card</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
 
-.card--flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: row-reverse;
-
-  .card__figure {
-    flex: 1 1 33%;
+  <span class="hljs-selector-class">.card__title</span> {
+    <span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
+    <span class="hljs-attribute">color</span>: var(--accent-color);
   }
 
-  .card__content {
-    flex: 99 1 17.5em;
-  }
-}
+  &amp;<span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$text-color</span>;
 
-.card--flex-overlap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: row-reverse;
-  padding-bottom: $spacing-sm;
-
-  .card__figure {
-    flex: 1 1 33%;
-  }
-
-  .card__content {
-    flex: 99 1 17.5em;
-  }
-
-  .card__figure {
-    margin-bottom: -#{$spacing-sm};
+    <span class="hljs-selector-class">.card__title</span> {
+      <span class="hljs-attribute">text-decoration</span>: underline;
+    }
   }
 }
 
-.card--testimonial {
-  padding-bottom: $card__internal-spacing;
+<span class="hljs-comment">//--  VARIANTS</span>
+
+<span class="hljs-selector-class">.card--flex</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-items</span>: flex-start;
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;
+
+  <span class="hljs-selector-class">.card__figure</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">33%</span>;
+  }
+
+  <span class="hljs-selector-class">.card__content</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">99</span> <span class="hljs-number">1</span> <span class="hljs-number">17.5em</span>;
+  }
 }
 
-.card--pullquote {
-  padding-bottom: $card__internal-spacing;
-  margin-left: 5%;
+<span class="hljs-selector-class">.card--flex-overlap</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">align-items</span>: flex-start;
+  <span class="hljs-attribute">flex-direction</span>: row-reverse;
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-sm</span>;
+
+  <span class="hljs-selector-class">.card__figure</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">33%</span>;
+  }
+
+  <span class="hljs-selector-class">.card__content</span> {
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">99</span> <span class="hljs-number">1</span> <span class="hljs-number">17.5em</span>;
+  }
+
+  <span class="hljs-selector-class">.card__figure</span> {
+    <span class="hljs-attribute">margin-bottom</span>: -#{<span class="hljs-variable">$spacing-sm</span>};
+  }
+}
+
+<span class="hljs-selector-class">.card--testimonial</span> {
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$card__internal-spacing</span>;
+
+  <span class="hljs-selector-class">.blockquote__figure</span> <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid var(--accent-color);
+  }
+}
+
+<span class="hljs-selector-class">.card--pullquote</span> {
+  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$card__internal-spacing</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">5%</span>;
 
   &amp;:before {
-    content: &#x27;&#x27;;
-    display: block;
-    float: left;
-    width: 5%;
-    height: 0;
-    padding-bottom: 5%;
-    margin-left: -5%;
-    background: #fff url(&#x27;#{$image-theme-directory-icon}/icon-quote-primary.svg&#x27;) no-repeat center center;
-    background-size: contain;
+    content: <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">5%</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">1%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">5%</span>;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">5%</span>;
+    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-quote-primary.svg&#x27;</span>) no-repeat center center;
+    <span class="hljs-attribute">background-size</span>: contain;
   }
 
-  // These themes need to be updated &#x27;manually&#x27; for now, as we&#x27;re using an svg,
-  // and I can&#x27;t think of a clever way to update dynamically based on the accent var
-  // something using inline SVG use/fill, or a mask?
-  // Don&#x27;t forget to add the SVG to the filesystem!
+  <span class="hljs-comment">// These themes need to be updated &#x27;manually&#x27; for now, as we&#x27;re using an svg,</span>
+  <span class="hljs-comment">// and I can&#x27;t think of a clever way to update dynamically based on the accent var</span>
+  <span class="hljs-comment">// something using inline SVG use/fill, or a mask?</span>
+  <span class="hljs-comment">// Don&#x27;t forget to add the SVG to the filesystem!</span>
 
-  @each $name, $value in $card-accent-colors {
-    &amp;.card--#{$name} {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$card-accent-colors</span> {
+    &amp;<span class="hljs-selector-class">.card--</span>#{<span class="hljs-variable">$name</span>} {
       &amp;:before {
-        background: #fff url(&#x27;#{$image-theme-directory-icon}/icon-quote-#{$name}.svg&#x27;) no-repeat center center;
-        background-size: contain;
+        background: transparent url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-quote-#{$name}.svg&#x27;</span>) no-repeat center center;
+        <span class="hljs-attribute">background-size</span>: contain;
       }
     }
   }
 }
 
-.card--contact {
-  ul.list--inline {
-    padding-left: 1.5em;
-    li a {
-      text-decoration: none!important;
+<span class="hljs-selector-class">.card--contact</span> {
+  <span class="hljs-selector-tag">ul</span><span class="hljs-selector-class">.list--inline</span> {
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">1.5em</span>;
+    <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+      <span class="hljs-attribute">text-decoration</span>: none<span class="hljs-meta">!important</span>;
     }
-    .icon {
-      font-size: 1.5rem;
+    <span class="hljs-selector-class">.icon</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5rem</span>;
     }
   }
-  ul.list--icon-bullets {
-    li a {
-      text-decoration: none!important;
-      border-bottom: 1px solid $grey--light
+  <span class="hljs-selector-tag">ul</span><span class="hljs-selector-class">.list--icon-bullets</span> {
+    <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+      <span class="hljs-attribute">text-decoration</span>: none<span class="hljs-meta">!important</span>;
+      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$grey--light</span>
     }
   }
 }
 
 .card--course {
-  // this exists, but doesn&#x27;t need anything specific (yet)
+  border-left: <span class="hljs-variable">$border-accent-width</span> solid <span class="hljs-variable">$primary</span>;
+  <span class="hljs-attribute">border-color</span>: var(--accent-color);
 }
 
-.card--result {
-  // this exists, but doesn&#x27;t need anything specific (yet)
+<span class="hljs-selector-class">.card--result</span> {
+  <span class="hljs-comment">// this exists, but doesn&#x27;t need anything specific (yet)</span>
 }
 
-.card--profile {
-  padding: $spacing-md;
+<span class="hljs-selector-class">.card--profile</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-md</span>;
 
-  /* Needs:
+  <span class="hljs-comment">/* Needs:
     grey and teal
     grey and burgundy
     teal and neon
     burgundy and neon
-  */
-  @each $name, $value in $profile-card-themes {
-    &amp;.card--#{$name} {
-      background: map_get($value, &quot;background&quot;);
-      border-bottom: $spacing-2xs solid map_get($value, &quot;accent-color&quot;);
-      margin-left: $spacing-2xl;
+  */</span>
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$profile-card-themes</span> {
+    &amp;<span class="hljs-selector-class">.card--</span>#{<span class="hljs-variable">$name</span>} {
+      <span class="hljs-attribute">background</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>);
+      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+      <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-2xl</span>;
 
-      @if (choose-contrast-color(map_get($value, &quot;background&quot;)) == white) {
-        color: white;
+      <span class="hljs-keyword">@if</span> (choose-contrast-color(map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>)) == white) {
+        <span class="hljs-attribute">color</span>: white;
 
-        &amp; h3, &amp; .strong {
-          color: map_get($value, &quot;accent-color&quot;);
+        &amp; <span class="hljs-selector-class">.button</span> {
+          <span class="hljs-attribute">color</span>: white;
         }
+      }
+
+      &amp; <span class="hljs-selector-class">.button--outline</span> {
+        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+        <span class="hljs-attribute">border-color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+
+        &amp;<span class="hljs-selector-pseudo">:hover</span> {
+          <span class="hljs-attribute">color</span>: black;
+        }
+      }
+
+      &amp; <span class="hljs-selector-class">.title</span>, &amp; <span class="hljs-selector-class">.strong</span> {
+        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
       }
     }
   }
 
-  &amp;.card--flex {
-    flex-direction: row;
+  &amp;<span class="hljs-selector-class">.card--flex</span> {
+    <span class="hljs-attribute">flex-direction</span>: row;
   }
 
-  &amp; .card__figure {
-    margin-left: -$spacing-2xl;
-    max-width: 15rem;
+  &amp; <span class="hljs-selector-class">.card__figure</span> {
+    <span class="hljs-attribute">margin-left</span>: auto;
+    <span class="hljs-attribute">margin-right</span>: auto;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">15rem</span>;
+
+    <span class="hljs-comment">/*@media (max-width: (map_get($breakpoint-stages, &#x27;tablet-wide&#x27;))) {
+      flex: 1 1 25%;
+    }*/</span>
   }
 
-  &amp; .title {
-    margin-bottom: 0;
+  &amp; <span class="hljs-selector-class">.title</span> {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
   }
 }
 
-.card--ksp {
-  color: $neutral--primary;
-  border-left: none;
+<span class="hljs-selector-class">.card--ksp</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neutral--primary</span>;
+  <span class="hljs-attribute">border-left</span>: none;
 
   &amp;__icon-container {
-    display: table;
-    border-radius: 50%;
-    background-color: var(--accent-color);
+    <span class="hljs-attribute">display</span>: table;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">background-color</span>: var(--accent-color);
   }
 
-  &amp; .icon {
-    display: table-cell;
-    vertical-align: middle;
-    width: 2em;
-    height: 2em;
+  &amp; <span class="hljs-selector-class">.icon</span> {
+    <span class="hljs-attribute">display</span>: table-cell;
+    <span class="hljs-attribute">vertical-align</span>: middle;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">2em</span>;
     
-    img {
-      width: 60%;
-      height: 60%;
-      vertical-align: unset;
+    <span class="hljs-selector-tag">img</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">60%</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">60%</span>;
+      <span class="hljs-attribute">vertical-align</span>: unset;
     }
 
     svg {
@@ -544,159 +580,159 @@ a.card {
     }
   }
 
-  &amp; .card__title {
-    color: inherit;
-    margin-top: $card__internal-spacing * 2;
+  &amp; <span class="hljs-selector-class">.card__title</span> {
+    <span class="hljs-attribute">color</span>: inherit;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$card__internal-spacing</span> * <span class="hljs-number">2</span>;
   }
 
-  &amp;.card--light {
-    color: white;
-  }
-}
-
-.card--event {
-  margin-left: $spacing-4xl;
-
-  .card__figure {
-    margin-bottom: #{$spacing-xs};
-  }
-
-  .card__date {
-    position: absolute;
-    top: 0;
-    left: -$spacing-4xl;
-    width: $spacing-4xl;
-    @include typescale(&#x27;xs&#x27;);
-    padding: $spacing-sm 0;
-    color: white;
-    background: $primary;
-    background: var(--accent-color);
-    line-height: 1;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .link--stretched h2 {
-    color: $teal;
-  }
-
-  a.link--stretched:hover h2 {
-    color: $red;
-  }
-
-  .card__day {
-    display: block;
-    font-weight: 500;
-    @include typescale(&#x27;xl&#x27;);
-
-    @media (min-width: map_get($breakpoint-stages, &#x27;mobile-wide&#x27;)) {
-      @include typescale(&#x27;3xl&#x27;);
-    }
-  }
-
-  .card__date-separator {
-    display: block;
-    font-weight: 500;
-    @include typescale(&#x27;xl&#x27;);
-    padding: $spacing-xs 0;
-  }
-
-  @media (min-width: (map_get($breakpoint-stages, &#x27;tablet-wide&#x27;) + 5rem)) {
-    margin-left: $spacing-5xl;
-
-    .card__date {
-      left: -$spacing-5xl;
-      width: $spacing-5xl;
-    }
-
-    .card__day {
-      @include typescale(&#x27;5xl&#x27;);
-    }
+  &amp;<span class="hljs-selector-class">.card--light</span> {
+    <span class="hljs-attribute">color</span>: white;
   }
 }
 
-.card--with-logo {
-  border: 0;
+<span class="hljs-selector-class">.card--event</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-4xl</span>;
 
-  &amp; .card__content {
-    max-width: 80%;
-    background-color: $offwhite;
-    padding: $spacing-xl $spacing-xl $spacing-2xl $spacing-xl;
+  <span class="hljs-selector-class">.card__figure</span> {
+    <span class="hljs-attribute">margin-bottom</span>: #{<span class="hljs-variable">$spacing-xs</span>};
   }
 
-  &amp; a:hover,&amp; a:hover .card__content p {
-    text-decoration: none;
+  <span class="hljs-selector-class">.card__date</span> {
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: -<span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xs&#x27;</span>);
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$primary</span>;
+    <span class="hljs-attribute">background</span>: var(--accent-color);
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
   }
 
-  &amp; img {
-    float: right;
-    margin-top: -$spacing-xl;
-    max-height: 100px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    background: #FFF;
+  <span class="hljs-selector-class">.link--stretched</span> <span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$teal</span>;
   }
 
-}
-
-.card__video.card__figure {
-  @media (max-width: map_get($breakpoint-stages, &#x27;mobile-wide&#x27;)) {
-    padding-bottom: 50%;
-    position: relative;
-    height: 0;
+  <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.link--stretched</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">h2</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$red</span>;
   }
-  &amp; iframe {
-    width: 100%;
-    height: 100%;
-    @media (max-width: map_get($breakpoint-stages, &#x27;mobile-wide&#x27;)) {
-      padding-bottom: 50%;
-      position: absolute;
+
+  <span class="hljs-selector-class">.card__day</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
+
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
+    }
+  }
+
+  <span class="hljs-selector-class">.card__date-separator</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: (map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>) + <span class="hljs-number">5rem</span>)) {
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-5xl</span>;
+
+    <span class="hljs-selector-class">.card__date</span> {
+      <span class="hljs-attribute">left</span>: -<span class="hljs-variable">$spacing-5xl</span>;
+      <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-5xl</span>;
+    }
+
+    <span class="hljs-selector-class">.card__day</span> {
+      <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;5xl&#x27;</span>);
     }
   }
 }
 
-.card--virtual-tour {
-    min-height: 20rem;
-    position: relative;
-    overflow: hidden;
-    flex-direction:  row;
-    background-color: $offwhite;
-    background-size: cover!important;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-left: none;
-    border: $spacing-4xs solid $teal;
+<span class="hljs-selector-class">.card--with-logo</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
 
-    @media (max-width: map_get($breakpoint-stages, &#x27;mobile-wide&#x27;)) {
-      background-image: none!important;
-      background-color: $offwhite!important;
+  &amp; <span class="hljs-selector-class">.card__content</span> {
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">80%</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-2xl</span> <span class="hljs-variable">$spacing-xl</span>;
+  }
+
+  &amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,&amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.card__content</span> <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">text-decoration</span>: none;
+  }
+
+  &amp; <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">float</span>: right;
+    <span class="hljs-attribute">margin-top</span>: -<span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">max-height</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.5</span>);
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#FFF</span>;
+  }
+
+}
+
+<span class="hljs-selector-class">.card__video</span><span class="hljs-selector-class">.card__figure</span> {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+  }
+  &amp; <span class="hljs-selector-tag">iframe</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">position</span>: absolute;
+    }
+  }
+}
+
+<span class="hljs-selector-class">.card--virtual-tour</span> {
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">20rem</span>;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">overflow</span>: hidden;
+    <span class="hljs-attribute">flex-direction</span>:  row;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background-size</span>: cover<span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">background-position</span>: center center;
+    <span class="hljs-attribute">background-repeat</span>: no-repeat;
+    <span class="hljs-attribute">border-left</span>: none;
+    <span class="hljs-attribute">border</span>: <span class="hljs-variable">$spacing-4xs</span> solid <span class="hljs-variable">$teal</span>;
+
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-attribute">background-image</span>: none<span class="hljs-meta">!important</span>;
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span><span class="hljs-meta">!important</span>;
     }
 
-    .card__content {
-      margin-top: $spacing-2xl;
-      margin-left: $spacing-2xl;
-      max-width: 25rem;
-      z-index: 1;
-      background: rgba(255,255,255,0.9);
-      padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
+    <span class="hljs-selector-class">.card__content</span> {
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$spacing-2xl</span>;
+      <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-2xl</span>;
+      <span class="hljs-attribute">max-width</span>: <span class="hljs-number">25rem</span>;
+      <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
+      <span class="hljs-attribute">background</span>: rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0.9</span>);
+      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-xl</span>;
 
-      &gt; .title {
-        color: $teal;
+      &gt; <span class="hljs-selector-class">.title</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$teal</span>;
       }
 
-      &gt; :last-child {
-        margin-top: $spacing-md;
+      &gt; <span class="hljs-selector-pseudo">:last-child</span> {
+        <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$spacing-md</span>;
       }
     }
 }
 
-.grid-2-cols\@tablet {
-  &amp;  .card__video {
-    &amp;.card__figure {
-      padding-bottom: 50%;
-      position: relative;
-      height: 0;
-      &amp; iframe {
-        position: absolute;
+<span class="hljs-selector-class">.grid-2-cols</span>\<span class="hljs-keyword">@tablet</span> {
+  &amp;  <span class="hljs-selector-class">.card__video</span> {
+    &amp;<span class="hljs-selector-class">.card__figure</span> {
+      <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50%</span>;
+      <span class="hljs-attribute">position</span>: relative;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+      &amp; <span class="hljs-selector-tag">iframe</span> {
+        <span class="hljs-attribute">position</span>: absolute;
       }
     }
   }
@@ -716,7 +752,7 @@ a.card {
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">9.1 KB</span>
+                    <span class="Meta-value">9.8 KB</span>
                 </li>
             </ul>
         </div>
@@ -914,7 +950,7 @@ a.card {
         
         
         <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./typography--default.html" data-role="tree-link" data-pjax data-handle="typography">
+            <a class="Tree-entityLink" href="./typography.html" data-role="tree-link" data-pjax data-handle="typography">
                 <span>Typography</span>
                 
 
@@ -1163,7 +1199,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1189,7 +1225,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1241,7 +1277,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1333,7 +1369,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1359,7 +1395,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1385,7 +1421,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1411,7 +1447,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1427,6 +1463,32 @@ a.card {
                 </ul>
             </li>
             
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./global-search.html" data-role="tree-link" data-pjax data-handle="global-search">
+                <span>Global Search</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
         
     
         
@@ -1495,7 +1557,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1729,7 +1791,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1807,7 +1869,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1885,7 +1947,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -1951,7 +2013,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2061,7 +2123,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2087,7 +2149,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -2254,79 +2316,6 @@ a.card {
     
         
     
-        
-            
-            <div class="Navigation-group" data-role="variant-group" data-component="typography">
-                
-<div class="Tree" data-behaviour="tree" id="tree-typography-variants">
-    <div class="Tree-header">
-        <h3 class="Tree-title">Typography Variants</h3>
-
-        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
-            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
-
-        </button>
-    </div>
-    <ul class="Tree-items Tree-depth-1">
-        
-    
-        
-        
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./typography--default.html" data-role="tree-link" data-pjax data-handle="typography">
-                <span>Default</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #2999cc;" title="Reference"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-        
-        
-        
-        
-        <li class="Tree-item Tree-entity" data-role="item">
-            <a class="Tree-entityLink" href="./typography--examples.html" data-role="tree-link" data-pjax data-handle="typography">
-                <span>Examples</span>
-                
-
-<div class="Status Status--unlabelled">
-
-<div class="Status-dots">
-
-
-<span class="Status-dot" style="border-color: #2999cc;" title="Reference"></span>
-
-
-</div>
-
-</div>
-
-
-            </a>
-        </li>
-        
-    
-
-    </ul>
-</div>
-
-            </div>
         
     
         
@@ -2664,6 +2653,32 @@ a.card {
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="./box--open-day-dates.html" data-role="tree-link" data-pjax data-handle="box">
                 <span>Open day dates</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./box--abstitle.html" data-role="tree-link" data-pjax data-handle="box">
+                <span>AbsPos Title</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -3158,7 +3173,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3184,7 +3199,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3210,7 +3225,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3236,7 +3251,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3262,7 +3277,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3340,7 +3355,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3366,7 +3381,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3392,7 +3407,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3418,7 +3433,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3444,7 +3459,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3470,7 +3485,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3496,7 +3511,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3522,7 +3537,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3548,7 +3563,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3574,7 +3589,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3600,7 +3615,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3626,7 +3641,33 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./card--with-background.html" data-role="tree-link" data-pjax data-handle="card">
+                <span>With Background</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -3802,6 +3843,8 @@ a.card {
 </div>
 
             </div>
+        
+    
         
     
         
@@ -4598,7 +4641,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -4624,7 +4667,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -4650,7 +4693,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -4676,7 +4719,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -4702,7 +4745,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5141,7 +5184,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5167,7 +5210,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5193,7 +5236,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5219,7 +5262,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5245,7 +5288,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5271,7 +5314,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5297,7 +5340,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5528,7 +5571,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5554,7 +5597,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5580,7 +5623,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5606,7 +5649,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5655,7 +5698,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5681,7 +5724,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5707,7 +5750,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5733,7 +5776,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>
@@ -5759,7 +5802,7 @@ a.card {
 <div class="Status-dots">
 
 
-<span class="Status-dot" style="border-color: #ff9233;" title="WIP"></span>
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
 
 
 </div>

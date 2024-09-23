@@ -406,28 +406,99 @@ if(anchorTarget == "#courses__postgraduate")
 
   };
 
-  let siteSearchInit = function() {
-    
-    let megaNav = $('#megaNav');
-    let searchField = $('#search-site');
+  let globalSearchInit = function searchInit() {
+    // CG: Show / hide the global search as appropriate
+    $("#global-search-open, #global-search__close").on("click", function (e) {
+      $("#global-search").toggleClass("global-search--open");
+    });
+    $(document).on("keyup", function (e) {
+      if (e.keyCode == 27) {
+        $("#global-search").removeClass("global-search--open");
+      }
+    }); // CG: Show / hide the appropriate global search field
 
-    searchField.on('focus focusout', function () {
-        var searchIsOpen = searchField.hasClass('is-open');
+    $("#global-search__options .global-search__scope").on("change", function (e) {
+      var scope = $("#global-search__options .global-search__scope:checked").val();
 
-        if(searchIsOpen) {
-          searchField.removeClass('is-open');
-          setTimeout(function() {
-            megaNav.fadeIn(500);
-          }, 200);
-        } else {
-          megaNav.fadeOut(500, function() {
-            searchField.addClass('is-open');
-          });
-        }
-    })
+      if (scope == "courses") {
+        // Show the course search field
+        $("#global-search__keywords--courses").removeClass("visually-hidden");
+        $("#global-search__keywords--whole-site").addClass("visually-hidden");
+      } else {
+        $("#global-search__keywords--whole-site").removeClass("visually-hidden");
+        $("#global-search__keywords--courses").addClass("visually-hidden");
+      }
+    });
+    /* CG: Build search URLs */
+
+    function courseSearchUrl(query) {
+      var collection = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "staffordshire-coursetitles";
+      var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      if (level == "postgraduate") {
+        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=postgraduate+(taught)&f.Level%7CV=postgraduate+(research)&query=" + query;
+      } else if (level == "undergraduate") {
+        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=undergraduate&query=" + query;
+      }
+
+      return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&query=" + query;
+    }
+
+    function siteSearchUrl(query) {
+      return "https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=" + query;
+    }
+
+    $("#global-search__keywords--whole-site").keyup(function (e) {
+      // CG: Detect ENTER being pressed
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        window.location.href = siteSearchUrl($(this).val());
+      }
+
+      e.preventDefault();
+    });
+    $("#global-search__keywords--courses").keyup(function (e) {
+      // CG: Detect ENTER being pressed
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        window.location.href = courseSearchUrl($(this).val());
+      }
+
+      e.preventDefault();
+    });
   }
 
   let courseSearchInit = function() {
+    var searchField = $('#course-search__keywords');
+    $(searchField).on('keyup', function (e) {
+
+      var keycode = e.keyCode ? e.keyCode : e.which;
+
+      if (keycode == '13') {
+        $('#form1').on('submit', function (e) {
+          e.preventDefault();
+        });
+        e.stopImmediatePropagation();
+        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&query=' + searchField.val();
+
+        if (window.location != window.parent.location) {
+          window.parent.location = targetUrl;
+        } else {
+          window.location = targetUrl;
+        }
+      }
+    });
+
     $('#course-search__submit--ug').on('click', function() {
       var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=undergraduate&query=' + $('#course-search__keywords').val();
       if (window.location != window.parent.location) {
@@ -1102,7 +1173,7 @@ if(anchorTarget == "#courses__postgraduate")
   };
 
   var toggleVariantInit = function toggleVariantInit() {
-    $("#study-option-selector").on("change", function() {
+    $(".masthead__study-option-selector").on("change", function() {
 
       if (stopFlag == false) {        
           var activeOption = $(this).find(":selected").val();
@@ -1111,7 +1182,7 @@ if(anchorTarget == "#courses__postgraduate")
           $('*[data-mode]').not(activeMode.show()).hide();
           // Refresh sliders         
           $(".slick-slider").each(function() {
-              $(this).slick('reinit');          
+              $(this).slick('reinit');
           });
   
           // CG: Reset the assessment tabs
@@ -1128,9 +1199,18 @@ if(anchorTarget == "#courses__postgraduate")
         }
   
         stopFlag = false;
-  });
+      }
+    );
 
-  $('input[name=study-option]').on('change', function () {
+    $("#award-selector").on("change", function() {
+      var activeOption = $(this).find(":selected").val();
+      // CG: Show / hide the relevant award selector
+      $('.masthead__study-option-selector').not($('.masthead__study-option-selector[data-award="' + activeOption + '"]').show()).hide();
+      // CG: Switch to the first item, and trigger "change"
+      $('.masthead__study-option-selector[data-award="' + activeOption + '"]').prop('selectedIndex',0).trigger('change');
+    });
+
+    $('input[name=study-option]').on('change', function () {
       if (stopFlag == false) {        
           var activeOption = $(this).val();
           console.log("Mode of study = " + activeOption);
@@ -1145,9 +1225,11 @@ if(anchorTarget == "#courses__postgraduate")
 
           // CG: Reset the  assessment tabs
           $('a[href="#teachingOverview"]').trigger('click');
+        }
+
+        stopFlag = false;
       }
-      stopFlag = false;
-  });
+    );
   };
 
   var visualizerInit = function visualizerInit() {
@@ -1208,7 +1290,7 @@ if(anchorTarget == "#courses__postgraduate")
   $(document).ready(function () {
     megaNavMobile();
     megaNavInit();
-    siteSearchInit();
+    globalSearchInit();
     courseSearchInit();
     tabsInit();
     sliderInit();

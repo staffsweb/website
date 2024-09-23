@@ -127,6 +127,18 @@ $card__internal-spacing: $spacing-sm;
     }
 
   }
+
+  &--bg-offwhite {
+    background-color: $grey-50-pc;
+
+    & .card__content {
+      padding: $card__internal-spacing * 2;
+    }
+
+    & .card__figure {
+      margin-bottom: 0;
+    }
+  }
 }
 
 a.card {
@@ -185,6 +197,10 @@ a.card {
 
 .card--testimonial {
   padding-bottom: $card__internal-spacing;
+
+  .blockquote__figure img {
+    border-bottom: $spacing-2xs solid var(--accent-color);
+  }
 }
 
 .card--pullquote {
@@ -196,10 +212,11 @@ a.card {
     display: block;
     float: left;
     width: 5%;
+    margin-right: 1%;
     height: 0;
     padding-bottom: 5%;
     margin-left: -5%;
-    background: #fff url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
+    background: url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
     background-size: contain;
   }
 
@@ -211,7 +228,7 @@ a.card {
   @each $name, $value in $card-accent-colors {
     &.card--#{$name} {
       &:before {
-        background: #fff url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
+        background: transparent url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
         background-size: contain;
       }
     }
@@ -237,7 +254,8 @@ a.card {
 }
 
 .card--course {
-  // this exists, but doesn't need anything specific (yet)
+  border-left: $border-accent-width solid $primary;
+  border-color: var(--accent-color);
 }
 
 .card--result {
@@ -262,9 +280,22 @@ a.card {
       @if (choose-contrast-color(map_get($value, "background")) == white) {
         color: white;
 
-        & h3, & .strong {
-          color: map_get($value, "accent-color");
+        & .button {
+          color: white;
         }
+      }
+
+      & .button--outline {
+        color: map_get($value, "accent-color");
+        border-color: map_get($value, "accent-color");
+
+        &:hover {
+          color: black;
+        }
+      }
+
+      & .title, & .strong {
+        color: map_get($value, "accent-color");
       }
     }
   }
@@ -274,8 +305,13 @@ a.card {
   }
 
   & .card__figure {
-    margin-left: -$spacing-2xl;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 15rem;
+
+    /*@media (max-width: (map_get($breakpoint-stages, 'tablet-wide'))) {
+      flex: 1 1 25%;
+    }*/
   }
 
   & .title {
@@ -386,7 +422,7 @@ a.card {
 
   & .card__content {
     max-width: 80%;
-    background-color: $offwhite;
+    background-color: $grey-50-pc;
     padding: $spacing-xl $spacing-xl $spacing-2xl $spacing-xl;
   }
 
@@ -425,7 +461,7 @@ a.card {
     position: relative;
     overflow: hidden;
     flex-direction:  row;
-    background-color: $offwhite;
+    background-color: $grey-50-pc;
     background-size: cover!important;
     background-position: center center;
     background-repeat: no-repeat;
@@ -434,7 +470,7 @@ a.card {
 
     @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
       background-image: none!important;
-      background-color: $offwhite!important;
+      background-color: $grey-50-pc!important;
     }
 
     .card__content {
