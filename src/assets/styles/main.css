@@ -1863,6 +1863,8 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .ui-autocomplete { z-index: 1000; }
 
+.ui-autocomplete-category { padding: 0.5rem 0.5rem 0 0.5rem; font-weight: bold; color: #170d38; }
+
 .ui-menu-item__course { padding: 0 0.5rem 0 0.75rem; }
 
 .ui-menu-item__course:hover { background-color: #EEE; }
