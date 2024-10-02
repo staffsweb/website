@@ -3,7 +3,7 @@ status: ready
 
 variants:
   - name: red
-    label: "Theme: Red"
+    label: "Theme: Hot Red"
     
   - name: burgundy
     label: "Theme: Burgundy"
@@ -16,11 +16,9 @@ variants:
 
   - name: ksp
     label: "KSP (Key Selling Points)"
-    status: ready
 
   - name: ksp-light
     label: "KSP (Light on Dark)"
-    status: ready
 
   - name: with-logo
     label: "With logo"
