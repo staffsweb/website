@@ -1,0 +1,267 @@
+<div class="title">
+  <h1>Getting Started</h1>
+</div>
+
+<div class="slab  slab--bg-offwhite  align-full">
+  <div class="wrap">
+    <p class="intro">The component library contains some guidance on what components are for and how to use them
+      from both a content editor, and developer viewpoint on each individual component. There are also some more
+      globally applicable guidelines for things like Typography, Colour, Spacing and Layout on other pages in this
+      section.</p>
+    <p class="intro"><strong>This is mostly technical documentation intended for those using and maintaining the
+        Staffs component library. If you don't write code, this might not be the page you're looking for, skip
+        it :)</strong></p>
+    <p class="intro">In this guide you will find some (hopefully) useful notes on:</p>
+    <ul class="">
+      <li><a href="#fractal">Fractal and setting it up</a></li>
+      <li><a href="#file-structure">Front-end architecture / file structure</a></li>
+      <li><a href="#build-process">Build process / Code compilation (Gulp)</a></li>
+      <li><a href="#adding-a-new-component">Guide: How to add a new component</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-header  section-header--bg-offwhite   align-full  margin-top-xl" id="fractal">
+  <div class="wrap">
+    <div class="section-header__title  title">
+      <h2>Fractal</h2>
+    </div>
+  </div>
+</div>
+
+<p>The component library is managed using <a href="https://fractal.build">Fractal</a>, which has great documentation
+  worth familiarising yourself with, it's already set up to run in the repo, you'll just need it installed on your
+  system, see: <a href="https://fractal.build/guide/installation.html#installing-the-fractal-cli-tool">Installing the
+    Fractal CLI tool</a></p>
+<p>The <code>package.json</code> file in the root of the repository should list everything you need to run the project
+  locally. Just run:</p>
+
+<pre>npm install</pre>
+
+<p>to grab the packages, then to check everything is working, you should be able to run:
+
+<pre>fractal start</pre>
+
+<p>To get a viewable localhost version running on your system at this point. You can kill the process after you confirm it's
+  working.</p>
+
+<p>Fractal's settings can be found in <code>fractal.config.js</code> in the root, as per <a
+      href="https://fractal.build/guide/project-settings.html">the docs</a>. Changing anything in this file will
+  need a restart of Fractal to take effect.</p>
+
+<p>In the long term, we'll run Fractal through <a href="https://gulpjs.com/docs/en/getting-started/quick-start">Gulp</a>,
+  more on this later.</p>
+
+
+<div class="section-header  section-header--bg-offwhite align-full  margin-top-6xl" id="file-structure">
+  <div class="wrap">
+    <div class="section-header__title  title">
+      <h2>File structure</h2>
+    </div>
+  </div>
+</div>
+
+<p>The file structure for Fractal is set in <code>fractal.js</code> for components, assets, docs and the build folder.
+</p>
+<p>The docs folder is unused, we have a folder in components (<code>src/components/01-globals-and-docs</code>) for these
+  docs (yes, these ones you're reading now), as it's a bit easier to add fancier styles and examples here.</p>
+
+<h3 class="h4">The Build Folder</h3>
+<p>The <code>design-system</code> folder is the <strong>build folder</strong>. This contains <strong>generated code and
+    should not be edited</strong>. It will be overwritten when building a static version of the component library.
+  More on this later.</p>
+
+<h3 class="h4">The Source Folder</h3>
+<p><code>src</code> contains everything you'll edit. It runs the localhost version while you're building things, and is
+  then compiled when <a href="https://fractal.build/guide/web/exporting-static-html.html#configuration">exporting a
+    static HTML version</a>.
+
+<h3 class="h4">Templating Note</h3>
+<p>You'll notice that all the template files use <a href="https://twig.symfony.com">Twig</a> as a <a
+      href="https://fractal.build/guide/customisation/template-engines.html">templating language</a>. This means
+  components can be built to be directly included in Drupal and WordPress (using <a
+      href="https://github.com/timber/timber">Timber</a> or likewise). While that might not be directly
+  appropriate for your project's integration, it sped up the development of components at the time 😇.</p>
+<p><strong>Plain ol' HTML is valid Twig, and the compiled HTML can be viewed for all components from within Fractal in
+  the HTML tab along the bottom of the screen</strong>.</p>
+
+<h3 class="h4">Global Assets</h3>
+<p>Assets like fonts, images, js and styles (in <a href="https://sass-lang.com">Sass</a>) are stored in
+  <code>src/assets</code>. Edit them here, they get copied to the build folder when building a static version of the
+  component library.</p>
+
+<h3 class="h4">Components</h3>
+<p>Each component has a folder in <code>src/components/</code>. This normally contains a <code>.twig</code> view
+  template (for the HTML), some contain a config file to add context, dynamically created variants, control naming and
+  ordering. Ideally all the styles and JS for a component will live here also. At the time of writing, all the
+  components have their own <code>.scss</code> file for styles, but the JS is in one <code>app.js</code> file in
+  <code>assets</code>.</p>
+<p>The JavaScript could probably use breaking up and bundling better. Ideally it'd be nice to do a similar thing with JS
+  for each component as we do for Sass styles, so:</p>
+
+<pre>
+├── components
+│   └── slider
+│   │   ├── slider.twig
+│   │   ├── slider--variant.twig
+│   │   ├── slider.config.yml
+│   │   ├── _sliders.scss
+│   │   └── _sliders.js
+</pre>
+
+<p><strong>Useful:</strong> <a href="https://fractal.build/guide/components/">Fractal Docs on Components</a></p>
+
+
+<div class="section-header  section-header--bg-offwhite align-full  margin-top-6xl" id="build-process">
+  <div class="wrap">
+    <div class="section-header__title  title">
+      <h2>Build process / Code compilation (Gulp)</h2>
+    </div>
+  </div>
+</div>
+
+<p class="intro">The build process has been set up using <a
+      href="https://gulpjs.com/docs/en/getting-started/quick-start">Gulp</a> for simplicity, cross-platform
+  compatibility, and extensibility. It probably has some room for improvement, but it 'just works' for now 😬. If
+  improved, remember to update these docs.</p>
+
+<p>
+  <del>We used to use a 'designer-friendly' GUI app for code compilation, set up for use with <a
+        href="https://codekitapp.com">CodeKit</a> which sadly is a <strong>Mac only</strong> app. A suitable
+    cross-platform GUI alternative might be <a href="https://prepros.io">PrePros</a>.
+  </del>
+</p>
+
+<p>If you've never used Gulp on your system, <a href="https://gulpjs.com/docs/en/getting-started/quick-start/#install-the-gulp-command-line-utility">install the CLI</a> with:</p>
+
+<pre>npm install --global gulp-cli</pre>
+
+
+<p>Our goal for a build process, among other things is:</p>
+<ul>
+  <li>Sass to CSS compilation</li>
+  <li>Sass syntax checking</li>
+  <li>Compact output style, works best for git diffs, but compressed (minified) is an option</li>
+  <li>Source maps</li>
+  <li>PostCSS/Autoprefixer</li>
+  <li>Theme image optimisation (for SVG, JPEG, PNG, etc.)</li>
+  <li>JavaScript transpilation (Babel)</li>
+  <li>ESLint syntax checking</li>
+  <li>JS minification if not taken care of by the CMS</li>
+  <li>JS source maps</li>
+</ul>
+
+<p>There is a gulpfile in the root where a basic command-line build process for Sass/JS has been set up.</p>
+
+<p>The build process watches Sass/JS and compiles on the fly, and also runs the equivelant of <code>fractal start</code>
+  to running a localhost with BrowserSync. This is the default gulp task, so you just need to run:</p>
+
+<pre>gulp</pre>
+
+<p>A <code>gulp build</code> task has been set up, which currently just runs <code>fractal build</code>, but could be extended.</p>
+<p>There's also a <code>gulp deploy</code> task, which in future could be modified to generate minified assets if needed for the target environment.</p>
+
+
+<h3 class="h4">Sass (to CSS)</h3>
+
+<p>Global styles are located in <code>src/assets/styles/</code>.</p>
+
+<p>The entry point / manifest for generation of the main CSS is in <code>src/assets/styles/main.scss</code></p>
+
+<ul>
+  <li><code>__vars</code> is used for variables/settings, nothing in this folder outputs code, it's just variables and
+    mixins to be called from other places. <strong>Change things here, and they'll likely cascade across the site
+      (and subthemes).</strong></li>
+  <li><code>_global</code> contains global, non-componentized styles required for everything, like base typography,
+    layout wrappers
+  </li>
+  <li><code>_grid</code> contains the code that actually outputs the grid system, it doesn't need to be edited unless
+    you want to for example, significantly rename classes or upgrade it to use flexbox rather than floats. You can
+    <em>extend</em> the grid system by editing its settings <code>_grid.scss</code> <strong> in
+      <code>__vars</code></strong>.
+  </li>
+  <li><code>_utils</code> contains code which outputs utility classes</li>
+  <li><code>_vendor</code> is a place to add third-party styles if they can't be enqueued in another way. We mostly
+    just use this to include <a href="https://necolas.github.io/normalize.css/">Normalize</a>.
+  </li>
+</ul>
+
+<p><strong>Component styles</strong> are separated out into their component folders, and are included by main.scss. It
+  'reaches out' of the assets folder and into each component, for example:</p>
+
+<pre>
+@import "__vars/_all";
+@import "../../components/card/cards";
+</pre>
+
+<p><strong>NB: We do not (currently) use 'globbing' to include all files (such as components) - eg. <code>@import
+      "../../components/*/*";</code></strong>. Partially as some Sass compilers don't support it for 'reasons',
+  and partially to control the ordering of what gets imported (one of the 'reasons' some Sass compilers opt not to
+  support globbing). Thus, with the current build process, when you add a partial, you'll need to <strong>manually
+    (purposefully) add it to <code>main.scss</code> (and any other subthemes created)</strong>. More on this in the
+  guide below.</p>
+
+
+<h3 class="h4">JavaScript</h3>
+
+<p>Our first rule is to use sparingly. If a JavaScript-free solution is available (like <a
+      href="https://developer.mozilla.org/en/docs/Web/HTML/Element/details">{{ '<details>' | escape }}</a>),
+  prefer it!</p>
+<p>That said, it's mad to think we can eliminate JavaScript completely.</p>
+<p>JavaScript lives in <code>src/assets/js</code> and is processed by gulp.</p>
+<p>The entry point is <code>app.js</code>, which currently uses
+{#  <del>@codekit-prepend, CodeKit's <a#}
+{#        href="https://codekitapp.com/help/javascript/">simple JavaScript imports</a></del>#}
+  <a href="https://www.npmjs.com/package/gulp-include">gulp-include</a> syntax to bring in third-party
+  libraries we keep in <code>src/assets/js/vendor/</code>. Using "proper" package management for this would be a
+  great idea.
+</p>
+<p>As mentioned above, it'd also be really nice to separate out what are currently three functions for the megaNav, tabs
+  and slider into separate files in their component folders, and bundle them 'properly' using modern JavaScript
+  methods.</p>
+<p>It ain't perfect, but it Works For Now&trade;.</p>
+
+<p>The result of <code>gulp default</code> is output at <code>src/assets/dev/js</code>, which is referenced in Fractal's localhost, and copied to the build folder when building.</p>
+<p>There's a <code>src/assets/dist</code> folder which would be used by <code>gulp deploy</code> to create minified assets, but this is currently not in use. If the target CMS environment doesn't
+  support concatenation and minification of CSS/JS, this is worth looking into for performance.</p>
+
+
+<div class="section-header  section-header--bg-offwhite align-full  margin-top-6xl" id="adding-a-new-component">
+  <div class="wrap">
+    <div class="section-header__title  title">
+      <h2>Guide: Adding a new component</h2>
+    </div>
+  </div>
+</div>
+
+<ol>
+  <li>From command line, run
+    <pre>gulp</pre>
+    from the root of the project, this should start Fractal, Sass/JS filewatching, and open your browser to the localhost.
+  </li>
+  <li>Create a folder for the component in <code>src/components/</code>, eg.
+    <code>src/components/your-component/</code></li>
+  <li>Create a <code>.twig</code> template file (for the HTML) inside the folder, .eg <code>src/components/your-component/your-component.twig</code>
+    - as soon as you do this, Fractal should refresh and the component should appear in the components list on the
+    left
+  </li>
+  <li>Create a <code>.scss</code> 'partial' file prefixed with an underscore (this lets the compiler know not to
+    directly compile the file, because it is included by another file), eg. <code>src/components/your-component/_your-component.scss</code>
+  </li>
+  <li>Reference the partial <code>.scss</code> in <code>src/assets/styles/main.scss</code>*, so that it's brought into
+    the site CSS, by adding a line like so:
+    <pre>@import "../../components/your-component/your-component";</pre>
+    For now, this will be compiled to <code>src/assets/styles/main.css</code>, which is referenced in Fractal.
+  </li>
+  <li>Write the HTML and Sass for your component</li>
+  <li>When you're done, <a href="https://fractal.build/guide/web/exporting-static-html.html#configuration">run a build to a static HTML version</a> by running
+    <pre>gulp build</pre>
+    (or fractal build) from the command line. This will compile .twig to static HTML, and copy all (already compilied on-the-fly) assets (fonts/img/css/js) to the <code>design-system</code>
+    folder, so the component library can be viewed without having to run a localhost version
+  </li>
+  <li>Add the new/modified files to your chosen flavour of source control</li>
+  <li>Repeat!</li>
+</ol>
+
+<p><sup>* this will add the component to the main site styles, to include in sub-themes, add to their Sass file too, eg.
+    <code>main-ldn.scss</code></sup></p>
