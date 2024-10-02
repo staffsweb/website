@@ -15,7 +15,7 @@
 <p>For example:</p>
 
 <pre>
-  // Pallette
+  // Palette
   $purple:                        #ad0075;
   $purple--light:                 #ad0075;
   $purple--vibrant:               #ad0075;
@@ -66,11 +66,9 @@ Sass for each component can then pick up <code>$main-link-color</code>, eg.
 
 <pre>
 $tile-accent-colors: (
-  'red': $red,
-  'pink': $pink,
-  'maroon': $maroon,
-  'slate': $slate,
-  'tef-gold': $gold--tef,
+  'dark-blue': $dark-blue,
+  'digital-blue': $digital-blue,
+  'neon': $neon,
 );
 </pre>
 
@@ -87,11 +85,9 @@ $tile-accent-colors: (
 <p>Producing:</p>
 
 <pre>
-.tile--accent-red { --accent-color: #d70a26; }
-.tile--accent-pink { --accent-color: #d5035e; }
-.tile--accent-maroon { --accent-color: #970048; }
-.tile--accent-slate { --accent-color: #394851; }
-.tile--accent-tef-gold { --accent-color: #dd9200; }
+.tile--accent-dark-blue { --accent-color: #170d38; }
+.tile--accent-digital-blue { --accent-color: #304dfc; }
+.tile--accent-neon { --accent-color: #c4ff36; }
 </pre>
 
 <h2>Colour Utilities</h2>
