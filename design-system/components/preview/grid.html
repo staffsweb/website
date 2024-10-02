@@ -1,0 +1,222 @@
+
+
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="en">
+    <head>
+        
+<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="../../styles/main.css" rel="stylesheet" />
+<link media="print" href="../../styles/print.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrap  margin-top-xl">
+            <div class="title  title--has-tail">
+  <h1 class="title__highlight">Grid</h1>
+</div>
+
+<p class="intro">The structure of the grid is created with a class of <code><strong>grid</strong></code> on a container <code>div</code>.</p>
+<p class="intro">The <code>grid</code>'s <strong>direct descendant</strong> elements then automagically become its grid cells. Make these empty containing divs with no styling, as the gutters are added with padding.</p>
+
+<p>For example:</p>
+
+<pre>&lt;div class=&quot;grid  grid-4-cols&quot;&gt;
+  &lt;div&gt;
+    &lt;div class=&quot;box  box--padded  box--has-shadow&quot;&gt;Column&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;div class=&quot;box  box--padded  box--has-shadow &quot;&gt;Column&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;div class=&quot;box  box--padded  box--has-shadow&quot;&gt;Column&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div&gt;
+    &lt;div class=&quot;box  box--padded  box--has-shadow&quot;&gt;Column&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>Automagic Columns</h2>
+
+<p>Most basic grids can be acheived simply by adding a class of <code>grid-<em>[n]</em>-cols</code> on the grid, the columns will then be 'automagically' generated up to a maximum of <em>[n]</em> columns as soon as is visibily suitable.
+  Columns flow left to right, and return again at the end of the row.</p>
+
+<p>eg.</p>
+
+<ul>
+  <li><code>grid-2-cols</code> Will create two columns when it's visibly sensible to do so</li>
+  <li><code>grid-3-cols</code> Will create three columns when it's visibly sensible to do so.</li>
+  <li><code>grid-4-cols</code> Will create two columns when the viewport is wide enough to do so, then four columns at wider viewports when it's visibly sensible to do so.</li>
+  <li><code>grid-5-cols</code> Will step through two columns when the viewport is wide enough to do so, then three columns, then five columns at wider viewports.</li>
+  <li><code>grid-6-cols</code> Will step through two columns when the viewport is wide enough to do so, then three, then four columns, then six columns at wider viewports.</li>
+</ul>
+
+<p>For more complex control of choosing where columns are applied at breakpoints, see below (if applicable to project). For reference, 'automagic' breakpoints are defined in <code>__vars/_breakpoints.scss</code></p>
+
+<h2>Spacing/Padding</h2>
+
+<p>Space items more or less by making them <code>flush</code>, <code>compact</code>, or <code>spaced</code>. eg.</p></p>
+
+<section>
+  <h3 class="h4"><code>grid <strong>grid--flush</strong> grid-4-cols</code></h3>
+
+  <div class="grid  grid--flush  grid-4-cols">
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow ">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3 class="h4"><code>grid <strong>grid-compact</strong> grid-4-cols</code></h3>
+
+  <div class="grid  grid--compact  grid-4-cols">
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow ">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3 class="h4"><code>grid grid-4-cols</code></h3>
+
+  <div class="grid  grid-4-cols">
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow ">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3 class="h4"><code>grid <strong>grid-spaced</strong> grid-4-cols</code></h3>
+
+  <div class="grid  grid--spaced  grid-4-cols">
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow ">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+    <div>
+      <div class="box  box--padded  box--has-shadow">Column</div>
+    </div>
+  </div>
+</section>
+
+<h2>Column Classes</h2>
+
+<p>Individual columns can be given classes that override the parent grid class.</p>
+<p>Individual column classes can be used on all columns instead of a 'default' on the <code>grid</code> if required, the <code>grid</code> class on the container is still needed, and columns should still be direct descendant elements.</p>
+<p>The fractions that will work depend on your project setup, generally speaking this will range from <code>col-1/2</code> to <code>col-5/6</code>.
+<p>Always use the <strong>lowest common denominator</strong> in fractions. <code>col-3/6</code> is <strong>not valid</strong>, use <code>col-1/2</code>.</p>
+<p>These columns will still use 'automagic' breakpoints, ie. <code>col-1/4</code> will be half-width where visibly suitable. For more complex control of choosing where columns are applied at breakpoints, see below (if applicable to
+  project).</p>
+
+<p>It's possible to use multiple col classes to change the widths of items at wider widths, bear in mind the higher denominator breakpoint takes priority the wider the viewport, and if mixing and matching, use fractions that work together,
+  breaking up rows with additional <code>grid</code> wrappers to create new rows.</p>
+
+<h2>Complex/Advanced Usage: Custom Breakpoints</h2>
+
+<p><strong>Depending on project setup</strong>, the grid may allow custom breakpoints (stages) to be appended to <code>grid-</code> and <code>col-</code> classes using the syntaxes:</p>
+<ul>
+  <li><code>grid-[col]-cols@[stage]</code></li>
+  <li><code>col-[x]/[col]@[stage]</code></li>
+</ul>
+<p>The <code>[col]</code>s, and <code>[stage]</code>s for this usage must be initialised in Sass for the output classes to be compiled and available for use. This is not default behaviour as it can generate a hefty filesize depending on
+  options chosen. See below for your project's support of this.</p>
+
+<p>For example, if stages of <code>s1</code>, <code>xxs</code>, and <code>phablet</code> were defined, valid grid classes may be:</p>
+<ul>
+  <li><i><code>grid-2-cols@s1</code></i></li>
+  <li><i><code>grid-2-cols@xxs</code></i></li>
+  <li><i><code>grid-4-cols@phablet</code></i></li>
+</ul>
+
+<p>Valid column classes may be:</p>
+<ul>
+  <li><i><code>col-1/2@s1</code></i></li>
+  <li><i><code>col-2/5@xxs</code></i></li>
+  <li><i><code>col-3/4@phablet</code></i></li>
+</ul>
+
+<p>As with automagic breakpoints, <code>col-</code> classes take priority over any <code>grid-</code> classes, the higher denominator takes priority within the same breakpoint, and the later the breakpoint (the wider the viewport), the
+  greater priority it would have.</p>
+
+<p><strong>This project, at delivery, has been enabled with the <code>[stage]</code>s:</strong><p>
+
+<pre>
+  mobile: 20rem,
+  mobile-wide: 35rem,
+  tablet: 45rem,
+  tablet-wide: 60rem,
+  desktop: 80rem,
+  desktop-wide: 90rem,
+</pre>
+
+<p><strong>for <code>[col]</code>s:</strong><p>
+<pre>2, 3, 4, 5, 6</pre>
+
+<p>So use in this project might include, for example:</p>
+
+<ul>
+  <li><i><code>grid-2-cols@mobile</code></i></li>
+  <li><i><code>grid-3-cols@tablet-wide</code></i></li>
+  <li><i><code>grid-5-cols@desktop</code></i></li>
+  <li><i><code>col-1/4@mobile</code></i></li>
+  <li><i><code>col-1/2@tablet</code></i></li>
+  <li><i><code>col-3/5@desktop-wide</code></i></li>
+</ul>
+
+<p><em>(To add/edit/remove, see <code>__vars/_breakpoints.scss</code> & <code>__vars/_grid.scss</code>)</em></p>
+
+</body>
+</html>
+        </div>
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../dev/js/app.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="en">
+    <head>
+        
+<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="../../styles/main.css" rel="stylesheet" />
+<link media="print" href="../../styles/print.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrap  margin-top-xl">
+            <div class="title  title--has-tail">
+  <h1 class="title__highlight">Colour</h1>
+</div>
+
+<h2>Brand colours</h2>
+
+<p>Colours can be found in <code>__vars/_colours.scss</code>. Refer to it for available colours when making components, and maintain the palette there.</p>
+
+<p>Colours should be stored as solid hexes or rgb (not rgba), and given a <strong>name unique to their appearance</strong> - consistent with their naming in brand guidelines, if possible, and <em>then</em> assigned for use within the design system, it is encouraged to abstract as much as possible, this helps components to be themed later.</p>
+<p>For example, the theme could use an abstracted <code>$neutral--primary</code> and <code>$neutral--light</code>, to avoid using <code>$slate</code> from the main palette, which might not be suitable for sub-themes.</p>
+<p>If multiple shades of a colour exist, give them BEM-like modifier names.</p>
+<p>If allowed by brand guidelines, use Sass rgba() to create transparent variants.</p>
+<p>For example:</p>
+
+<pre>
+  // Pallette
+  $purple:                        #ad0075;
+  $purple--light:                 #ad0075;
+  $purple--vibrant:               #ad0075;
+  $orange:                        #e6650a;
+
+  // Theme colours
+  $primary:                       $purple;
+  $secondary:                     $orange;
+
+  // References
+  $main-link-color:               $primary;
+  $main-link-color--hover:        rgba($main-link-color, 0.9)
+</pre>
+
+Sass for each component can then pick up <code>$main-link-color</code>, eg.
+
+<pre>
+  a {
+    color: $main-link-color;
+
+    &:hover {
+      color: $main-link-color--hover;
+    }
+  }
+</pre>
+
+<h2>Applying colour</h2>
+<p>If not abstracting to a colour variable (or map of colour variables) for a specific component, aim to utilise <code>$primary</code>, <code>$secondary</code>, etc. variables when colouring components. This means when a theme layer is applied, the components can take on any updated colours easily. More on this below, and in <a href="../detail/theming.html" target="_top">Theming docs</a>.</p>
+
+<h2>Colour variants</h2>
+<p>If the brand guidelines allow, colour variants/derivatives should always be named and added to the main colour variables file so they are traceable. Hexes should (almost?) never be found in components' partials.</p>
+
+<h2>Colour tints</h2>
+<p>'Tints' (usually from print brand guidelines) are acheived best by using the Sass <code>mix()</code> function, with white. Something like:</p>
+
+<pre>
+  $green-lime:                    #a2aa1f;
+  $green-lime--tint-10:           mix($green-lime, white, 10%);
+  $green-lime--tint-20:           mix($green-lime, white, 20%);
+  $green-lime--tint-30:           mix($green-lime, white, 30%);
+  $green-lime--tint-50:           mix($green-lime, white, 50%);
+</pre>
+<p>Avoid just lightening/darkening in Sass (these functions are just weird in their operation and produce inconsistent results to what you might expect, don't use them).</p>
+
+<h2>Component variants (maps & loops)</h2>
+
+<p>A select number of components have colour variants, these are generated dynamically from maps and loops, for example, the Tile component has a <code>$tile-accent-colors</code> map:</p>
+
+<pre>
+$tile-accent-colors: (
+  'red': $red,
+  'pink': $pink,
+  'maroon': $maroon,
+  'slate': $slate,
+  'tef-gold': $gold--tef,
+);
+</pre>
+
+<p>This is accompanied by a loop in the component file to generate CSS classes for variants:</p>
+
+<pre>
+@each $name, $value in $tile-accent-colors {
+  &--accent-#{$name} {
+    --accent-color: #{$value};
+  }
+}
+</pre>
+
+<p>Producing:</p>
+
+<pre>
+.tile--accent-red { --accent-color: #d70a26; }
+.tile--accent-pink { --accent-color: #d5035e; }
+.tile--accent-maroon { --accent-color: #970048; }
+.tile--accent-slate { --accent-color: #394851; }
+.tile--accent-tef-gold { --accent-color: #dd9200; }
+</pre>
+
+<h2>Colour Utilities</h2>
+
+<p>There are two maps, <code>$utils-bg-colors</code> and <code>$utils-text-colors</code> which generate utility classes for colours. As with the margin/spacing utilities, <strong>use sparingly, not
+    by default.</strong> These styles probably belong in a component.</p>
+
+<p>For example, adding:</p>
+<pre>'primary': $primary,</pre>
+<p>to the <code>$utils-text-colors</code> map, will output a class of <code>text-color-primary</code> which can be used to <span class="text-color-primary">make text the primary colour</span>.</p>
+
+<p>In <code>$utils-bg-colors</code>, the line:</p>
+<pre>'tertiary': $tertiary,</pre>
+<p>Will output a class of <code>bg-tertiary</code> which can be used to <span class="bg-tertiary">set the background of any element to tertiary.</span></p>
+<p>If you were to use <code>bg-offblack</code>, you'd need to be careful to also add a class of <code>text-color-offwhite</code> <span class="bg-offblack text-color-offwhite">so that text is
+    readable</span>.</p>
+
+        </div>
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../dev/js/app.js"></script>
+
+    </body>
+</html>

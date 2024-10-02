@@ -1,0 +1,144 @@
+<div class="title  title--has-tail">
+  <h1 class="title__highlight">Alignments</h1>
+</div>
+
+<h2>Alignments</h2>
+
+<p>Elements can be aligned left and right within the normal flow of paragraph content using the classes <code>align-left</code> and <code>align-right</code>. Where no specific size is selected, they'll default to <strong>size-md at small screens, and size-sm at larger screens</strong>
+  width. This is normally fine.</p>
+<p>As these elements are floated, <strong>always make sure there is enough copy to flow all the way around the element to 'clear' it.</strong>
+
+<h2>Sizes</h2>
+
+<p>Elements can be given a size to restrict their width. Normally <strong>you don't need to</strong>, by default things will be size-md at small screens, and size-sm at larger screens, but if you want to make something explicitly larger or
+  smaller than its default width <strong>at all times</strong>, add one of:</p>
+
+<ul class="list--unstyled  list--inline">
+  <li><code>align-size-xs</code></li>
+  <li><code>align-size-sm</code></li>
+  <li><code>align-size-md</code></li>
+  <li><code>align-size-lg</code></li>
+</ul>
+
+<hr>
+
+<h2>Demo</h2>
+
+<figure class="align-left">
+  <img src="https://picsum.photos/335/210?random=1"/>
+  <figcaption>An image aligned left, with a caption</figcaption>
+</figure>
+
+<p>{{ placeholderPara1 }}</p>
+
+<p>{{ placeholderPara2 }}</p>
+
+<p>It's normally a good idea to delay adding a heading until you've added enough copy to clear a left-aligned figure, else it can look weird.</p>
+
+<h3 class="h4">Right aligned after a heading</h3>
+
+<figure class="align-right">
+  <img src="https://picsum.photos/335/210?random=2"/>
+  <figcaption>An image aligned right, with a caption</figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<hr/>
+
+<h2>In constrained content column</h2>
+
+<div class="grid  grid--spaced  grid-4-cols@tablet-wide">
+  <div>
+    <aside class="box  box--padded  box--bg-slate">Aside ahead of content</aside>
+  </div>
+
+  <div class="col-1/2@tablet-wide">
+    <figure class="align-left">
+      <img src="https://picsum.photos/335/210?random=3"/>
+      <figcaption>An image aligned left, with a caption</figcaption>
+    </figure>
+
+    <p>{{ placeholderPara3 }}</p>
+
+    <p>{{ placeholderPara2 }}</p>
+
+    <p>It's normally a good idea to delay adding a heading until you've added enough copy to clear a left-aligned figure, else it can look weird.</p>
+
+    <h3 class="h4">Right aligned after a heading</h3>
+
+    <figure class="align-right">
+      <img src="https://picsum.photos/335/210?random=4"/>
+      <figcaption>An image aligned right, with a caption</figcaption>
+    </figure>
+
+    <p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+    <p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+  </div>
+
+  <div>
+    <aside class="box  box--padded box--bg-slate">Aside after content</aside>
+  </div>
+</div>
+
+
+<h2>Blockquote</h2>
+<figure class="align-left">
+  <blockquote class="blockquote--short">
+    <q class="blockquote__title">If aligning a quote, make it short.</q>
+    <footer>
+      <cite>Dan (VP of Alignment Advice)</cite>
+    </footer>
+  </blockquote>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<h2>Sizes</h2>
+<figure class="align-right  align-size-xs">
+  <img src="https://picsum.photos/210/210?random=5"/>
+  <figcaption>size-xs</figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<figure class="align-right ">
+  <img src="https://picsum.photos/800/400?random=6"/>
+  <figcaption><strong>automatically sized (default: normally just use this!)</strong></figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<figure class="align-right  align-size-sm">
+  <img src="https://picsum.photos/800/400?random=7"/>
+  <figcaption>size-sm</figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<figure class="align-right  align-size-md">
+  <img src="https://picsum.photos/800/400?random=8"/>
+  <figcaption>size-md</figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+
+<figure class="align-right  align-size-lg">
+  <img src="https://picsum.photos/800/400?random=9"/>
+  <figcaption>size-lg</figcaption>
+</figure>
+
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+<p>{{ placeholderPara2 }} {{ placeholderPara1 }}</p>
+

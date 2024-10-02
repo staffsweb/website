@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="en">
+    <head>
+        
+<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="../../styles/main.css" rel="stylesheet" />
+<link media="print" href="../../styles/print.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrap  margin-top-xl">
+            <div class="title  title--has-tail">
+  <h1 class="title__highlight">Spacing</h1>
+</div>
+
+<h2>Spacing variables</h2>
+<p>These can be found for reference in <code>__vars/_spacing.scss</code>, and <strong>should not be changed</strong>, they define the spacing across the entire site.</p>
+<p>The map for the utilities classes is also defined here.</p>
+
+<pre>
+  $spacing-baseline: 1rem !default;
+
+  $spacing-4xs: $spacing-baseline * 0.0625 !default;
+  $spacing-3xs: $spacing-baseline * 0.125 !default;
+  $spacing-2xs: $spacing-baseline * 0.25 !default;
+  $spacing-xs: $spacing-baseline * 0.5 !default;
+  $spacing-sm: $spacing-baseline * 0.75 !default;
+  $spacing-md: $spacing-baseline !default;
+  $spacing-lg: $spacing-baseline * 1.5 !default;
+  $spacing-xl: $spacing-baseline * 2 !default;
+  $spacing-2xl: $spacing-baseline * 2.5 !default;
+  $spacing-3xl: $spacing-baseline * 3 !default;
+  $spacing-4xl: $spacing-baseline * 4 !default;
+  $spacing-5xl: $spacing-baseline * 6 !default;
+  $spacing-6xl: $spacing-baseline * 8 !default;
+</pre>
+
+<p>You'll see them used liberally in Sass to keep consistency in spacing accross the site, for example, something like:</p>
+
+<pre>.element {
+  margin: 0 0 $spacing-xl;
+  padding: $spacing-md;
+}
+</pre>
+
+<p>If helpful, don't be afraid to assign variables to variables to give them more meaning, for example:</p>
+
+<pre>$card__internal-spacing: $spacing-sm;
+
+.card {
+  margin: 0 0 $spacing-xl;
+  padding: $card__internal-spacing;
+
+  &__title {
+    margin-bottom: $card__internal-spacing;
+  }
+}
+</pre>
+
+<h2>Spacing utilities</h2>
+<p>We generate utility classes for layout-level spacing to help with vertical rhythm in content. Use sparingly, only where it isn't really possible to add margins in CSS.</p>
+<p>To add margin <strong>top and bottom</strong>, use: <code>margin-y-[size]</code>, eg. <code>margin-y-md</code> for medium spacing, <code>.margin-y-lg</code> for large spacing.</p>
+<p>To add margin to <strong>bottom only</strong>, use: <code>margin-bottom-[size]</code>, eg. <code>margin-bottom-md</code> for medium spacing.</p>
+<p>To add margin to <strong>top only</strong>, use: <code>margin-top-[size]</code>, eg. <code>margin-top-md</code> for medium spacing. This is normally an unlikely use case. Consider adding bottom margin to the layout block above instead.</p>
+
+<pre>$utils-margin-sizes: (
+  '4xs':  $spacing-4xs,
+  '3xs':  $spacing-3xs,
+  '2xs':  $spacing-2xs,
+  'xs':   $spacing-xs,
+  'sm':   $spacing-sm,
+  'md':   $spacing-md,
+  'lg':   $spacing-lg,
+  'xl':   $spacing-xl,
+  '2xl':  $spacing-2xl,
+  '3xl':  $spacing-3xl,
+  '4xl':  $spacing-4xl,
+  '5xl':  $spacing-5xl,
+  '6xl':  $spacing-6xl,
+)</pre>
+        </div>
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../dev/js/app.js"></script>
+
+    </body>
+</html>
