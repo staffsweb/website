@@ -23,6 +23,11 @@
       display: block;
       margin: auto auto $spacing-lg;
     }
+
+    & > svg {
+      width: 1em;
+      height: 1em;
+    }
   }
 
   &__content {
