@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html class="no-js no-touch" lang="en">
+    <head>
+        
+<script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="cleartype" content="on" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link href="../../styles/main.css" rel="stylesheet" />
+<link media="print" href="../../styles/print.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="wrap  margin-top-xl">
+            <div class="title  title--has-tail">
+  <h1 class="title__highlight">Imagery</h1>
+</div>
+
+<h2>Icons - SVG preferred</h2>
+
+<p>Where possible, use <abbr title="Scalable Vector Graphics">SVG</abbr> format for icons. Not only do they scale without loss of quality, but they can also be easily recoloured when placed on different backgrounds to give sufficient contrast.</p>
+<p>For example, rather than:</p>
+
+<pre>
+  &lt;img src=&quot;/site/images/icon-calendar.svg&quot; alt=&quot;&quot; /&gt;
+</pre>
+
+<p>..embed the code directly:</p>
+
+<pre>
+   &lt;svg id=&quot;icon-calendar&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 400 399.95&quot;&gt;
+    &lt;g id=&quot;icon-calendar__outline&quot; fill=&quot;currentColor&quot;&gt;
+      &lt;g&gt;
+        &lt;path d=&quot;m316.88,98&hellip;
+
+      // etc.
+</pre>
+
+<p>Note that any fill or stroke colours should be set to <code>currentColor</code> if you needs to recolour them - this will allow you to change the icon's colour using CSS.</p>
+
+<h3>Watch those IDs!</h3>
+
+<p>Software such as Adobe Illustrator often adds classes and IDs to SVG code with generic names such as <code>Layer_1</code>. Make sure to remove these, because they are likely to cause duplication of IDs in the web page and <a href="https://www.w3.org/TR/WCAG20-TECHS/F77.html" title="W3C guidance on duplicate values of type 'ID'">this will not meet accessibility requirements</a>.</p>
+        </div>
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../../dev/js/app.js"></script>
+
+    </body>
+</html>
