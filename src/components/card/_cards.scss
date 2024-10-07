@@ -474,12 +474,15 @@ a.card {
     }
 
     .card__content {
-      margin-top: $spacing-2xl;
-      margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
       background: rgba(255,255,255,0.9);
       padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
+
+      @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        margin-top: $spacing-2xl;
+        margin-left: $spacing-2xl;
+      }
 
       > .title {
         color: $teal;

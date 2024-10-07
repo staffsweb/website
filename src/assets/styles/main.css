@@ -1811,7 +1811,9 @@ a.card:hover .card__title { text-decoration: underline; }
 
 @media (max-width: 35rem) { .card--virtual-tour { background-image: none !important; background-color: #E0DFE8 !important; } }
 
-.card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; max-width: 25rem; z-index: 1; background: rgba(255, 255, 255, 0.9); padding: 2rem 2rem 0.5rem 2rem; }
+.card--virtual-tour .card__content { max-width: 25rem; z-index: 1; background: rgba(255, 255, 255, 0.9); padding: 2rem 2rem 0.5rem 2rem; }
+
+@media (min-width: 35rem) { .card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; } }
 
 .card--virtual-tour .card__content > .title { color: #006b82; }
 
