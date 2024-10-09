@@ -105,6 +105,19 @@ $card__internal-spacing: $spacing-sm;
   @each $name, $value in $card-accent-colors {
     &--#{$name} {
       --accent-color: #{$value};
+
+      &.card--ksp .icon svg * {
+        @if (choose-contrast-color($value) == white) {
+          stroke: white!important;
+          fill: white!important;
+          color: white;
+        }
+        @else {
+          stroke: black!important;
+          fill: black!important;
+          color: black;
+        }
+      }
     }
   } 
 
@@ -335,7 +348,7 @@ a.card {
     width: 2em;
     height: 2em;
     
-    img {
+    img, svg {
       width: 60%;
       height: 60%;
       vertical-align: unset;
