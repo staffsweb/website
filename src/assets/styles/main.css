@@ -1961,6 +1961,10 @@ hr { position: relative; }
 
 .hr--primary { border-top-width: 2px; border-color: #E0DFE8; }
 
+.hr--burgundy { border-top-width: 2px; border-color: #8a0045; }
+
+.hr--teal { border-top-width: 2px; border-color: #006b82; }
+
 .hr--compact { margin: 2rem auto; }
 
 .hr--spaced { margin: 6rem auto; }

@@ -8,6 +8,16 @@ hr {
   border-color: $grey-50-pc;
 }
 
+.hr--burgundy {
+  border-top-width: 2px;
+  border-color: $burgundy;
+}
+
+.hr--teal {
+  border-top-width: 2px;
+  border-color: $teal;
+}
+
 // Spacing
 
 .hr--compact {
