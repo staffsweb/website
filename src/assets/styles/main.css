@@ -1607,51 +1607,51 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--red { --accent-color: #ef4a3b; }
 
-.card--red.card--ksp .icon svg * { stroke: black !important; fill: black !important; color: black; }
+.card--red.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--pink { --accent-color: #170d38; }
 
-.card--pink.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--pink.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--maroon { --accent-color: #8a0045; }
 
-.card--maroon.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--maroon.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--slate { --accent-color: #170d38; }
 
-.card--slate.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--slate.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--blue-ldn { --accent-color: #170d38; }
 
-.card--blue-ldn.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--blue-ldn.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--burgundy { --accent-color: #8a0045; }
 
-.card--burgundy.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--burgundy.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--digital-blue { --accent-color: #304dfc; }
 
-.card--digital-blue.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--digital-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--dark-blue { --accent-color: #170d38; }
 
-.card--dark-blue.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--dark-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--teal { --accent-color: #006b82; }
 
-.card--teal.card--ksp .icon svg * { stroke: white !important; fill: white !important; color: white; }
+.card--teal.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--grey { --accent-color: #c2bfd2; }
 
-.card--grey.card--ksp .icon svg * { stroke: black !important; fill: black !important; color: black; }
+.card--grey.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--pale-blue { --accent-color: #bdf7e3; }
 
-.card--pale-blue.card--ksp .icon svg * { stroke: black !important; fill: black !important; color: black; }
+.card--pale-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--neon { --accent-color: #c4ff36; }
 
-.card--neon.card--ksp .icon svg * { stroke: black !important; fill: black !important; color: black; }
+.card--neon.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--primary { --accent-color: #170d38; }
 
