@@ -37,15 +37,15 @@ variants:
     context:
       background: teal
       text: 'This is a teal slab'
+      
   - name: slate
     label: "Legacy: Slate"
     context:
       background: slate
       text: 'Slate slabs will become dark blue'
 
-  - name: bg-img
-    label: "Background Image"
-    hidden: true
+  - name: bg-knot
+    label: "Background: Knot"
     context:
-      background: img
+      background: knot
       text: 'This is a slab with background image'

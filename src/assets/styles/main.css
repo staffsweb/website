@@ -2649,7 +2649,7 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab__bg { position: absolute; right: 0; bottom: 0; left: 0; z-index: -1; }
 
-.slab__bg img { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
+.slab__bg img, .slab__bg svg { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
 
 .slab--border-bottom { border-bottom: 1px solid #dddddd; }
 
@@ -2678,6 +2678,16 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 .slab--bg-teal { background-color: #006b82; color: white; }
 
 .slab--bg-teal a:not(.button), .slab--bg-teal h2 { color: white; }
+
+.slab--bg-knot-grey { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23E0DFE8" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-neon { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23E1FF9A" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-blue { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23bdf7e3" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-peach { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23febea5" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-yellow { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23ffffae" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
 
 .slab--bg-blue-ldn a { color: inherit; }
 
