@@ -2693,6 +2693,8 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab--bg-knot-yellow { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23ffffae" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
 
+.slab--bg-knot-lavender { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23e8c7ff" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
 .slab--bg-blue-ldn a { color: inherit; }
 
 .slab--bg-blue-ldn a:hover { text-decoration: none; border-bottom: 0; }
