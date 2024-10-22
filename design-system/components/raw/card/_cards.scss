@@ -105,6 +105,19 @@ $card__internal-spacing: $spacing-sm;
   @each $name, $value in $card-accent-colors {
     &--#{$name} {
       --accent-color: #{$value};
+
+      &.card--ksp .card--ksp__icon-container > .icon svg * {
+        @if (choose-contrast-color($value) == white) {
+          stroke: white!important;
+          fill: white!important;
+          color: white;
+        }
+        @else {
+          stroke: black!important;
+          fill: black!important;
+          color: black;
+        }
+      }
     }
   } 
 
@@ -335,7 +348,7 @@ a.card {
     width: 2em;
     height: 2em;
     
-    img {
+    img, svg {
       width: 60%;
       height: 60%;
       vertical-align: unset;
@@ -474,12 +487,15 @@ a.card {
     }
 
     .card__content {
-      margin-top: $spacing-2xl;
-      margin-left: $spacing-2xl;
       max-width: 25rem;
       z-index: 1;
       background: rgba(255,255,255,0.9);
       padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
+
+      @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        margin-top: $spacing-2xl;
+        margin-left: $spacing-2xl;
+      }
 
       > .title {
         color: $teal;

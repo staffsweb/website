@@ -34,7 +34,7 @@ $neon-50-pc: #E1FF9A;
 $yellow: #ffff58;
 $yellow-light: #ffffae;
 $peach: #febea5;
-$lavender: #d18fff;
+$lavender: #e8c7ff;
 
 
 
@@ -172,6 +172,14 @@ $slab-bg-colors: (
   'neon': $neon-50-pc,
   'digital-blue': $digital-blue,
   'teal': $teal
+);
+
+$slab-bg-image-colors: (
+  'grey': $grey-50-pc,
+  'neon': $neon-50-pc,
+  'blue': $pale-blue,
+  'peach': $peach,
+  'yellow': $yellow-light
 );
 
 $banner-bg-colors: (

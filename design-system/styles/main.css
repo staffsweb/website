@@ -1607,27 +1607,51 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--red { --accent-color: #ef4a3b; }
 
+.card--red.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
+
 .card--pink { --accent-color: #170d38; }
+
+.card--pink.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--maroon { --accent-color: #8a0045; }
 
+.card--maroon.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
+
 .card--slate { --accent-color: #170d38; }
+
+.card--slate.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--blue-ldn { --accent-color: #170d38; }
 
+.card--blue-ldn.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
+
 .card--burgundy { --accent-color: #8a0045; }
+
+.card--burgundy.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--digital-blue { --accent-color: #304dfc; }
 
+.card--digital-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
+
 .card--dark-blue { --accent-color: #170d38; }
+
+.card--dark-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
 
 .card--teal { --accent-color: #006b82; }
 
+.card--teal.card--ksp .card--ksp__icon-container > .icon svg * { stroke: white !important; fill: white !important; color: white; }
+
 .card--grey { --accent-color: #c2bfd2; }
+
+.card--grey.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--pale-blue { --accent-color: #bdf7e3; }
 
+.card--pale-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
+
 .card--neon { --accent-color: #c4ff36; }
+
+.card--neon.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--primary { --accent-color: #170d38; }
 
@@ -1765,7 +1789,7 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--ksp .icon { display: table-cell; vertical-align: middle; width: 2em; height: 2em; }
 
-.card--ksp .icon img { width: 60%; height: 60%; vertical-align: unset; }
+.card--ksp .icon img, .card--ksp .icon svg { width: 60%; height: 60%; vertical-align: unset; }
 
 .card--ksp .icon svg { fill: var(--accent-color); }
 
@@ -1811,7 +1835,9 @@ a.card:hover .card__title { text-decoration: underline; }
 
 @media (max-width: 35rem) { .card--virtual-tour { background-image: none !important; background-color: #E0DFE8 !important; } }
 
-.card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; max-width: 25rem; z-index: 1; background: rgba(255, 255, 255, 0.9); padding: 2rem 2rem 0.5rem 2rem; }
+.card--virtual-tour .card__content { max-width: 25rem; z-index: 1; background: rgba(255, 255, 255, 0.9); padding: 2rem 2rem 0.5rem 2rem; }
+
+@media (min-width: 35rem) { .card--virtual-tour .card__content { margin-top: 2.5rem; margin-left: 2.5rem; } }
 
 .card--virtual-tour .card__content > .title { color: #006b82; }
 
@@ -1934,6 +1960,10 @@ a.feature-link:hover .feature-link__figure { opacity: 0.9; }
 hr { position: relative; }
 
 .hr--primary { border-top-width: 2px; border-color: #E0DFE8; }
+
+.hr--burgundy { border-top-width: 2px; border-color: #8a0045; }
+
+.hr--teal { border-top-width: 2px; border-color: #006b82; }
 
 .hr--compact { margin: 2rem auto; }
 
@@ -2623,7 +2653,7 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab__bg { position: absolute; right: 0; bottom: 0; left: 0; z-index: -1; }
 
-.slab__bg img { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
+.slab__bg img, .slab__bg svg { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
 
 .slab--border-bottom { border-bottom: 1px solid #dddddd; }
 
@@ -2652,6 +2682,18 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 .slab--bg-teal { background-color: #006b82; color: white; }
 
 .slab--bg-teal a:not(.button), .slab--bg-teal h2 { color: white; }
+
+.slab--bg-knot-grey { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23E0DFE8" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-neon { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23E1FF9A" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-blue { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23bdf7e3" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-peach { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23febea5" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-yellow { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23ffffae" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
+
+.slab--bg-knot-lavender { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23e8c7ff" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
 
 .slab--bg-blue-ldn a { color: inherit; }
 
