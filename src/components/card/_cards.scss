@@ -208,8 +208,45 @@ a.card {
   }
 }
 
+// In Razor, attach background colours only if there are more than one
 .card--testimonial {
   padding-bottom: $card__internal-spacing;
+
+  & .cite {
+    margin-bottom: $spacing-2xs;
+    color: var(--accent-color);
+  }
+
+  @each $name, $value in $testimonial-card-colors {
+    &.card--bg-#{$name} {
+      background-color: map_get($value, "background");
+      color: map_get($value, "color");
+      padding: $spacing-2xs $spacing-lg $spacing-lg $spacing-lg;
+
+      @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        & .card__content {
+          padding-left: 0;
+          margin-left: -$spacing-4xl;
+        }
+      }
+
+      & .blockquote__prose  {
+        margin-top: 0;
+      }
+
+      & q {
+        color: map_get($value, "color");
+      }
+
+      & strong, & .cite { 
+        color: map_get($value, "contrast-color");
+      }
+
+      & .blockquote__figure img {
+        border-bottom: 0;
+      }
+    }
+  }
 
   .blockquote__figure img {
     border-bottom: $spacing-2xs solid var(--accent-color);

@@ -1699,6 +1699,44 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--testimonial { padding-bottom: 0.75rem; }
 
+.card--testimonial .cite { margin-bottom: 0.25rem; color: var(--accent-color); }
+
+.card--testimonial.card--bg-burgundy { background-color: #8a0045; color: white; padding: 0.25rem 1.5rem 1.5rem 1.5rem; }
+
+@media (min-width: 35rem) { .card--testimonial.card--bg-burgundy .card__content { padding-left: 0; margin-left: -4rem; } }
+
+.card--testimonial.card--bg-burgundy .blockquote__prose { margin-top: 0; }
+
+.card--testimonial.card--bg-burgundy q { color: white; }
+
+.card--testimonial.card--bg-burgundy strong, .card--testimonial.card--bg-burgundy .cite { color: #c4ff36; }
+
+.card--testimonial.card--bg-burgundy .blockquote__figure img { border-bottom: 0; }
+
+.card--testimonial.card--bg-digital-blue { background-color: #304dfc; color: white; padding: 0.25rem 1.5rem 1.5rem 1.5rem; }
+
+@media (min-width: 35rem) { .card--testimonial.card--bg-digital-blue .card__content { padding-left: 0; margin-left: -4rem; } }
+
+.card--testimonial.card--bg-digital-blue .blockquote__prose { margin-top: 0; }
+
+.card--testimonial.card--bg-digital-blue q { color: white; }
+
+.card--testimonial.card--bg-digital-blue strong, .card--testimonial.card--bg-digital-blue .cite { color: #c4ff36; }
+
+.card--testimonial.card--bg-digital-blue .blockquote__figure img { border-bottom: 0; }
+
+.card--testimonial.card--bg-neon { background-color: #E1FF9A; color: black; padding: 0.25rem 1.5rem 1.5rem 1.5rem; }
+
+@media (min-width: 35rem) { .card--testimonial.card--bg-neon .card__content { padding-left: 0; margin-left: -4rem; } }
+
+.card--testimonial.card--bg-neon .blockquote__prose { margin-top: 0; }
+
+.card--testimonial.card--bg-neon q { color: black; }
+
+.card--testimonial.card--bg-neon strong, .card--testimonial.card--bg-neon .cite { color: #304dfc; }
+
+.card--testimonial.card--bg-neon .blockquote__figure img { border-bottom: 0; }
+
 .card--testimonial .blockquote__figure img { border-bottom: 0.25rem solid var(--accent-color); }
 
 .card--pullquote { padding-bottom: 0.75rem; margin-left: 5%; }
