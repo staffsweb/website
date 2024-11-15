@@ -77,6 +77,12 @@ variants:
       classes: ['button--outline-dark-blue']
       text: 'Dark Blue Outline Style Button'
 
+  - name: outline-grey
+    label: "Style: Outline Grey"
+    context:
+      classes: ['button--outline-grey']
+      text: 'Grey Outline Style Button'
+
   - name: block
     label: "Style: Block-level Element"
     context:

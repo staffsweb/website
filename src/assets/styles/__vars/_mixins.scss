@@ -133,6 +133,20 @@
   }
 }
 
+@mixin button--outline-grey {
+  color: black;
+  border: 0.2em solid $grey-50-pc;
+  padding: 0.6em 2em;
+  background-color: transparent;
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, $grey-50-pc 50%);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+}
+
 @mixin button--grey {
   background-image: linear-gradient(to left, $grey-50-pc 50%, black 50%);
   color: black;

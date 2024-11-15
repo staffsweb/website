@@ -66,6 +66,10 @@
     @include button--outline-dark-blue;
   }
 
+  &--outline-grey {
+    @include button--outline-grey;
+  }
+
   &--outline-slate {
     @include button--outline-dark-blue;
   }

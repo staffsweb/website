@@ -225,6 +225,10 @@ a.tag:hover { text-decoration: underline; color: black; }
 
 .button--outline-dark-blue:hover, .button--outline-dark-blue:focus, .button--outline-dark-blue:active { color: white; }
 
+.button--outline-grey { color: black; border: 0.2em solid #E0DFE8; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #E0DFE8 50%); }
+
+.button--outline-grey:hover, .button--outline-grey:focus, .button--outline-grey:active { color: black; }
+
 .button--outline-slate { color: black; border: 0.2em solid #170d38; padding: 0.6em 2em; background-color: transparent; background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #170d38 50%); }
 
 .button--outline-slate:hover, .button--outline-slate:focus, .button--outline-slate:active { color: white; }

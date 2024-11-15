@@ -7766,6 +7766,21 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
     });
   };
 
+  var readMoreInit = function readMoreInit() {
+    $('.read-more__link').on('click', function () {
+      var itemToShow = $(this).attr('data-item');
+
+      if ($(this).hasClass('is-open')) {
+        $(this).removeClass('is-open').text('Read more');
+        $('#' + itemToShow).slideUp();
+      } else {
+        $(this).addClass('is-open').text('Read less');
+        ;
+        $('#' + itemToShow).slideDown();
+      }
+    });
+  };
+
   var visualizerInit = function visualizerInit() {
     if (getURLParameter("visualizer") == "true") {
       $('[data-source]').each(function () {
@@ -7837,6 +7852,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
     visualizerInit();
     toggleSlide('[data-course-modules-trigger]', scrollToTop);
     playlistInit();
+    readMoreInit();
     countrySubmit();
     crmFormsInit();
     leadGenInit();

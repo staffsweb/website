@@ -41,6 +41,19 @@
     &-body {
       @include typescale('sm');
       @include line-height('normal');
+
+      & .button > .icon {
+        margin-right: $spacing-2xs;
+      }
+    }
+  }
+
+  &--facility {
+    margin-bottom: $spacing-xs;
+
+    & .tile__content {
+      position: static;
+      margin-right: 0;
     }
   }
 
@@ -71,6 +84,12 @@
   @each $name, $value in $tile-accent-colors {
     &--accent-#{$name} {
       --accent-color: #{$value};
+
+      & .title .title__highlight {
+        @if (choose-contrast-color($value) == black) {
+          color: black;
+        }
+      }
     }
   }
 
@@ -106,4 +125,26 @@ a.tile {
 
 .has-cta .tile {
   min-height: 30em;
+}
+
+.read-more {
+  &__link {
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:after {
+      content: '\25BC';
+    }
+
+    &.is-open:after {
+      content: '\25B2';
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__text {
+    display: none;;
+  }
 }
