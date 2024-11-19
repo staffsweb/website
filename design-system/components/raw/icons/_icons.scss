@@ -1,0 +1,105 @@
+// add icons to this array with their filename and type,
+// the loop at the bottom of the file will create classes for them
+
+$icons: (
+  '360' : 'svg',
+  '360-red' : 'svg',
+  'envelope': 'svg',
+  'phone': 'svg',
+  'facebook': 'svg',
+  'pin': 'svg',
+  'pin-red': 'svg',
+  'book-red': 'svg',
+  'calendar': 'svg',
+  'clock': 'svg',
+  'circle-padlock-white': 'svg',
+  'pricetag': 'svg',
+  'facebook-white': 'svg',
+  'instagram': 'svg',
+  'instagram-white': 'svg',
+  'linkedin': 'svg',
+  'linkedin-white': 'svg',
+  'more' : 'svg',
+  'pinterest': 'svg',
+  'pinterest-white': 'svg',
+  'play-circle-red': 'svg',
+  'snapchat': 'svg',
+  'snapchat-white': 'svg',
+  'tiktok': 'svg',
+  'tiktok-white': 'svg',
+  'twitter': 'svg',
+  'twitter-white': 'svg',
+  'youtube': 'svg',
+  'youtube-white': 'svg',
+  'form' : 'svg',
+  'globe' : 'svg',
+  'person' : 'svg',
+  'video' : 'svg',
+  'x' : 'svg',
+  'x-white' : 'svg'
+);
+
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  vertical-align: baseline;
+  top: 0.1em;
+
+  svg,
+  img {
+    display: inline-block;
+    width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+
+  svg {
+    height: 100%;
+    //fill: #000;
+  }
+
+  &:before {
+    font-size: 1em;
+    display: inline-block;
+  }
+
+  @each $name, $extension in $icons {
+    &--#{$name} {
+      background-image: url('#{$image-theme-directory-icon}/icon-#{$name}.#{$extension}');
+    }
+  }
+}
+
+.facility-icons {
+  font-weight: 500;
+    
+  &__item {
+      float: left;
+      position: relative;
+      padding-bottom: 30%; // CG: = width for a 1:1 aspect ratio
+      margin: 1.66%;
+      overflow: hidden;
+      background-color: $grey--light;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+  }
+  &__content {
+      position: absolute;
+      height: 90%; // CG: = 100% - 2 * 5% padding
+      width: 90%; // CG: = 100% - 2 * 5% padding
+      padding: 5%;
+      text-align: center;
+      
+  }
+  &__image {
+      margin-bottom: 0;
+  }
+}
+.tile__icon {  width: 43%; margin-top: 5%; }

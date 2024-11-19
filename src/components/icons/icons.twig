@@ -1,0 +1,10 @@
+{% set icons = ["360", "360-red", "book-red", "calendar", "circle-padlock-white", "clock", "envelope", "facebook", "facebook-white", "form", "globe", "instagram", "instagram-white", "linkedin", "linkedin-white", "person", "phone", "pin", "pin-red", "pinterest", "pinterest-white", "play-circle-red", "pricetag", "snapchat", "snapchat-white", "tiktok", "tiktok-white", "twitter", "twitter-white", "x-white", "youtube", "youtube-white"] %}
+<div class="wrap">
+    <ul class="list--inline  font-lg">
+        {% for name in icons %}
+            <li>
+                <span class="button  button--grey"><i class="icon  icon--{{name}}"></i> {{name}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
