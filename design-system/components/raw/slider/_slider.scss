@@ -92,6 +92,15 @@
   }
 }
 
+.slider--facilities {
+  .slick-track {
+    margin: 0 -$grid-gutter;
+  }
+  .slick-slide {
+    margin: 0 $grid-gutter;
+  }
+}
+
 .accolade-slider {
   &__item {
     text-align: center;
