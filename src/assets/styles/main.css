@@ -1406,8 +1406,6 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .banner--with-image { border-radius: 0; }
 
-.banner--with-image .title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: white; color: var(--color); box-shadow: -0.5rem 0 0 0 white, 0.5rem 0 0 0 white; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-
 .banner--with-image .banner__cta, .banner--with-image .hgroup { text-align: center; }
 
 .banner--with-image.banner--bg-burgundy .title__highlight { color: #8a0045; }
@@ -1495,7 +1493,7 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .box--with-abstitle .box__abstitle { position: absolute; top: 0.2rem; left: 0; }
 
-.box--with-abstitle .title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #170d38; background: var(--background, #170d38); color: #c4ff36; box-shadow: -0.5rem 0 0 0 #170d38, 0.5rem 0 0 0 #170d38; box-shadow: -0.5rem 0 0 0 var(--background, #170d38), 0.5rem 0 0 0 var(--background, #170d38); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.box--with-abstitle .title__highlight { color: #c4ff36; }
 
 .box--with-abstitle .title__highlight a { color: #c4ff36; }
 
@@ -2691,6 +2689,10 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .side-nav .title { margin-bottom: 0; padding-bottom: 0; line-height: 1.5rem; }
 
+.side-nav .title__highlight { color: white; }
+
+.side-nav .title__highlight > a { color: white; }
+
 .side-nav h2 { margin-bottom: 0.5rem; }
 
 .sitewide-message { background-color: #FFD91C; padding: 0.5rem 0.75rem; }
@@ -2963,6 +2965,8 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .tile .title__highlight { --background: var(--accent-color); }
 
+.tile .tile .title__highlight a { color: white; color: var(--color); }
+
 .tile--accent-burgundy { --accent-color: #8a0045; }
 
 .tile--accent-dark-blue { --accent-color: #170d38; }
@@ -3031,15 +3035,9 @@ a.tile:focus { outline-width: 3px; outline-color: #170d38; z-index: 2; }
 
 .title--course-location { margin-top: 0.5rem; }
 
+.title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #170d38; background: var(--background, #170d38); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #170d38, 0.5rem 0 0 0 #170d38; box-shadow: -0.5rem 0 0 0 var(--background, #170d38), 0.5rem 0 0 0 var(--background, #170d38); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
 .slab .title, .mini-template-grid .title { margin-top: 0; }
-
-.tile .title__highlight { position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #170d38; background: var(--background, #170d38); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #170d38, 0.5rem 0 0 0 #170d38; box-shadow: -0.5rem 0 0 0 var(--background, #170d38), 0.5rem 0 0 0 var(--background, #170d38); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-
-.tile .title__highlight a { color: white; color: var(--color); }
-
-.side-nav .title__highlight { --background: #ef4a3b; --color: white; position: relative; display: inline; left: 0.5rem; padding: 0.25rem; line-height: 1.4; background: #ef4a3b; background: var(--background, #ef4a3b); color: white; color: var(--color); box-shadow: -0.5rem 0 0 0 #ef4a3b, 0.5rem 0 0 0 #ef4a3b; box-shadow: -0.5rem 0 0 0 var(--background, #ef4a3b), 0.5rem 0 0 0 var(--background, #ef4a3b); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-
-.side-nav .title__highlight a { color: white; color: var(--color); }
 
 .title--bg-white { --background: white; --color: black; }
 

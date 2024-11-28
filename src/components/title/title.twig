@@ -16,7 +16,7 @@
 
 
 <div class="title{{ classString }}">
-  <{{ textElement }} class="{{ textElementStyle ? '  ' ~ textElementStyle }}">
+  <{{ textElement }} class="{{ background ? 'title__highlight' : ''}}{{ textElementStyle ? '  ' ~ textElementStyle }}">
   {{ text }}
 </{{ textElement }}>
 </div>

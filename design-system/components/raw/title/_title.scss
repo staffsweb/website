@@ -23,21 +23,23 @@
   }
 }
 
+.title__highlight {
+  position: relative;
+  display: inline;
+  left: $spacing-xs;
+  padding: 0.25rem;
+  line-height: 1.4;
+  background: $primary;
+  background: var(--background, #{$primary});
+  color: white;
+  color: var(--color);
+  box-shadow: -$spacing-xs 0 0 0 #{$primary}, $spacing-xs 0 0 0 #{$primary};
+  box-shadow: -$spacing-xs 0 0 0 var(--background, #{$primary}), $spacing-xs 0 0 0 var(--background, #{$primary});
+  box-decoration-break: clone;
+}
+
 .tile {
   .title__highlight {
-    position: relative;
-    display: inline;
-    left: $spacing-xs;
-    padding: 0.25rem;
-    line-height: 1.4;
-    background: $dark-blue;
-    background: var(--background, #{$dark-blue});
-    color: white;
-    color: var(--color);
-    box-shadow: -$spacing-xs 0 0 0 #{$dark-blue}, $spacing-xs 0 0 0 #{$dark-blue};
-    box-shadow: -$spacing-xs 0 0 0 var(--background, #{$dark-blue}), $spacing-xs 0 0 0 var(--background, #{$dark-blue});
-    box-decoration-break: clone;
-
     a {
       color: white;
       color: var(--color);
@@ -49,18 +51,6 @@
   .title__highlight {
     --background: #{$red};
     --color: white;
-    position: relative;
-    display: inline;
-    left: $spacing-xs;
-    padding: 0.25rem;
-    line-height: 1.4;
-    background: $red;
-    background: var(--background, #{$red});
-    color: white;
-    color: var(--color);
-    box-shadow: -$spacing-xs 0 0 0 #{$red}, $spacing-xs 0 0 0 #{$red};
-    box-shadow: -$spacing-xs 0 0 0 var(--background, #{$red}), $spacing-xs 0 0 0 var(--background, #{$red});
-    box-decoration-break: clone;
 
     a {
       color: white;

@@ -19,6 +19,13 @@
         line-height: $spacing-lg;
     }
 
+    .title__highlight {
+        color: white;
+        & > a {
+            color: white;
+        }
+    }
+
     & h2 {
         margin-bottom: $spacing-xs;
     }
