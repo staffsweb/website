@@ -2599,6 +2599,26 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .pager__next:hover, .pager__prev:hover { color: white; }
 
+.pie-chart .pie { -webkit-transform: rotate(-90deg); transform: rotate(-90deg); width: 200px; height: 200px; background: #F4F4F4; border-radius: 50%; margin-bottom: 2rem; }
+
+.pie-chart .pie circle { fill: none; stroke: #F4F4F4; stroke-width: 99; -webkit-animation: rotate 1.5s ease-in; animation: rotate 1.5s ease-in; }
+
+.pie-chart .pie .circle-1 { stroke: #D20052; }
+
+.pie-chart .pie .circle-2 { stroke: #394851; }
+
+.pie-chart .pie .circle-3 { stroke: #C3C1C1; }
+
+.pie-chart_key { margin: 0.5rem 0; }
+
+.pie-chart_key .key-color { display: inline-block; width: 17px; height: 17px; margin-right: 0.5rem; }
+
+.pie-chart_key .key-color.key-1 { background: #D20052; }
+
+.pie-chart_key .key-color.key-2 { background: #394851; }
+
+.pie-chart_key .key-color.key-3 { background: #C3C1C1; }
+
 h2.playlist__title { color: #c4ff36 !important; }
 
 a.playlist__link { display: block; padding: 0.75rem 0.75rem 0.75rem 3rem; text-decoration: none; color: white; transition: all 125ms; background-image: url(../images/icons/icon-play-circle-red.svg); background-position: 0.5rem center; background-repeat: no-repeat; background-size: 2rem; }
@@ -3308,28 +3328,6 @@ a.tile:focus { outline-width: 3px; outline-color: #170d38; z-index: 2; }
 .system-info { text-align: right; font-size: 90%; }
 
 .note--validation { color: #ef4a3b; font-weight: 500; }
-
-.pie-chart { width: 200px; }
-
-.pie-chart .pie { -webkit-transform: rotate(-90deg); transform: rotate(-90deg); width: 200px; height: 200px; background: #F4F4F4; border-radius: 50%; margin-bottom: 2rem; }
-
-.pie-chart .pie circle { fill: none; stroke: #F4F4F4; stroke-width: 99; -webkit-animation: rotate 1.5s ease-in; animation: rotate 1.5s ease-in; }
-
-.pie-chart .pie .circle-1 { stroke: #D20052; }
-
-.pie-chart .pie .circle-2 { stroke: #394851; }
-
-.pie-chart .pie .circle-3 { stroke: #C3C1C1; }
-
-.pie-chart .pie-chart_key { margin: 0.5rem 0; }
-
-.pie-chart .pie-chart_key .key-color { display: inline-block; width: 17px; height: 17px; margin-right: 0.5rem; }
-
-.pie-chart .pie-chart_key .key-color.key-1 { background: #D20052; }
-
-.pie-chart .pie-chart_key .key-color.key-2 { background: #394851; }
-
-.pie-chart .pie-chart_key .key-color.key-3 { background: #C3C1C1; }
 
 p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: none; }
 
