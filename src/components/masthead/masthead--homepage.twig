@@ -1,40 +1,27 @@
 <article class="masthead-home">
-  <div class="masthead-home__knot"></div>
+  <div class="wrap">
+    <div class="masthead-home__hero">
+      <img class="masthead-home__img" src="{{ ('/images/masthead-home.jpg') | path }}" alt="" />
+      <img class="masthead-home__mobile" src="{{ ('/images/masthead-home-mobile.jpg') | path }}" alt="" />
 
-  <div class="masthead-home__hero" style="background-image: url({{ ('/images/masthead-home.jpg') | path }});"></div>
-
-  <div class="masthead-home__story  masthead-home__story--background">
-    <!-- CG: Begin content -->
-    <div class="masthead-home__story  masthead-home__story--content">
-      <div class="wrap">
-        <div class="title">
-          <h1>Your place of possibility</h1>
+      <!-- CG: Begin content -->
+      <div class="masthead-home__story">
+        <div class="masthead-home__title  title  title--bg-dark-blue">
+          <h1 class="title__highlight">Welcome to your place of possibility</h1>
         </div>
-        <p>University of Staffordshire London is a lively ecosystem designed for the curious, the bold, and the ambitious.</p>
+        <div class="masthead-home__subtitle  title--bg-white">
+          <p class="title__highlight  h5">Join us on campus on Saturday 30 November to discover next-level teaching within an uplifting, inclusive community.</p>
+        </div>
 
-        <a href="" class="button">
-            Book an open day
+        <a href="" class="button  button--neon">
+            Book undergraduate
         </a>
 
-        <a href="" class="button  button--grey">
-            View courses
+        <a href="" class="button  button--digital-blue">
+            Book postgraduate
         </a>
       </div>
+      <!-- CG: End content -->
     </div>
-    <!-- CG: End content -->
-    <div class="wrap  no-show">
-        <div class="title">
-          <h1>Your place of possibility</h1>
-        </div>
-        <p>University of Staffordshire London is a lively ecosystem designed for the curious, the bold, and the ambitious.</p>
-
-        <a href="" class="button">
-            Book an open day
-        </a>
-
-        <a href="" class="button  button--grey">
-            View courses
-        </a>
-      </div>
   </div>
 </article>
