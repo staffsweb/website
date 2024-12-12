@@ -2390,7 +2390,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @media (max-width: 35rem) { .masthead-home__subtitle { margin-top: 10rem; } }
 
-.masthead-home__story { position: absolute; z-index: 3; bottom: 1rem; }
+.masthead-home__story { position: absolute; z-index: 3; bottom: 1rem; margin-right: 1.5rem; }
 
 @media (max-width: 35rem) { .masthead-home__story { top: 1rem; } }
 
