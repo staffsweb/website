@@ -202,92 +202,77 @@
   // CG: For home page masthead
   &-home {
     position: relative;
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
+    background: $red url('../images/bg-knot-whole-blue.svg') center center no-repeat;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      min-height: 500px;
+    }
 
-    .masthead__inner {
-      position: relative;
+    &--dark-blue {
+      background: $dark-blue url('../images/bg-knot-whole-red.svg') center center no-repeat;
+      background-size: 120%;
+      background-repeat: no-repeat;
     }
 
     &__hero {
-      height: 400px;
-      @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
-        height: 500px;
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+      overflow: hidden;
+
+      & > img {
+        padding-left: 25%;
+        float: right;
       }
+    }
 
-      width: 100%;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: cover;
+    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      .masthead-home__img {
+        display: none;
+      }
+      .masthead-home__mobile {
+        display: block;
+      }
+    }
+    @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      .masthead-home__img {
+        display: block;
+      }
+      .masthead-home__mobile {
+        display: none;
+      }
+    }
 
-      img {
-        @supports (object-fit: cover) {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          object-position: 60% 35%; // we're going to assume the image's focal point is roughly slightly-above-center right, but specify this as an inline style for each image
+    &__title.title {
+      max-width: 30rem!important;
+      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        & h1 {
+          font-size: 1.75rem;
         }
       }
+
+      & > h1 {
+        font-weight: 800;
+      }
     }
 
-    &__knot {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      left: 0;
-      z-index: 3;
-      background: url('../images/bg-knot-blue.svg') right top no-repeat;
-      background-size: 50%;
-
-      @media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
-        background-size: 70%;
-      }
-
+    &__subtitle {
+      max-width: 50rem!important;
       @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
-        background-position: right bottom;
-        background-size: contain;
+        margin-top: 10rem;
       }
-    }
-
-    .no-show {
-      opacity: 0;
-      z-index: -1;
+      margin-bottom: $spacing-xl;
     }
 
     &__story {
-      width: 100%;
-      padding-top: $spacing-lg;
-      color: white;
-
-      & .title {
-        text-transform: uppercase;
-        max-width: 70%;
-
-        & > h1 {
-          font-weight: 800;
-        }
+      position: absolute;
+      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        top: $spacing-md;
       }
-
-      &--background {
-        position: relative;
-        background: $digital-blue;
-      }
-
-      &--content {
-        position: absolute;
-        z-index: 3;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        left: 0;
-      }
+      z-index: 3;
+      bottom: $spacing-md;
+      margin-right: $spacing-lg;
     }
   }
 }

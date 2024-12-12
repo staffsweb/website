@@ -17,12 +17,6 @@
   }
 }
 
-.slab, .mini-template-grid {
-  .title {
-    margin-top: 0;
-  }
-}
-
 .title__highlight {
   position: relative;
   display: inline;
@@ -38,27 +32,11 @@
   box-decoration-break: clone;
 }
 
-.tile {
-  .title__highlight {
-    a {
-      color: white;
-      color: var(--color);
-    }
+.slab, .mini-template-grid {
+  .title {
+    margin-top: 0;
   }
 }
-
-.side-nav {
-  .title__highlight {
-    --background: #{$red};
-    --color: white;
-
-    a {
-      color: white;
-      color: var(--color);
-    }
-  }
-}
-
 
 @each $name, $value in $title-bg-colors {
   .title--bg-#{$name} {

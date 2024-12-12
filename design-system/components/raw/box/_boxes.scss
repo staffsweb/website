@@ -119,18 +119,7 @@
   }
 
   .title__highlight {
-    position: relative;
-    display: inline;
-    left: $spacing-xs;
-    padding: 0.25rem;
-    line-height: 1.4;
-    background: $dark-blue;
-    background: var(--background, #{$dark-blue});
     color: $neon;
-    box-shadow: -$spacing-xs 0 0 0 #{$dark-blue}, $spacing-xs 0 0 0 #{$dark-blue};
-    box-shadow: -$spacing-xs 0 0 0 var(--background, #{$dark-blue}), $spacing-xs 0 0 0 var(--background, #{$dark-blue});
-    box-decoration-break: clone;
-
     a {
       color: $neon;
     }

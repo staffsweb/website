@@ -748,6 +748,15 @@
     --<span class="hljs-attribute">background</span>: var(--accent-color);
   }
 
+  <span class="hljs-selector-class">.tile</span> {
+    <span class="hljs-selector-class">.title__highlight</span> {
+      <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">color</span>: white;
+        <span class="hljs-attribute">color</span>: var(--color);
+      }
+    }
+  }
+
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$tile-accent-colors</span> {
     &amp;--accent-#{<span class="hljs-variable">$name</span>} {
       --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$value</span>};
@@ -830,7 +839,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.5 KB</span>
+                    <span class="Meta-value">2.6 KB</span>
                 </li>
             </ul>
         </div>
@@ -1966,6 +1975,32 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="./pager.html" data-role="tree-link" data-pjax data-handle="pager">
                 <span>Pager</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./pie-chart.html" data-role="tree-link" data-pjax data-handle="pie-chart">
+                <span>Pie Chart</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -4867,6 +4902,8 @@
 </div>
 
             </div>
+        
+    
         
     
         

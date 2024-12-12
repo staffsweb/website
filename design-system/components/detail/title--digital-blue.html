@@ -179,7 +179,7 @@
     <code class="Code Code--lang-html hljs">
         
         <pre><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  title--bg-digital-blue&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title__highlight&quot;</span>&gt;</span>
         This is a digital blue highlighted title
     <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
@@ -208,7 +208,7 @@
 
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title</span></span></span><span class="hljs-template-variable">{{ classString }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span>
-  &lt;</span><span class="hljs-template-variable">{{ textElement }}</span><span class="xml"> class=&quot;</span><span class="hljs-template-variable">{{ textElementStyle ? &#x27;  &#x27; ~ textElementStyle }}</span><span class="xml">&quot;&gt;
+  &lt;</span><span class="hljs-template-variable">{{ textElement }}</span><span class="xml"> class=&quot;</span><span class="hljs-template-variable">{{ background ? &#x27;title__highlight&#x27; : &#x27;&#x27;}}</span><span class="hljs-template-variable">{{ textElementStyle ? &#x27;  &#x27; ~ textElementStyle }}</span><span class="xml">&quot;&gt;
   </span><span class="hljs-template-variable">{{ text }}</span><span class="xml">
 &lt;/</span><span class="hljs-template-variable">{{ textElement }}</span><span class="xml">&gt;
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
@@ -259,58 +259,26 @@
   }
 }
 
+<span class="hljs-selector-class">.title__highlight</span> {
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">display</span>: inline;
+  <span class="hljs-attribute">left</span>: <span class="hljs-variable">$spacing-xs</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$primary</span>;
+  <span class="hljs-attribute">background</span>: var(--background, #{<span class="hljs-variable">$primary</span>});
+  <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">color</span>: var(--color);
+  <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$primary</span>}, <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$primary</span>};
+  <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$primary</span>}), <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$primary</span>});
+  <span class="hljs-attribute">box-decoration-break</span>: clone;
+}
+
 <span class="hljs-selector-class">.slab</span>, <span class="hljs-selector-class">.mini-template-grid</span> {
   <span class="hljs-selector-class">.title</span> {
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
   }
 }
-
-<span class="hljs-selector-class">.tile</span> {
-  <span class="hljs-selector-class">.title__highlight</span> {
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">display</span>: inline;
-    <span class="hljs-attribute">left</span>: <span class="hljs-variable">$spacing-xs</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span>;
-    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
-    <span class="hljs-attribute">background</span>: var(--background, #{<span class="hljs-variable">$dark-blue</span>});
-    <span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">color</span>: var(--color);
-    <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$dark-blue</span>}, <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$dark-blue</span>};
-    <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$dark-blue</span>}), <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$dark-blue</span>});
-    <span class="hljs-attribute">box-decoration-break</span>: clone;
-
-    <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-attribute">color</span>: white;
-      <span class="hljs-attribute">color</span>: var(--color);
-    }
-  }
-}
-
-<span class="hljs-selector-class">.side-nav</span> {
-  <span class="hljs-selector-class">.title__highlight</span> {
-    --<span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$red</span>};
-    --<span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">display</span>: inline;
-    <span class="hljs-attribute">left</span>: <span class="hljs-variable">$spacing-xs</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span>;
-    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$red</span>;
-    <span class="hljs-attribute">background</span>: var(--background, #{<span class="hljs-variable">$red</span>});
-    <span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">color</span>: var(--color);
-    <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$red</span>}, <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> #{<span class="hljs-variable">$red</span>};
-    <span class="hljs-attribute">box-shadow</span>: -<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$red</span>}), <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> var(--background, #{<span class="hljs-variable">$red</span>});
-    <span class="hljs-attribute">box-decoration-break</span>: clone;
-
-    <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-attribute">color</span>: white;
-      <span class="hljs-attribute">color</span>: var(--color);
-    }
-  }
-}
-
 
 <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$title-bg-colors</span> {
   <span class="hljs-selector-class">.title--bg-</span>#{<span class="hljs-variable">$name</span>} {
@@ -335,7 +303,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.8 KB</span>
+                    <span class="Meta-value">1.1 KB</span>
                 </li>
             </ul>
         </div>
@@ -1471,6 +1439,32 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="./pager.html" data-role="tree-link" data-pjax data-handle="pager">
                 <span>Pager</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./pie-chart.html" data-role="tree-link" data-pjax data-handle="pie-chart">
+                <span>Pie Chart</span>
                 
 
 <div class="Status Status--unlabelled">
@@ -4372,6 +4366,8 @@
 </div>
 
             </div>
+        
+    
         
     
         

@@ -33,19 +33,6 @@
   &--with-image {
     border-radius: 0;
 
-    & .title__highlight {
-      position: relative;
-      display: inline;
-      left: 0.5rem;
-      padding: 0.25rem;
-      line-height: 1.4;
-      background: white;
-      color: var(--color);
-      box-shadow: -0.5rem 0 0 0 white, 0.5rem 0 0 0 white;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-    }
-
     & .banner__cta, & .hgroup {
       text-align: center;
     }

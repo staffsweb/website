@@ -81,6 +81,15 @@
     --background: var(--accent-color);
   }
 
+  .tile {
+    .title__highlight {
+      a {
+        color: white;
+        color: var(--color);
+      }
+    }
+  }
+
   @each $name, $value in $tile-accent-colors {
     &--accent-#{$name} {
       --accent-color: #{$value};
