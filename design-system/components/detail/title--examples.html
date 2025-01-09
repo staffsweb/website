@@ -193,26 +193,26 @@
             <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  title--bg-white&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
                 This is a paragraph on white
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  title--bg-dark-blue&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title__highlight&quot;</span>&gt;</span>
                 This is an H2 on dark blue
             <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  title--bg-digital-blue&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title__highlight&quot;</span>&gt;</span>
                 This is an H4 on digital blue
             <span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  title--bg-neon&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title__highlight&quot;</span>&gt;</span>
                 This is a paragraph on neon
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -240,25 +240,25 @@
 
     </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
       text: &#x27;This is a paragraph on white&#x27;,
-      modifiers: [&#x27;bg-white&#x27;],
+      background: white,
       textElement: &#x27;p&#x27;
     } %}</span><span class="xml">
 
     </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
       text: &#x27;This is an H2 on dark blue&#x27;,
-      modifiers: [&#x27;bg-dark-blue&#x27;],
+      background: &#x27;dark-blue&#x27;,
       textElement: &#x27;h2&#x27;
     } %}</span><span class="xml">
 
     </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
       text: &#x27;This is an H4 on digital blue&#x27;,
-      modifiers: [&#x27;bg-digital-blue&#x27;],
+      background: &#x27;digital-blue&#x27;,
       textElement: &#x27;h4&#x27;
     } %}</span><span class="xml">
 
     </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
       text: &#x27;This is a paragraph on neon&#x27;,
-      modifiers: [&#x27;bg-neon&#x27;],
+      background: &#x27;neon&#x27;,
       textElement: &#x27;p&#x27;
     } %}</span><span class="xml">
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

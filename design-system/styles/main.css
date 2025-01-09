@@ -1651,9 +1651,13 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--pale-blue.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
-.card--neon { --accent-color: #c4ff36; }
+.card--neon { --accent-color: #E1FF9A; }
 
 .card--neon.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
+
+.card--lavender { --accent-color: #e8c7ff; }
+
+.card--lavender.card--ksp .card--ksp__icon-container > .icon svg * { stroke: black !important; fill: black !important; color: black; }
 
 .card--primary { --accent-color: #170d38; }
 
@@ -1768,6 +1772,8 @@ a.card:hover .card__title { text-decoration: underline; }
 .card--pullquote.card--pale-blue:before { background: transparent url("../images/icons/icon-quote-pale-blue.svg") no-repeat center center; background-size: contain; }
 
 .card--pullquote.card--neon:before { background: transparent url("../images/icons/icon-quote-neon.svg") no-repeat center center; background-size: contain; }
+
+.card--pullquote.card--lavender:before { background: transparent url("../images/icons/icon-quote-lavender.svg") no-repeat center center; background-size: contain; }
 
 .card--contact ul.list--inline { padding-left: 1.5em; }
 
