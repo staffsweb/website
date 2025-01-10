@@ -1202,6 +1202,13 @@ if(anchorTarget == "#courses__postgraduate")
       }
     );
 
+    // CG: If an anchor of 'foundation' is specified, switch to the foundation variant
+    if(window.location.hash == "#foundation") {
+      var $modeSelector = $('.masthead__study-option-selector:first');
+      $modeSelector.find('option[data-mode="foundation"]').prop('selected', true);
+      $modeSelector.trigger('change');
+    }
+
     $("#award-selector").on("change", function() {
       var activeOption = $(this).find(":selected").val();
       // CG: Show / hide the relevant award selector
