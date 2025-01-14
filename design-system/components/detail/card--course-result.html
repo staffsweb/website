@@ -444,10 +444,6 @@
     }
   }
 
-  &amp;--light {
-    --accent-<span class="hljs-attribute">color</span>: white;
-  }
-
   &amp;--bg-offwhite {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
 
@@ -709,8 +705,11 @@
   }
 
   &amp;<span class="hljs-selector-class">.card--light</span> {
-    <span class="hljs-attribute">color</span>: white;
-  }
+
+    &amp; <span class="hljs-selector-class">.card__title</span>, &amp; <span class="hljs-selector-tag">p</span> {
+      <span class="hljs-attribute">color</span>: white;
+    }
+}
 }
 
 <span class="hljs-selector-class">.card--event</span> {

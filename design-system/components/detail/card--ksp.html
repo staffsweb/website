@@ -527,7 +527,7 @@
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card  card--ksp  card--neon&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card  card--ksp  card--neon-50-pc&quot;</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card__content&quot;</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card--ksp__icon-container&quot;</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon  h3  card--ksp__icon&quot;</span>&gt;</span>
@@ -833,7 +833,7 @@ c-1.3-7.8-1.6-15.9-1-24.3c0.6-8.4,1.4-15.7,2.3-21.7C177.8,112.5,179.1,105.3,180.
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card  card--ksp  card--neon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card  card--ksp  card--neon-50-pc&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card__content&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;card--ksp__icon-container&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon  h3  card--ksp__icon&quot;</span>&gt;</span>
@@ -1072,10 +1072,6 @@ c-1.3-7.8-1.6-15.9-1-24.3c0.6-8.4,1.4-15.7,2.3-21.7C177.8,112.5,179.1,105.3,180.
           fill: #{<span class="hljs-variable">$value</span>};
       }
     }
-  }
-
-  &amp;--light {
-    --accent-<span class="hljs-attribute">color</span>: white;
   }
 
   &amp;--bg-offwhite {
@@ -1339,8 +1335,11 @@ c-1.3-7.8-1.6-15.9-1-24.3c0.6-8.4,1.4-15.7,2.3-21.7C177.8,112.5,179.1,105.3,180.
   }
 
   &amp;<span class="hljs-selector-class">.card--light</span> {
-    <span class="hljs-attribute">color</span>: white;
-  }
+
+    &amp; <span class="hljs-selector-class">.card__title</span>, &amp; <span class="hljs-selector-tag">p</span> {
+      <span class="hljs-attribute">color</span>: white;
+    }
+}
 }
 
 <span class="hljs-selector-class">.card--event</span> {

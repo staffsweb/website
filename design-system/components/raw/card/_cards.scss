@@ -131,10 +131,6 @@ $card__internal-spacing: $spacing-sm;
     }
   }
 
-  &--light {
-    --accent-color: white;
-  }
-
   &--bg-offwhite {
     background-color: $grey-50-pc;
 
@@ -396,8 +392,11 @@ a.card {
   }
 
   &.card--light {
-    color: white;
-  }
+
+    & .card__title, & p {
+      color: white;
+    }
+}
 }
 
 .card--event {
