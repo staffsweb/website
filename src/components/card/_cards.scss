@@ -132,13 +132,7 @@ $card__internal-spacing: $spacing-sm;
   }
 
   &--light {
-    --accent-color: #{rgba(white, 0.5)};
-    color: white;
-
-    svg {
-      fill: white;
-    }
-
+    --accent-color: white;
   }
 
   &--bg-offwhite {

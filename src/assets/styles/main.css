@@ -1673,9 +1673,7 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .card--tertiary svg { fill: #304dfc; }
 
-.card--light { --accent-color: rgba(255, 255, 255, 0.5); color: white; }
-
-.card--light svg { fill: white; }
+.card--light { --accent-color: white; }
 
 .card--bg-offwhite { background-color: #E0DFE8; }
 
