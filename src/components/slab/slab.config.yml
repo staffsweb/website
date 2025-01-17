@@ -49,3 +49,9 @@ variants:
     context:
       background: knot
       text: 'This is a slab with background image'
+
+  - name: bg-box-knot
+    label: "Background: Box Knot"
+    context:
+      background: box-knot
+      text: 'This is a slab with a box knot background image'

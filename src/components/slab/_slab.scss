@@ -23,6 +23,10 @@
     }
   }
 
+  &__content {
+    padding: $spacing-4xl;
+  }
+
   //--
 
   &--border-bottom {
@@ -43,6 +47,51 @@
         & a:not(.button), & h2 {
           color: white;
         }
+      }
+    }
+  }
+
+  &--bg-box-knot {
+    background-size: cover;
+    background-position: no-repeat;
+
+    &.burgundy-on-lavender {
+      background-image: url('#{$image-theme-directory}/bg-box-knot-burgundy.svg');
+      background-color: $lavender;
+
+      & .slab__content, & .slab__title {
+        background-color: $burgundy;
+        color: white;
+      }
+    }
+
+    &.dark-blue-on-pale-blue {
+      background-image: url('#{$image-theme-directory}/bg-box-knot-dark-blue.svg');
+      background-color: $pale-blue;
+
+      & .slab__content, & .slab__title {
+        background-color: $dark-blue;
+        color: white;
+      }
+    }
+
+    &.neon-on-dark-blue {
+      background-image: url('#{$image-theme-directory}/bg-box-knot-neon.svg');
+      background-color: $dark-blue;
+
+      & .slab__content, & .slab__title {
+        background-color: $neon-50-pc;
+        color: $dark-blue;
+      }
+    }
+
+    &.lavender-on-dark-blue {
+      background-image: url('#{$image-theme-directory}/bg-box-knot-lavender.svg');
+      background-color: $dark-blue;
+
+      & .slab__content, & .slab__title {
+        background-color: $lavender;
+        color: $dark-blue;
       }
     }
   }
