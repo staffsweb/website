@@ -2739,6 +2739,8 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab__bg img, .slab__bg svg { height: auto; width: 100%; -o-object-fit: contain; object-fit: contain; }
 
+.slab__content { padding: 4rem; }
+
 .slab--border-bottom { border-bottom: 1px solid #dddddd; }
 
 .slab--border-top { border-bottom: 1px solid #dddddd; }
@@ -2766,6 +2768,24 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 .slab--bg-teal { background-color: #006b82; color: white; }
 
 .slab--bg-teal a:not(.button), .slab--bg-teal h2 { color: white; }
+
+.slab--bg-box-knot { background-size: cover; background-position: no-repeat; }
+
+.slab--bg-box-knot.burgundy-on-lavender { background-image: url("../images/bg-box-knot-burgundy.svg"); background-color: #e8c7ff; }
+
+.slab--bg-box-knot.burgundy-on-lavender .slab__content, .slab--bg-box-knot.burgundy-on-lavender .slab__title { background-color: #8a0045; color: white; }
+
+.slab--bg-box-knot.dark-blue-on-pale-blue { background-image: url("../images/bg-box-knot-dark-blue.svg"); background-color: #bdf7e3; }
+
+.slab--bg-box-knot.dark-blue-on-pale-blue .slab__content, .slab--bg-box-knot.dark-blue-on-pale-blue .slab__title { background-color: #170d38; color: white; }
+
+.slab--bg-box-knot.neon-on-dark-blue { background-image: url("../images/bg-box-knot-neon.svg"); background-color: #170d38; }
+
+.slab--bg-box-knot.neon-on-dark-blue .slab__content, .slab--bg-box-knot.neon-on-dark-blue .slab__title { background-color: #E1FF9A; color: #170d38; }
+
+.slab--bg-box-knot.lavender-on-dark-blue { background-image: url("../images/bg-box-knot-lavender.svg"); background-color: #170d38; }
+
+.slab--bg-box-knot.lavender-on-dark-blue .slab__content, .slab--bg-box-knot.lavender-on-dark-blue .slab__title { background-color: #e8c7ff; color: #170d38; }
 
 .slab--bg-knot-grey { background: url('data:image/svg+xml,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 657 376" style="enable-background:new 0 0 657 376;" xml:space="preserve"><path fill="%23E0DFE8" d="M657,10c0,0-135,143-154,228c0,0-97-26-278,10S0,326.3,0,326.3V377l657-1"/></svg>') right bottom no-repeat; background-size: 100%; }
 

@@ -264,6 +264,10 @@
     }
   }
 
+  &amp;__content {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-4xl</span>;
+  }
+
   <span class="hljs-comment">//--</span>
 
   &amp;--<span class="hljs-attribute">border-bottom</span> {
@@ -284,6 +288,51 @@
         &amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not</span>(.button), &amp; <span class="hljs-selector-tag">h2</span> {
           <span class="hljs-attribute">color</span>: white;
         }
+      }
+    }
+  }
+
+  &amp;--bg-box-knot {
+    <span class="hljs-attribute">background-size</span>: cover;
+    <span class="hljs-attribute">background-position</span>: no-repeat;
+
+    &amp;<span class="hljs-selector-class">.burgundy-on-lavender</span> {
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-burgundy.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$lavender</span>;
+
+      &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$burgundy</span>;
+        <span class="hljs-attribute">color</span>: white;
+      }
+    }
+
+    &amp;<span class="hljs-selector-class">.dark-blue-on-pale-blue</span> {
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-dark-blue.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$pale-blue</span>;
+
+      &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+        <span class="hljs-attribute">color</span>: white;
+      }
+    }
+
+    &amp;<span class="hljs-selector-class">.neon-on-dark-blue</span> {
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-neon.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+
+      &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$neon-50-pc</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+      }
+    }
+
+    &amp;<span class="hljs-selector-class">.lavender-on-dark-blue</span> {
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-lavender.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+
+      &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$lavender</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
       }
     }
   }
@@ -357,7 +406,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.8 KB</span>
+                    <span class="Meta-value">5.1 KB</span>
                 </li>
             </ul>
         </div>
@@ -4929,6 +4978,32 @@
         <li class="Tree-item Tree-entity" data-role="item">
             <a class="Tree-entityLink" href="./slab--bg-knot.html" data-role="tree-link" data-pjax data-handle="slab">
                 <span>Background: Knot</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="./slab--bg-box-knot.html" data-role="tree-link" data-pjax data-handle="slab">
+                <span>Background: Box Knot</span>
                 
 
 <div class="Status Status--unlabelled">
