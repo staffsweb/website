@@ -2771,6 +2771,8 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .slab--bg-box-knot { background-size: cover; background-position: no-repeat; }
 
+@media (max-width: 45rem) { .slab--bg-box-knot .slab__content { padding: 2.5rem; } }
+
 .slab--bg-box-knot.burgundy-on-lavender { background-image: url("../images/bg-box-knot-burgundy.svg"); background-color: #e8c7ff; }
 
 .slab--bg-box-knot.burgundy-on-lavender .slab__content, .slab--bg-box-knot.burgundy-on-lavender .slab__title { background-color: #8a0045; color: white; }

@@ -55,6 +55,13 @@
     background-size: cover;
     background-position: no-repeat;
 
+    // CG: Slabs have half padding on mobile devices
+    @media (max-width: (map_get($breakpoint-stages, 'tablet'))) {
+      & .slab__content {
+        padding: $spacing-2xl;
+      }
+    }
+
     &.burgundy-on-lavender {
       background-image: url('#{$image-theme-directory}/bg-box-knot-burgundy.svg');
       background-color: $lavender;

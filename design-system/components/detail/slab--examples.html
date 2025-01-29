@@ -392,6 +392,13 @@
     <span class="hljs-attribute">background-size</span>: cover;
     <span class="hljs-attribute">background-position</span>: no-repeat;
 
+    <span class="hljs-comment">// CG: Slabs have half padding on mobile devices</span>
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: (map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>))) {
+      &amp; <span class="hljs-selector-class">.slab__content</span> {
+        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-2xl</span>;
+      }
+    }
+
     &amp;<span class="hljs-selector-class">.burgundy-on-lavender</span> {
       <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-burgundy.svg&#x27;</span>);
       <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$lavender</span>;
@@ -502,7 +509,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">5.1 KB</span>
+                    <span class="Meta-value">5.3 KB</span>
                 </li>
             </ul>
         </div>
