@@ -2037,6 +2037,8 @@ hr { position: relative; }
 
 .icon--envelope { background-image: url("../images/icons/icon-envelope.svg"); }
 
+.icon--external-link { background-image: url("../images/icons/icon-external-link.svg"); }
+
 .icon--phone { background-image: url("../images/icons/icon-phone.svg"); }
 
 .icon--facebook { background-image: url("../images/icons/icon-facebook.svg"); }

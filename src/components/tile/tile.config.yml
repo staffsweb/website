@@ -17,4 +17,3 @@ variants:
   - name: group
   - name: facility
     label: 'Facility'
-    status: wip
