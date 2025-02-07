@@ -123,8 +123,21 @@
         height: 100%;
         position: absolute;
         max-width: none;
-        left: 40%;
         z-index: -1;
+
+        @media(max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+          left: 40%;
+        }
+        @media(max-width: map_get($breakpoint-stages, 'desktop')) {
+          left: 35%;
+        }
+        @media(max-width: map_get($breakpoint-stages, 'desktop-wide')) {
+          left: 25%;
+        }
+
+        &.narrow-aspect {
+          left: 50%;
+        }
       }
     }
   }
