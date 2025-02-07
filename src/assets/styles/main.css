@@ -2380,7 +2380,11 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 @media (max-width: 35rem) { .masthead-home { min-height: 500px; } }
 
-.masthead-home--dark-blue { background: #170d38 url("../images/bg-knot-whole-red.svg") center center no-repeat; background-size: 120%; background-repeat: no-repeat; }
+.masthead-home--dark-blue-with-red { background: #170d38 url("../images/bg-knot-whole-red.svg") center center no-repeat; background-size: 120%; background-repeat: no-repeat; }
+
+.masthead-home--dark-blue-with-neon { background: #170d38 url("../images/bg-knot-whole-neon.svg") center center no-repeat; background-size: 120%; background-repeat: no-repeat; }
+
+.masthead-home--neon-with-dark-blue { background: #c4ff36 url("../images/bg-knot-whole-blue.svg") center center no-repeat; background-size: 120%; background-repeat: no-repeat; }
 
 .masthead-home__hero { padding-top: 1.5rem; padding-bottom: 1.5rem; overflow: hidden; }
 

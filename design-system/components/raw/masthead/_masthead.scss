@@ -210,8 +210,20 @@
       min-height: 500px;
     }
 
-    &--dark-blue {
+    &--dark-blue-with-red {
       background: $dark-blue url('../images/bg-knot-whole-red.svg') center center no-repeat;
+      background-size: 120%;
+      background-repeat: no-repeat;
+    }
+
+    &--dark-blue-with-neon {
+      background: $dark-blue url('../images/bg-knot-whole-neon.svg') center center no-repeat;
+      background-size: 120%;
+      background-repeat: no-repeat;
+    }
+
+    &--neon-with-dark-blue {
+      background: $neon url('../images/bg-knot-whole-blue.svg') center center no-repeat;
       background-size: 120%;
       background-repeat: no-repeat;
     }
