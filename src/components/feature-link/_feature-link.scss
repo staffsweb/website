@@ -87,7 +87,7 @@ a.feature-link {
   }
 }
 
-[class *= 'bg-dark-blue'], [class *= 'bg-teal'], [class *= 'bg-digital-blue'] {
+[class *= 'bg-dark-blue'], [class *= 'bg-teal'], [class *= 'bg-digital-blue'], .burgundy-on-lavender, .dark-blue-on-pale-blue {
   & .feature-link {
     color: white;
 
@@ -101,7 +101,8 @@ a.feature-link {
   }
 }
 
-[class *= 'bg-teal'], [class *= 'bg-digital-blue'] {
+// CG: Overrides for use on slabs, etc.
+[class *= 'bg-teal'], [class *= 'bg-digital-blue'], .burgundy-on-lavender, .dark-blue-on-pale-blue {
   .feature-link--no-image .feature-link__title,
   .feature-link__figure,
   .feature-link:hover .feature-link__figure {
