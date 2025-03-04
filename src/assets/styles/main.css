@@ -1350,6 +1350,14 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 .footer-site__legal { margin: 0 0 0.25rem; font-size: 0.75rem; line-height: 0.8; }
 
+.accolade { color: black; background: #E0DFE8; padding: 2rem; text-align: center; margin-bottom: 1.5rem; }
+
+@media (min-width: 35rem) { .accolade { width: 30%; margin-right: 2%; margin-bottom: 0; }
+  .accolade:last-child { margin-right: 0; }
+  .accolade-container { display: flex; justify-content: center; } }
+
+.accolade__figure { max-width: 100px; }
+
 .accordion { clear: both; margin-bottom: 4rem; border-bottom: 1px solid #dddddd; }
 
 .accordion__item { border-top: 1px solid #dddddd; }
@@ -3116,6 +3124,12 @@ a.tile:focus { outline-width: 3px; outline-color: #170d38; z-index: 2; }
 .title--bg-dark-blue { --background: #170d38; }
 
 .title--bg-digital-blue { --background: #304dfc; }
+
+.title--bg-pale-blue { --background: #bdf7e3; --color: black; }
+
+.title--bg-peach { --background: #febea5; --color: black; }
+
+.title--bg-yellow-light { --background: #ffffae; --color: black; }
 
 @media (min-width: 45rem) { .webinar__video { border-right: 0.0625rem solid #E0DFE8; } }
 

@@ -1,0 +1,26 @@
+.accolade {
+    color: black;
+    background: $grey-50-pc;
+    padding: $spacing-xl;
+    text-align: center;
+    margin-bottom: $spacing-lg;
+
+    @media(min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+        width: 30%;
+        margin-right: 2%;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__figure {
+        max-width: 100px;
+    }
+}
