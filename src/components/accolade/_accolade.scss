@@ -17,10 +17,34 @@
         &-container {
             display: flex;
             justify-content: center;
+
+            &--divider {
+                padding: $spacing-lg 0;
+                background: $grey-50-pc;
+            }
         }
     }
 
     &__figure {
         max-width: 100px;
+    }
+
+    &--divider {
+        width: 100%;
+        margin-right: 0;
+
+        @media(min-width: map_get($breakpoint-stages, 'tablet')) {
+            display: flex;
+            flex-direction: row-reverse;
+
+            & .accolade__figure {
+                float: left;
+                min-width: 75px;
+            }
+
+            &:not(:last-child) {
+                border-right: 1px solid $grey;
+            }
+        }
     }
 }

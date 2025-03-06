@@ -1,0 +1,13 @@
+<article class="accolade{% if style %}  accolade--{{ style }} {% endif %}" aria-label="{{ headline }}">
+    <div class="accolade__content">
+        <div class="title  title--bg-{{ colour }}">
+            <h3 class="h4  title__highlight">{{ headline }}</h3>
+        </div>
+        <p class="accolade__source">{{ source }}</p>
+    </div>
+    {% if image %}
+        <figure class="accolade__figure  align-center">
+            <img src="{{ image | path }}" alt="" />
+        </figure>
+    {% endif %}
+</article>

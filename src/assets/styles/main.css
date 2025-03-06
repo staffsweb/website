@@ -1354,9 +1354,16 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
 
 @media (min-width: 35rem) { .accolade { width: 30%; margin-right: 2%; margin-bottom: 0; }
   .accolade:last-child { margin-right: 0; }
-  .accolade-container { display: flex; justify-content: center; } }
+  .accolade-container { display: flex; justify-content: center; }
+  .accolade-container--divider { padding: 1.5rem 0; background: #E0DFE8; } }
 
 .accolade__figure { max-width: 100px; }
+
+.accolade--divider { width: 100%; margin-right: 0; }
+
+@media (min-width: 45rem) { .accolade--divider { display: flex; flex-direction: row-reverse; }
+  .accolade--divider .accolade__figure { float: left; min-width: 75px; }
+  .accolade--divider:not(:last-child) { border-right: 1px solid #c2bfd2; } }
 
 .accordion { clear: both; margin-bottom: 4rem; border-bottom: 1px solid #dddddd; }
 
