@@ -1,8 +1,8 @@
-status: wip
+status: ready
 
 variants:
   - name: default
-    label: "Default"
+    label: "Box"
 
   - name: divider
     label: "Divider"
