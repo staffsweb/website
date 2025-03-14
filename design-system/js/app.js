@@ -436,16 +436,16 @@ if(anchorTarget == "#courses__postgraduate")
       var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
       if (level == "postgraduate") {
-        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=postgraduate+(taught)&f.Level%7CV=postgraduate+(research)&query=" + query;
+        return "https://www.staffs.ac.uk/courses/search?q=" + query + "&level=postgraduate";
       } else if (level == "undergraduate") {
-        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=undergraduate&query=" + query;
+        return "https://www.staffs.ac.uk/courses/search?q=" + query + "&level=undergraduate";
       }
 
-      return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&query=" + query;
+      return "https://www.staffs.ac.uk/courses/search?q=" + query;
     }
 
-    function siteSearchUrl(query) {
-      return "https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=" + query;
+    function globalSearchUrl(query) {
+      return "https://www.staffs.ac.uk/search#gsc.tab=0&gsc.q=" + query;
     }
 
     $("#global-search__keywords--whole-site").keyup(function (e) {
@@ -457,7 +457,7 @@ if(anchorTarget == "#courses__postgraduate")
           e.preventDefault();
         });
         e.stopImmediatePropagation();
-        window.location.href = siteSearchUrl($(this).val());
+        window.location.href = globalSearchUrl($(this).val());
       }
 
       e.preventDefault();
@@ -489,7 +489,7 @@ if(anchorTarget == "#courses__postgraduate")
           e.preventDefault();
         });
         e.stopImmediatePropagation();
-        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&query=' + searchField.val();
+        var targetUrl = 'https://www.staffs.ac.uk/courses/search?q=' + searchField.val();
 
         if (window.location != window.parent.location) {
           window.parent.location = targetUrl;
@@ -500,7 +500,7 @@ if(anchorTarget == "#courses__postgraduate")
     });
 
     $('#course-search__submit--ug').on('click', function() {
-      var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=undergraduate&query=' + $('#course-search__keywords').val();
+      var targetUrl = 'https://www.staffs.ac.uk/courses/search?q=' + $('#course-search__keywords').val() + '&level=undergraduate';
       if (window.location != window.parent.location) {
         window.parent.location = targetUrl;
       } else {
@@ -509,7 +509,7 @@ if(anchorTarget == "#courses__postgraduate")
     });
 
     $('#course-search__submit--pg').on('click', function() {
-      var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=postgraduate+%28research%29&f.Level%7CV=postgraduate+%28taught%29&query=' + $('#course-search__keywords').val();
+      var targetUrl = 'https://www.staffs.ac.uk/courses/search?q=' + $('#course-search__keywords').val() + '&level=postgraduate';
       if (window.location != window.parent.location) {
         window.parent.location = targetUrl;
       } else {
@@ -931,6 +931,8 @@ if(anchorTarget == "#courses__postgraduate")
   };
 
   let autocompleteInit = function() {
+    /* CG: Autocomplete disabled while we wait for the new search to be implemented, March 2025 */
+    /*
     $.widget("custom.courseautocomplete", $.ui.autocomplete, {
       _create: function() {
         this._super();
@@ -1013,7 +1015,7 @@ if(anchorTarget == "#courses__postgraduate")
         window.location = ui.item.action;
         return false;
       }
-    });
+    });*/
   };
 
   let playlistInit = function() {
