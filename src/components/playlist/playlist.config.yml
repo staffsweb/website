@@ -1,1 +1,4 @@
 status: ready
+
+variants:
+  - name: non-transparent
