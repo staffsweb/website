@@ -23,3 +23,20 @@ a.playlist__link {
         background-color: $grey-50-pc;
     }
 }
+
+.playlist--non-transparent {
+    a.playlist__link {
+        background-color: #EEE;
+        color: #170d38!important;
+
+        &.selected {
+            color: $dark-blue!important;
+            background-color: $neon;
+        }
+    
+        &:hover {
+            color: $dark-blue!important;
+            background-color: $grey-50-pc;
+        }
+    }
+}
