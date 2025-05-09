@@ -1842,6 +1842,16 @@ a.card:hover .card__title { text-decoration: underline; }
 
 .card--profile.card--burgundy-with-neon .title, .card--profile.card--burgundy-with-neon .strong { color: #c4ff36; }
 
+.card--profile.card--dark-blue-with-neon { background: #170d38; border-bottom: 0.25rem solid #c4ff36; margin-left: 2.5rem; color: white; }
+
+.card--profile.card--dark-blue-with-neon .button { color: white; }
+
+.card--profile.card--dark-blue-with-neon .button--outline { color: #c4ff36; border-color: #c4ff36; }
+
+.card--profile.card--dark-blue-with-neon .button--outline:hover { color: black; }
+
+.card--profile.card--dark-blue-with-neon .title, .card--profile.card--dark-blue-with-neon .strong { color: #c4ff36; }
+
 .card--profile.card--flex { flex-direction: row; }
 
 .card--profile .card__figure { margin-left: auto; margin-right: auto; max-width: 15rem; /*@media (max-width: (map_get($breakpoint-stages, 'tablet-wide'))) { flex: 1 1 25%; }*/ }
