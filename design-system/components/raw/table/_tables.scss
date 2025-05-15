@@ -6,10 +6,22 @@ table {
 .table {
 }
 
+$module-table-header-colours: (
+  'pale-blue': $pale-blue,
+  'lavender' : $lavender,
+  'neon' : $neon-50-pc
+);
+
 .table--modules {
   thead {
     th {
-      background: $yellow-light;
+      @each $name, $value in $module-table-header-colours {
+        &.th--#{$name} {
+          background: $value;
+          color: $dark-blue;
+        }
+      }
+
       color: $dark-blue;
     }
   }
