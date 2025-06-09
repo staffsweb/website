@@ -37,6 +37,12 @@ variants:
     context:
       background: teal
       text: 'This is a teal slab'
+
+  - name: pale-blue
+    label: "Background: Pale blue"
+    context:
+      background: pale-blue
+      text: 'This is a pale blue slab'
       
   - name: slate
     label: "Legacy: Slate"

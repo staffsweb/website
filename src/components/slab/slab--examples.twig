@@ -63,3 +63,29 @@
 
   </div>
 </div>
+
+
+
+<div class="slab  slab--bg-lavender">
+  <div class="wrap">
+    <div class="hgroup">
+      {% include '@title' with {
+        text: 'This is a title',
+        tail: true,
+        textElement: 'h2'
+      } %}
+      {% include '@title' with {
+        text: 'This is a sub title',
+        tail: true,
+        background: 'white',
+        textElement: 'h3',
+        textElementStyle: 'h6'
+      } %}
+    </div>
+
+
+    <p>{{ loremLong }}</p>
+
+
+  </div>
+</div>
