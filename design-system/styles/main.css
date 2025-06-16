@@ -729,7 +729,7 @@ thead { border-bottom: 2px solid #170d38; }
 
 thead td, thead th { background: #fff; vertical-align: bottom; }
 
-tr { background: rgba(241, 241, 241, 0.5); border-bottom: 1px solid #f1f1f1; }
+tr { background: #E0DFE8; border-bottom: 1px solid #f1f1f1; }
 
 tr:nth-child(even) { background: #fff; }
 
@@ -2985,7 +2985,7 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .table--modules thead th.th--neon { background: #E1FF9A; color: #170d38; }
 
-.table--modules__credits { font-weight: bold; }
+.table--modules__credits { font-weight: bold; white-space: nowrap; }
 
 .table--apply { font-size: 1em; }
 

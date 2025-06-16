@@ -117,7 +117,7 @@ thead { border-bottom: 2px solid #170d38; }
 
 thead td, thead th { background: #fff; vertical-align: bottom; }
 
-tr { background: rgba(241, 241, 241, 0.5); border-bottom: 1px solid #f1f1f1; }
+tr { background: #E0DFE8; border-bottom: 1px solid #f1f1f1; }
 
 tr:nth-child(even) { background: #fff; }
 
