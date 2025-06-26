@@ -3426,6 +3426,9 @@ p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: n
 @media (max-width: 35rem) { .visible-mobile-down { display: block !important; }
   .hidden-mobile-down { display: none !important; } }
 
+@media (max-width: 65rem) { .visible-tablet-wide-down { display: block !important; }
+  .hidden-tablet-wide-down { display: none !important; } }
+
 @media (min-width: 35rem) { .visible-mobile-down { display: none !important; } }
 
 .modal__overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000000; display: flex; justify-content: center; align-items: center; z-index: 9998; }

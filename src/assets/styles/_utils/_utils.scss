@@ -183,6 +183,15 @@ p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: n
   }
 }
 
+@media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+  .visible-tablet-wide-down {
+    display: block!important;
+  }
+  .hidden-tablet-wide-down {
+    display: none!important;
+  }
+}
+
 @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
   .visible-mobile-down {
     display: none!important;
