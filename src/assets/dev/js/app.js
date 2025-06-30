@@ -7037,16 +7037,16 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
       var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
       if (level == "postgraduate") {
-        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=postgraduate+(taught)&f.Level%7CV=postgraduate+(research)&query=" + query;
+        return "https://www.staffs.ac.uk/courses/search/?searchstax[facets][0]=or:study_level_ss:Postgraduate%20(Taught)&searchstax[facets][1]=or:study_level_ss:Postgraduate%20(Research)&searchstax[query]=" + query;
       } else if (level == "undergraduate") {
-        return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&f.Level%7CV=undergraduate&query=" + query;
+        return "https://www.staffs.ac.uk/courses/search/?searchstax[facets][0]=and:study_level_ss:Undergraduate&searchstax[query]=" + query;
       }
 
-      return "https://search.staffs.ac.uk/s/search.html?collection=" + collection + "&query=" + query;
+      return "https://www.staffs.ac.uk/courses/search/?searchstax[query]=" + query;
     }
 
-    function siteSearchUrl(query) {
-      return "https://search.staffs.ac.uk/s/search.html?collection=staffordshire-main&query=" + query;
+    function globalSearchUrl(query) {
+      return "https://www.staffs.ac.uk/search#gsc.tab=0&gsc.q=" + query;
     }
 
     $("#global-search__keywords--whole-site").keyup(function (e) {
@@ -7058,7 +7058,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
           e.preventDefault();
         });
         e.stopImmediatePropagation();
-        window.location.href = siteSearchUrl($(this).val());
+        window.location.href = globalSearchUrl($(this).val());
       }
 
       e.preventDefault();
@@ -7089,7 +7089,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
           e.preventDefault();
         });
         e.stopImmediatePropagation();
-        var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&query=' + searchField.val();
+        var targetUrl = 'https://www.staffs.ac.uk/courses/search/?searchstax[query]=' + searchField.val();
 
         if (window.location != window.parent.location) {
           window.parent.location = targetUrl;
@@ -7099,7 +7099,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
       }
     });
     $('#course-search__submit--ug').on('click', function () {
-      var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=undergraduate&query=' + $('#course-search__keywords').val();
+      var targetUrl = 'https://www.staffs.ac.uk/courses/search/?searchstax[facets][0]=and:study_level_ss:Undergraduate&searchstax[query]=' + $('#course-search__keywords').val();
 
       if (window.location != window.parent.location) {
         window.parent.location = targetUrl;
@@ -7108,7 +7108,7 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
       }
     });
     $('#course-search__submit--pg').on('click', function () {
-      var targetUrl = 'https://search.staffs.ac.uk/s/search.html?collection=staffordshire-coursetitles&f.Level%7CV=postgraduate+%28research%29&f.Level%7CV=postgraduate+%28taught%29&query=' + $('#course-search__keywords').val();
+      var targetUrl = 'https://www.staffs.ac.uk/courses/search/?searchstax[facets][0]=or:study_level_ss:Postgraduate%20(Taught)&searchstax[facets][1]=or:study_level_ss:Postgraduate%20(Research)&searchstax[query]=' + $('#course-search__keywords').val();
 
       if (window.location != window.parent.location) {
         window.parent.location = targetUrl;
@@ -7476,91 +7476,89 @@ var newsAndEventsSearchInit = function newsAndEventsSearchInit() {
   };
 
   var autocompleteInit = function autocompleteInit() {
+    /*
     $.widget("custom.courseautocomplete", $.ui.autocomplete, {
-      _create: function _create() {
+      _create: function() {
         this._super();
-
-        this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
       },
-      _renderMenu: function _renderMenu(ul, items) {
+      _renderMenu: function( ul, items ) {
         var that = this,
-            currentCategory = "";
-        $.each(items, function (index, item) {
+          currentCategory = "";
+        $.each( items, function( index, item ) {
           var li;
-
-          if (item.cat != currentCategory) {
-            ul.append("<li class='course-search__category ui-autocomplete-category'>" + item.cat + "</li>");
+          if ( item.cat != currentCategory ) {
+            ul.append( "<li class='course-search__category ui-autocomplete-category'>" + item.cat + "</li>" );
             currentCategory = item.cat;
           }
-
-          li = that._renderItemData(ul, item);
-
-          if (item.cat) {
-            li.attr("aria-label", item.cat + " : " + item.disp);
+          li = that._renderItemData( ul, item );
+          if ( item.cat ) {
+            li.attr( "aria-label", item.cat + " : " + item.disp );
           }
         });
       },
-      _renderItemData: function _renderItemData(ul, item) {
-        var label = item.disp.replace(new RegExp('(' + $("#course-search__keywords").val() + ')', 'i'), '<strong>$1</strong>');
-        ul.data('ui-autocomplete-item', item);
-        return $("<li>").data('ui-autocomplete-item', item).append("<div>" + label + "</div>").addClass('ui-menu-item ui-menu-item__course').appendTo(ul);
-      }
+      _renderItemData: function( ul, item) {
+            var label = item.disp.replace(new RegExp('('+ $("#course-search__keywords").val() + ')', 'i'), '<strong>$1</strong>');
+            ul.data('ui-autocomplete-item', item);
+            return $("<li>")
+              .data('ui-autocomplete-item', item )
+              .append( "<div>" + label + "</div>" )
+              .addClass('ui-menu-item ui-menu-item__course')
+              .appendTo( ul );
+        }
     });
-    $("#course-search__keywords").courseautocomplete({
-      source: function source(request, response) {
+      $("#course-search__keywords").courseautocomplete({
+      source: function(request, response) {
         $.ajax({
-          url: "https://search.staffs.ac.uk/s/search.html",
-          dataType: "json",
-          data: {
-            meta_t_trunc: request.term.toLowerCase(),
-            // CG: Accounts for mobile devices using sentence caps when doing autocorrect
-            collection: 'staffordshire-coursetitles',
-            profile: 'auto-completion',
-            form: 'qc',
-            meta_V_and: $("#course-search__level").find(":selected").val() != null ? $("#course-search__level").find(":selected").val() : $("#course-search__level").val(),
-            sort: 'dmetaV' // CG: Sorts by level of study, with UG first
-
-          },
-          success: function success(data) {
-            response(data);
-          }
+            url: "https://search.staffs.ac.uk/s/search.html",
+            dataType: "json",
+            data: {
+              meta_t_trunc : request.term.toLowerCase(), // CG: Accounts for mobile devices using sentence caps when doing autocorrect
+              collection : 'staffordshire-coursetitles',
+              profile : 'auto-completion',
+              form : 'qc',
+              meta_V_and: $("#course-search__level").find(":selected").val() != null ? $("#course-search__level").find(":selected").val() : $("#course-search__level").val(),
+              sort : 'dmetaV' // CG: Sorts by level of study, with UG first
+            },
+            success: function(data) {
+                response(data);
+            }
         });
       },
       minLength: 3,
       delay: 300,
-      select: function select(event, ui) {
+      select: function(event, ui) {
         // CG: Redirect to the relevant course page
         window.location = ui.item.action;
         return false;
       }
     });
-    $("#global-search__keywords--courses").courseautocomplete({
-      source: function source(request, response) {
+      $("#global-search__keywords--courses").courseautocomplete({
+      source: function(request, response) {
         $.ajax({
-          url: "https://search.staffs.ac.uk/s/search.html",
-          dataType: "json",
-          data: {
-            meta_t_trunc: request.term.toLowerCase(),
-            // CG: Accounts for mobile devices using sentence caps when doing autocorrect
-            collection: 'staffordshire-coursetitles',
-            profile: 'auto-completion',
-            form: 'qc',
-            sort: 'dmetaV' // CG: Sorts by level of study, with UG first
-
-          },
-          success: function success(data) {
-            response(data);
-          }
+            url: "https://search.staffs.ac.uk/s/search.html",
+            dataType: "json",
+            data: {
+              meta_t_trunc : request.term.toLowerCase(), // CG: Accounts for mobile devices using sentence caps when doing autocorrect
+              collection : 'staffordshire-coursetitles',
+              profile : 'auto-completion',
+              form : 'qc',
+              sort : 'dmetaV' // CG: Sorts by level of study, with UG first
+            },
+            success: function(data) {
+                response(data);
+            }
         });
       },
       minLength: 3,
       delay: 300,
-      select: function select(event, ui) {
+      select: function(event, ui) {
         // CG: Redirect to the relevant course page
         window.location = ui.item.action;
         return false;
       }
     });
+    */
   };
 
   var playlistInit = function playlistInit() {
