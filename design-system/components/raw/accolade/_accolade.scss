@@ -26,7 +26,14 @@
     }
 
     &__figure {
-        max-width: 100px;
+        & > img {
+            max-width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & > svg {
+            max-height: 100px;
+        }
     }
 
     &--divider {

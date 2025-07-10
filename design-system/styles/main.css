@@ -1357,7 +1357,9 @@ input.search-site { background-color: #E0DFE8; background-image: url(../images/b
   .accolade-container { display: flex; justify-content: center; }
   .accolade-container--divider { padding: 1.5rem 0; background: #E0DFE8; } }
 
-.accolade__figure { max-width: 100px; }
+.accolade__figure > img { max-width: 100px; margin-left: auto; margin-right: auto; }
+
+.accolade__figure > svg { max-height: 100px; }
 
 .accolade--divider { width: 100%; margin-right: 0; }
 
