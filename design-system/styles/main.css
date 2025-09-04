@@ -3398,7 +3398,7 @@ a.tile:focus { outline-width: 3px; outline-color: #170d38; z-index: 2; }
 
 .link--stretched::after { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; pointer-events: all; content: ""; background-color: rgba(0, 0, 0, 0); }
 
-.source-outline { border: 2px solid #F00 !important; padding: 0 1rem; color: #000; }
+.source-outline { border: 2px solid #F00 !important; color: #000; }
 
 #source-indicator { background-color: #333; padding: 5px 8px; font-size: 18px; border: 1px solid #FFF; color: #FFF; position: absolute; font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; z-index: 2000; }
 
