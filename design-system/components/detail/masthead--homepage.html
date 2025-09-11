@@ -441,6 +441,18 @@
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$burgundy</span>;
   }
 
+  &amp;--teal {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal</span><span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-lavender.svg&quot;</span>);
+    <span class="hljs-attribute">background-size</span>: contain;
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+      <span class="hljs-attribute">background-size</span>: cover;
+      <span class="hljs-attribute">background-position</span>: calc(<span class="hljs-number">50%</span> + <span class="hljs-number">25rem</span>) center;
+    }
+    <span class="hljs-attribute">background-repeat</span>: no-repeat;
+    <span class="hljs-attribute">background-position</span>: right center;
+  }
+
   &amp;--grey {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
 
@@ -772,7 +784,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">6.9 KB</span>
+                    <span class="Meta-value">7.3 KB</span>
                 </li>
             </ul>
         </div>

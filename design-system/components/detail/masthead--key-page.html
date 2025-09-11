@@ -291,6 +291,27 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;masthead  masthead--teal&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;masthead__inner&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  js-waypoint&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;  h1&quot;</span>&gt;</span>
+                    Undergraduate courses
+                <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title  js-waypoint&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+                    (If long, consider using h2 textElementStyle)
+                <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;breadcrumbs&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
@@ -403,6 +424,26 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;masthead  masthead--teal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;masthead__inner&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
+      </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
+        text: &#x27;Undergraduate courses&#x27;,
+        textElement: &#x27;h1&#x27;,
+        textElementStyle: &#x27;h1&#x27;,
+        animate: true
+      } %}</span><span class="xml">
+      </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./title.html">@title</a>&#x27; with {
+        text: &#x27;(If long, consider using h2 textElementStyle)&#x27;,
+        textElement: &#x27;h6&#x27;,
+        animate: true
+      } %}</span><span class="xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrap&quot;</span>&gt;</span>
   </span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">include</span></span> &#x27;<a href="./breadcrumbs.html">@breadcrumbs</a>&#x27; %}</span><span class="xml">
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></pre>
@@ -442,6 +483,18 @@
 
   &amp;--burgundy {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$burgundy</span>;
+  }
+
+  &amp;--teal {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal</span><span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-lavender.svg&quot;</span>);
+    <span class="hljs-attribute">background-size</span>: contain;
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+      <span class="hljs-attribute">background-size</span>: cover;
+      <span class="hljs-attribute">background-position</span>: calc(<span class="hljs-number">50%</span> + <span class="hljs-number">25rem</span>) center;
+    }
+    <span class="hljs-attribute">background-repeat</span>: no-repeat;
+    <span class="hljs-attribute">background-position</span>: right center;
   }
 
   &amp;--grey {
@@ -775,7 +828,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">6.9 KB</span>
+                    <span class="Meta-value">7.3 KB</span>
                 </li>
             </ul>
         </div>

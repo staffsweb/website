@@ -88,6 +88,26 @@
   </div>
 </div>
 
+<hr />
+
+<div class="masthead  masthead--teal">
+  <div class="masthead__inner">
+    <div class="wrap">
+      {% include '@title' with {
+        text: 'Undergraduate courses',
+        textElement: 'h1',
+        textElementStyle: 'h1',
+        animate: true
+      } %}
+      {% include '@title' with {
+        text: '(If long, consider using h2 textElementStyle)',
+        textElement: 'h6',
+        animate: true
+      } %}
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
   {% include '@breadcrumbs' %}
 </div>

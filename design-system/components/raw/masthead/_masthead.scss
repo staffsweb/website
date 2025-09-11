@@ -8,6 +8,18 @@
     background-color: $burgundy;
   }
 
+  &--teal {
+    background-color: $teal!important;
+    background-image: url("../images/masthead-knot-lavender.svg");
+    background-size: contain;
+    @media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+      background-size: cover;
+      background-position: calc(50% + 25rem) center;
+    }
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
   &--grey {
     background-color: $grey-50-pc;
 

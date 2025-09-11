@@ -2345,6 +2345,10 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead--burgundy { background-color: #8a0045; }
 
+.masthead--teal { background-color: #006b82 !important; background-image: url("../images/masthead-knot-lavender.svg"); background-size: contain; background-repeat: no-repeat; background-position: right center; }
+
+@media (max-width: 65rem) { .masthead--teal { background-size: cover; background-position: calc(50% + 25rem) center; } }
+
 .masthead--grey { background-color: #E0DFE8; }
 
 .masthead--grey .title { color: #170d38 !important; }
