@@ -3040,17 +3040,27 @@ cite, .cite { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; f
 
 .tag--not-rounded { border-radius: 0; }
 
-.tag--red { background-color: #ef4a3b; color: black; color: white; }
+.tag--red { background-color: #ef4a3b; color: white; }
 
-.tag--dark-blue { background-color: #170d38; color: black; color: white; }
+.tag--dark-blue { background-color: #170d38; color: white; }
 
-.tag--digital-blue { background-color: #304dfc; color: black; color: white; }
+.tag--digital-blue { background-color: #304dfc; color: white; }
 
 .tag--neon { background-color: #c4ff36; color: black; }
 
-.tag--teal { background-color: #006b82; color: black; color: white; }
+.tag--teal { background-color: #006b82; color: white; }
 
-.tag--burgundy { background-color: #8a0045; color: black; color: white; }
+.tag--burgundy { background-color: #8a0045; color: white; }
+
+.tag--blue { background-color: #0000cc; color: white; }
+
+.tag--green { background-color: #00cc66; color: black; }
+
+.tag--orange { background-color: #ff6600; color: black; }
+
+.tag--purple { background-color: #9933ff; color: white; }
+
+.tag--yellow { background-color: #ffff58; color: black; }
 
 .tile { position: relative; display: block; overflow: hidden; outline: 1px solid #dddddd; box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15); min-height: 10em; }
 
