@@ -2402,7 +2402,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead__course-options h2, .masthead__course-options h3, .masthead__course-options h4, .masthead__course-options h5, .masthead__course-options h6 { margin: 0.5rem 0 0.25rem 0; }
 
-.masthead__course-options select.one-item { background: white; }
+.masthead__course-options select.one-item, .masthead__course-options select.one-item[disabled] { background: none; border: none; color: white; padding: 0; opacity: 1; }
 
 @media (max-width: 35rem) { .masthead--profile .masthead__inner { padding: 8rem 0 2rem; }
   .masthead--profile .masthead__inner figure { margin: 2rem 0 2rem; } }

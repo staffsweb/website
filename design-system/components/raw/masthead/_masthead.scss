@@ -166,11 +166,13 @@
       margin: $spacing-xs 0 $spacing-2xs 0;
     }
 
-    & select.one-item {
-      background: white;
+    & select.one-item, & select.one-item[disabled] {
+      background: none;
+      border: none;
+      color: white;
+      padding: 0;
+      opacity: 1;
     }
-
-
   }
 
   @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
