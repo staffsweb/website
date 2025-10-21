@@ -2374,7 +2374,9 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead--course { background: #170d38; color: white; }
 
-.masthead--course .title { color: #c4ff36; padding-left: 0; }
+.masthead--course h1, .masthead--course h2, .masthead--course h3, .masthead--course h4, .masthead--course h5, .masthead--course h6 { color: #c4ff36; padding-left: 0; }
+
+.masthead--course .list--inline-bulleted li::before { color: inherit; }
 
 .masthead__award-type { color: white; }
 
@@ -2398,9 +2400,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead__course-options { background: #170d38; padding-right: 2rem; }
 
-.masthead__course-options label { margin: 1.5rem 0 0.75rem; }
-
-.masthead__course-options .title { margin: 2.5rem 0 0 0; }
+.masthead__course-options h2, .masthead__course-options h3, .masthead__course-options h4, .masthead__course-options h5, .masthead__course-options h6 { margin: 0.5rem 0 0.25rem 0; }
 
 .masthead__course-options select.one-item { background: white; }
 
@@ -2448,6 +2448,8 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 .masthead-home__story { position: absolute; z-index: 3; bottom: 1rem; margin-right: 1.5rem; }
 
 @media (max-width: 35rem) { .masthead-home__story { top: 1rem; } }
+
+.masthead__award-selector, .masthead__study-option-selector { margin-bottom: 1.5rem; width: auto; max-width: 100%; }
 
 .masthead--with-image .masthead__inner { padding: 2rem 0 2rem; }
 

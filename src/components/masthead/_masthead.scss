@@ -95,9 +95,13 @@
     background: $dark-blue;
     color: white;
 
-    & .title {
+    & h1, & h2, & h3, & h4, & h5, & h6 {
       color: $neon;
       padding-left: 0;
+    }
+
+    & .list--inline-bulleted li::before {
+      color: inherit;
     }
   }
 
@@ -158,12 +162,8 @@
     background:  $dark-blue;
     padding-right: $spacing-xl;
 
-    & label {
-      margin: $spacing-lg 0 $spacing-sm;
-    }
-
-    & .title {
-      margin: $spacing-2xl 0 0 0;
+    & h2, & h3, & h4, & h5, & h6 {
+      margin: $spacing-xs 0 $spacing-2xs 0;
     }
 
     & select.one-item {
@@ -311,6 +311,12 @@
       bottom: $spacing-md;
       margin-right: $spacing-lg;
     }
+  }
+
+  &__award-selector, &__study-option-selector {
+    margin-bottom: $spacing-lg;
+    width: auto;
+    max-width: 100%;
   }
 }
 
