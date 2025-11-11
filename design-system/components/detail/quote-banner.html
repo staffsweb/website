@@ -270,14 +270,13 @@
 
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$banner-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
+      <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
 
       <span class="hljs-keyword">@if</span> <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;digital-blue&#x27;</span> {
-        <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
         <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
       }
 
       <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;teal&#x27;</span> {
-        <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
         <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
       }
 

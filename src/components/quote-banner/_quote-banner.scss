@@ -9,14 +9,13 @@
 
   @each $name, $value in $banner-bg-colors {
     &--bg-#{$name} {
+      background-color: #{$value};
 
       @if $name == 'digital-blue' {
-        background-color: #{$value};
         background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
       @else if $name == 'teal' {
-        background-color: #{$value};
         background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
