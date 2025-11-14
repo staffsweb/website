@@ -29,7 +29,7 @@
   }
 
   @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
-    &__img {
+    &__img--with-overlap {
       margin-bottom: -$spacing-3xl;
     }
   }

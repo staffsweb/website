@@ -2353,7 +2353,7 @@ a.iconBox:hover.iconBox--bg-offwhite .iconBox__title, a.iconBox:hover.iconBox--b
 
 .masthead--grey .title { color: #170d38 !important; }
 
-@media (min-width: 65rem) { .masthead__img { margin-bottom: -3rem; } }
+@media (min-width: 65rem) { .masthead__img--with-overlap { margin-bottom: -3rem; } }
 
 .masthead .title { color: white; max-width: 30rem; }
 
