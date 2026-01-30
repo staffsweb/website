@@ -8,6 +8,8 @@ import plugins from 'gulp-load-plugins';
 // import browserSync from 'browser-sync';
 import gulp from 'gulp';
 import rename from 'gulp-rename';
+import gulpSass from 'gulp-sass';
+import dartSass from 'sass';
 import yaml from 'js-yaml';
 import fs from 'fs';
 // import webpackStream from 'webpack-stream';
@@ -26,6 +28,7 @@ const path = require('path');
 const fractal = module.exports = require('@frctl/fractal').create();
 const twigAdapter = require('@frctl/twig');
 const mandelbrot = require('@frctl/mandelbrot');
+const sassCompiler = gulpSass(dartSass);
 
 const logger = fractal.cli.console; // keep a reference to the fractal CLI
                                     // console utility
@@ -202,11 +205,11 @@ function sass() {
 
   return gulp.src(PATHS.watch.sass)
       .pipe($.sourcemaps.init())
-      .pipe($.sass({
+      .pipe(sassCompiler({
         includePaths: PATHS.sass,
-        outputStyle: 'compact',
+        outputStyle: 'compressed',
         precision: 4
-      }).on('error', $.sass.logError))
+      }).on('error', sassCompiler.logError))
       .pipe($.postcss(postCssPlugins))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest(PATHS.assets.dev.css))
@@ -220,9 +223,9 @@ function sassDist() {
   const postCssPlugins = [autoprefixer()].filter(Boolean);
 
   return gulp.src(PATHS.watch.sass)
-      .pipe($.sass({
+      .pipe(sassCompiler({
         includePaths: PATHS.sass
-      }).on('error', $.sass.logError))
+      }).on('error', sassCompiler.logError))
       .pipe($.postcss(postCssPlugins))
       .pipe($.cleanCss())
       .pipe(gulp.dest(PATHS.assets.dist.css))
