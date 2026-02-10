@@ -5232,24 +5232,6 @@ function setCookie(name, value, days) {
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
-// CG: Functionality for use with the cookie banner, March 2021 onwards
-function getOptanonCategoryFromClass(string) {
-  var re = /optanon-category-([cC]\d{4})/gm;
-  var matches = re.exec(string);
-  if (!matches) {
-    return false;
-  } else {
-    return matches[1];
-  }
-}
-function relevantCookiesAccepted(category) {
-  // CG: Checks if the specific category (such as "C0002") is present in the Optanon "accepted" categories in the cookie
-  var optanonCookieString = readCookie('OptanonConsent');
-  if (optanonCookieString.indexOf(category + ":1") != -1) {
-    return true;
-  }
-  return false;
-}
 function checkForInvalidFields() {
   // CG: Count the invalid fields, then enable / disable the "submit" button as appropriate
   var invalidFieldCount = 0;
@@ -6463,7 +6445,7 @@ let newsAndEventsSearchInit = function () {
               .appendTo( ul );
         }
     });
-     $("#course-search__keywords").courseautocomplete({
+      $("#course-search__keywords").courseautocomplete({
       source: function(request, response) {
         $.ajax({
             url: "https://search.staffs.ac.uk/s/search.html",
@@ -6489,7 +6471,7 @@ let newsAndEventsSearchInit = function () {
         return false;
       }
     });
-     $("#global-search__keywords--courses").courseautocomplete({
+      $("#global-search__keywords--courses").courseautocomplete({
       source: function(request, response) {
         $.ajax({
             url: "https://search.staffs.ac.uk/s/search.html",
@@ -6560,15 +6542,10 @@ let newsAndEventsSearchInit = function () {
           var hasVideo = video && video != undefined; // CG: Only display the video if the user has consented to the relevant cookies, e.g. the cookie string contains "C0003:1"
 
           if (hasVideo) {
-            var videoCookieCategory = getOptanonCategoryFromClass(video.className);
-            if (relevantCookiesAccepted(videoCookieCategory)) {
-              video.setAttribute('src', video.dataset.videoSrc);
-            } else {
-              var newDiv = document.createElement("p");
-              newDiv.style.color = '#FFF';
-              newDiv.innerHTML = "Sorry, this video requires the use of functional cookies which you have not consented to use. <a style='color: #FFF; text-decoration: underline;' href='/legal/data-protection/cookie-policy'>Change your cookie settings</a> or <a style='color: #FFF; text-decoration: underline;' href='" + video.dataset.videoSrc + "'>watch the video on the provider's website</a>.";
-              video.parentNode.replaceChild(newDiv, video);
-            }
+            var newDiv = document.createElement("p");
+            newDiv.style.color = '#FFF';
+            newDiv.innerHTML = "Sorry, this video requires the use of functional cookies which you have not consented to use. <a style='color: #FFF; text-decoration: underline;' href='/legal/data-protection/cookie-policy'>Change your cookie settings</a> or <a style='color: #FFF; text-decoration: underline;' href='" + video.dataset.videoSrc + "'>watch the video on the provider's website</a>.";
+            video.parentNode.replaceChild(newDiv, video);
           }
           modal.querySelector('[data-modal-close]').addEventListener('click', function () {
             modal.classList.remove('is-open');
