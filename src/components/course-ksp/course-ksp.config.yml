@@ -1,0 +1,6 @@
+status: wip
+label: "Course KSP"
+
+variants:
+  - name: item
+    hidden: true
