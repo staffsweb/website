@@ -1,1 +1,5 @@
-status: ready
+name: Country Selector
+status: wip
+context:
+  titleText: 'International entry requirements in your country'
+  dropdownLabel: 'Select your country'
