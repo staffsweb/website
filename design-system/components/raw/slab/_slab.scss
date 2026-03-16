@@ -37,6 +37,11 @@
     border-bottom: 1px solid $border-color;
   }
 
+  &--entry-requirements {
+    margin-bottom: 2rem;
+    padding: 3rem 0 1rem;
+  }
+
   //--
 
   @each $name, $value in $slab-bg-colors {

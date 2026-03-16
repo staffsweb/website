@@ -61,3 +61,7 @@ variants:
     context:
       background: box-knot
       text: 'This is a slab with a box knot background image'
+
+  - name: entry-requirements
+    label: "Entry requirements"
+    status: wip
