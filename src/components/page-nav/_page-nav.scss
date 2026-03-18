@@ -1,3 +1,5 @@
+@use "sass:color";
+
 
 .page-nav {
   min-height: #{$spacing-md + $spacing-xl + $spacing-md};
@@ -6,7 +8,7 @@
   $background: white;
 
   --background: #{$background};
-  --backgroundRGB: #{red($background)}, #{green($background)}, #{blue($background)};
+  --backgroundRGB: #{color.channel($background, 'red', $space: rgb)}, #{color.channel($background, 'green', $space: rgb)}, #{color.channel($background, 'blue', $space: rgb)};
 
   &__stickyContainer {
     // we'd be doing this with position sticky, but IE,
@@ -97,7 +99,7 @@
   &.is-waypoint-reached {
     $background: $teal;
     --background: #{$background};
-    --backgroundRGB: #{red($background)}, #{green($background)}, #{blue($background)};
+    --backgroundRGB: #{color.channel($background, 'red', $space: rgb)}, #{color.channel($background, 'green', $space: rgb)}, #{color.channel($background, 'blue', $space: rgb)};
 
     .page-nav__stickyContainer {
       position: fixed;

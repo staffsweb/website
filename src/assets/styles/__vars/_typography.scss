@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //@mixin font-face ($prefix: '..') {
 //}
 $typescale-map: (
@@ -103,7 +105,7 @@ $border-accent-width: $spacing-2xs;
   background: #fff;
   font-weight: 400;
   font-variant-ligatures: none;
-  tap-highlight-color: transparentize($primary, 0.75);
+  tap-highlight-color: color.adjust($primary, $alpha: -0.75);
 }
 
 @mixin base-elements {
