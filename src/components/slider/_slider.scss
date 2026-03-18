@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../assets/js/vendor/slick-1.8.1/slick/slick.scss';
 
 .slick-slider {
@@ -40,7 +42,7 @@
 }
 
 .slick-next {
-  right: -#{$page-gutter-small/1.1};
+  right: -#{math.div($page-gutter-small, 1.1)};
 
   @media (min-width: $wrap-large-gutter-width) {
     right: -#{$page-gutter-large};
@@ -52,7 +54,7 @@
 }
 
 .slick-prev {
-  left: -#{$page-gutter-small/1.1};
+  left: -#{math.div($page-gutter-small, 1.1)};
 
   @media (min-width: $wrap-large-gutter-width) {
     left: -#{$page-gutter-large};

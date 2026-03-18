@@ -129,7 +129,7 @@
       display: block;
       float: left;
       clear: left;
-      margin-left: -#{$spacing-3xl + $spacing-lg + $border-accent-width/2};
+      margin-left: -#{$spacing-3xl + $spacing-lg + $border-accent-width*0.5};
       width: $spacing-3xl;
       padding: $spacing-2xs 0;
       background: var(--accent-color, #{$neutral--primary});

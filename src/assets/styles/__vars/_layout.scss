@@ -1,10 +1,12 @@
 
+@use "sass:math";
+
 $grid-gutter: $spacing-lg;
 $grid-gutter-small: $spacing-sm;
 $grid-gutter-large: $spacing-3xl;
 
-$page-gutter-small: $grid-gutter/1.25;
-$page-gutter-large: $grid-gutter-large/2;
+$page-gutter-small: math.div($grid-gutter, 1.25);
+$page-gutter-large: $grid-gutter-large*0.5;
 $page-gutter-full: 5%;
 
 $wrap-width: 86rem;

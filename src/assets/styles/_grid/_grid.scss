@@ -35,7 +35,7 @@
     @include clearfix;
     clear: both;
     padding: 0;
-    margin: 0 -#{$grid-gutter/2};
+    margin: 0 -#{$grid-gutter*0.5};
 
     > * {
       display: block;
@@ -43,26 +43,26 @@
       list-style-type: none;
       box-sizing: border-box;
       width: 100%;
-      padding: 0 $grid-gutter/2;
+      padding: 0 $grid-gutter*0.5;
     }
   }
 
   .grid--spaced {
     @media (min-width: $wrap-large-gutter-width) {
-      margin: 0 -#{$grid-gutter-large/2};
+      margin: 0 -#{$grid-gutter-large*0.5};
 
       > * {
-        padding: 0 $grid-gutter-large/2;
+        padding: 0 $grid-gutter-large*0.5;
       }
     }
   }
 
   .grid--compact {
     @media (min-width: 1em) {
-      margin: 0 -#{$grid-gutter-small/2};
+      margin: 0 -#{$grid-gutter-small*0.5};
 
       > * {
-        padding: 0 $grid-gutter-small/2;
+        padding: 0 $grid-gutter-small*0.5;
       }
     }
   }
