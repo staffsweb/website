@@ -1,25 +1,29 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .meta {
-  @include line-height('normal');
+  @include typography.line-height('normal');
 
   dt {
-    margin-bottom: $spacing-2xs;
+    margin-bottom: spacing.$spacing-2xs;
   }
 
   &__item {
-    margin-bottom: $spacing-md;
+    margin-bottom: spacing.$spacing-md;
   }
 }
 
 .meta--inline-dd {
   dd {
     display: inline;
-    margin-right: $spacing-xs;
+    margin-right: spacing.$spacing-xs;
 
     &:before {
       content: '•';
-      margin-right: $spacing-xs;
+      margin-right: spacing.$spacing-xs;
       font-weight: bold;
-      color: $red;
+      color: colours.$red;
     }
 
     &:first-of-type {
@@ -32,12 +36,12 @@
 
 .meta--inline {
   .meta__item {
-    margin-bottom: $spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
   }
 
   dt, dd {
     display: inline-block;
-    margin-right: $spacing-xs;
+    margin-right: spacing.$spacing-xs;
   }
 
   dd {
@@ -45,9 +49,9 @@
 
     &:before {
       content: '•';
-      margin-right: $spacing-xs;
+      margin-right: spacing.$spacing-xs;
       font-weight: bold;
-      color: $red;
+      color: colours.$red;
     }
 
     &:first-of-type {

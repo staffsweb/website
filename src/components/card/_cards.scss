@@ -1,14 +1,23 @@
-$card__internal-spacing: $spacing-sm;
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/layout";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
+$card__internal-spacing: spacing.$spacing-sm;
 
 .card {
   // $theme-colours: see __vars/colours
 
   display: block;
   position: relative;
-  --accent-color: #{$primary};
-  margin-bottom: $spacing-xl;
+  --accent-color: #{colours.$primary};
+  margin-bottom: spacing.$spacing-xl;
 
-  @include clearfix;
+  @include layout.clearfix;
 
   a:not(.button) {
     text-decoration: none;
@@ -37,10 +46,10 @@ $card__internal-spacing: $spacing-sm;
 
   &__title {
     margin-top: 0;
-    margin-bottom: $spacing-md;
+    margin-bottom: spacing.$spacing-md;
 
     a {
-      color: #{$primary};
+      color: #{colours.$primary};
       color: var(--accent-color);
     }
   }
@@ -57,14 +66,14 @@ $card__internal-spacing: $spacing-sm;
       &:after {
         content: '';
         position: absolute;
-        width: $spacing-4xl;
-        height: $spacing-4xl;
+        width: spacing.$spacing-4xl;
+        height: spacing.$spacing-4xl;
         max-width: 50%;
         max-height: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: url('#{$image-theme-directory-icon}/icon-play-circle-neutral-light.svg') no-repeat center center;
+        background: url('#{config.$image-theme-directory-icon}/icon-play-circle-neutral-light.svg') no-repeat center center;
         background-size: contain;
         z-index: 1;
         pointer-events: none;
@@ -77,7 +86,7 @@ $card__internal-spacing: $spacing-sm;
   }
 
   &__clearing-flag {
-    background-color: $red;
+    background-color: colours.$red;
     color: #FFF;
     padding: 0.25rem 0.5rem;
     font-weight: 400;
@@ -102,12 +111,12 @@ $card__internal-spacing: $spacing-sm;
   }
 
   //--  ACCENT THEMES
-  @each $name, $value in $card-accent-colors {
+  @each $name, $value in colours.$card-accent-colors {
     &--#{$name} {
       --accent-color: #{$value};
 
       &.card--ksp .card--ksp__icon-container > .icon svg * {
-        @if (choose-contrast-color($value) == white) {
+        @if (functions.choose-contrast-color($value) == white) {
           stroke: white!important;
           fill: white!important;
           color: white;
@@ -121,7 +130,7 @@ $card__internal-spacing: $spacing-sm;
     }
   } 
 
-  @each $name, $value in $theme-colours {
+  @each $name, $value in colours.$theme-colours {
     &--#{$name} {
       --accent-color: #{$value};
 
@@ -132,7 +141,7 @@ $card__internal-spacing: $spacing-sm;
   }
 
   &--bg-offwhite {
-    background-color: $grey-50-pc;
+    background-color: colours.$grey-50-pc;
 
     & .card__content {
       padding: $card__internal-spacing * 2;
@@ -148,12 +157,12 @@ a.card {
   text-decoration: none;
 
   .card__title {
-    color: #{$primary};
+    color: #{colours.$primary};
     color: var(--accent-color);
   }
 
   &:hover {
-    color: $text-color;
+    color: colours.$text-color;
 
     .card__title {
       text-decoration: underline;
@@ -183,7 +192,7 @@ a.card {
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: row-reverse;
-  padding-bottom: $spacing-sm;
+  padding-bottom: spacing.$spacing-sm;
 
   .card__figure {
     flex: 1 1 33%;
@@ -194,7 +203,7 @@ a.card {
   }
 
   .card__figure {
-    margin-bottom: -#{$spacing-sm};
+    margin-bottom: -#{spacing.$spacing-sm};
   }
 }
 
@@ -203,20 +212,20 @@ a.card {
   padding-bottom: $card__internal-spacing;
 
   & .cite {
-    margin-bottom: $spacing-2xs;
+    margin-bottom: spacing.$spacing-2xs;
     color: var(--accent-color);
   }
 
-  @each $name, $value in $testimonial-card-colors {
+  @each $name, $value in colours.$testimonial-card-colors {
     &.card--bg-#{$name} {
-      background-color: map_get($value, "background");
-      color: map_get($value, "color");
-      padding: $spacing-2xs $spacing-lg $spacing-lg $spacing-lg;
+      background-color: map.get($value, "background");
+      color: map.get($value, "color");
+      padding: spacing.$spacing-2xs spacing.$spacing-lg spacing.$spacing-lg spacing.$spacing-lg;
 
-      @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      @media (min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
         & .card__content {
           padding-left: 0;
-          margin-left: -$spacing-4xl;
+          margin-left: -(spacing.$spacing-4xl);
         }
       }
 
@@ -225,11 +234,11 @@ a.card {
       }
 
       & q {
-        color: map_get($value, "color");
+        color: map.get($value, "color");
       }
 
       & strong, & .cite { 
-        color: map_get($value, "contrast-color");
+        color: map.get($value, "contrast-color");
       }
 
       & .blockquote__figure img {
@@ -239,7 +248,7 @@ a.card {
   }
 
   .blockquote__figure img {
-    border-bottom: $spacing-2xs solid var(--accent-color);
+    border-bottom: spacing.$spacing-2xs solid var(--accent-color);
   }
 }
 
@@ -256,7 +265,7 @@ a.card {
     height: 0;
     padding-bottom: 5%;
     margin-left: -5%;
-    background: url('#{$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
+    background: url('#{config.$image-theme-directory-icon}/icon-quote-primary.svg') no-repeat center center;
     background-size: contain;
   }
 
@@ -265,10 +274,10 @@ a.card {
   // something using inline SVG use/fill, or a mask?
   // Don't forget to add the SVG to the filesystem!
 
-  @each $name, $value in $card-accent-colors {
+  @each $name, $value in colours.$card-accent-colors {
     &.card--#{$name} {
       &:before {
-        background: transparent url('#{$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
+        background: transparent url('#{config.$image-theme-directory-icon}/icon-quote-#{$name}.svg') no-repeat center center;
         background-size: contain;
       }
     }
@@ -288,13 +297,13 @@ a.card {
   ul.list--icon-bullets {
     li a {
       text-decoration: none!important;
-      border-bottom: 1px solid $grey--light
+      border-bottom: 1px solid colours.$grey--light
     }
   }
 }
 
 .card--course {
-  border-left: $border-accent-width solid $primary;
+  border-left: typography.$border-accent-width solid colours.$primary;
   border-color: var(--accent-color);
 }
 
@@ -303,7 +312,7 @@ a.card {
 }
 
 .card--profile {
-  padding: $spacing-md;
+  padding: spacing.$spacing-md;
 
   /* Needs:
     grey and teal
@@ -311,13 +320,13 @@ a.card {
     teal and neon
     burgundy and neon
   */
-  @each $name, $value in $profile-card-themes {
+  @each $name, $value in colours.$profile-card-themes {
     &.card--#{$name} {
-      background: map_get($value, "background");
-      border-bottom: $spacing-2xs solid map_get($value, "accent-color");
-      margin-left: $spacing-2xl;
+      background: map.get($value, "background");
+      border-bottom: spacing.$spacing-2xs solid map.get($value, "accent-color");
+      margin-left: spacing.$spacing-2xl;
 
-      @if (choose-contrast-color(map_get($value, "background")) == white) {
+      @if (functions.choose-contrast-color(map.get($value, "background")) == white) {
         color: white;
 
         & .button {
@@ -326,8 +335,8 @@ a.card {
       }
 
       & .button--outline {
-        color: map_get($value, "accent-color");
-        border-color: map_get($value, "accent-color");
+        color: map.get($value, "accent-color");
+        border-color: map.get($value, "accent-color");
 
         &:hover {
           color: black;
@@ -335,7 +344,7 @@ a.card {
       }
 
       & .title, & .strong {
-        color: map_get($value, "accent-color");
+        color: map.get($value, "accent-color");
       }
     }
   }
@@ -360,7 +369,7 @@ a.card {
 }
 
 .card--ksp {
-  color: $neutral--primary;
+  color: colours.$neutral--primary;
   border-left: none;
 
   &__icon-container {
@@ -400,21 +409,21 @@ a.card {
 }
 
 .card--event {
-  margin-left: $spacing-4xl;
+  margin-left: spacing.$spacing-4xl;
 
   .card__figure {
-    margin-bottom: #{$spacing-xs};
+    margin-bottom: #{spacing.$spacing-xs};
   }
 
   .card__date {
     position: absolute;
     top: 0;
-    left: -$spacing-4xl;
-    width: $spacing-4xl;
-    @include typescale('xs');
-    padding: $spacing-sm 0;
+    left: -(spacing.$spacing-4xl);
+    width: spacing.$spacing-4xl;
+    @include typography.typescale('xs');
+    padding: spacing.$spacing-sm 0;
     color: white;
-    background: $primary;
+    background: colours.$primary;
     background: var(--accent-color);
     line-height: 1;
     text-align: center;
@@ -422,40 +431,40 @@ a.card {
   }
 
   .link--stretched h2 {
-    color: $teal;
+    color: colours.$teal;
   }
 
   a.link--stretched:hover h2 {
-    color: $red;
+    color: colours.$red;
   }
 
   .card__day {
     display: block;
     font-weight: 500;
-    @include typescale('xl');
+    @include typography.typescale('xl');
 
-    @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
-      @include typescale('3xl');
+    @media (min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
+      @include typography.typescale('3xl');
     }
   }
 
   .card__date-separator {
     display: block;
     font-weight: 500;
-    @include typescale('xl');
-    padding: $spacing-xs 0;
+    @include typography.typescale('xl');
+    padding: spacing.$spacing-xs 0;
   }
 
-  @media (min-width: (map_get($breakpoint-stages, 'tablet-wide') + 5rem)) {
-    margin-left: $spacing-5xl;
+  @media (min-width: (map.get(breakpoints.$breakpoint-stages, 'tablet-wide') + 5rem)) {
+    margin-left: spacing.$spacing-5xl;
 
     .card__date {
-      left: -$spacing-5xl;
-      width: $spacing-5xl;
+      left: -(spacing.$spacing-5xl);
+      width: spacing.$spacing-5xl;
     }
 
     .card__day {
-      @include typescale('5xl');
+      @include typography.typescale('5xl');
     }
   }
 }
@@ -465,8 +474,8 @@ a.card {
 
   & .card__content {
     max-width: 80%;
-    background-color: $grey-50-pc;
-    padding: $spacing-xl $spacing-xl $spacing-2xl $spacing-xl;
+    background-color: colours.$grey-50-pc;
+    padding: spacing.$spacing-xl spacing.$spacing-xl spacing.$spacing-2xl spacing.$spacing-xl;
   }
 
   & a:hover,& a:hover .card__content p {
@@ -475,7 +484,7 @@ a.card {
 
   & img {
     float: right;
-    margin-top: -$spacing-xl;
+    margin-top: -(spacing.$spacing-xl);
     max-height: 100px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     background: #FFF;
@@ -484,7 +493,7 @@ a.card {
 }
 
 .card__video.card__figure {
-  @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+  @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
     padding-bottom: 50%;
     position: relative;
     height: 0;
@@ -492,7 +501,7 @@ a.card {
   & iframe {
     width: 100%;
     height: 100%;
-    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
       padding-bottom: 50%;
       position: absolute;
     }
@@ -504,35 +513,35 @@ a.card {
     position: relative;
     overflow: hidden;
     flex-direction:  row;
-    background-color: $grey-50-pc;
+    background-color: colours.$grey-50-pc;
     background-size: cover!important;
     background-position: center center;
     background-repeat: no-repeat;
     border-left: none;
-    border: $spacing-4xs solid $teal;
+    border: spacing.$spacing-4xs solid colours.$teal;
 
-    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
       background-image: none!important;
-      background-color: $grey-50-pc!important;
+      background-color: colours.$grey-50-pc!important;
     }
 
     .card__content {
       max-width: 25rem;
       z-index: 1;
       background: rgba(255,255,255,0.9);
-      padding: $spacing-xl $spacing-xl $spacing-xs $spacing-xl;
+      padding: spacing.$spacing-xl spacing.$spacing-xl spacing.$spacing-xs spacing.$spacing-xl;
 
-      @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
-        margin-top: $spacing-2xl;
-        margin-left: $spacing-2xl;
+      @media (min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
+        margin-top: spacing.$spacing-2xl;
+        margin-left: spacing.$spacing-2xl;
       }
 
       > .title {
-        color: $teal;
+        color: colours.$teal;
       }
 
       > :last-child {
-        margin-top: $spacing-md;
+        margin-top: spacing.$spacing-md;
       }
     }
 }

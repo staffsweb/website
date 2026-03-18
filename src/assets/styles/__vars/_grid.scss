@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@import 'spacing';
+@use 'spacing';
 
 // grid gutters are set in __vars/_layout :)
 
@@ -47,7 +47,7 @@ $complex-12ths: false;
 }
 
 @mixin offset-left($n,$d) {
-    @if (round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
+    @if (math.round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
         margin-left: (math.div($n * 100%, $d));
     } @else {
         margin-left: (math.div($n * 100%, $d) - 0.001);
@@ -55,7 +55,7 @@ $complex-12ths: false;
 }
 
 @mixin offset-right($n,$d) {
-    @if (round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
+    @if (math.round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
         margin-right: (math.div($n * 100%, $d));
     } @else {
         margin-right: (math.div($n * 100%, $d) - 0.001);
@@ -63,7 +63,7 @@ $complex-12ths: false;
 }
 
 @mixin grid-col($n:1,$d:1) {
-    @if (round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
+    @if (math.round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
         width: (math.div($n * 100%, $d));
     } @else {
         width: (math.div($n * 100%, $d) - 0.001);
@@ -78,7 +78,7 @@ $complex-12ths: false;
 
 @mixin col($n:1,$d:1) {
     &:nth-child(n) {
-        @if (round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
+        @if (math.round(($n * 100%) / $d) == math.div($n * 100%, $d)) {
             width: (math.div($n * 100%, $d));
         } @else {
             width: (math.div($n * 100%, $d) - 0.001);

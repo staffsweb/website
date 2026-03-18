@@ -1,12 +1,19 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/spacing";
+
 .slab {
   position: relative;
-  $border-color: $grey--light;
-  padding: $spacing-4xl 0;
+  $border-color: colours.$grey--light;
+  padding: spacing.$spacing-4xl 0;
   background-size: cover;
   background-repeat: no-repeat;
 
   &__header {
-    margin-top: -#{$spacing-4xl};
+    margin-top: -#{spacing.$spacing-4xl};
   }
 
   &__bg {
@@ -24,7 +31,7 @@
   }
 
   &__content {
-    padding: $spacing-4xl;
+    padding: spacing.$spacing-4xl;
   }
 
   //--
@@ -44,10 +51,10 @@
 
   //--
 
-  @each $name, $value in $slab-bg-colors {
+  @each $name, $value in colours.$slab-bg-colors {
     &--bg-#{$name} {
       background-color: #{$value};
-      @if (choose-contrast-color($value) == white) {
+      @if (functions.choose-contrast-color($value) == white) {
         color: white;
         & a:not(.button), & h2 {
           color: white;
@@ -61,49 +68,49 @@
     background-position: no-repeat;
 
     // CG: Slabs have half padding on mobile devices
-    @media (max-width: (map_get($breakpoint-stages, 'tablet'))) {
+    @media (max-width: (map.get(breakpoints.$breakpoint-stages, 'tablet'))) {
       & .slab__content {
-        padding: $spacing-2xl;
+        padding: spacing.$spacing-2xl;
       }
     }
 
     &.burgundy-on-lavender {
-      background-image: url('#{$image-theme-directory}/bg-box-knot-burgundy.svg');
-      background-color: $lavender;
+      background-image: url('#{config.$image-theme-directory}/bg-box-knot-burgundy.svg');
+      background-color: colours.$lavender;
 
       & .slab__content, & .slab__title {
-        background-color: $burgundy;
+        background-color: colours.$burgundy;
         color: white;
       }
     }
 
     &.dark-blue-on-pale-blue {
-      background-image: url('#{$image-theme-directory}/bg-box-knot-dark-blue.svg');
-      background-color: $pale-blue;
+      background-image: url('#{config.$image-theme-directory}/bg-box-knot-dark-blue.svg');
+      background-color: colours.$pale-blue;
 
       & .slab__content, & .slab__title {
-        background-color: $dark-blue;
+        background-color: colours.$dark-blue;
         color: white;
       }
     }
 
     &.neon-on-dark-blue {
-      background-image: url('#{$image-theme-directory}/bg-box-knot-neon.svg');
-      background-color: $dark-blue;
+      background-image: url('#{config.$image-theme-directory}/bg-box-knot-neon.svg');
+      background-color: colours.$dark-blue;
 
       & .slab__content, & .slab__title {
-        background-color: $neon-50-pc;
-        color: $dark-blue;
+        background-color: colours.$neon-50-pc;
+        color: colours.$dark-blue;
       }
     }
 
     &.lavender-on-dark-blue {
-      background-image: url('#{$image-theme-directory}/bg-box-knot-lavender.svg');
-      background-color: $dark-blue;
+      background-image: url('#{config.$image-theme-directory}/bg-box-knot-lavender.svg');
+      background-color: colours.$dark-blue;
 
       & .slab__content, & .slab__title {
-        background-color: $lavender;
-        color: $dark-blue;
+        background-color: colours.$lavender;
+        color: colours.$dark-blue;
       }
     }
   }

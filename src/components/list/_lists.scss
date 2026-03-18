@@ -1,3 +1,7 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .list--unbulleted,
 .list--unstyled {
   list-style: none;
@@ -6,7 +10,7 @@
 
 .list--spaced {
   > li {
-    margin-bottom: $spacing-lg;
+    margin-bottom: spacing.$spacing-lg;
   }
 }
 
@@ -15,15 +19,15 @@
 
   li {
     display: inline;
-    margin-right: $spacing-xs;
+    margin-right: spacing.$spacing-xs;
   }
 }
 
 .list--links {
-  @include line-height('normal');
+  @include typography.line-height('normal');
 
   li {
-    margin-bottom: $spacing-sm;
+    margin-bottom: spacing.$spacing-sm;
   }
 
   a {
@@ -75,13 +79,13 @@
 
   li {
     display: inline;
-    margin-right: $spacing-xs;
+    margin-right: spacing.$spacing-xs;
 
     &:before {
       content: '•';
-      margin-right: $spacing-xs;
+      margin-right: spacing.$spacing-xs;
       font-weight: bold;
-      color: $primary;
+      color: colours.$primary;
     }
 
     &:first-child {
@@ -104,24 +108,24 @@
 
 .list--steps {
   $number-accent-colors: (
-    'red': $red,
-    'pink': $pink,
-    'maroon': $maroon,
-    'slate': $slate,
-    'blue-ldn': $blue--deep-ldn,
+    'red': colours.$red,
+    'pink': colours.$pink,
+    'maroon': colours.$maroon,
+    'slate': colours.$slate,
+    'blue-ldn': colours.$blue--deep-ldn,
   );
 
   list-style: none;
-  padding-inline-start: $spacing-3xl;
+  padding-inline-start: spacing.$spacing-3xl;
   counter-reset: list--steps;
-  margin-bottom: $spacing-4xl;
+  margin-bottom: spacing.$spacing-4xl;
 
   > li {
     position: relative;
-    border-left: $border-accent-width solid $neutral--primary;
-    border-color: var(--accent-color, #{$neutral--primary});
-    padding-left: $spacing-lg;
-    margin-bottom: $spacing-2xl;
+    border-left: typography.$border-accent-width solid colours.$neutral--primary;
+    border-color: var(--accent-color, #{colours.$neutral--primary});
+    padding-left: spacing.$spacing-lg;
+    margin-bottom: spacing.$spacing-2xl;
 
     &::before {
       content: counter(list--steps);
@@ -129,12 +133,12 @@
       display: block;
       float: left;
       clear: left;
-      margin-left: -#{$spacing-3xl + $spacing-lg + $border-accent-width*0.5};
-      width: $spacing-3xl;
-      padding: $spacing-2xs 0;
-      background: var(--accent-color, #{$neutral--primary});
+      margin-left: -#{spacing.$spacing-3xl + spacing.$spacing-lg + typography.$border-accent-width*0.5};
+      width: spacing.$spacing-3xl;
+      padding: spacing.$spacing-2xs 0;
+      background: var(--accent-color, #{colours.$neutral--primary});
       color: white;
-      @include typescale('3xl');
+      @include typography.typescale('3xl');
       font-weight: 500;
       line-height: 1.4; // matches .title
       text-align: center;
@@ -143,9 +147,9 @@
   }
 
   &__box {
-    background: $greyblue--superlight;
-    padding: calc(#{$spacing-sm} + 2.5%);
-    margin-left: -$spacing-lg;
+    background: colours.$greyblue--superlight;
+    padding: calc(#{spacing.$spacing-sm} + 2.5%);
+    margin-left: -(spacing.$spacing-lg);
   }
 
   &__title {
@@ -173,27 +177,27 @@
     border-bottom: 0;
 
     > li {
-      border-color: $primary;
-      border-color: var(--accent-color, #{$primary});
+      border-color: colours.$primary;
+      border-color: var(--accent-color, #{colours.$primary});
 
       &::before {
-        background-color: $primary;
-        background-color: var(--accent-color, #{$primary});
+        background-color: colours.$primary;
+        background-color: var(--accent-color, #{colours.$primary});
       }
     }
 
     .accordion__title {
-      background: $greyblue--superlight;
+      background: colours.$greyblue--superlight;
     }
 
     .accordion__title,
     .accordion__content {
-      padding-left: calc(#{$spacing-sm} + 2.5%);
+      padding-left: calc(#{spacing.$spacing-sm} + 2.5%);
     }
 
     .accordion__item {
       border-top: none;
-      margin-left: -$spacing-lg;
+      margin-left: -(spacing.$spacing-lg);
     }
 
     .accordion__toggle {
@@ -201,7 +205,7 @@
 
       &:before {
         float: right;
-        margin: 0 0 0 $spacing-md;
+        margin: 0 0 0 spacing.$spacing-md;
       }
     }
   }

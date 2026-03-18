@@ -1,10 +1,15 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .tile {
   // $tile-accent-colors: see __vars/colours
 
   position: relative;
   display: block;
   overflow: hidden;
-  outline: 1px solid $grey--light;
+  outline: 1px solid colours.$grey--light;
   box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.15);
   min-height: 10em;
 
@@ -33,23 +38,23 @@
     left: 0;
     margin-right: 2rem;
     max-height: 90%;
-    padding: 0 $spacing-md 1px;
+    padding: 0 spacing.$spacing-md 1px;
     background: white;
     box-sizing: border-box;
     z-index: 1;
 
     &-body {
-      @include typescale('sm');
-      @include line-height('normal');
+      @include typography.typescale('sm');
+      @include typography.line-height('normal');
 
       & .button > .icon {
-        margin-right: $spacing-2xs;
+        margin-right: spacing.$spacing-2xs;
       }
     }
   }
 
   &--facility {
-    margin-bottom: $spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
 
     & .tile__content {
       position: static;
@@ -74,7 +79,7 @@
   }
 
   &__title {
-    margin-top: -$spacing-md!important;
+    margin-top: -(spacing.$spacing-md)!important;
   }
 
   .title__highlight {
@@ -90,12 +95,12 @@
     }
   }
 
-  @each $name, $value in $tile-accent-colors {
+  @each $name, $value in colours.$tile-accent-colors {
     &--accent-#{$name} {
       --accent-color: #{$value};
 
       & .title .title__highlight {
-        @if (choose-contrast-color($value) == black) {
+        @if (functions.choose-contrast-color($value) == black) {
           color: black;
         }
       }
@@ -116,7 +121,7 @@ a.tile {
 
   &:hover,
   &:focus {
-    color: $neutral--primary;
+    color: colours.$neutral--primary;
 
     //.tile__figure {
     //  img {
@@ -127,7 +132,7 @@ a.tile {
 
   &:focus {
     outline-width: 3px;
-    outline-color: $primary;
+    outline-color: colours.$primary;
     z-index: 2;
   }
 }

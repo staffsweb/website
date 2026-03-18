@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "sass:color";
 
 //
@@ -298,9 +299,9 @@ $linear-channel-values:
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
  */
 @function luminance($color) {
-  $red: nth($linear-channel-values, color.channel($color, 'red', $space: rgb) + 1);
-  $green: nth($linear-channel-values, color.channel($color, 'green', $space: rgb) + 1);
-  $blue: nth($linear-channel-values, color.channel($color, 'blue', $space: rgb) + 1);
+  $red: list.nth($linear-channel-values, color.channel($color, 'red', $space: rgb) + 1);
+  $green: list.nth($linear-channel-values, color.channel($color, 'green', $space: rgb) + 1);
+  $blue: list.nth($linear-channel-values, color.channel($color, 'blue', $space: rgb) + 1);
 
   @return .2126 * $red + .7152 * $green + .0722 * $blue;
 }

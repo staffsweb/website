@@ -1,8 +1,11 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .announcement {
     position: relative;
-    padding: $spacing-2xl 0;
-    background: $grey-50-pc;
-    border-bottom: $spacing-2xs solid $teal;
+    padding: spacing.$spacing-2xl 0;
+    background: colours.$grey-50-pc;
+    border-bottom: spacing.$spacing-2xs solid colours.$teal;
 }
 
-.slider--announcements  .slick-slide { padding-right: $spacing-xl; }
+.slider--announcements  .slick-slide { padding-right: spacing.$spacing-xl; }

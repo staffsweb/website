@@ -1,27 +1,31 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .breadcrumbs {
   display: inline-block;
   color: #000;
-  margin: 0 0 $spacing-xs;
-  padding: $spacing-xs $spacing-sm $spacing-xs 0;
+  margin: 0 0 spacing.$spacing-xs;
+  padding: spacing.$spacing-xs spacing.$spacing-sm spacing.$spacing-xs 0;
 
   &.has-solid-bg {
-    background: $grey-50-pc;
+    background: colours.$grey-50-pc;
   }
 
   ul {
     margin: 0;
     padding: 0;
-    @include typescale('sm');
+    @include typography.typescale('sm');
   }
 
   li {
     display: inline-block;
-    margin: 0 $spacing-2xs;
+    margin: 0 spacing.$spacing-2xs;
 
     &:before {
       content: '/ ';
       display: inline-block;
-      margin: 0 $spacing-xs 0 0;
+      margin: 0 spacing.$spacing-xs 0 0;
     }
 
     &:first-child {
@@ -31,7 +35,7 @@
     }
 
     a, a:visited, a:not([class]) {
-      color: $dark-blue;
+      color: colours.$dark-blue;
       font-weight: 500;
       border-bottom: 0;
   

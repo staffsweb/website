@@ -1,3 +1,5 @@
+@use "../../assets/styles/__vars/spacing";
+
 .lead-gen {
     position: fixed;
     bottom: 0;
@@ -11,7 +13,7 @@
 
     &__bg {
         background: rgba(0,0,0,0.7);
-        padding: $spacing-lg; 
+        padding: spacing.$spacing-lg; 
     }
 
     &__no {

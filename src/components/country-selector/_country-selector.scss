@@ -1,4 +1,7 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .country-selector {
-    background: $pale-blue;
-    padding: $spacing-xl  $spacing-lg;
+    background: colours.$pale-blue;
+    padding: spacing.$spacing-xl  spacing.$spacing-lg;
 }

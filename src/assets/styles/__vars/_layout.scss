@@ -1,9 +1,12 @@
+@use "breakpoints";
+@use "spacing";
+
 
 @use "sass:math";
 
-$grid-gutter: $spacing-lg;
-$grid-gutter-small: $spacing-sm;
-$grid-gutter-large: $spacing-3xl;
+$grid-gutter: spacing.$spacing-lg;
+$grid-gutter-small: spacing.$spacing-sm;
+$grid-gutter-large: spacing.$spacing-3xl;
 
 $page-gutter-small: math.div($grid-gutter, 1.25);
 $page-gutter-large: $grid-gutter-large*0.5;
@@ -17,7 +20,7 @@ $wrap-full-gutter-width: 40rem;
 $line-length-max: 50em;
 $line-length-max-rem: 50rem;
 
-$breakpoint-largescreen-typography: $quart-breakpoint + 5rem;
+$breakpoint-largescreen-typography: breakpoints.$quart-breakpoint + 5rem;
 $breakpoint-largescreen-typography-height: 40rem;
 
 $align-size-xs: calc(25% - #{$grid-gutter});
@@ -27,8 +30,8 @@ $align-size-lg: calc(66% - #{$grid-gutter});
 $align-min-breakpoint: 32.5rem;
 //$align-right-offset-breakpoint: $wrap-width + 10rem;
 
-$body-border-width: $spacing-xs;
-$body-border-width--wide: $spacing-md;
+$body-border-width: spacing.$spacing-xs;
+$body-border-width--wide: spacing.$spacing-md;
 $body-border-breakpoint: $wrap-full-gutter-width;
 
 $megaNav-full-breakpoint: 70rem; // if you change this, you'll need to update the corresponding matchMedia (megaNavFullBreakpoint) in app.js
@@ -71,12 +74,12 @@ $megaNav-full-breakpoint: 70rem; // if you change this, you'll need to update th
     max-width: $align-size-md;
     box-sizing: border-box;
     margin-left: 0;
-    margin-top: $spacing-2xs;
+    margin-top: spacing.$spacing-2xs;
     margin-right: $grid-gutter-large;
-    margin-bottom: $spacing-lg;
+    margin-bottom: spacing.$spacing-lg;
   }
 
-  @media (min-width: $third-breakpoint) {
+  @media (min-width: breakpoints.$third-breakpoint) {
     max-width: $align-size-sm;
   }
 }
@@ -90,12 +93,12 @@ $megaNav-full-breakpoint: 70rem; // if you change this, you'll need to update th
     max-width: $align-size-md;
     box-sizing: border-box;
     margin-right: 0;
-    margin-top: $spacing-2xs;
+    margin-top: spacing.$spacing-2xs;
     margin-left: $grid-gutter-large;
-    margin-bottom: $spacing-lg;
+    margin-bottom: spacing.$spacing-lg;
   }
 
-  @media (min-width: $third-breakpoint) {
+  @media (min-width: breakpoints.$third-breakpoint) {
     max-width: $align-size-sm;
   }
 }

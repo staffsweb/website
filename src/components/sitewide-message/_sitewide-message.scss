@@ -1,6 +1,8 @@
+@use "../../assets/styles/__vars/spacing";
+
 .sitewide-message {
     background-color: #FFD91C;
-    padding: $spacing-xs $spacing-sm;
+    padding: spacing.$spacing-xs spacing.$spacing-sm;
 
     &__text {
         margin: 0;

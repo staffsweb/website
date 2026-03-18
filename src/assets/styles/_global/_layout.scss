@@ -1,4 +1,6 @@
-@import "../__vars/layout";
+@use "../__vars/layout";
+@use "../__vars/spacing";
+
 
 html {
   overflow-x: hidden; // this is for align-full's 100vw "bug"
@@ -27,7 +29,7 @@ body {
   @at-root .has-expanded-smallscreen-nav {
     overflow: hidden;
 
-    @media (min-width: $megaNav-full-breakpoint) {
+    @media (min-width: layout.$megaNav-full-breakpoint) {
       overflow: auto;
     }
   }
@@ -50,14 +52,14 @@ main {
 
 .page-section {
   // CG: The default method for obtaining "vertical rhythm"
-  margin-bottom:  $spacing-4xl;
+  margin-bottom:  spacing.$spacing-4xl;
 
   &--margin-lg {
-    margin-bottom:  $spacing-6xl;
+    margin-bottom:  spacing.$spacing-6xl;
   }
 
   &--margin-sm {
-    margin-bottom:  $spacing-md;
+    margin-bottom:  spacing.$spacing-md;
   }
 }
 
@@ -66,19 +68,19 @@ iframe {
 }
 
 .page-body {
-  margin: $spacing-4xl 0;
+  margin: spacing.$spacing-4xl 0;
 }
 
 .wrap {
-  @include wrap;
+  @include layout.wrap;
 }
 
 .align-left {
-  @include align-left;
+  @include layout.align-left;
 }
 
 .align-right {
-  @include align-right;
+  @include layout.align-right;
 }
 
 .align-center,
@@ -89,33 +91,33 @@ iframe {
 
 .align-full,
 .alignfull {
-  @include align-full;
+  @include layout.align-full;
 }
 
 .wrap-wysiwyg {
-  @include clearfix;
+  @include layout.clearfix;
 }
 
 .size-line-length-max {
-  max-width: $line-length-max-rem;
+  max-width: layout.$line-length-max-rem;
   box-sizing: border-box;
 }
 
-@media (min-width: $align-min-breakpoint) {
+@media (min-width: layout.$align-min-breakpoint) {
   .align-size-xs {
-    max-width: $align-size-xs;
+    max-width: layout.$align-size-xs;
   }
 
   .align-size-sm {
-    max-width: $align-size-sm;
+    max-width: layout.$align-size-sm;
   }
 
   .align-size-md {
-    max-width: $align-size-md;
+    max-width: layout.$align-size-md;
   }
 
   .align-size-lg {
-    max-width: $align-size-lg;
+    max-width: layout.$align-size-lg;
   }
 
   .size-auto {

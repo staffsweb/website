@@ -1,16 +1,20 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/spacing";
+
 .callout {
     text-align: center;
-    padding: $spacing-md;
-    margin-bottom: $spacing-lg;
+    padding: spacing.$spacing-md;
+    margin-bottom: spacing.$spacing-lg;
 
     & p, & h2 {
         margin: 0;
     }
 
-    @each $name, $value in $callout-bg-colors {
+    @each $name, $value in colours.$callout-bg-colors {
         &--bg-#{$name} {
           background-color: #{$value};
-          @if (choose-contrast-color($value) == white) {
+          @if (functions.choose-contrast-color($value) == white) {
             color: white;
             & h2 {
               color: white;

@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+
 .modal__overlay {
     position: fixed;
     top: 0;
@@ -24,13 +27,13 @@
     bottom: 50px;
     right: 50px;
     left: 50px;
-    @media (max-width: (map_get($breakpoint-stages, 'mobile') )) {
+    @media (max-width: (map.get(breakpoints.$breakpoint-stages, 'mobile') )) {
       right: 5px;
       left: 5px;
     }
     overflow: auto;
     position: fixed;
-    @media (min-width: (map_get($breakpoint-stages, 'tablet-wide') )) {
+    @media (min-width: (map.get(breakpoints.$breakpoint-stages, 'tablet-wide') )) {
       right: 20%;
       left: 20%;
     }
@@ -115,7 +118,7 @@
       padding-bottom: 50%;
       position: relative;
       height: 0;
-      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
         padding-bottom: 100%;
       }
       &.card__figure iframe {
@@ -139,7 +142,7 @@
     z-index: 9998;
         opacity: 0.9;
   }
-  @media(max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+  @media(max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
     .modal__container {
       right: 0;
       left: 0;
@@ -147,7 +150,7 @@
   }
 }
 
-@media(max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+@media(max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
     .modal__content .slab, .modal__content .wrap {
       padding: 0;
     }

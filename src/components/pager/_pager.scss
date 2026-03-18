@@ -1,5 +1,9 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .pager {
-  @include line-height('normal');
+  @include typography.line-height('normal');
 
   &__list {
     display: flex;
@@ -7,7 +11,7 @@
   }
 
   &__item {
-    margin: 0 $spacing-2xs $spacing-2xs 0;
+    margin: 0 spacing.$spacing-2xs spacing.$spacing-2xs 0;
   }
 
   &__link,
@@ -15,9 +19,9 @@
   &__ellipsis {
     display: inline-block;
     min-width: 1em;
-    padding: $spacing-xs $spacing-md;
+    padding: spacing.$spacing-xs spacing.$spacing-md;
     text-align: center;
-    border: 1px solid $grey--light;
+    border: 1px solid colours.$grey--light;
     box-sizing: border-box;
   }
 
@@ -30,10 +34,10 @@
   &__current {
     font-weight: 500;
     cursor: default;
-    background: $grey-50-pc;
+    background: colours.$grey-50-pc;
 
     &:hover {
-      color: $text-color;
+      color: colours.$text-color;
       text-decoration: none;
     }
   }
@@ -44,8 +48,8 @@
 
   &__next,
   &__prev {
-    border-color: $primary;
-    background: $primary;
+    border-color: colours.$primary;
+    background: colours.$primary;
     color: white;
 
     &:hover {

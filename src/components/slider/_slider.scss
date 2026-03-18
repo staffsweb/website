@@ -1,6 +1,12 @@
 @use "sass:math";
 
-@import '../../assets/js/vendor/slick-1.8.1/slick/slick.scss';
+@use '../../assets/js/vendor/slick-1.8.1/slick/slick.scss';
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/layout";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 
 .slick-slider {
 }
@@ -9,7 +15,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: $page-gutter-small*2;
+  font-size: layout.$page-gutter-small*2;
   width: 1em;
   height: 1em;
   padding: 0;
@@ -25,8 +31,8 @@
     opacity: 0.8;
   }
 
-  @media (min-width: $wrap-large-gutter-width) {
-    font-size: $page-gutter-large*2;
+  @media (min-width: layout.$wrap-large-gutter-width) {
+    font-size: layout.$page-gutter-large*2;
   }
 
   &:before {
@@ -35,33 +41,33 @@
     margin: auto;
     width: 1em;
     height: 1em;
-    background: $neutral--primary url('#{$image-theme-directory-icon}/icon-gt-white.svg') no-repeat 55% 50%;
+    background: colours.$neutral--primary url('#{config.$image-theme-directory-icon}/icon-gt-white.svg') no-repeat 55% 50%;
     background-size: 30%;
     border-radius: 100%;
   }
 }
 
 .slick-next {
-  right: -#{math.div($page-gutter-small, 1.1)};
+  right: -#{math.div(layout.$page-gutter-small, 1.1)};
 
-  @media (min-width: $wrap-large-gutter-width) {
-    right: -#{$page-gutter-large};
+  @media (min-width: layout.$wrap-large-gutter-width) {
+    right: -#{layout.$page-gutter-large};
   }
 
-  @media (min-width: $wrap-full-gutter-width) {
-    right: -#{$page-gutter-full};
+  @media (min-width: layout.$wrap-full-gutter-width) {
+    right: -#{layout.$page-gutter-full};
   }
 }
 
 .slick-prev {
-  left: -#{math.div($page-gutter-small, 1.1)};
+  left: -#{math.div(layout.$page-gutter-small, 1.1)};
 
-  @media (min-width: $wrap-large-gutter-width) {
-    left: -#{$page-gutter-large};
+  @media (min-width: layout.$wrap-large-gutter-width) {
+    left: -#{layout.$page-gutter-large};
   }
 
-  @media (min-width: $wrap-full-gutter-width) {
-    left: -#{$page-gutter-full};
+  @media (min-width: layout.$wrap-full-gutter-width) {
+    left: -#{layout.$page-gutter-full};
   }
 
   &:before {
@@ -90,35 +96,35 @@
 
 .slider--event-cards {
   .slick-slide {
-    margin: 0 $grid-gutter 0 0;
+    margin: 0 layout.$grid-gutter 0 0;
   }
 }
 
 .slider--facilities {
   .slick-track {
-    margin: 0 - $grid-gutter;
+    margin: 0 - layout.$grid-gutter;
   }
   .slick-slide {
-    margin: 0 $grid-gutter;
+    margin: 0 layout.$grid-gutter;
   }
 }
 
 .accolade-slider {
   &__item {
     text-align: center;
-    margin: 0 $grid-gutter;
+    margin: 0 layout.$grid-gutter;
   }
 
   &__item-title {
-    margin-bottom: $spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
     border-bottom: 1px solid #FFF;
-    padding-bottom: $spacing-xs;
+    padding-bottom: spacing.$spacing-xs;
     color: #FFF;
   }
 
   &__item-description {
-    @include typescale('sm');
-    @include line-height('normal');
+    @include typography.typescale('sm');
+    @include typography.line-height('normal');
 
     p {
       margin-bottom: 0;
@@ -155,7 +161,7 @@
 
 .js-slider--responsive {
   .slick-slide {
-    margin: 0 $grid-gutter 0;
+    margin: 0 layout.$grid-gutter 0;
   }
 
   .slick-prev {
@@ -174,10 +180,10 @@
 
   .slick-slide {
     max-width: 80vw;
-    margin: 0 $grid-gutter-small;
+    margin: 0 layout.$grid-gutter-small;
 
-    @media (min-width: $wrap-width) {
-      max-width: $wrap-width - 15rem;
+    @media (min-width: layout.$wrap-width) {
+      max-width: layout.$wrap-width - 15rem;
     }
   }
 }
@@ -192,12 +198,12 @@
 
     img {
       box-sizing: border-box;
-      border: $spacing-2xs solid transparent;
+      border: spacing.$spacing-2xs solid transparent;
     }
 
     .slick-current {
       img {
-        border-color: $primary;
+        border-color: colours.$primary;
       }
     }
   }

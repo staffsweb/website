@@ -1,8 +1,12 @@
+@use "sass:color";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .box {
   position: relative;
   background: white;
-  color: $text-color;
-  margin: 0 0 $spacing-xl;
+  color: colours.$text-color;
+  margin: 0 0 spacing.$spacing-xl;
 
   &__figure {
     img {
@@ -11,7 +15,7 @@
   }
 
   &__content {
-    padding: calc(#{$spacing-sm} + 2.5%);
+    padding: calc(#{spacing.$spacing-sm} + 2.5%);
 
     > :first-child {
       margin-top: 0;
@@ -26,7 +30,7 @@
     margin-top: 0;
 
     & * {
-      color: $dark-blue;
+      color: colours.$dark-blue;
     }
 
     a {
@@ -36,8 +40,8 @@
   }
 
   &__footer {
-    padding: $spacing-md calc(#{$spacing-sm} + 2.5%);
-    background: $dark-blue;
+    padding: spacing.$spacing-md calc(#{spacing.$spacing-sm} + 2.5%);
+    background: colours.$dark-blue;
     box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.05);
 
     > :first-child {
@@ -53,7 +57,7 @@
   //--
 
   &--padded {
-    padding: calc(#{$spacing-sm} + 2.5%);
+    padding: calc(#{spacing.$spacing-sm} + 2.5%);
   }
 
   //-
@@ -65,19 +69,19 @@
   //-
 
   &--bg-offwhite {
-    background: $grey-50-pc;
+    background: colours.$grey-50-pc;
 
     & .box__footer {
-      background: $grey;
+      background: colours.$grey;
     }
   }
 
   &--bg-greyblue-superlight {
-    background: $grey-50-pc;
+    background: colours.$grey-50-pc;
   }
 
   &--bg-dark-blue, &--bg-slate {
-    background: $dark-blue;
+    background: colours.$dark-blue;
     color: #fff;
 
     & .box__title * {
@@ -94,12 +98,12 @@
     }
 
     & .box__footer {
-      background: $grey;
+      background: colours.$grey;
     }
   }
 
   &--bg-offwhite-gradient {
-    background: radial-gradient(45% 660% at 50% 50%, mix(#e3e3e3, white, 30%) 0%, mix(#ccc, white, 30%) 100%);
+    background: radial-gradient(45% 660% at 50% 50%, color.mix(#e3e3e3, white, 30%) 0%, color.mix(#ccc, white, 30%) 100%);
   }
 }
 
@@ -109,7 +113,7 @@
   // absolutely positioned title
 
   .box__content:first-child {
-    padding-top: calc(#{$spacing-3xl} + 2.5%);;
+    padding-top: calc(#{spacing.$spacing-3xl} + 2.5%);;
   }
 
   .box__abstitle {
@@ -119,9 +123,9 @@
   }
 
   .title__highlight {
-    color: $neon;
+    color: colours.$neon;
     a {
-      color: $neon;
+      color: colours.$neon;
     }
   }
 

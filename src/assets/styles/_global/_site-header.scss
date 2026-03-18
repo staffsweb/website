@@ -1,3 +1,9 @@
+@use "../__vars/colours";
+@use "../__vars/config";
+@use "../__vars/layout";
+@use "../__vars/spacing";
+@use "../__vars/typography";
+
 
 .header-site {
   padding: 0;
@@ -8,11 +14,11 @@
   }
 
   &--dashboard {
-    background: $red;
+    background: colours.$red;
   }
 
-  @media (min-width: $body-border-breakpoint) {
-    left: $body-border-width--wide;
+  @media (min-width: layout.$body-border-breakpoint) {
+    left: layout.$body-border-width--wide;
   }
 
   &__flexContainer {
@@ -20,7 +26,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    @media (min-width: $megaNav-full-breakpoint) {
+    @media (min-width: layout.$megaNav-full-breakpoint) {
       position: relative;
     }
   }
@@ -52,9 +58,9 @@
   display: block;
   justify-self: flex-end;
   align-self: center;
-  height: $spacing-3xl;
-  width: $spacing-3xl;
-  margin: $spacing-sm 0 $spacing-sm $spacing-sm;
+  height: spacing.$spacing-3xl;
+  width: spacing.$spacing-3xl;
+  margin: spacing.$spacing-sm 0 spacing.$spacing-sm spacing.$spacing-sm;
   padding: 0;
   border: 0;
   z-index: 2;
@@ -67,28 +73,28 @@
   &__label {
     display: block;
     text-align: center;
-    @include typescale('2xs');
+    @include typography.typescale('2xs');
     padding-top: 1.75rem;
   }
 }
 
 .toggle-search-site {
-  background: url(#{$image-theme-directory-icon}/icon-search.svg) center center no-repeat;
+  background: url(#{config.$image-theme-directory-icon}/icon-search.svg) center center no-repeat;
   background-size: 1.5rem 1.5rem;
 }
 
 input.search-site {
-  background-color: $grey-50-pc;
-  background-image: url(#{$image-theme-directory}/bg-search-box.svg);
+  background-color: colours.$grey-50-pc;
+  background-image: url(#{config.$image-theme-directory}/bg-search-box.svg);
   background-repeat: no-repeat;
   background-size: 1rem;
-  background-position: $spacing-2xs center;
-  padding-left: $spacing-lg;
-  margin-left: $spacing-md;
+  background-position: spacing.$spacing-2xs center;
+  padding-left: spacing.$spacing-lg;
+  margin-left: spacing.$spacing-md;
   width: 100%;
 
-  @media (min-width: $megaNav-full-breakpoint) {
-    height: $spacing-xl;
+  @media (min-width: layout.$megaNav-full-breakpoint) {
+    height: spacing.$spacing-xl;
 
     &__label {
       display: block;
@@ -118,16 +124,16 @@ input.search-site {
     }
   }
 
-  @media (min-width: $megaNav-full-breakpoint) {
+  @media (min-width: layout.$megaNav-full-breakpoint) {
     order: 3;
   }
 }
 
 .toggle-megaNav {
-  background: url('#{$image-theme-directory-icon}/icon-hamburger.svg') center $spacing-2xs no-repeat;
-  background-size: $spacing-lg $spacing-lg;
+  background: url('#{config.$image-theme-directory-icon}/icon-hamburger.svg') center spacing.$spacing-2xs no-repeat;
+  background-size: spacing.$spacing-lg spacing.$spacing-lg;
 
-  @media (min-width: $megaNav-full-breakpoint) {
+  @media (min-width: layout.$megaNav-full-breakpoint) {
     display: none;
   }
 }

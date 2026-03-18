@@ -1,7 +1,10 @@
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/layout";
+
 .news-record {
     .align-right {
-        @media (min-width: $third-breakpoint) {
-            max-width: $align-size-md;
+        @media (min-width: breakpoints.$third-breakpoint) {
+            max-width: layout.$align-size-md;
         }
     }
 

@@ -1,3 +1,7 @@
+@use "colours";
+@use "spacing";
+@use "typography";
+
 
 // at the moment this is used for 'anything we want to repeat / include in places'
 // it could probably use refactoring out into more specifically named/categorised files
@@ -19,8 +23,8 @@
   border-radius: 0.25rem; // explicitly set this for inputs on iOS
   font-weight: 600;
 
-  background-color: $neon;
-  background-image: linear-gradient(to left, $neon 50%, black 50%);
+  background-color: colours.$neon;
+  background-image: linear-gradient(to left, colours.$neon 50%, black 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   background-repeat: no-repeat; // needed for Chrome bug
@@ -46,19 +50,19 @@
 
 
 @mixin button--xs {
-  @include typescale('xs', 'em');
+  @include typography.typescale('xs', 'em');
 }
 
 @mixin button--sm {
-  @include typescale('sm', 'em');
+  @include typography.typescale('sm', 'em');
 }
 
 @mixin button--lg {
-  @include typescale('lg', 'em');
+  @include typography.typescale('lg', 'em');
 }
 
 @mixin button--xl {
-  @include typescale('xl', 'em');
+  @include typography.typescale('xl', 'em');
 }
 
 @mixin button--block {
@@ -76,7 +80,7 @@
 }
 
 @mixin button--dark-blue {
-  background-image: linear-gradient(to left, $dark-blue 50%, black 50%);
+  background-image: linear-gradient(to left, colours.$dark-blue 50%, black 50%);
   color: white;
 
   &:hover,
@@ -86,7 +90,7 @@
 }
 
 @mixin button--digital-blue {
-  background-image: linear-gradient(to left, $digital-blue 50%, black 50%);
+  background-image: linear-gradient(to left, colours.$digital-blue 50%, black 50%);
   color: white;
 
   &:hover,
@@ -96,7 +100,7 @@
 }
 
 @mixin button--granite {
-  background-image: linear-gradient(to left, $granite--ldn 50%, black 50%);
+  background-image: linear-gradient(to left, colours.$granite--ldn 50%, black 50%);
   color: white;
 
   &:hover,
@@ -107,10 +111,10 @@
 
 @mixin button--outline {
   color: black;
-  border: 0.2em solid $neon;
+  border: 0.2em solid colours.$neon;
   padding: 0.6em 2em;
   background-color: transparent;
-  background-image: linear-gradient(to left, rgba(white, 0) 50%, $neon 50%);
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, colours.$neon 50%);
 
   &:hover,
   &:focus,
@@ -121,10 +125,10 @@
 
 @mixin button--outline-dark-blue {
   color: black;
-  border: 0.2em solid $dark-blue;
+  border: 0.2em solid colours.$dark-blue;
   padding: 0.6em 2em;
   background-color: transparent;
-  background-image: linear-gradient(to left, rgba(white, 0) 50%, $dark-blue 50%);
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, colours.$dark-blue 50%);
 
   &:hover,
   &:focus,
@@ -135,10 +139,10 @@
 
 @mixin button--outline-grey {
   color: black;
-  border: 0.2em solid $grey-50-pc;
+  border: 0.2em solid colours.$grey-50-pc;
   padding: 0.6em 2em;
   background-color: transparent;
-  background-image: linear-gradient(to left, rgba(white, 0) 50%, $grey-50-pc 50%);
+  background-image: linear-gradient(to left, rgba(white, 0) 50%, colours.$grey-50-pc 50%);
 
   &:hover,
   &:focus,
@@ -148,7 +152,7 @@
 }
 
 @mixin button--grey {
-  background-image: linear-gradient(to left, $grey-50-pc 50%, black 50%);
+  background-image: linear-gradient(to left, colours.$grey-50-pc 50%, black 50%);
   color: black;
 
   &:hover,
@@ -180,7 +184,7 @@
 }
 
 @mixin boxed__padding {
-  padding: $spacing-md;
+  padding: spacing.$spacing-md;
 }
 
 @mixin boxed__radius {

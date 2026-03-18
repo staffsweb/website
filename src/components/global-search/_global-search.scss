@@ -1,3 +1,8 @@
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .global-search {
     opacity: 0;
     transition: opacity 0.5s;
@@ -11,23 +16,23 @@
     text-align: right;
   
     &__container {
-      margin: $spacing-4xl auto;
-      padding: $spacing-xl;
+      margin: spacing.$spacing-4xl auto;
+      padding: spacing.$spacing-xl;
       
-      @media (min-width: $fifth-breakpoint) {
+      @media (min-width: breakpoints.$fifth-breakpoint) {
         max-width: 60%;
       }
     }
   
     &__options {
-      @include typescale('sm');
+      @include typography.typescale('sm');
       color: #FFF;
-      background-color: $teal;
-      padding: $spacing-lg;
+      background-color: colours.$teal;
+      padding: spacing.$spacing-lg;
       text-align: left;
   
-      @media (min-width: $fifth-breakpoint) {
-        @include typescale('md');
+      @media (min-width: breakpoints.$fifth-breakpoint) {
+        @include typography.typescale('md');
       }
   
       & label {
@@ -53,8 +58,8 @@
       background: none;
       border: 0;
       color: #FFF;
-      @include typescale('3xl');
-      padding: $spacing-lg;
+      @include typography.typescale('3xl');
+      padding: spacing.$spacing-lg;
   
       &:hover {
         cursor: pointer;

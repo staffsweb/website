@@ -1,3 +1,4 @@
+@use "sass:color";
 
 // Staffs Palette
 
@@ -11,7 +12,7 @@ $grey--shadow:                  #e0dfe7;
 $grey--light:                   #dddddd;
 $greyblue--light:               #e8ebed;
 $greyblue--superlight:          #f0f1f2;
-$greyblue--supersuperlight:     mix(#f0f1f2, #fff);
+$greyblue--supersuperlight:     color.mix(#f0f1f2, #fff);
 $offwhite:                      #f1f1f1;
 //$yellow:                        #ffd91b;
 
@@ -57,7 +58,7 @@ $blue--ldn:                     rgb(0, 130, 200);
 $magenta--ldn:                  rgb(185, 15, 130);
 $purple--deep-ldn:              rgb(130, 30, 130);
 $granite--ldn:                  rgb(65, 70, 75);
-$granite--light-ldn:            mix($granite--ldn, white, 85%);
+$granite--light-ldn:            color.mix($granite--ldn, white, 85%);
 
 // Theme Colours:
 

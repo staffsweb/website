@@ -1,15 +1,18 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .zebra {
   $zebra-inline-breakpoint: 50rem;
   $zebra-overlap: 5%;
 
-  margin: $spacing-md 0 $spacing-xl;
+  margin: spacing.$spacing-md 0 spacing.$spacing-xl;
 
-  @each $name, $value in $zebra-bg-colors {
+  @each $name, $value in colours.$zebra-bg-colors {
     &--bg-#{$name} .zebra__row .zebra__body {
       background: #{$value};
     }
 
-    @each $name, $value in $zebra-bg-colors {
+    @each $name, $value in colours.$zebra-bg-colors {
       &--bg-#{$name} {
         & .zebra__row:nth-child(odd) {
           background-color: white;
@@ -37,11 +40,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: $grey-50-pc;
+    background-color: colours.$grey-50-pc;
 
     &:nth-child(even) {
       flex-direction: row-reverse;
-      background-color: $grey-50-pc;
+      background-color: colours.$grey-50-pc;
 
       .zebra__body {
         background-color: white;
@@ -91,12 +94,12 @@
     min-width: 50%;
     box-sizing: border-box;
     background-color: white;
-    padding: $spacing-xl;
+    padding: spacing.$spacing-xl;
     z-index: 0;
 
     @media (min-width: $zebra-inline-breakpoint) {
       flex: 0 0 45%; // IE.
-      margin: $spacing-4xl auto $spacing-2xl;
+      margin: spacing.$spacing-4xl auto spacing.$spacing-2xl;
       left: -#{$zebra-overlap};
     }
   }
@@ -105,7 +108,7 @@
 // CG: Override for existing Contensis templates
 .zebra__title h2.title__highlight {
   background: none;
-  color: $burgundy;
+  color: colours.$burgundy;
   box-shadow: none;
   left: inherit;
   padding: 0;

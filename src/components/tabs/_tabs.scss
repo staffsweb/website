@@ -1,13 +1,16 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .tabs {
   $tabs-inline-breakpoint: 65rem;
 
-  margin-bottom: $spacing-xl;
-  border-bottom: $spacing-2xs solid $neutral--primary;
-  padding-bottom: $spacing-sm;
+  margin-bottom: spacing.$spacing-xl;
+  border-bottom: spacing.$spacing-2xs solid colours.$neutral--primary;
+  padding-bottom: spacing.$spacing-sm;
 
   &__nav {
     margin: 0 -1px 0 0;
-    border-bottom: 3px solid $neutral--primary;
+    border-bottom: 3px solid colours.$neutral--primary;
     text-align: center;
 
     @media (min-width: $tabs-inline-breakpoint) {
@@ -34,7 +37,7 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    margin: 0 $spacing-2xs $spacing-xs;
+    margin: 0 spacing.$spacing-2xs spacing.$spacing-xs;
 
     @media (min-width: $tabs-inline-breakpoint) {
       margin: 0 1px 0 0;
@@ -46,10 +49,10 @@
     font-weight: 500;
     border-radius: 1em;
     padding: 0.2em 1em;
-    background: $greyblue--light;
+    background: colours.$greyblue--light;
 
     &:hover {
-      color: $neutral--primary;
+      color: colours.$neutral--primary;
     }
 
     @media (min-width: $tabs-inline-breakpoint) {
@@ -66,13 +69,13 @@
     }
 
     &.is-selected {
-      background: $neutral--primary;
+      background: colours.$neutral--primary;
       color: white;
     }
   }
 
   &__section {
-    padding-top: $spacing-4xl;
+    padding-top: spacing.$spacing-4xl;
   }
 
 }

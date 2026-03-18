@@ -1,15 +1,21 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/spacing";
+
 .banner {
   position: relative;
   display: flex;
-  margin-bottom: $spacing-xl;
+  margin-bottom: spacing.$spacing-xl;
   color: #fff;
-  border-radius: $spacing-xs;
+  border-radius: spacing.$spacing-xs;
 
-  @each $name, $value in $banner-bg-colors {
+  @each $name, $value in colours.$banner-bg-colors {
     &--bg-#{$name} {
       background: #{$value};
 
-      @if (choose-contrast-color($value) == white) {
+      @if (functions.choose-contrast-color($value) == white) {
         color: white;
         & h2 {
           color: white;
@@ -23,11 +29,11 @@
   }
 
   &--bg-dark-blue &__title {
-    color: $neon;
+    color: colours.$neon;
   }
 
   &--bg-dark-blue &__theme svg, &--bg-neon &__theme svg {
-    fill: $neon;
+    fill: colours.$neon;
   }
 
   &--with-image {
@@ -37,7 +43,7 @@
       text-align: center;
     }
 
-    @each $name, $value in $banner-bg-colors {
+    @each $name, $value in colours.$banner-bg-colors {
       &.banner--bg-#{$name} {  
         & .title__highlight {
           color: #{$value};
@@ -45,17 +51,17 @@
       }
     }
 
-    @media (min-width: map_get($breakpoint-stages, 'tablet')) {  
+    @media (min-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {  
       .banner__body {
         width: 50%;
       }
     }
 
-    @media (max-width: map_get($breakpoint-stages, 'tablet')) {  
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {  
       display: block;
 
       .hgroup {
-        margin-top: -$spacing-2xl;
+        margin-top: -(spacing.$spacing-2xl);
       }
 
       .banner__body {
@@ -98,7 +104,7 @@
     box-sizing: border-box;
     width: 70%;
     z-index: 1;
-    padding: #{$spacing-xl} calc(#{$spacing-sm} + 2.5%) #{$spacing-md};
+    padding: #{spacing.$spacing-xl} calc(#{spacing.$spacing-sm} + 2.5%) #{spacing.$spacing-md};
   }
 
   .wrap {

@@ -1,21 +1,24 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .booking-link {
-    --accent-color: #{$teal};
-    margin-bottom: $spacing-xl;
-    color: $neutral--primary;
+    --accent-color: #{colours.$teal};
+    margin-bottom: spacing.$spacing-xl;
+    color: colours.$neutral--primary;
     text-decoration: none;
-    padding: $spacing-md calc(#{$spacing-sm} + 2.5%) 0;
-    background: $grey-50-pc;
+    padding: spacing.$spacing-md calc(#{spacing.$spacing-sm} + 2.5%) 0;
+    background: colours.$grey-50-pc;
   
     &__title {
       display: table;
       position: relative;
-      margin-bottom: $spacing-md;
+      margin-bottom: spacing.$spacing-md;
       padding-right: 1em;
       word-break: break-word;
     }
   
     &__content {
-      padding: $spacing-xs 0;
+      padding: spacing.$spacing-xs 0;
   
       > :first-child {
         margin-top: 0;
@@ -27,6 +30,6 @@
     }
   
     p {
-      color: $neutral--primary;
+      color: colours.$neutral--primary;
     }
   }
