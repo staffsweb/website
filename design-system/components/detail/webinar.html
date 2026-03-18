@@ -255,9 +255,14 @@ Stella Jones-Devitt recounts some of her struggles and triumphs along the way in
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:map&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
     <span class="hljs-selector-class">.webinar__video</span> {
-        <span class="hljs-attribute">border-right</span>: <span class="hljs-variable">$spacing-4xs</span> solid <span class="hljs-variable">$grey-50-pc</span>;
+        <span class="hljs-attribute">border-right</span>: spacing.<span class="hljs-variable">$spacing-4xs</span> solid colours.<span class="hljs-variable">$grey-50-pc</span>;
     }
 }</pre>
                             </code>
@@ -275,7 +280,7 @@ Stella Jones-Devitt recounts some of her struggles and triumphs along the way in
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">147 Bytes</span>
+                    <span class="Meta-value">326 Bytes</span>
                 </li>
             </ul>
         </div>

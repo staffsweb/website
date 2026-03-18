@@ -431,21 +431,27 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.masthead</span> {
-  <span class="hljs-variable">$overlay-breakpoint</span>: <span class="hljs-variable">$third-breakpoint</span> + <span class="hljs-number">10rem</span>;
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;<span class="hljs-comment">//$offwhite;</span>
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:map&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/layout&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.masthead</span> {
+  <span class="hljs-variable">$overlay-breakpoint</span>: breakpoints.<span class="hljs-variable">$third-breakpoint</span> + <span class="hljs-number">10rem</span>;
+  <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$dark-blue</span>;<span class="hljs-comment">//$offwhite;</span>
   <span class="hljs-attribute">box-sizing</span>: border-box;
   <span class="hljs-attribute">position</span>: relative;
 
   &amp;--burgundy {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$burgundy</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$burgundy</span>;
   }
 
   &amp;--teal {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$teal</span><span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$teal</span><span class="hljs-meta">!important</span>;
     <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-lavender.svg&quot;</span>);
     <span class="hljs-attribute">background-size</span>: contain;
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
       <span class="hljs-attribute">background-size</span>: cover;
       <span class="hljs-attribute">background-position</span>: calc(<span class="hljs-number">50%</span> + <span class="hljs-number">25rem</span>) center;
     }
@@ -454,16 +460,16 @@
   }
 
   &amp;--grey {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
 
     &amp; <span class="hljs-selector-class">.title</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span><span class="hljs-meta">!important</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span><span class="hljs-meta">!important</span>;
     }
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
     &amp;__img--with-overlap {
-      <span class="hljs-attribute">margin-bottom</span>: -<span class="hljs-variable">$spacing-3xl</span>;
+      <span class="hljs-attribute">margin-bottom</span>: -(spacing.<span class="hljs-variable">$spacing-3xl</span>);
     }
   }
 
@@ -476,7 +482,7 @@
     <span class="hljs-attribute">align-self</span>: flex-end;
     <span class="hljs-attribute">align-content</span>: flex-end;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
     <span class="hljs-attribute">box-sizing</span>: border-box;
     <span class="hljs-attribute">background</span>: black;
     <span class="hljs-attribute">color</span>: white;
@@ -485,11 +491,11 @@
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$overlay-breakpoint</span>) {
       <span class="hljs-attribute">background</span>: none;
       <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
 
       &amp;Inner {
-        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -#{<span class="hljs-variable">$grid-gutter</span>};
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-lg</span> <span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -#{layout.<span class="hljs-variable">$grid-gutter</span>};
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-lg</span> layout.<span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
         <span class="hljs-attribute">background</span>: rgba(black, <span class="hljs-number">0.75</span>);
         <span class="hljs-keyword">@supports</span> (<span class="hljs-attribute">backdrop-filter</span>: blur(<span class="hljs-number">1em</span>)) {
           <span class="hljs-attribute">background</span>: rgba(black, <span class="hljs-number">0.6</span>);
@@ -511,11 +517,11 @@
   }
 
   &amp;--shallow {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span> url(<span class="hljs-string">&#x27;../images/masthead-shallow-bg.svg&#x27;</span>) no-repeat;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey-50-pc</span> url(<span class="hljs-string">&#x27;../images/masthead-shallow-bg.svg&#x27;</span>) no-repeat;
     <span class="hljs-attribute">background-size</span>: cover;
 
     &amp; <span class="hljs-selector-class">.title</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     }
 
     <span class="hljs-selector-class">.masthead__inner</span> {
@@ -525,11 +531,11 @@
   }
 
   &amp;--course {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     <span class="hljs-attribute">color</span>: white;
 
     &amp; <span class="hljs-selector-tag">h1</span>, &amp; <span class="hljs-selector-tag">h2</span>, &amp; <span class="hljs-selector-tag">h3</span>, &amp; <span class="hljs-selector-tag">h4</span>, &amp; <span class="hljs-selector-tag">h5</span>, &amp; <span class="hljs-selector-tag">h6</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neon</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neon</span>;
       <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
     }
 
@@ -543,26 +549,26 @@
   }
 
   &amp;__ucas-<span class="hljs-selector-tag">code</span> <span class="hljs-selector-tag">strong</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neon</span>;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-md</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neon</span>;
+    <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
   }
 
   &amp;__course-info {
     <span class="hljs-attribute">display</span>: flex;
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
     &amp;__course-info {
       <span class="hljs-attribute">flex-direction</span>:column-reverse;
     }
 
     &amp;__course-hero {
-      <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-xl</span>;
-      <span class="hljs-attribute">margin-right</span>: -<span class="hljs-variable">$spacing-xl</span>;
+      <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-xl</span>);
+      <span class="hljs-attribute">margin-right</span>: -(spacing.<span class="hljs-variable">$spacing-xl</span>);
     }
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
     &amp;__course-info {  
       &amp; &gt; <span class="hljs-selector-tag">div</span> {
         <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
@@ -574,13 +580,13 @@
         <span class="hljs-attribute">max-width</span>: none;
         <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">1</span>;
 
-        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
           <span class="hljs-attribute">left</span>: <span class="hljs-number">40%</span>;
         }
-        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;desktop&#x27;</span>)) {
+        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;desktop&#x27;</span>)) {
           <span class="hljs-attribute">left</span>: <span class="hljs-number">35%</span>;
         }
-        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;desktop-wide&#x27;</span>)) {
+        <span class="hljs-keyword">@media</span>(<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;desktop-wide&#x27;</span>)) {
           <span class="hljs-attribute">left</span>: <span class="hljs-number">25%</span>;
         }
 
@@ -592,11 +598,11 @@
   }
 
   &amp;__course-options {
-    <span class="hljs-attribute">background</span>:  <span class="hljs-variable">$dark-blue</span>;
-    <span class="hljs-attribute">padding-right</span>: <span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">background</span>:  colours.<span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">padding-right</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
 
     &amp; <span class="hljs-selector-tag">h2</span>, &amp; <span class="hljs-selector-tag">h3</span>, &amp; <span class="hljs-selector-tag">h4</span>, &amp; <span class="hljs-selector-tag">h5</span>, &amp; <span class="hljs-selector-tag">h6</span> {
-      <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
     }
 
     &amp; select<span class="hljs-selector-class">.one-item</span>, &amp; select<span class="hljs-selector-class">.one-item</span><span class="hljs-selector-attr">[disabled]</span> {
@@ -608,10 +614,10 @@
     }
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
     &amp;--profile {
       <span class="hljs-selector-class">.masthead__inner</span> {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-6xl</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xl</span>;
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-6xl</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
         <span class="hljs-selector-tag">figure</span> {
           <span class="hljs-attribute">margin</span>: <span class="hljs-number">2rem</span> <span class="hljs-number">0</span> <span class="hljs-number">2rem</span>;
         }
@@ -623,7 +629,7 @@
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">flex-wrap</span>: wrap;
     <span class="hljs-attribute">min-height</span>: <span class="hljs-number">35vmin</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">12rem</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">12rem</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
     <span class="hljs-attribute">align-self</span>: flex-end;
     <span class="hljs-attribute">align-content</span>: flex-end;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
@@ -662,35 +668,35 @@
   <span class="hljs-comment">// CG: For home page masthead</span>
   &amp;-home {
     <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$red</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-blue.svg&#x27;</span>) center center no-repeat;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$red</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-blue.svg&#x27;</span>) center center no-repeat;
     <span class="hljs-attribute">background-size</span>: <span class="hljs-number">120%</span>;
     <span class="hljs-attribute">background-repeat</span>: no-repeat;
     <span class="hljs-attribute">min-height</span>: <span class="hljs-number">400px</span>;
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
       <span class="hljs-attribute">min-height</span>: <span class="hljs-number">500px</span>;
     }
 
     &amp;--dark-blue-with-red {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-red.svg&#x27;</span>) center center no-repeat;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-red.svg&#x27;</span>) center center no-repeat;
       <span class="hljs-attribute">background-size</span>: <span class="hljs-number">120%</span>;
       <span class="hljs-attribute">background-repeat</span>: no-repeat;
     }
 
     &amp;--dark-blue-with-neon {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-neon.svg&#x27;</span>) center center no-repeat;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-neon.svg&#x27;</span>) center center no-repeat;
       <span class="hljs-attribute">background-size</span>: <span class="hljs-number">120%</span>;
       <span class="hljs-attribute">background-repeat</span>: no-repeat;
     }
 
     &amp;--neon-with-dark-blue {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$neon</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-blue.svg&#x27;</span>) center center no-repeat;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$neon</span> url(<span class="hljs-string">&#x27;../images/bg-knot-whole-blue.svg&#x27;</span>) center center no-repeat;
       <span class="hljs-attribute">background-size</span>: <span class="hljs-number">120%</span>;
       <span class="hljs-attribute">background-repeat</span>: no-repeat;
     }
 
     &amp;__hero {
-      <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$spacing-lg</span>;
-      <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">padding-top</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
       <span class="hljs-attribute">overflow</span>: hidden;
 
       &amp; &gt; <span class="hljs-selector-tag">img</span> {
@@ -699,7 +705,7 @@
       }
     }
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
       <span class="hljs-selector-class">.masthead-home__img</span> {
         <span class="hljs-attribute">display</span>: none;
       }
@@ -707,7 +713,7 @@
         <span class="hljs-attribute">display</span>: block;
       }
     }
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
       <span class="hljs-selector-class">.masthead-home__img</span> {
         <span class="hljs-attribute">display</span>: block;
       }
@@ -718,7 +724,7 @@
 
     &amp;__title<span class="hljs-selector-class">.title</span> {
       <span class="hljs-attribute">max-width</span>: <span class="hljs-number">30rem</span><span class="hljs-meta">!important</span>;
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
         &amp; <span class="hljs-selector-tag">h1</span> {
           <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.75rem</span>;
         }
@@ -731,25 +737,25 @@
 
     &amp;__subtitle {
       <span class="hljs-attribute">max-width</span>: <span class="hljs-number">50rem</span><span class="hljs-meta">!important</span>;
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
         <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10rem</span>;
       }
-      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xl</span>;
+      <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
     }
 
     &amp;__story {
       <span class="hljs-attribute">position</span>: absolute;
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
-        <span class="hljs-attribute">top</span>: <span class="hljs-variable">$spacing-md</span>;
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+        <span class="hljs-attribute">top</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
       }
       <span class="hljs-attribute">z-index</span>: <span class="hljs-number">3</span>;
-      <span class="hljs-attribute">bottom</span>: <span class="hljs-variable">$spacing-md</span>;
-      <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">bottom</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
+      <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
     }
   }
 
   &amp;__award-selector, &amp;__study-option-selector {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
     <span class="hljs-attribute">width</span>: auto;
     <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
   }
@@ -757,7 +763,7 @@
 
 <span class="hljs-selector-class">.masthead--with-image</span> {
   &amp; <span class="hljs-selector-class">.masthead__inner</span> {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
   }
 
   &amp; <span class="hljs-selector-tag">h1</span> {
@@ -792,7 +798,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">7.6 KB</span>
+                    <span class="Meta-value">8.3 KB</span>
                 </li>
             </ul>
         </div>

@@ -1,22 +1,27 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/layout";
+@use "../../assets/styles/__vars/spacing";
+
 .quote-banner {
   position: relative;
   overflow: hidden;
   color: white;
-  background: $burgundy url('#{$image-theme-directory}/bg-knot-whole-red.svg');
+  background: colours.$burgundy url('#{config.$image-theme-directory}/bg-knot-whole-red.svg');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 55%;
 
-  @each $name, $value in $banner-bg-colors {
+  @each $name, $value in colours.$banner-bg-colors {
     &--bg-#{$name} {
       background-color: #{$value};
 
       @if $name == 'digital-blue' {
-        background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
+        background-image: url('#{config.$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
       @else if $name == 'teal' {
-        background-image: url('#{$image-theme-directory}/bg-knot-whole-neon.svg');
+        background-image: url('#{config.$image-theme-directory}/bg-knot-whole-neon.svg');
       }
 
     }
@@ -27,7 +32,7 @@
   }
 
   &__flexContainer {
-    margin: 0 -#{$grid-gutter};
+    margin: 0 -#{layout.$grid-gutter};
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
@@ -42,11 +47,11 @@
   }
 
   &__figure {
-    margin: $spacing-xl $grid-gutter 0;
+    margin: spacing.$spacing-xl layout.$grid-gutter 0;
     flex: 1 1 40%;
 
     &--align-bottom {
-      margin: 0 $grid-gutter;
+      margin: 0 layout.$grid-gutter;
       align-self: flex-end;
     }
 
@@ -62,7 +67,7 @@
   }
 
   &__quoteContainer {
-    margin: $spacing-xl $grid-gutter;
+    margin: spacing.$spacing-xl layout.$grid-gutter;
     flex: 1 1 20em;
   }
 }

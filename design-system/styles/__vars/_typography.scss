@@ -1,3 +1,11 @@
+@use "sass:map";
+@use "sass:string";
+@use "colours";
+@use "layout";
+@use "spacing";
+
+@use "sass:color";
+
 //@mixin font-face ($prefix: '..') {
 //}
 $typescale-map: (
@@ -38,7 +46,7 @@ $line-height-map: (
   'compact': 0.8,
 );
 
-$border-accent-width: $spacing-2xs;
+$border-accent-width: spacing.$spacing-2xs;
 
 @mixin font-sans {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -66,19 +74,19 @@ $border-accent-width: $spacing-2xs;
 
 
 @mixin line-height($size) {
-  @if map-has-key($line-height-map, $size) {
-    line-height: map-get($line-height-map, $size);
+  @if map.has-key($line-height-map, $size) {
+    line-height: map.get($line-height-map, $size);
   } @else {
     @warn 'This is not a step of the line-height scale';
   }
 }
 
 @mixin typescale($size, $unit: 'rem', $important: false) {
-  @if map-has-key($typescale-map, $size) {
+  @if map.has-key($typescale-map, $size) {
     @if $important {
-      font-size: map-get($typescale-map, $size)+unquote($unit)+unquote(' !important');
+      font-size: map.get($typescale-map, $size)+string.unquote($unit)+string.unquote(' !important');
     } @else {
-      font-size: map-get($typescale-map, $size)+unquote($unit);
+      font-size: map.get($typescale-map, $size)+string.unquote($unit);
     }
     //@if (map-get($typescale-map, $size) > 2) {
     //  @include line-height('compact');
@@ -99,16 +107,16 @@ $border-accent-width: $spacing-2xs;
 @mixin body {
   @include font-primary;
   @include line-height('normal');
-  color: $text-color;
+  color: colours.$text-color;
   background: #fff;
   font-weight: 400;
   font-variant-ligatures: none;
-  tap-highlight-color: transparentize($primary, 0.75);
+  tap-highlight-color: color.adjust(colours.$primary, $alpha: -0.75);
 }
 
 @mixin base-elements {
-  a { color: $link-color; cursor: pointer; }
-  a:hover { color: $link-color--hover }
+  a { color: colours.$link-color; cursor: pointer; }
+  a:hover { color: colours.$link-color--hover }
   a img {	border: 0px; }
   a[href^="mailto"], .url { word-break: break-word; }
 
@@ -126,13 +134,13 @@ $border-accent-width: $spacing-2xs;
     & a:not([class]), & a[class*="sys_"] {
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1px solid $grey--light
+      border-bottom: 1px solid colours.$grey--light
     }
   }
 
   .link--standard {
     font-weight: 500!important;
-    border-bottom: 1px solid $grey--light!important;
+    border-bottom: 1px solid colours.$grey--light!important;
 
     &:hover {
       text-decoration: none!important;
@@ -159,19 +167,19 @@ $border-accent-width: $spacing-2xs;
   }
 
   h2, h2 > a {
-    color: $burgundy;
+    color: colours.$burgundy;
   }
 
   h1, h2 {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 spacing.$spacing-lg;
   }
 
   h3 {
-    margin: 0 0 $spacing-md;
+    margin: 0 0 spacing.$spacing-md;
   }
 
   h4, h5, h6 {
-    margin: 0 0 $spacing-xs;
+    margin: 0 0 spacing.$spacing-xs;
   }
 
   h1 + h2,
@@ -182,7 +190,7 @@ $border-accent-width: $spacing-2xs;
   }
 
   h3 + h4 {
-    margin-top: $spacing-lg;
+    margin-top: spacing.$spacing-lg;
   }
 
   @each $name, $size in $headings-smallscreen-map {
@@ -190,7 +198,7 @@ $border-accent-width: $spacing-2xs;
       @include typescale($size);
     }
   }
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
     @each $name, $size in $headings-map {
       #{$name}, .#{$name} {
         @include typescale($size);
@@ -220,17 +228,17 @@ $border-accent-width: $spacing-2xs;
   }
 
   li {
-    margin-bottom: $spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
   }
 
   ul {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 spacing.$spacing-lg;
     list-style-type: square;
     padding-left: 1.5em;
   }
 
   ol {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 spacing.$spacing-lg;
     padding-left: 2em;
   }
 
@@ -246,7 +254,7 @@ $border-accent-width: $spacing-2xs;
   }
 
   dl {
-    margin: 0 0 $spacing-lg;
+    margin: 0 0 spacing.$spacing-lg;
   }
 
   dt {
@@ -261,8 +269,8 @@ $border-accent-width: $spacing-2xs;
     clear: both;
     height: 0;
     border: 0;
-    border-top: 1px solid $grey--light;
-    margin: $spacing-4xl auto;
+    border-top: 1px solid colours.$grey--light;
+    margin: spacing.$spacing-4xl auto;
   }
 
   img {
@@ -278,7 +286,7 @@ $border-accent-width: $spacing-2xs;
 
   figure {
     position: relative;
-    margin: 0 0 $spacing-xl;
+    margin: 0 0 spacing.$spacing-xl;
 
     img {
       width: 100%;
@@ -299,7 +307,7 @@ $border-accent-width: $spacing-2xs;
     clear: both;
     @include typescale('sm', 'em');
     @include line-height('normal');
-    margin: $spacing-lg 0;
+    margin: spacing.$spacing-lg 0;
     padding: 1em;
     tab-size: 2;
     background: black;
@@ -308,7 +316,7 @@ $border-accent-width: $spacing-2xs;
     overflow: auto;
 
     &::selection {
-      background: rgba($primary, 0.75);
+      background: rgba(colours.$primary, 0.75);
       color: white;
     }
   }
@@ -317,17 +325,17 @@ $border-accent-width: $spacing-2xs;
     display: inline-block;
     @include line-height('normal');
     @include typescale('xs', 'em');
-    background: rgba($primary, 0.05);
+    background: rgba(colours.$primary, 0.05);
     padding: 0 0.2em;
-    color: $primary;
-    border: 1px rgba($primary, 0.25) solid;
+    color: colours.$primary;
+    border: 1px rgba(colours.$primary, 0.25) solid;
     border-radius: 0.2em;
   }
 
   table {
     font-size: 0.9em;
     width: 100%;
-    margin: 0 0 $spacing-xl;
+    margin: 0 0 spacing.$spacing-xl;
     //border: 1px solid $offwhite;
     border-spacing: 0;
     border-collapse: collapse;
@@ -339,7 +347,7 @@ $border-accent-width: $spacing-2xs;
   }
 
   thead {
-    border-bottom: 2px solid $neutral--primary;
+    border-bottom: 2px solid colours.$neutral--primary;
 
     td, th {
       background: #fff;
@@ -348,8 +356,8 @@ $border-accent-width: $spacing-2xs;
   }
 
   tr {
-    background: $grey-50-pc;
-    border-bottom: 1px solid $offwhite;
+    background: colours.$grey-50-pc;
+    border-bottom: 1px solid colours.$offwhite;
 
     &:nth-child(even) {
       background: #fff;
@@ -361,7 +369,7 @@ $border-accent-width: $spacing-2xs;
   }
 
   th {
-    color: $neutral--primary;
+    color: colours.$neutral--primary;
     font-weight: 600;
     text-align: left;
   }
@@ -372,8 +380,8 @@ $border-accent-width: $spacing-2xs;
 
   //details {
     .accordion__title {
-      margin: $spacing-sm 0;
-      padding: $spacing-xs;
+      margin: spacing.$spacing-sm 0;
+      padding: spacing.$spacing-xs;
     }
 
     .accordion__toggle {
@@ -387,8 +395,8 @@ $border-accent-width: $spacing-2xs;
   .is-style-intro {
     @include typescale('lg');
     @include line-height('normal');
-    max-width: $line-length-max-rem;
-    color: $secondary;
+    max-width: layout.$line-length-max-rem;
+    color: colours.$secondary;
     font-weight: 500;
 
     @media (min-width: 40em) {
@@ -399,11 +407,11 @@ $border-accent-width: $spacing-2xs;
   .stat {
     @include typescale('2xl', 'em');
     font-weight: 600;
-    color: $primary;
+    color: colours.$primary;
     text-decoration: none;
 
     a {
-      color: $primary;
+      color: colours.$primary;
       text-decoration: none;
     }
   }
@@ -411,60 +419,60 @@ $border-accent-width: $spacing-2xs;
 
 @mixin h1 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h1'));
+  @include typescale(map.get($headings-smallscreen-map, 'h1'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    @include typescale(map-get($headings-map, 'h1'));
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
+    @include typescale(map.get($headings-map, 'h1'));
   }
 }
 
 @mixin h2 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h2'));
+  @include typescale(map.get($headings-smallscreen-map, 'h2'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    @include typescale(map-get($headings-map, 'h2'));
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
+    @include typescale(map.get($headings-map, 'h2'));
   }
 }
 
 @mixin h3 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h3'));
+  @include typescale(map.get($headings-smallscreen-map, 'h3'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    @include typescale(map-get($headings-map, 'h3'));
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
+    @include typescale(map.get($headings-map, 'h3'));
   }
 }
 
 @mixin h4 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h4'));
+  @include typescale(map.get($headings-smallscreen-map, 'h4'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    @include typescale(map-get($headings-map, 'h4'));
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
+    @include typescale(map.get($headings-map, 'h4'));
   }
 }
 
 @mixin h5 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h5'));
+  @include typescale(map.get($headings-smallscreen-map, 'h5'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
-    @include typescale(map-get($headings-map, 'h5'));
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
+    @include typescale(map.get($headings-map, 'h5'));
   }
 }
 
 @mixin h6 {
   @include line-height('headings');
-  @include typescale(map-get($headings-smallscreen-map, 'h6'));
+  @include typescale(map.get($headings-smallscreen-map, 'h6'));
   font-weight: 600;
 
-  @media (min-width: $breakpoint-largescreen-typography) and (min-height: $breakpoint-largescreen-typography-height) {
+  @media (min-width: layout.$breakpoint-largescreen-typography) and (min-height: layout.$breakpoint-largescreen-typography-height) {
     @include map-get($headings-map, 'h6');
   }
 }
@@ -472,14 +480,14 @@ $border-accent-width: $spacing-2xs;
 @mixin blockquote {
   position: relative;
   display: table;
-  margin: $spacing-xl 0;
+  margin: spacing.$spacing-xl 0;
   padding: 0;
   @include typescale('xl', 'em');
   @include line-height('normal');
 
-  @media (min-width: $breakpoint-largescreen-typography) {
+  @media (min-width: layout.$breakpoint-largescreen-typography) {
     @include typescale('2xl', 'em');
-    margin-bottom: $spacing-xl;
+    margin-bottom: spacing.$spacing-xl;
   }
 
   p {
@@ -498,23 +506,23 @@ $border-accent-width: $spacing-2xs;
   font-style: normal;
   font-weight: 600;
   display: block;
-  margin: $spacing-lg 0 $spacing-xs;
+  margin: spacing.$spacing-lg 0 spacing.$spacing-xs;
 }
 
 @mixin figcaption {
   margin: 0;
-  padding: $spacing-sm 0;
+  padding: spacing.$spacing-sm 0;
   background: #fff;
-  color: $text-color;
-  border-bottom: 1px solid $grey--light;
+  color: colours.$text-color;
+  border-bottom: 1px solid colours.$grey--light;
   line-height: normal;
 }
 
 @mixin tag {
   display: inline-block;
   @include typescale('xs', 'em');
-  color: $text-color;
-  background: $offwhite;
+  color: colours.$text-color;
+  background: colours.$offwhite;
   padding: 0.35em 1.5em;
   line-height: 1;
   border-radius: 0.35em;
@@ -525,7 +533,7 @@ $border-accent-width: $spacing-2xs;
 
 @mixin tag--hover {
   text-decoration: underline;
-  color: $text-color;
+  color: colours.$text-color;
 }
 
 @mixin caps {

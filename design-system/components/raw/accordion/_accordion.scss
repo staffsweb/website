@@ -1,24 +1,29 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 // See also: fusion with list--steps in _lists.scss
 
 .accordion {
   clear: both;
-  margin-bottom: $spacing-4xl;
-  border-bottom: 1px solid $grey--light;
+  margin-bottom: spacing.$spacing-4xl;
+  border-bottom: 1px solid colours.$grey--light;
 }
 
 .accordion__item {
-  border-top: 1px solid $grey--light;
+  border-top: 1px solid colours.$grey--light;
 
   &[open] {
     .accordion__title {
       font-weight: 500;
-      background: $greyblue--superlight;
+      background: colours.$greyblue--superlight;
     }
 
     .accordion__toggle:before {
       content: '';
       transform: rotate(0deg);
-      background: $neutral--primary url('#{$image-theme-directory-icon}/icon-minus-white.svg') no-repeat center center;
+      background: colours.$neutral--primary url('#{config.$image-theme-directory-icon}/icon-minus-white.svg') no-repeat center center;
       background-size: 50%;
     }
   }
@@ -27,14 +32,14 @@
 .accordion__title {
   display: block;
   margin: 0;
-  padding: $spacing-lg $spacing-sm;
+  padding: spacing.$spacing-lg spacing.$spacing-sm;
   font-weight: normal;
-  @include line-height('headings');
+  @include typography.line-height('headings');
   list-style: none;
   cursor: pointer;
 
   &:focus {
-    outline: 0.1em solid rgba($neutral--primary, 0.5);
+    outline: 0.1em solid rgba(colours.$neutral--primary, 0.5);
   }
 
   &::-webkit-details-marker {
@@ -42,14 +47,14 @@
   }
 
   @media (min-width: 40em) {
-    padding: $spacing-lg $spacing-lg;
+    padding: spacing.$spacing-lg spacing.$spacing-lg;
   }
 }
 
 .accordion__toggle {
   display: block;
   padding-left: 1.5em;
-  color: $dark-blue;
+  color: colours.$dark-blue;
 
   &:before {
     display: inline-block;
@@ -60,7 +65,7 @@
     line-height: 1;
     padding: 0;
     margin-left: -1.5em;
-    background: $neutral--primary url('#{$image-theme-directory-icon}/icon-plus-white.svg') no-repeat center center;
+    background: colours.$neutral--primary url('#{config.$image-theme-directory-icon}/icon-plus-white.svg') no-repeat center center;
     background-size: 50%;
     text-align: center;
     border-radius: 50%;
@@ -70,12 +75,12 @@
 }
 
 .accordion__content {
-  padding: $spacing-sm;
-  background: $greyblue--supersuperlight;
-  border-top: 1px solid $grey--light;
+  padding: spacing.$spacing-sm;
+  background: colours.$greyblue--supersuperlight;
+  border-top: 1px solid colours.$grey--light;
 
   @media (min-width: 40em) {
-    padding: $spacing-lg $spacing-lg;
+    padding: spacing.$spacing-lg spacing.$spacing-lg;
   }
 }
 

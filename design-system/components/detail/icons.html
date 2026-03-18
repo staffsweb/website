@@ -364,7 +364,10 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-comment">// add icons to this array with their filename and type,</span>
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+
+<span class="hljs-comment">// add icons to this array with their filename and type,</span>
 <span class="hljs-comment">// the loop at the bottom of the file will create classes for them</span>
 
 <span class="hljs-variable">$icons</span>: (
@@ -440,7 +443,7 @@
 
   <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$extension</span> in <span class="hljs-variable">$icons</span> {
     &amp;--#{<span class="hljs-variable">$name</span>} {
-      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-#{$name}.#{$extension}&#x27;</span>);
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-#{$name}.#{$extension}&#x27;</span>);
     }
   }
 }
@@ -454,7 +457,7 @@
       <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">30%</span>; <span class="hljs-comment">// CG: = width for a 1:1 aspect ratio</span>
       <span class="hljs-attribute">margin</span>: <span class="hljs-number">1.66%</span>;
       <span class="hljs-attribute">overflow</span>: hidden;
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey--light</span>;
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey--light</span>;
       <span class="hljs-attribute">text-transform</span>: uppercase;
       <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1rem</span>;
 
@@ -487,7 +490,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.3 KB</span>
+                    <span class="Meta-value">2.4 KB</span>
                 </li>
             </ul>
         </div>

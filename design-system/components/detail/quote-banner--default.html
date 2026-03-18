@@ -259,25 +259,30 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.quote-banner</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/layout&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.quote-banner</span> {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">overflow</span>: hidden;
   <span class="hljs-attribute">color</span>: white;
-  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>);
+  <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$burgundy</span> url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-knot-whole-red.svg&#x27;</span>);
   <span class="hljs-attribute">background-repeat</span>: no-repeat;
   <span class="hljs-attribute">background-position</span>: right center;
   <span class="hljs-attribute">background-size</span>: <span class="hljs-number">55%</span>;
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$banner-bg-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$banner-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
       <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
 
       <span class="hljs-keyword">@if</span> <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;digital-blue&#x27;</span> {
-        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
+        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
       }
 
       <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$name</span> == <span class="hljs-string">&#x27;teal&#x27;</span> {
-        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
+        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-knot-whole-neon.svg&#x27;</span>);
       }
 
     }
@@ -288,7 +293,7 @@
   }
 
   &amp;__flexContainer {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -#{<span class="hljs-variable">$grid-gutter</span>};
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -#{layout.<span class="hljs-variable">$grid-gutter</span>};
     <span class="hljs-attribute">min-height</span>: <span class="hljs-number">50vh</span>;
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">flex-wrap</span>: wrap;
@@ -303,11 +308,11 @@
   }
 
   &amp;__figure {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-xl</span> layout.<span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">40%</span>;
 
     &amp;--align-<span class="hljs-attribute">bottom</span> {
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter</span>;
       <span class="hljs-attribute">align-self</span>: flex-end;
     }
 
@@ -323,7 +328,7 @@
   }
 
   &amp;__quoteContainer {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$grid-gutter</span>;
+    <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-xl</span> layout.<span class="hljs-variable">$grid-gutter</span>;
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">20em</span>;
   }
 }</pre>
@@ -342,7 +347,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.4 KB</span>
+                    <span class="Meta-value">1.6 KB</span>
                 </li>
             </ul>
         </div>

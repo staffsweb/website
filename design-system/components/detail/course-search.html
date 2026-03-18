@@ -329,10 +329,15 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.course-search</span> {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory}/course-search-bg.svg&#x27;</span>) right top no-repeat;
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.course-search</span> {
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span> url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/course-search-bg.svg&#x27;</span>) right top no-repeat;
     <span class="hljs-attribute">background-size</span>: <span class="hljs-number">300px</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
 
     &amp;, &amp; <span class="hljs-selector-tag">a</span>, &amp; <span class="hljs-selector-tag">h2</span> {
         <span class="hljs-attribute">color</span>: white;
@@ -340,7 +345,7 @@
 
     &amp;__keywords {
         <span class="hljs-attribute">display</span>: block;
-        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
 
         &amp;<span class="hljs-selector-attr">[type=<span class="hljs-string">&quot;search&quot;</span>]</span> {
             <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
@@ -350,24 +355,24 @@
         }
     }
     &amp; <span class="hljs-selector-tag">h3</span><span class="hljs-selector-pseudo">:not</span>([class]) {
-        <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-md</span>;
     }
     &amp;<span class="hljs-selector-class">.slab--bg-slate</span> <span class="hljs-selector-class">.accordion__title</span><span class="hljs-selector-pseudo">:focus</span>-visible {
-        <span class="hljs-attribute">outline-color</span>: <span class="hljs-variable">$tertiary</span>;
+        <span class="hljs-attribute">outline-color</span>: colours.<span class="hljs-variable">$tertiary</span>;
     }
     &amp; <span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> {
         <span class="hljs-attribute">cursor</span>: pointer;
     }
 }
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$third-breakpoint</span>) {
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: breakpoints.<span class="hljs-variable">$third-breakpoint</span>) {
     <span class="hljs-selector-class">.course-search</span> {
         &amp;__subject-list {
             -moz-<span class="hljs-attribute">column-count</span>: <span class="hljs-number">3</span>;
-            -moz-<span class="hljs-attribute">column-gap</span>: <span class="hljs-variable">$spacing-xl</span>;
+            -moz-<span class="hljs-attribute">column-gap</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
             -webkit-<span class="hljs-attribute">column-count</span>: <span class="hljs-number">3</span>;
-            -webkit-<span class="hljs-attribute">column-gap</span>: <span class="hljs-variable">$spacing-xl</span>;
+            -webkit-<span class="hljs-attribute">column-gap</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
             <span class="hljs-attribute">column-count</span>: <span class="hljs-number">3</span>;
-            <span class="hljs-attribute">column-gap</span>: <span class="hljs-variable">$spacing-xl</span>;
+            <span class="hljs-attribute">column-gap</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
         }
     }
 }
@@ -375,13 +380,13 @@
     <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1000</span>;
 }
 <span class="hljs-selector-class">.ui-autocomplete-category</span> {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xs</span>;
     <span class="hljs-attribute">font-weight</span>: bold;
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-3xs</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-3xs</span>;
 }
 <span class="hljs-selector-class">.ui-menu-item__course</span> {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-sm</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-sm</span>;
 
     &amp;<span class="hljs-selector-pseudo">:hover</span> {
         <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#EEE</span>;
@@ -402,7 +407,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.4 KB</span>
+                    <span class="Meta-value">1.7 KB</span>
                 </li>
             </ul>
         </div>

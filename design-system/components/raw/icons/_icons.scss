@@ -1,3 +1,6 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+
 // add icons to this array with their filename and type,
 // the loop at the bottom of the file will create classes for them
 
@@ -74,7 +77,7 @@ $icons: (
 
   @each $name, $extension in $icons {
     &--#{$name} {
-      background-image: url('#{$image-theme-directory-icon}/icon-#{$name}.#{$extension}');
+      background-image: url('#{config.$image-theme-directory-icon}/icon-#{$name}.#{$extension}');
     }
   }
 }
@@ -88,7 +91,7 @@ $icons: (
       padding-bottom: 30%; // CG: = width for a 1:1 aspect ratio
       margin: 1.66%;
       overflow: hidden;
-      background-color: $grey--light;
+      background-color: colours.$grey--light;
       text-transform: uppercase;
       margin-bottom: 1rem;
 

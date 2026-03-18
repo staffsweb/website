@@ -1,7 +1,12 @@
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/spacing";
+
 .course-search {
-    background: $dark-blue url('#{$image-theme-directory}/course-search-bg.svg') right top no-repeat;
+    background: colours.$dark-blue url('#{config.$image-theme-directory}/course-search-bg.svg') right top no-repeat;
     background-size: 300px;
-    padding: $spacing-4xl;
+    padding: spacing.$spacing-4xl;
 
     &, & a, & h2 {
         color: white;
@@ -9,7 +14,7 @@
 
     &__keywords {
         display: block;
-        margin-bottom: $spacing-md;
+        margin-bottom: spacing.$spacing-md;
 
         &[type="search"] {
             max-width: 100%;
@@ -19,24 +24,24 @@
         }
     }
     & h3:not([class]) {
-        margin: $spacing-lg 0 $spacing-md;
+        margin: spacing.$spacing-lg 0 spacing.$spacing-md;
     }
     &.slab--bg-slate .accordion__title:focus-visible {
-        outline-color: $tertiary;
+        outline-color: colours.$tertiary;
     }
     & .button:hover {
         cursor: pointer;
     }
 }
-@media (min-width: $third-breakpoint) {
+@media (min-width: breakpoints.$third-breakpoint) {
     .course-search {
         &__subject-list {
             -moz-column-count: 3;
-            -moz-column-gap: $spacing-xl;
+            -moz-column-gap: spacing.$spacing-xl;
             -webkit-column-count: 3;
-            -webkit-column-gap: $spacing-xl;
+            -webkit-column-gap: spacing.$spacing-xl;
             column-count: 3;
-            column-gap: $spacing-xl;
+            column-gap: spacing.$spacing-xl;
         }
     }
 }
@@ -44,13 +49,13 @@
     z-index: 1000;
 }
 .ui-autocomplete-category {
-    padding: $spacing-xs $spacing-xs 0 $spacing-xs;
+    padding: spacing.$spacing-xs spacing.$spacing-xs 0 spacing.$spacing-xs;
     font-weight: bold;
-    color: $dark-blue;
-    margin-bottom: $spacing-3xs;
+    color: colours.$dark-blue;
+    margin-bottom: spacing.$spacing-3xs;
 }
 .ui-menu-item__course {
-    padding: 0 $spacing-xs 0 $spacing-sm;
+    padding: 0 spacing.$spacing-xs 0 spacing.$spacing-sm;
 
     &:hover {
         background-color: #EEE;

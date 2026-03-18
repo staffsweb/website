@@ -567,7 +567,11 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.list--unbulleted</span>,
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-selector-class">.list--unbulleted</span>,
 <span class="hljs-selector-class">.list--unstyled</span> {
   <span class="hljs-attribute">list-style</span>: none;
   <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
@@ -575,7 +579,7 @@
 
 <span class="hljs-selector-class">.list--spaced</span> {
   &gt; <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
   }
 }
 
@@ -584,15 +588,15 @@
 
   <span class="hljs-selector-tag">li</span> {
     <span class="hljs-attribute">display</span>: inline;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
   }
 }
 
 <span class="hljs-selector-class">.list--links</span> {
-  <span class="hljs-keyword">@include</span> line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
+  <span class="hljs-keyword">@include</span> typography.line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
 
   <span class="hljs-selector-tag">li</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-sm</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
   }
 
   <span class="hljs-selector-tag">a</span> {
@@ -644,13 +648,13 @@
 
   <span class="hljs-selector-tag">li</span> {
     <span class="hljs-attribute">display</span>: inline;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
 
     &amp;:before {
       content: <span class="hljs-string">&#x27;•&#x27;</span>;
-      <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+      <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
       <span class="hljs-attribute">font-weight</span>: bold;
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$primary</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$primary</span>;
     }
 
     &amp;<span class="hljs-selector-pseudo">:first</span>-child {
@@ -673,24 +677,24 @@
 
 <span class="hljs-selector-class">.list--steps</span> {
   <span class="hljs-variable">$number-accent-colors</span>: (
-    <span class="hljs-string">&#x27;red&#x27;</span>: <span class="hljs-variable">$red</span>,
-    <span class="hljs-string">&#x27;pink&#x27;</span>: <span class="hljs-variable">$pink</span>,
-    <span class="hljs-string">&#x27;maroon&#x27;</span>: <span class="hljs-variable">$maroon</span>,
-    <span class="hljs-string">&#x27;slate&#x27;</span>: <span class="hljs-variable">$slate</span>,
-    <span class="hljs-string">&#x27;blue-ldn&#x27;</span>: <span class="hljs-variable">$blue--deep-ldn</span>,
+    <span class="hljs-string">&#x27;red&#x27;</span>: colours.<span class="hljs-variable">$red</span>,
+    <span class="hljs-string">&#x27;pink&#x27;</span>: colours.<span class="hljs-variable">$pink</span>,
+    <span class="hljs-string">&#x27;maroon&#x27;</span>: colours.<span class="hljs-variable">$maroon</span>,
+    <span class="hljs-string">&#x27;slate&#x27;</span>: colours.<span class="hljs-variable">$slate</span>,
+    <span class="hljs-string">&#x27;blue-ldn&#x27;</span>: colours.<span class="hljs-variable">$blue--deep-ldn</span>,
   );
 
   <span class="hljs-attribute">list-style</span>: none;
-  <span class="hljs-attribute">padding</span>-inline-start: <span class="hljs-variable">$spacing-3xl</span>;
+  <span class="hljs-attribute">padding</span>-inline-start: spacing.<span class="hljs-variable">$spacing-3xl</span>;
   <span class="hljs-attribute">counter-reset</span>: list--steps;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-4xl</span>;
+  <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
 
   &gt; <span class="hljs-selector-tag">li</span> {
     <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">border-left</span>: <span class="hljs-variable">$border-accent-width</span> solid <span class="hljs-variable">$neutral--primary</span>;
-    <span class="hljs-attribute">border-color</span>: var(--accent-color, #{<span class="hljs-variable">$neutral--primary</span>});
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$spacing-lg</span>;
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-2xl</span>;
+    <span class="hljs-attribute">border-left</span>: typography.<span class="hljs-variable">$border-accent-width</span> solid colours.<span class="hljs-variable">$neutral--primary</span>;
+    <span class="hljs-attribute">border-color</span>: var(--accent-color, #{colours.<span class="hljs-variable">$neutral--primary</span>});
+    <span class="hljs-attribute">padding-left</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xl</span>;
 
     &amp;<span class="hljs-selector-pseudo">::before</span> {
       <span class="hljs-attribute">content</span>: counter(list--steps);
@@ -698,12 +702,12 @@
       <span class="hljs-attribute">display</span>: block;
       <span class="hljs-attribute">float</span>: left;
       <span class="hljs-attribute">clear</span>: left;
-      <span class="hljs-attribute">margin-left</span>: -#{<span class="hljs-variable">$spacing-3xl</span> + <span class="hljs-variable">$spacing-lg</span> + <span class="hljs-variable">$border-accent-width</span>/<span class="hljs-number">2</span>};
-      <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-3xl</span>;
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">background</span>: var(--accent-color, #{<span class="hljs-variable">$neutral--primary</span>});
+      <span class="hljs-attribute">margin-left</span>: -#{spacing.<span class="hljs-variable">$spacing-3xl</span> + spacing.<span class="hljs-variable">$spacing-lg</span> + typography.<span class="hljs-variable">$border-accent-width</span>*<span class="hljs-number">0.5</span>};
+      <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-3xl</span>;
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">background</span>: var(--accent-color, #{colours.<span class="hljs-variable">$neutral--primary</span>});
       <span class="hljs-attribute">color</span>: white;
-      <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
+      <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
       <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
       <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>; <span class="hljs-comment">// matches .title</span>
       <span class="hljs-attribute">text-align</span>: center;
@@ -712,9 +716,9 @@
   }
 
   &amp;__box {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--superlight</span>;
-    <span class="hljs-attribute">padding</span>: calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
-    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$greyblue--superlight</span>;
+    <span class="hljs-attribute">padding</span>: calc(#{spacing.<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
+    <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-lg</span>);
   }
 
   &amp;__title {
@@ -742,27 +746,27 @@
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">0</span>;
 
     &gt; <span class="hljs-selector-tag">li</span> {
-      <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$primary</span>;
-      <span class="hljs-attribute">border-color</span>: var(--accent-color, #{<span class="hljs-variable">$primary</span>});
+      <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$primary</span>;
+      <span class="hljs-attribute">border-color</span>: var(--accent-color, #{colours.<span class="hljs-variable">$primary</span>});
 
       &amp;<span class="hljs-selector-pseudo">::before</span> {
-        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$primary</span>;
-        <span class="hljs-attribute">background-color</span>: var(--accent-color, #{<span class="hljs-variable">$primary</span>});
+        <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$primary</span>;
+        <span class="hljs-attribute">background-color</span>: var(--accent-color, #{colours.<span class="hljs-variable">$primary</span>});
       }
     }
 
     <span class="hljs-selector-class">.accordion__title</span> {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--superlight</span>;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$greyblue--superlight</span>;
     }
 
     <span class="hljs-selector-class">.accordion__title</span>,
     <span class="hljs-selector-class">.accordion__content</span> {
-      <span class="hljs-attribute">padding-left</span>: calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
+      <span class="hljs-attribute">padding-left</span>: calc(#{spacing.<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
     }
 
     <span class="hljs-selector-class">.accordion__item</span> {
       <span class="hljs-attribute">border-top</span>: none;
-      <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-lg</span>);
     }
 
     <span class="hljs-selector-class">.accordion__toggle</span> {
@@ -770,7 +774,7 @@
 
       &amp;:before {
         float: right;
-        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-md</span>;
       }
     }
   }
@@ -792,7 +796,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.6 KB</span>
+                    <span class="Meta-value">4 KB</span>
                 </li>
             </ul>
         </div>

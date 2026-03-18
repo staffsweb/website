@@ -1,26 +1,30 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/spacing";
+
 h2.playlist__title {
-    color: $neon!important;
+    color: colours.$neon!important;
 }
 
 a.playlist__link {
     display: block;
-    padding: $spacing-sm $spacing-sm $spacing-sm $spacing-3xl;
+    padding: spacing.$spacing-sm spacing.$spacing-sm spacing.$spacing-sm spacing.$spacing-3xl;
     text-decoration: none;
     color: white;
     transition: all 125ms;
-    background-image: url(#{$image-theme-directory-icon}/icon-play-circle-red.svg);
-    background-position: $spacing-xs center;
+    background-image: url(#{config.$image-theme-directory-icon}/icon-play-circle-red.svg);
+    background-position: spacing.$spacing-xs center;
     background-repeat: no-repeat;
-    background-size: $spacing-xl;
+    background-size: spacing.$spacing-xl;
 
     &.selected {
-        color: $dark-blue!important;
-        background-color: $neon;
+        color: colours.$dark-blue!important;
+        background-color: colours.$neon;
     }
 
     &:hover {
-        color: $dark-blue!important;
-        background-color: $grey-50-pc;
+        color: colours.$dark-blue!important;
+        background-color: colours.$grey-50-pc;
     }
 }
 
@@ -30,13 +34,13 @@ a.playlist__link {
         color: #170d38!important;
 
         &.selected {
-            color: $dark-blue!important;
-            background-color: $neon;
+            color: colours.$dark-blue!important;
+            background-color: colours.$neon;
         }
     
         &:hover {
-            color: $dark-blue!important;
-            background-color: $grey-50-pc;
+            color: colours.$dark-blue!important;
+            background-color: colours.$grey-50-pc;
         }
     }
 }

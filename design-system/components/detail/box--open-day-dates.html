@@ -363,11 +363,15 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.box</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:color&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.box</span> {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">background</span>: white;
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$text-color</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xl</span>;
+  <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$text-color</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
 
   &amp;__figure {
     <span class="hljs-selector-tag">img</span> {
@@ -376,7 +380,7 @@
   }
 
   &amp;__content {
-    <span class="hljs-attribute">padding</span>: calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
+    <span class="hljs-attribute">padding</span>: calc(#{spacing.<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
 
     &gt; <span class="hljs-selector-pseudo">:first</span>-child {
       <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
@@ -391,7 +395,7 @@
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
 
     &amp; * {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     }
 
     <span class="hljs-selector-tag">a</span> {
@@ -401,8 +405,8 @@
   }
 
   &amp;__footer {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-md</span> calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-md</span> calc(#{spacing.<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.05</span>);
 
     &gt; <span class="hljs-selector-pseudo">:first</span>-child {
@@ -418,7 +422,7 @@
   <span class="hljs-comment">//--</span>
 
   &amp;--padded {
-    <span class="hljs-attribute">padding</span>: calc(#{<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
+    <span class="hljs-attribute">padding</span>: calc(#{spacing.<span class="hljs-variable">$spacing-sm</span>} + <span class="hljs-number">2.5%</span>);
   }
 
   <span class="hljs-comment">//-</span>
@@ -430,19 +434,19 @@
   <span class="hljs-comment">//-</span>
 
   &amp;--bg-offwhite {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
 
     &amp; <span class="hljs-selector-class">.box__footer</span> {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey</span>;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey</span>;
     }
   }
 
   &amp;--bg-greyblue-superlight {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
   }
 
   &amp;--bg-dark-blue, &amp;--bg-slate {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
 
     &amp; <span class="hljs-selector-class">.box__title</span> * {
@@ -459,12 +463,12 @@
     }
 
     &amp; <span class="hljs-selector-class">.box__footer</span> {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey</span>;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey</span>;
     }
   }
 
   &amp;--bg-offwhite-gradient {
-    <span class="hljs-attribute">background</span>: radial-gradient(<span class="hljs-number">45%</span> <span class="hljs-number">660%</span> at <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>, mix(<span class="hljs-number">#e3e3e3</span>, white, <span class="hljs-number">30%</span>) <span class="hljs-number">0%</span>, mix(<span class="hljs-number">#ccc</span>, white, <span class="hljs-number">30%</span>) <span class="hljs-number">100%</span>);
+    <span class="hljs-attribute">background</span>: radial-gradient(<span class="hljs-number">45%</span> <span class="hljs-number">660%</span> at <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>, color.mix(<span class="hljs-number">#e3e3e3</span>, white, <span class="hljs-number">30%</span>) <span class="hljs-number">0%</span>, color.mix(<span class="hljs-number">#ccc</span>, white, <span class="hljs-number">30%</span>) <span class="hljs-number">100%</span>);
   }
 }
 
@@ -474,7 +478,7 @@
   <span class="hljs-comment">// absolutely positioned title</span>
 
   <span class="hljs-selector-class">.box__content</span><span class="hljs-selector-pseudo">:first</span>-child {
-    <span class="hljs-attribute">padding-top</span>: calc(#{<span class="hljs-variable">$spacing-3xl</span>} + <span class="hljs-number">2.5%</span>);;
+    <span class="hljs-attribute">padding-top</span>: calc(#{spacing.<span class="hljs-variable">$spacing-3xl</span>} + <span class="hljs-number">2.5%</span>);;
   }
 
   <span class="hljs-selector-class">.box__abstitle</span> {
@@ -484,9 +488,9 @@
   }
 
   <span class="hljs-selector-class">.title__highlight</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neon</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neon</span>;
     <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neon</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neon</span>;
     }
   }
 
@@ -516,7 +520,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.1 KB</span>
+                    <span class="Meta-value">2.4 KB</span>
                 </li>
             </ul>
         </div>

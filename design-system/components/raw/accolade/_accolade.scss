@@ -1,11 +1,16 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .accolade {
     color: black;
-    background: $grey-50-pc;
-    padding: $spacing-xl;
+    background: colours.$grey-50-pc;
+    padding: spacing.$spacing-xl;
     text-align: center;
-    margin-bottom: $spacing-lg;
+    margin-bottom: spacing.$spacing-lg;
 
-    @media(min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media(min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
         width: 30%;
         margin-right: 2%;
         margin-bottom: 0;
@@ -19,8 +24,8 @@
             justify-content: center;
 
             &--divider {
-                padding: $spacing-lg 0;
-                background: $grey-50-pc;
+                padding: spacing.$spacing-lg 0;
+                background: colours.$grey-50-pc;
             }
         }
     }
@@ -40,7 +45,7 @@
         width: 100%;
         margin-right: 0;
 
-        @media(min-width: map_get($breakpoint-stages, 'tablet')) {
+        @media(min-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {
             display: flex;
             flex-direction: row-reverse;
 
@@ -50,7 +55,7 @@
             }
 
             &:not(:last-child) {
-                border-right: 1px solid $grey;
+                border-right: 1px solid colours.$grey;
             }
         }
     }

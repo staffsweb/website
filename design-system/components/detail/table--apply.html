@@ -400,7 +400,10 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-tag">table</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-tag">table</span> {
   <span class="hljs-comment">// there are some base styles set on this element in the &#x27;base-elements&#x27; mixin,</span>
   <span class="hljs-comment">// in __vars/typography</span>
 }
@@ -409,9 +412,9 @@
 }
 
 <span class="hljs-variable">$module-table-header-colours</span>: (
-  <span class="hljs-string">&#x27;pale-blue&#x27;</span>: <span class="hljs-variable">$pale-blue</span>,
-  <span class="hljs-string">&#x27;lavender&#x27;</span> : <span class="hljs-variable">$lavender</span>,
-  <span class="hljs-string">&#x27;neon&#x27;</span> : <span class="hljs-variable">$neon-50-pc</span>
+  <span class="hljs-string">&#x27;pale-blue&#x27;</span>: colours.<span class="hljs-variable">$pale-blue</span>,
+  <span class="hljs-string">&#x27;lavender&#x27;</span> : colours.<span class="hljs-variable">$lavender</span>,
+  <span class="hljs-string">&#x27;neon&#x27;</span> : colours.<span class="hljs-variable">$neon-50-pc</span>
 );
 
 <span class="hljs-selector-class">.table--modules</span> {
@@ -420,11 +423,11 @@
       <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$module-table-header-colours</span> {
         &amp;<span class="hljs-selector-class">.th--</span>#{<span class="hljs-variable">$name</span>} {
           <span class="hljs-attribute">background</span>: <span class="hljs-variable">$value</span>;
-          <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+          <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
         }
       }
 
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
     }
   }
 
@@ -453,7 +456,7 @@
   }
 
   <span class="hljs-selector-class">.button</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
     <span class="hljs-attribute">white-space</span>: pre; <span class="hljs-comment">// this is a bit strong, but we really want to avoid this wrapping</span>
   }
 
@@ -464,7 +467,7 @@
 
     <span class="hljs-selector-tag">tr</span> {
       <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
       <span class="hljs-attribute">display</span>: flex;
       <span class="hljs-attribute">justify-content</span>: flex-start;
       <span class="hljs-attribute">align-items</span>: center;
@@ -513,7 +516,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.8 KB</span>
+                    <span class="Meta-value">2 KB</span>
                 </li>
             </ul>
         </div>

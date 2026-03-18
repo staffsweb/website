@@ -388,13 +388,17 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.iconBox</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-selector-class">.iconBox</span> {
   <span class="hljs-attribute">display</span>: flex;
   <span class="hljs-attribute">flex-wrap</span>: wrap;
   <span class="hljs-attribute">align-items</span>: flex-start;
-  <span class="hljs-attribute">padding</span>: calc(#{<span class="hljs-variable">$spacing-md</span>} + <span class="hljs-number">2.5%</span>) <span class="hljs-variable">$spacing-xs</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-md</span>;
-  <span class="hljs-attribute">background</span>: <span class="hljs-variable">$neutral--primary</span>;
+  <span class="hljs-attribute">padding</span>: calc(#{spacing.<span class="hljs-variable">$spacing-md</span>} + <span class="hljs-number">2.5%</span>) spacing.<span class="hljs-variable">$spacing-xs</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-md</span>;
+  <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
   <span class="hljs-attribute">color</span>: white;
   <span class="hljs-attribute">text-decoration</span>: none;
   <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.25rem</span>;
@@ -403,15 +407,15 @@
   <span class="hljs-comment">// --</span>
 
   &amp;__icon {
-    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-variable">$spacing-3xl</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{<span class="hljs-variable">$spacing-xs</span>} + <span class="hljs-number">1.25%</span>);
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> spacing.<span class="hljs-variable">$spacing-3xl</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{spacing.<span class="hljs-variable">$spacing-xs</span>} + <span class="hljs-number">1.25%</span>);
     <span class="hljs-attribute">box-sizing</span>: border-box;
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
     <span class="hljs-attribute">text-align</span>: center;
 
     <span class="hljs-selector-class">.icon</span>, <span class="hljs-selector-tag">img</span> {
       <span class="hljs-attribute">display</span>: block;
-      <span class="hljs-attribute">margin</span>: auto auto <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">margin</span>: auto auto spacing.<span class="hljs-variable">$spacing-lg</span>;
     }
 
     &amp; &gt; svg {
@@ -422,7 +426,7 @@
 
   &amp;__content {
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">80%</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{<span class="hljs-variable">$spacing-xs</span>} + <span class="hljs-number">1.25%</span>);
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> calc(#{spacing.<span class="hljs-variable">$spacing-xs</span>} + <span class="hljs-number">1.25%</span>);
     <span class="hljs-attribute">box-sizing</span>: border-box;
 
     &gt; <span class="hljs-selector-pseudo">:first</span>-child {
@@ -435,19 +439,19 @@
   }
 
   &amp;__title {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-sm</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-sm</span>;
   }
 
   <span class="hljs-comment">// --</span>
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$socialmedia-prime-colours</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$socialmedia-prime-colours</span> {
     &amp;--#{<span class="hljs-variable">$name</span>} {
       <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>};
       <span class="hljs-attribute">color</span>: white;
     }
   }
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$icon-box-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$icon-box-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
       <span class="hljs-attribute">background</span>: #{<span class="hljs-variable">$value</span>};
     }
@@ -458,10 +462,10 @@
   }
 
   &amp;--bg-offwhite, &amp;--bg-neon {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
 
     &amp; <span class="hljs-selector-class">.iconBox__icon</span> svg {
-      fill: <span class="hljs-variable">$dark-blue</span>;
+      fill: colours.<span class="hljs-variable">$dark-blue</span>;
     }
   }
 }
@@ -508,7 +512,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.7 KB</span>
+                    <span class="Meta-value">2 KB</span>
                 </li>
             </ul>
         </div>

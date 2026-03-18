@@ -1,75 +1,76 @@
-@import "__vars/_all";
+@use "__vars/_all";
 
 $icon-accent-colors: (
-  'red' : $red,
-  'pink' : $pink,
-  'maroon' : $maroon,
-  'slate' : $slate
+  'red' : colours.$red,
+  'pink' : colours.$pink,
+  'maroon' : colours.$maroon,
+  'slate' : colours.$slate
 );
 
-@import "_vendor/normalize";
-@import "_vendor/jquery-ui";
+@use "_vendor/normalize";
+@use "_vendor/jquery-ui";
 
-@import "_global/typography";
-@import "../../components/forms/forms";
+@use "_global/typography";
+@use "../../components/forms/forms";
 
-@import "_grid/grid";
-@import "_grid/title-grid";
+@use "_grid/grid";
+@use "_grid/title-grid";
 
-@import "_global/layout";
-@import "_global/site-header";
-@import "_global/site-footer";
+@use "_global/layout";
+@use "_global/site-header";
+@use "_global/site-footer";
 
 //@import "../../components/*/*";
-@import "../../components/accolade/accolade";
-@import "../../components/accordion/accordion";
-@import "../../components/announcements/announcements";
-@import "../../components/banner/banner";
-@import "../../components/booking-link/booking-link";
-@import "../../components/box/boxes";
-@import "../../components/breadcrumbs/breadcrumbs";
-@import "../../components/button/buttons";
-@import "../../components/card/cards";
-@import "../../components/callout/callout";
-@import "../../components/country-selector/country-selector";
-@import "../../components/course-listing/course-listing";
-@import "../../components/course-search/course-search";
-@import "../../components/course-ksp/course-ksp";
-@import "../../components/feature-link/feature-link";
-@import "../../components/global-search/global-search";
-@import "../../components/hr/hr";
-@import "../../components/icons/icons";
-@import "../../components/iconBox/iconBox";
-@import "../../components/list/lists";
-@import "../../components/lead-generation/lead-generation";
-@import "../../components/loading-spinner/loading-spinner";
-@import "../../components/masthead/masthead";
-@import "../../components/megaNav/megaNav";
-@import "../../components/meta/meta";
-@import "../../components/page-nav/page-nav";
-@import "../../components/pager/pager";
-@import "../../components/pie-chart/pie-chart";
-@import "../../components/playlist/playlist";
-@import "../../components/quote/quotes";
-@import "../../components/quote-banner/quote-banner";
-@import "../../components/ratio/ratio";
-@import "../../components/side-navigation/side-navigation";
-@import "../../components/sitewide-message/sitewide-message";
-@import "../../components/slab/slab";
-@import "../../components/slider/slider";
-@import "../../components/social-links/social-links";
-@import "../../components/specialist-items/specialist-items";
-@import "../../components/table/tables";
-@import "../../components/tabs/tabs";
-@import "../../components/tag/tag";
-@import "../../components/tile/tile";
-@import "../../components/tile/tile-group";
-@import "../../components/title/title";
-@import "../../components/webinar/webinar";
-@import "../../components/zebra/zebra";
+@use "../../components/accolade/accolade";
+@use "../../components/accordion/accordion";
+@use "../../components/announcements/announcements";
+@use "../../components/banner/banner";
+@use "../../components/booking-link/booking-link";
+@use "../../components/box/boxes";
+@use "../../components/breadcrumbs/breadcrumbs";
+@use "../../components/button/buttons";
+@use "../../components/card/cards";
+@use "../../components/callout/callout";
+@use "../../components/country-selector/country-selector";
+@use "../../components/course-listing/course-listing";
+@use "../../components/course-search/course-search";
+@use "../../components/course-ksp/course-ksp";
+@use "../../components/feature-link/feature-link";
+@use "../../components/global-search/global-search";
+@use "../../components/hr/hr";
+@use "../../components/icons/icons";
+@use "../../components/iconBox/iconBox";
+@use "../../components/list/lists";
+@use "../../components/lead-generation/lead-generation";
+@use "../../components/loading-spinner/loading-spinner";
+@use "../../components/masthead/masthead";
+@use "../../components/megaNav/megaNav";
+@use "../../components/meta/meta";
+@use "../../components/page-nav/page-nav";
+@use "../../components/pager/pager";
+@use "../../components/pie-chart/pie-chart";
+@use "../../components/playlist/playlist";
+@use "../../components/quote/quotes";
+@use "../../components/quote-banner/quote-banner";
+@use "../../components/ratio/ratio";
+@use "../../components/side-navigation/side-navigation";
+@use "../../components/sitewide-message/sitewide-message";
+@use "../../components/slab/slab";
+@use "../../components/slider/slider";
+@use "../../components/social-links/social-links";
+@use "../../components/specialist-items/specialist-items";
+@use "../../components/table/tables";
+@use "../../components/tabs/tabs";
+@use "../../components/tag/tag";
+@use "../../components/tile/tile";
+@use "../../components/tile/tile-group";
+@use "../../components/title/title";
+@use "../../components/webinar/webinar";
+@use "../../components/zebra/zebra";
 
-@import "_utils/utils";
+@use "_utils/utils";
 
 //Custom
-@import "../../components/modal/modal";
-@import "../../components/news/_news.scss";
+@use "../../components/modal/modal";
+@use "../../components/news/_news.scss";
+@use "__vars/colours";

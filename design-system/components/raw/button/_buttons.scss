@@ -1,35 +1,37 @@
+@use "../../assets/styles/__vars/mixins";
+
 .button {
   // For the moment, these are defined as little mixins over in __vars/mixins so they can be included elsewhere
 
-  @include button;
+  @include mixins.button;
 
   // Sizes
 
   &--xs {
-    @include button--xs;
+    @include mixins.button--xs;
   }
 
   &--sm {
-    @include button--sm;
+    @include mixins.button--sm;
   }
 
   &--lg {
-    @include button--lg;
+    @include mixins.button--lg;
   }
 
   &--xl {
-    @include button--xl;
+    @include mixins.button--xl;
   }
 
   // Layout
 
   &--block {
-    @include button--block;
+    @include mixins.button--block;
     line-height: 1.5;
   }
 
   &--pointy {
-    @include button--pointy;
+    @include mixins.button--pointy;
   }
 
   &--caps {
@@ -39,23 +41,23 @@
   // Colours
 
   &--dark-blue {
-    @include button--dark-blue;
+    @include mixins.button--dark-blue;
   }
 
   &--digital-blue {
-    @include button--digital-blue;
+    @include mixins.button--digital-blue;
   }
 
   &--granite {
-    @include button--granite;
+    @include mixins.button--granite;
   }
 
   &--grey {
-    @include button--grey;
+    @include mixins.button--grey;
   }
 
   &--outline {
-    @include button--outline;
+    @include mixins.button--outline;
 
     .slab--bg-slate &, .slab--bg-teal & {
       color: white;
@@ -63,18 +65,18 @@
   }
 
   &--outline-dark-blue {
-    @include button--outline-dark-blue;
+    @include mixins.button--outline-dark-blue;
   }
 
   &--outline-grey {
-    @include button--outline-grey;
+    @include mixins.button--outline-grey;
   }
 
   &--outline-slate {
-    @include button--outline-dark-blue;
+    @include mixins.button--outline-dark-blue;
   }
 
   &[disabled] {
-    @include button--disabled;
+    @include mixins.button--disabled;
   }
 }

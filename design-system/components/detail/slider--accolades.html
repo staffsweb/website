@@ -620,7 +620,15 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;../../assets/js/vendor/slick-1.8.1/slick/slick.scss&#x27;</span>;
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:math&quot;</span>;
+
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&#x27;../../assets/js/vendor/slick-1.8.1/slick/slick.scss&#x27;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/layout&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
 
 <span class="hljs-selector-class">.slick-slider</span> {
 }
@@ -629,7 +637,7 @@
   <span class="hljs-attribute">position</span>: absolute;
   <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
   <span class="hljs-attribute">transform</span>: translateY(-<span class="hljs-number">50%</span>);
-  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$page-gutter-small</span>*<span class="hljs-number">2</span>;
+  <span class="hljs-attribute">font-size</span>: layout.<span class="hljs-variable">$page-gutter-small</span>*<span class="hljs-number">2</span>;
   <span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
@@ -645,8 +653,8 @@
     <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.8</span>;
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-large-gutter-width</span>) {
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">$page-gutter-large</span>*<span class="hljs-number">2</span>;
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-large-gutter-width</span>) {
+    <span class="hljs-attribute">font-size</span>: layout.<span class="hljs-variable">$page-gutter-large</span>*<span class="hljs-number">2</span>;
   }
 
   &amp;:before {
@@ -655,33 +663,33 @@
     <span class="hljs-attribute">margin</span>: auto;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">1em</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$neutral--primary</span> url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-white.svg&#x27;</span>) no-repeat <span class="hljs-number">55%</span> <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$neutral--primary</span> url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-white.svg&#x27;</span>) no-repeat <span class="hljs-number">55%</span> <span class="hljs-number">50%</span>;
     <span class="hljs-attribute">background-size</span>: <span class="hljs-number">30%</span>;
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100%</span>;
   }
 }
 
 <span class="hljs-selector-class">.slick-next</span> {
-  <span class="hljs-attribute">right</span>: -#{<span class="hljs-variable">$page-gutter-small</span>/<span class="hljs-number">1.1</span>};
+  <span class="hljs-attribute">right</span>: -#{math.div(layout.<span class="hljs-variable">$page-gutter-small</span>, <span class="hljs-number">1.1</span>)};
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-large-gutter-width</span>) {
-    <span class="hljs-attribute">right</span>: -#{<span class="hljs-variable">$page-gutter-large</span>};
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-large-gutter-width</span>) {
+    <span class="hljs-attribute">right</span>: -#{layout.<span class="hljs-variable">$page-gutter-large</span>};
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-full-gutter-width</span>) {
-    <span class="hljs-attribute">right</span>: -#{<span class="hljs-variable">$page-gutter-full</span>};
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-full-gutter-width</span>) {
+    <span class="hljs-attribute">right</span>: -#{layout.<span class="hljs-variable">$page-gutter-full</span>};
   }
 }
 
 <span class="hljs-selector-class">.slick-prev</span> {
-  <span class="hljs-attribute">left</span>: -#{<span class="hljs-variable">$page-gutter-small</span>/<span class="hljs-number">1.1</span>};
+  <span class="hljs-attribute">left</span>: -#{math.div(layout.<span class="hljs-variable">$page-gutter-small</span>, <span class="hljs-number">1.1</span>)};
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-large-gutter-width</span>) {
-    <span class="hljs-attribute">left</span>: -#{<span class="hljs-variable">$page-gutter-large</span>};
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-large-gutter-width</span>) {
+    <span class="hljs-attribute">left</span>: -#{layout.<span class="hljs-variable">$page-gutter-large</span>};
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-full-gutter-width</span>) {
-    <span class="hljs-attribute">left</span>: -#{<span class="hljs-variable">$page-gutter-full</span>};
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-full-gutter-width</span>) {
+    <span class="hljs-attribute">left</span>: -#{layout.<span class="hljs-variable">$page-gutter-full</span>};
   }
 
   &amp;:before {
@@ -710,35 +718,35 @@
 
 <span class="hljs-selector-class">.slider--event-cards</span> {
   <span class="hljs-selector-class">.slick-slide</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
   }
 }
 
 <span class="hljs-selector-class">.slider--facilities</span> {
   <span class="hljs-selector-class">.slick-track</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -<span class="hljs-variable">$grid-gutter</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> - layout.<span class="hljs-variable">$grid-gutter</span>;
   }
   <span class="hljs-selector-class">.slick-slide</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter</span>;
   }
 }
 
 <span class="hljs-selector-class">.accolade-slider</span> {
   &amp;__item {
     <span class="hljs-attribute">text-align</span>: center;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter</span>;
   }
 
   &amp;__item-title {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#FFF</span>;
-    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
     <span class="hljs-attribute">color</span>: <span class="hljs-number">#FFF</span>;
   }
 
   &amp;__item-description {
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;sm&#x27;</span>);
-    <span class="hljs-keyword">@include</span> line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;sm&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
 
     <span class="hljs-selector-tag">p</span> {
       <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
@@ -775,7 +783,7 @@
 
 <span class="hljs-selector-class">.js-slider--responsive</span> {
   <span class="hljs-selector-class">.slick-slide</span> {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter</span> <span class="hljs-number">0</span>;
   }
 
   <span class="hljs-selector-class">.slick-prev</span> {
@@ -794,10 +802,10 @@
 
   <span class="hljs-selector-class">.slick-slide</span> {
     <span class="hljs-attribute">max-width</span>: <span class="hljs-number">80vw</span>;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$grid-gutter-small</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> layout.<span class="hljs-variable">$grid-gutter-small</span>;
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$wrap-width</span>) {
-      <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">$wrap-width</span> - <span class="hljs-number">15rem</span>;
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$wrap-width</span>) {
+      <span class="hljs-attribute">max-width</span>: layout.<span class="hljs-variable">$wrap-width</span> - <span class="hljs-number">15rem</span>;
     }
   }
 }
@@ -812,12 +820,12 @@
 
     <span class="hljs-selector-tag">img</span> {
       <span class="hljs-attribute">box-sizing</span>: border-box;
-      <span class="hljs-attribute">border</span>: <span class="hljs-variable">$spacing-2xs</span> solid transparent;
+      <span class="hljs-attribute">border</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid transparent;
     }
 
     <span class="hljs-selector-class">.slick-current</span> {
       <span class="hljs-selector-tag">img</span> {
-        <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$primary</span>;
+        <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$primary</span>;
       }
     }
   }
@@ -858,7 +866,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">3.8 KB</span>
+                    <span class="Meta-value">4.3 KB</span>
                 </li>
             </ul>
         </div>

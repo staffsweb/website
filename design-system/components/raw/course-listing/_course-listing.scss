@@ -1,8 +1,11 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .course-listing {
     .link--stretched {
-        color: $dark-blue;
+        color: colours.$dark-blue;
         text-decoration: none;
-        padding-bottom: $spacing-sm;
-        border-bottom: $spacing-3xs solid $red;
+        padding-bottom: spacing.$spacing-sm;
+        border-bottom: spacing.$spacing-3xs solid colours.$red;
     }
 }

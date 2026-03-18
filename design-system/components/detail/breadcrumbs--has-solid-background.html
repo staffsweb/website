@@ -245,30 +245,34 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.breadcrumbs</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-selector-class">.breadcrumbs</span> {
   <span class="hljs-attribute">display</span>: inline-block;
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
-  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xs</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-sm</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xs</span>;
+  <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> spacing.<span class="hljs-variable">$spacing-sm</span> spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
 
   &amp;<span class="hljs-selector-class">.has-solid-bg</span> {
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
   }
 
   <span class="hljs-selector-tag">ul</span> {
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;sm&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;sm&#x27;</span>);
   }
 
   <span class="hljs-selector-tag">li</span> {
     <span class="hljs-attribute">display</span>: inline-block;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-2xs</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-2xs</span>;
 
     &amp;:before {
       content: <span class="hljs-string">&#x27;/ &#x27;</span>;
       <span class="hljs-attribute">display</span>: inline-block;
-      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
     }
 
     &amp;<span class="hljs-selector-pseudo">:first</span>-child {
@@ -278,7 +282,7 @@
     }
 
     <span class="hljs-selector-tag">a</span>, <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span>, <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not</span>([class]) {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
       <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
       <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">0</span>;
   
@@ -304,7 +308,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">728 Bytes</span>
+                    <span class="Meta-value">936 Bytes</span>
                 </li>
             </ul>
         </div>

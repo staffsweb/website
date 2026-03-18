@@ -237,8 +237,12 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.pager</span> {
-  <span class="hljs-keyword">@include</span> line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-selector-class">.pager</span> {
+  <span class="hljs-keyword">@include</span> typography.line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
 
   &amp;__list {
     <span class="hljs-attribute">display</span>: flex;
@@ -246,7 +250,7 @@
   }
 
   &amp;__item {
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-2xs</span> spacing.<span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span>;
   }
 
   &amp;__link,
@@ -254,9 +258,9 @@
   &amp;__ellipsis {
     <span class="hljs-attribute">display</span>: inline-block;
     <span class="hljs-attribute">min-width</span>: <span class="hljs-number">1em</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-md</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> spacing.<span class="hljs-variable">$spacing-md</span>;
     <span class="hljs-attribute">text-align</span>: center;
-    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$grey--light</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid colours.<span class="hljs-variable">$grey--light</span>;
     <span class="hljs-attribute">box-sizing</span>: border-box;
   }
 
@@ -269,10 +273,10 @@
   &amp;__current {
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
     <span class="hljs-attribute">cursor</span>: default;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
 
     &amp;<span class="hljs-selector-pseudo">:hover</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$text-color</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$text-color</span>;
       <span class="hljs-attribute">text-decoration</span>: none;
     }
   }
@@ -283,8 +287,8 @@
 
   &amp;__next,
   &amp;__prev {
-    <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$primary</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$primary</span>;
+    <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$primary</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$primary</span>;
     <span class="hljs-attribute">color</span>: white;
 
     &amp;<span class="hljs-selector-pseudo">:hover</span> {
@@ -307,7 +311,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">866 Bytes</span>
+                    <span class="Meta-value">1.1 KB</span>
                 </li>
             </ul>
         </div>

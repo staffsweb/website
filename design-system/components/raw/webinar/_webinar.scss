@@ -1,5 +1,10 @@
-@media (min-width: map_get($breakpoint-stages, 'tablet')) {
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
+@media (min-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {
     .webinar__video {
-        border-right: $spacing-4xs solid $grey-50-pc;
+        border-right: spacing.$spacing-4xs solid colours.$grey-50-pc;
     }
 }

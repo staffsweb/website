@@ -1,10 +1,14 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 .iconBox {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: calc(#{$spacing-md} + 2.5%) $spacing-xs;
-  margin: 0 0 $spacing-md;
-  background: $neutral--primary;
+  padding: calc(#{spacing.$spacing-md} + 2.5%) spacing.$spacing-xs;
+  margin: 0 0 spacing.$spacing-md;
+  background: colours.$neutral--primary;
   color: white;
   text-decoration: none;
   border-radius: 0.25rem;
@@ -13,15 +17,15 @@
   // --
 
   &__icon {
-    flex: 1 1 $spacing-3xl;
-    padding: 0 calc(#{$spacing-xs} + 1.25%);
+    flex: 1 1 spacing.$spacing-3xl;
+    padding: 0 calc(#{spacing.$spacing-xs} + 1.25%);
     box-sizing: border-box;
-    @include typescale('3xl');
+    @include typography.typescale('3xl');
     text-align: center;
 
     .icon, img {
       display: block;
-      margin: auto auto $spacing-lg;
+      margin: auto auto spacing.$spacing-lg;
     }
 
     & > svg {
@@ -32,7 +36,7 @@
 
   &__content {
     flex: 1 1 80%;
-    padding: 0 calc(#{$spacing-xs} + 1.25%);
+    padding: 0 calc(#{spacing.$spacing-xs} + 1.25%);
     box-sizing: border-box;
 
     > :first-child {
@@ -45,19 +49,19 @@
   }
 
   &__title {
-    margin: 0 0 $spacing-sm;
+    margin: 0 0 spacing.$spacing-sm;
   }
 
   // --
 
-  @each $name, $value in $socialmedia-prime-colours {
+  @each $name, $value in colours.$socialmedia-prime-colours {
     &--#{$name} {
       background: #{$value};
       color: white;
     }
   }
 
-  @each $name, $value in $icon-box-colors {
+  @each $name, $value in colours.$icon-box-colors {
     &--bg-#{$name} {
       background: #{$value};
     }
@@ -68,10 +72,10 @@
   }
 
   &--bg-offwhite, &--bg-neon {
-    color: $dark-blue;
+    color: colours.$dark-blue;
 
     & .iconBox__icon svg {
-      fill: $dark-blue;
+      fill: colours.$dark-blue;
     }
   }
 }

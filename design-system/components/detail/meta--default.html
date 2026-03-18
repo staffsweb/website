@@ -253,28 +253,32 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.meta</span> {
-  <span class="hljs-keyword">@include</span> line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-selector-class">.meta</span> {
+  <span class="hljs-keyword">@include</span> typography.line-height(<span class="hljs-string">&#x27;normal&#x27;</span>);
 
   <span class="hljs-selector-tag">dt</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-2xs</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span>;
   }
 
   &amp;__item {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-md</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
   }
 }
 
 <span class="hljs-selector-class">.meta--inline-dd</span> {
   <span class="hljs-selector-tag">dd</span> {
     <span class="hljs-attribute">display</span>: inline;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
 
     &amp;:before {
       content: <span class="hljs-string">&#x27;•&#x27;</span>;
-      <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+      <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
       <span class="hljs-attribute">font-weight</span>: bold;
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$red</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$red</span>;
     }
 
     &amp;<span class="hljs-selector-pseudo">:first</span>-of-type {
@@ -287,12 +291,12 @@
 
 <span class="hljs-selector-class">.meta--inline</span> {
   <span class="hljs-selector-class">.meta__item</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
   }
 
   <span class="hljs-selector-tag">dt</span>, <span class="hljs-selector-tag">dd</span> {
     <span class="hljs-attribute">display</span>: inline-block;
-    <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
   }
 
   <span class="hljs-selector-tag">dd</span> {
@@ -300,9 +304,9 @@
 
     &amp;:before {
       content: <span class="hljs-string">&#x27;•&#x27;</span>;
-      <span class="hljs-attribute">margin-right</span>: <span class="hljs-variable">$spacing-xs</span>;
+      <span class="hljs-attribute">margin-right</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
       <span class="hljs-attribute">font-weight</span>: bold;
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$red</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$red</span>;
     }
 
     &amp;<span class="hljs-selector-pseudo">:first</span>-of-type {
@@ -327,7 +331,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">854 Bytes</span>
+                    <span class="Meta-value">1.1 KB</span>
                 </li>
             </ul>
         </div>

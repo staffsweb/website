@@ -234,22 +234,26 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.feature-link</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.feature-link</span> {
   <span class="hljs-attribute">display</span>: block;
   <span class="hljs-attribute">position</span>: relative;
-  --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xl</span>;
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+  --accent-<span class="hljs-attribute">color</span>: #{colours.<span class="hljs-variable">$primary</span>};
+  <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
+  <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
   <span class="hljs-attribute">text-decoration</span>: none;
 
   &amp;__title {
     <span class="hljs-attribute">display</span>: table;
     <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
     <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">1em</span>;
     <span class="hljs-attribute">word-break</span>: break-word;
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
-    <span class="hljs-attribute">width</span>: calc(<span class="hljs-number">100%</span> - #{<span class="hljs-variable">$spacing-md</span>});
+    <span class="hljs-attribute">width</span>: calc(<span class="hljs-number">100%</span> - #{spacing.<span class="hljs-variable">$spacing-md</span>});
 
     &amp;:after {
       content: <span class="hljs-string">&#x27;&#x27;</span>;
@@ -258,8 +262,8 @@
       <span class="hljs-attribute">display</span>: inline-block;
       <span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;
       <span class="hljs-attribute">height</span>: <span class="hljs-number">2.5em</span>;
-      <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-2xs</span>;
-      <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-red.svg&#x27;</span>) center center no-repeat;
+      <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-2xs</span>;
+      <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-red.svg&#x27;</span>) center center no-repeat;
       <span class="hljs-attribute">background-size</span>: <span class="hljs-number">40%</span>;
       <span class="hljs-attribute">vertical-align</span>: text-bottom;
       <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">75ms</span> ease-out;
@@ -267,17 +271,17 @@
   }
 
   &amp;__figure {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-2xs</span>;
+    <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span>;
     <span class="hljs-attribute">transition</span>: all <span class="hljs-number">125ms</span>;
   }
 
   &amp;<span class="hljs-selector-pseudo">:hover</span> &amp;__figure {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid <span class="hljs-variable">$red</span>;
+    <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid colours.<span class="hljs-variable">$red</span>;
   }
 
   &amp;__content {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
     
     &gt; <span class="hljs-selector-pseudo">:first</span>-child {
       <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
@@ -289,12 +293,12 @@
   }
 
   <span class="hljs-selector-tag">p</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
   }
 
   &amp;--no-image &amp;__title {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-3xs</span> solid <span class="hljs-variable">$red</span>;
-    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-md</span>;
+    <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-3xs</span> solid colours.<span class="hljs-variable">$red</span>;
+    <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
 
     &amp;<span class="hljs-selector-pseudo">::after</span> {
       <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
@@ -308,7 +312,7 @@
 
 <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.feature-link</span> {
   <span class="hljs-selector-class">.feature-link__title</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
   }
   &amp;<span class="hljs-selector-pseudo">:hover</span> {
     <span class="hljs-selector-class">.feature-link__title</span> {
@@ -318,7 +322,7 @@
     }
 
     <span class="hljs-selector-class">.feature-link__figure</span> {
-      <span class="hljs-attribute">opacity</span>: <span class="hljs-variable">$link-image-hover-opacity</span>;
+      <span class="hljs-attribute">opacity</span>: config.<span class="hljs-variable">$link-image-hover-opacity</span>;
     }
   }
 }
@@ -346,7 +350,7 @@
   }
 
   <span class="hljs-selector-class">.feature-link</span> <span class="hljs-selector-class">.feature-link__title</span>:after {
-    background-image: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-white.svg&#x27;</span>);
+    background-image: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-white.svg&#x27;</span>);
   }
 }</pre>
                             </code>
@@ -364,7 +368,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2.4 KB</span>
+                    <span class="Meta-value">2.7 KB</span>
                 </li>
             </ul>
         </div>

@@ -544,17 +544,26 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-variable">$card__internal-spacing</span>: <span class="hljs-variable">$spacing-sm</span>;
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:map&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/functions&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/layout&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+<span class="hljs-variable">$card__internal-spacing</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
 
 <span class="hljs-selector-class">.card</span> {
   <span class="hljs-comment">// $theme-colours: see __vars/colours</span>
 
   <span class="hljs-attribute">display</span>: block;
   <span class="hljs-attribute">position</span>: relative;
-  --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xl</span>;
+  --accent-<span class="hljs-attribute">color</span>: #{colours.<span class="hljs-variable">$primary</span>};
+  <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
 
-  <span class="hljs-keyword">@include</span> clearfix;
+  <span class="hljs-keyword">@include</span> layout.clearfix;
 
   <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not</span>(.button) {
     <span class="hljs-attribute">text-decoration</span>: none;
@@ -583,10 +592,10 @@
 
   &amp;__title {
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-md</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
 
     <span class="hljs-selector-tag">a</span> {
-      <span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
+      <span class="hljs-attribute">color</span>: #{colours.<span class="hljs-variable">$primary</span>};
       <span class="hljs-attribute">color</span>: var(--accent-color);
     }
   }
@@ -603,14 +612,14 @@
       &amp;:after {
         content: <span class="hljs-string">&#x27;&#x27;</span>;
         <span class="hljs-attribute">position</span>: absolute;
-        <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
-        <span class="hljs-attribute">height</span>: <span class="hljs-variable">$spacing-4xl</span>;
+        <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
+        <span class="hljs-attribute">height</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
         <span class="hljs-attribute">max-width</span>: <span class="hljs-number">50%</span>;
         <span class="hljs-attribute">max-height</span>: <span class="hljs-number">50%</span>;
         <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
         <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
         <span class="hljs-attribute">transform</span>: translate(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);
-        <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-play-circle-neutral-light.svg&#x27;</span>) no-repeat center center;
+        <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-play-circle-neutral-light.svg&#x27;</span>) no-repeat center center;
         <span class="hljs-attribute">background-size</span>: contain;
         <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
         <span class="hljs-attribute">pointer-events</span>: none;
@@ -623,7 +632,7 @@
   }
 
   &amp;__clearing-flag {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$red</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$red</span>;
     <span class="hljs-attribute">color</span>: <span class="hljs-number">#FFF</span>;
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.25rem</span> <span class="hljs-number">0.5rem</span>;
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
@@ -648,12 +657,12 @@
   }
 
   <span class="hljs-comment">//--  ACCENT THEMES</span>
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$card-accent-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$card-accent-colors</span> {
     &amp;--#{<span class="hljs-variable">$name</span>} {
       --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$value</span>};
 
       &amp;<span class="hljs-selector-class">.card--ksp</span> <span class="hljs-selector-class">.card--ksp__icon-container</span> &gt; <span class="hljs-selector-class">.icon</span> svg * {
-        <span class="hljs-keyword">@if</span> (choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
+        <span class="hljs-keyword">@if</span> (functions.choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
           stroke: white<span class="hljs-meta">!important</span>;
           fill: white<span class="hljs-meta">!important</span>;
           <span class="hljs-attribute">color</span>: white;
@@ -667,7 +676,7 @@
     }
   } 
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$theme-colours</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$theme-colours</span> {
     &amp;--#{<span class="hljs-variable">$name</span>} {
       --accent-<span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$value</span>};
 
@@ -678,7 +687,7 @@
   }
 
   &amp;--bg-offwhite {
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
 
     &amp; <span class="hljs-selector-class">.card__content</span> {
       <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$card__internal-spacing</span> * <span class="hljs-number">2</span>;
@@ -694,12 +703,12 @@
   <span class="hljs-attribute">text-decoration</span>: none;
 
   <span class="hljs-selector-class">.card__title</span> {
-    <span class="hljs-attribute">color</span>: #{<span class="hljs-variable">$primary</span>};
+    <span class="hljs-attribute">color</span>: #{colours.<span class="hljs-variable">$primary</span>};
     <span class="hljs-attribute">color</span>: var(--accent-color);
   }
 
   &amp;<span class="hljs-selector-pseudo">:hover</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$text-color</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$text-color</span>;
 
     <span class="hljs-selector-class">.card__title</span> {
       <span class="hljs-attribute">text-decoration</span>: underline;
@@ -729,7 +738,7 @@
   <span class="hljs-attribute">flex-wrap</span>: wrap;
   <span class="hljs-attribute">align-items</span>: flex-start;
   <span class="hljs-attribute">flex-direction</span>: row-reverse;
-  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-sm</span>;
+  <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
 
   <span class="hljs-selector-class">.card__figure</span> {
     <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">33%</span>;
@@ -740,7 +749,7 @@
   }
 
   <span class="hljs-selector-class">.card__figure</span> {
-    <span class="hljs-attribute">margin-bottom</span>: -#{<span class="hljs-variable">$spacing-sm</span>};
+    <span class="hljs-attribute">margin-bottom</span>: -#{spacing.<span class="hljs-variable">$spacing-sm</span>};
   }
 }
 
@@ -749,20 +758,20 @@
   <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$card__internal-spacing</span>;
 
   &amp; <span class="hljs-selector-class">.cite</span> {
-    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-2xs</span>;
+    <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span>;
     <span class="hljs-attribute">color</span>: var(--accent-color);
   }
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$testimonial-card-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$testimonial-card-colors</span> {
     &amp;<span class="hljs-selector-class">.card--bg-</span>#{<span class="hljs-variable">$name</span>} {
-      <span class="hljs-attribute">background-color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>);
-      <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;color&quot;</span>);
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-variable">$spacing-lg</span> <span class="hljs-variable">$spacing-lg</span> <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-attribute">background-color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>);
+      <span class="hljs-attribute">color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;color&quot;</span>);
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> spacing.<span class="hljs-variable">$spacing-lg</span> spacing.<span class="hljs-variable">$spacing-lg</span> spacing.<span class="hljs-variable">$spacing-lg</span>;
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
         &amp; <span class="hljs-selector-class">.card__content</span> {
           <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
-          <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-4xl</span>;
+          <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-4xl</span>);
         }
       }
 
@@ -771,11 +780,11 @@
       }
 
       &amp; <span class="hljs-selector-tag">q</span> {
-        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;color&quot;</span>);
+        <span class="hljs-attribute">color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;color&quot;</span>);
       }
 
       &amp; <span class="hljs-selector-tag">strong</span>, &amp; <span class="hljs-selector-class">.cite</span> { 
-        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;contrast-color&quot;</span>);
+        <span class="hljs-attribute">color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;contrast-color&quot;</span>);
       }
 
       &amp; <span class="hljs-selector-class">.blockquote__figure</span> <span class="hljs-selector-tag">img</span> {
@@ -785,7 +794,7 @@
   }
 
   <span class="hljs-selector-class">.blockquote__figure</span> <span class="hljs-selector-tag">img</span> {
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid var(--accent-color);
+    <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid var(--accent-color);
   }
 }
 
@@ -802,7 +811,7 @@
     <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">5%</span>;
     <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">5%</span>;
-    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-quote-primary.svg&#x27;</span>) no-repeat center center;
+    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-quote-primary.svg&#x27;</span>) no-repeat center center;
     <span class="hljs-attribute">background-size</span>: contain;
   }
 
@@ -811,10 +820,10 @@
   <span class="hljs-comment">// something using inline SVG use/fill, or a mask?</span>
   <span class="hljs-comment">// Don&#x27;t forget to add the SVG to the filesystem!</span>
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$card-accent-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$card-accent-colors</span> {
     &amp;<span class="hljs-selector-class">.card--</span>#{<span class="hljs-variable">$name</span>} {
       &amp;:before {
-        background: transparent url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-quote-#{$name}.svg&#x27;</span>) no-repeat center center;
+        background: transparent url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-quote-#{$name}.svg&#x27;</span>) no-repeat center center;
         <span class="hljs-attribute">background-size</span>: contain;
       }
     }
@@ -834,13 +843,13 @@
   <span class="hljs-selector-tag">ul</span><span class="hljs-selector-class">.list--icon-bullets</span> {
     <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
       <span class="hljs-attribute">text-decoration</span>: none<span class="hljs-meta">!important</span>;
-      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$grey--light</span>
+      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid colours.<span class="hljs-variable">$grey--light</span>
     }
   }
 }
 
 .card--course {
-  border-left: <span class="hljs-variable">$border-accent-width</span> solid <span class="hljs-variable">$primary</span>;
+  border-left: typography.<span class="hljs-variable">$border-accent-width</span> solid colours.<span class="hljs-variable">$primary</span>;
   <span class="hljs-attribute">border-color</span>: var(--accent-color);
 }
 
@@ -849,7 +858,7 @@
 }
 
 <span class="hljs-selector-class">.card--profile</span> {
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-md</span>;
+  <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
 
   <span class="hljs-comment">/* Needs:
     grey and teal
@@ -857,13 +866,13 @@
     teal and neon
     burgundy and neon
   */</span>
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$profile-card-themes</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$profile-card-themes</span> {
     &amp;<span class="hljs-selector-class">.card--</span>#{<span class="hljs-variable">$name</span>} {
-      <span class="hljs-attribute">background</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>);
-      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
-      <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-2xl</span>;
+      <span class="hljs-attribute">background</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>);
+      <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+      <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-2xl</span>;
 
-      <span class="hljs-keyword">@if</span> (choose-contrast-color(map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>)) == white) {
+      <span class="hljs-keyword">@if</span> (functions.choose-contrast-color(map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;background&quot;</span>)) == white) {
         <span class="hljs-attribute">color</span>: white;
 
         &amp; <span class="hljs-selector-class">.button</span> {
@@ -872,8 +881,8 @@
       }
 
       &amp; <span class="hljs-selector-class">.button--outline</span> {
-        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
-        <span class="hljs-attribute">border-color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+        <span class="hljs-attribute">color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+        <span class="hljs-attribute">border-color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
 
         &amp;<span class="hljs-selector-pseudo">:hover</span> {
           <span class="hljs-attribute">color</span>: black;
@@ -881,7 +890,7 @@
       }
 
       &amp; <span class="hljs-selector-class">.title</span>, &amp; <span class="hljs-selector-class">.strong</span> {
-        <span class="hljs-attribute">color</span>: map_get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
+        <span class="hljs-attribute">color</span>: map.get(<span class="hljs-variable">$value</span>, <span class="hljs-string">&quot;accent-color&quot;</span>);
       }
     }
   }
@@ -906,7 +915,7 @@
 }
 
 <span class="hljs-selector-class">.card--ksp</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neutral--primary</span>;
+  <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
   <span class="hljs-attribute">border-left</span>: none;
 
   &amp;__icon-container {
@@ -946,21 +955,21 @@
 }
 
 <span class="hljs-selector-class">.card--event</span> {
-  <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-4xl</span>;
+  <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
 
   <span class="hljs-selector-class">.card__figure</span> {
-    <span class="hljs-attribute">margin-bottom</span>: #{<span class="hljs-variable">$spacing-xs</span>};
+    <span class="hljs-attribute">margin-bottom</span>: #{spacing.<span class="hljs-variable">$spacing-xs</span>};
   }
 
   <span class="hljs-selector-class">.card__date</span> {
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">left</span>: -<span class="hljs-variable">$spacing-4xl</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xs&#x27;</span>);
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: -(spacing.<span class="hljs-variable">$spacing-4xl</span>);
+    <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;xs&#x27;</span>);
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
     <span class="hljs-attribute">color</span>: white;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$primary</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$primary</span>;
     <span class="hljs-attribute">background</span>: var(--accent-color);
     <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;
     <span class="hljs-attribute">text-align</span>: center;
@@ -968,40 +977,40 @@
   }
 
   <span class="hljs-selector-class">.link--stretched</span> <span class="hljs-selector-tag">h2</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$teal</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$teal</span>;
   }
 
   <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.link--stretched</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">h2</span> {
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$red</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$red</span>;
   }
 
   <span class="hljs-selector-class">.card__day</span> {
     <span class="hljs-attribute">display</span>: block;
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
-      <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+      <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;3xl&#x27;</span>);
     }
   }
 
   <span class="hljs-selector-class">.card__date-separator</span> {
     <span class="hljs-attribute">display</span>: block;
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
-    <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;xl&#x27;</span>);
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> <span class="hljs-number">0</span>;
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: (map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>) + <span class="hljs-number">5rem</span>)) {
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-5xl</span>;
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: (map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>) + <span class="hljs-number">5rem</span>)) {
+    <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-5xl</span>;
 
     <span class="hljs-selector-class">.card__date</span> {
-      <span class="hljs-attribute">left</span>: -<span class="hljs-variable">$spacing-5xl</span>;
-      <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-5xl</span>;
+      <span class="hljs-attribute">left</span>: -(spacing.<span class="hljs-variable">$spacing-5xl</span>);
+      <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-5xl</span>;
     }
 
     <span class="hljs-selector-class">.card__day</span> {
-      <span class="hljs-keyword">@include</span> typescale(<span class="hljs-string">&#x27;5xl&#x27;</span>);
+      <span class="hljs-keyword">@include</span> typography.typescale(<span class="hljs-string">&#x27;5xl&#x27;</span>);
     }
   }
 }
@@ -1011,8 +1020,8 @@
 
   &amp; <span class="hljs-selector-class">.card__content</span> {
     <span class="hljs-attribute">max-width</span>: <span class="hljs-number">80%</span>;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-2xl</span> <span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xl</span> spacing.<span class="hljs-variable">$spacing-xl</span> spacing.<span class="hljs-variable">$spacing-2xl</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
   }
 
   &amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,&amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.card__content</span> <span class="hljs-selector-tag">p</span> {
@@ -1021,7 +1030,7 @@
 
   &amp; <span class="hljs-selector-tag">img</span> {
     <span class="hljs-attribute">float</span>: right;
-    <span class="hljs-attribute">margin-top</span>: -<span class="hljs-variable">$spacing-xl</span>;
+    <span class="hljs-attribute">margin-top</span>: -(spacing.<span class="hljs-variable">$spacing-xl</span>);
     <span class="hljs-attribute">max-height</span>: <span class="hljs-number">100px</span>;
     <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">5px</span> rgba(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.5</span>);
     <span class="hljs-attribute">background</span>: <span class="hljs-number">#FFF</span>;
@@ -1030,7 +1039,7 @@
 }
 
 <span class="hljs-selector-class">.card__video</span><span class="hljs-selector-class">.card__figure</span> {
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
     <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50%</span>;
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
@@ -1038,7 +1047,7 @@
   &amp; <span class="hljs-selector-tag">iframe</span> {
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
       <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">50%</span>;
       <span class="hljs-attribute">position</span>: absolute;
     }
@@ -1050,35 +1059,35 @@
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">overflow</span>: hidden;
     <span class="hljs-attribute">flex-direction</span>:  row;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
     <span class="hljs-attribute">background-size</span>: cover<span class="hljs-meta">!important</span>;
     <span class="hljs-attribute">background-position</span>: center center;
     <span class="hljs-attribute">background-repeat</span>: no-repeat;
     <span class="hljs-attribute">border-left</span>: none;
-    <span class="hljs-attribute">border</span>: <span class="hljs-variable">$spacing-4xs</span> solid <span class="hljs-variable">$teal</span>;
+    <span class="hljs-attribute">border</span>: spacing.<span class="hljs-variable">$spacing-4xs</span> solid colours.<span class="hljs-variable">$teal</span>;
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
       <span class="hljs-attribute">background-image</span>: none<span class="hljs-meta">!important</span>;
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$grey-50-pc</span><span class="hljs-meta">!important</span>;
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span><span class="hljs-meta">!important</span>;
     }
 
     <span class="hljs-selector-class">.card__content</span> {
       <span class="hljs-attribute">max-width</span>: <span class="hljs-number">25rem</span>;
       <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
       <span class="hljs-attribute">background</span>: rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0.9</span>);
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xl</span> <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-xl</span>;
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xl</span> spacing.<span class="hljs-variable">$spacing-xl</span> spacing.<span class="hljs-variable">$spacing-xs</span> spacing.<span class="hljs-variable">$spacing-xl</span>;
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
-        <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$spacing-2xl</span>;
-        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-2xl</span>;
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;mobile-wide&#x27;</span>)) {
+        <span class="hljs-attribute">margin-top</span>: spacing.<span class="hljs-variable">$spacing-2xl</span>;
+        <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-2xl</span>;
       }
 
       &gt; <span class="hljs-selector-class">.title</span> {
-        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$teal</span>;
+        <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$teal</span>;
       }
 
       &gt; <span class="hljs-selector-pseudo">:last-child</span> {
-        <span class="hljs-attribute">margin-top</span>: <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">margin-top</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
       }
     }
 }
@@ -1110,7 +1119,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">11.1 KB</span>
+                    <span class="Meta-value">12.1 KB</span>
                 </li>
             </ul>
         </div>

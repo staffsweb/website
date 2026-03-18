@@ -1,12 +1,17 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 .side-nav {
-    @media (min-width: map-get($breakpoint-stages, 'tablet')) {
-        margin-left: $spacing-md;
+    @media (min-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {
+        margin-left: spacing.$spacing-md;
     }
 
     &__list {
-        border-bottom: 2px solid $red;
-        border-top: 2px solid $red;
-        padding: $spacing-lg 0;
+        border-bottom: 2px solid colours.$red;
+        border-top: 2px solid colours.$red;
+        padding: spacing.$spacing-lg 0;
     }
 
     &__current {
@@ -16,7 +21,7 @@
     & .title {
         margin-bottom: 0;
         padding-bottom: 0;
-        line-height: $spacing-lg;
+        line-height: spacing.$spacing-lg;
     }
 
     .title__highlight {
@@ -27,6 +32,6 @@
     }
 
     & h2 {
-        margin-bottom: $spacing-xs;
+        margin-bottom: spacing.$spacing-xs;
     }
 }

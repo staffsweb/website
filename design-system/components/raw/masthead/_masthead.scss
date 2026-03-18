@@ -1,18 +1,24 @@
+@use "sass:map";
+@use "../../assets/styles/__vars/breakpoints";
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/layout";
+@use "../../assets/styles/__vars/spacing";
+
 .masthead {
-  $overlay-breakpoint: $third-breakpoint + 10rem;
-  background-color: $dark-blue;//$offwhite;
+  $overlay-breakpoint: breakpoints.$third-breakpoint + 10rem;
+  background-color: colours.$dark-blue;//$offwhite;
   box-sizing: border-box;
   position: relative;
 
   &--burgundy {
-    background-color: $burgundy;
+    background-color: colours.$burgundy;
   }
 
   &--teal {
-    background-color: $teal!important;
+    background-color: colours.$teal!important;
     background-image: url("../images/masthead-knot-lavender.svg");
     background-size: contain;
-    @media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'tablet-wide')) {
       background-size: cover;
       background-position: calc(50% + 25rem) center;
     }
@@ -21,16 +27,16 @@
   }
 
   &--grey {
-    background-color: $grey-50-pc;
+    background-color: colours.$grey-50-pc;
 
     & .title {
-      color: $dark-blue!important;
+      color: colours.$dark-blue!important;
     }
   }
 
-  @media (min-width: map_get($breakpoint-stages, 'tablet-wide')) {
+  @media (min-width: map.get(breakpoints.$breakpoint-stages, 'tablet-wide')) {
     &__img--with-overlap {
-      margin-bottom: -$spacing-3xl;
+      margin-bottom: -(spacing.$spacing-3xl);
     }
   }
 
@@ -43,7 +49,7 @@
     align-self: flex-end;
     align-content: flex-end;
     width: 100%;
-    padding: $spacing-lg 0 0;
+    padding: spacing.$spacing-lg 0 0;
     box-sizing: border-box;
     background: black;
     color: white;
@@ -52,11 +58,11 @@
     @media (min-width: $overlay-breakpoint) {
       background: none;
       padding: 0;
-      margin-bottom: $spacing-lg;
+      margin-bottom: spacing.$spacing-lg;
 
       &Inner {
-        margin: 0 -#{$grid-gutter};
-        padding: $spacing-lg $grid-gutter 0;
+        margin: 0 -#{layout.$grid-gutter};
+        padding: spacing.$spacing-lg layout.$grid-gutter 0;
         background: rgba(black, 0.75);
         @supports (backdrop-filter: blur(1em)) {
           background: rgba(black, 0.6);
@@ -78,11 +84,11 @@
   }
 
   &--shallow {
-    background: $grey-50-pc url('../images/masthead-shallow-bg.svg') no-repeat;
+    background: colours.$grey-50-pc url('../images/masthead-shallow-bg.svg') no-repeat;
     background-size: cover;
 
     & .title {
-      color: $dark-blue;
+      color: colours.$dark-blue;
     }
 
     .masthead__inner {
@@ -92,11 +98,11 @@
   }
 
   &--course {
-    background: $dark-blue;
+    background: colours.$dark-blue;
     color: white;
 
     & h1, & h2, & h3, & h4, & h5, & h6 {
-      color: $neon;
+      color: colours.$neon;
       padding-left: 0;
     }
 
@@ -110,26 +116,26 @@
   }
 
   &__ucas-code strong {
-    color: $neon;
-    margin-right: $spacing-md;
+    color: colours.$neon;
+    margin-right: spacing.$spacing-md;
   }
 
   &__course-info {
     display: flex;
   }
 
-  @media (max-width: map_get($breakpoint-stages, 'tablet')) {
+  @media (max-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {
     &__course-info {
       flex-direction:column-reverse;
     }
 
     &__course-hero {
-      margin-left: -$spacing-xl;
-      margin-right: -$spacing-xl;
+      margin-left: -(spacing.$spacing-xl);
+      margin-right: -(spacing.$spacing-xl);
     }
   }
 
-  @media (min-width: map_get($breakpoint-stages, 'tablet')) {
+  @media (min-width: map.get(breakpoints.$breakpoint-stages, 'tablet')) {
     &__course-info {  
       & > div {
         width: 50%;
@@ -141,13 +147,13 @@
         max-width: none;
         z-index: -1;
 
-        @media(max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+        @media(max-width: map.get(breakpoints.$breakpoint-stages, 'tablet-wide')) {
           left: 40%;
         }
-        @media(max-width: map_get($breakpoint-stages, 'desktop')) {
+        @media(max-width: map.get(breakpoints.$breakpoint-stages, 'desktop')) {
           left: 35%;
         }
-        @media(max-width: map_get($breakpoint-stages, 'desktop-wide')) {
+        @media(max-width: map.get(breakpoints.$breakpoint-stages, 'desktop-wide')) {
           left: 25%;
         }
 
@@ -159,11 +165,11 @@
   }
 
   &__course-options {
-    background:  $dark-blue;
-    padding-right: $spacing-xl;
+    background:  colours.$dark-blue;
+    padding-right: spacing.$spacing-xl;
 
     & h2, & h3, & h4, & h5, & h6 {
-      margin: $spacing-xs 0 $spacing-2xs 0;
+      margin: spacing.$spacing-xs 0 spacing.$spacing-2xs 0;
     }
 
     & select.one-item, & select.one-item[disabled] {
@@ -175,10 +181,10 @@
     }
   }
 
-  @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+  @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
     &--profile {
       .masthead__inner {
-        padding: $spacing-6xl 0 $spacing-xl;
+        padding: spacing.$spacing-6xl 0 spacing.$spacing-xl;
         figure {
           margin: 2rem 0 2rem;
         }
@@ -190,7 +196,7 @@
     display: flex;
     flex-wrap: wrap;
     min-height: 35vmin;
-    padding: 12rem 0 $spacing-xl;
+    padding: 12rem 0 spacing.$spacing-xl;
     align-self: flex-end;
     align-content: flex-end;
     width: 100%;
@@ -229,35 +235,35 @@
   // CG: For home page masthead
   &-home {
     position: relative;
-    background: $red url('../images/bg-knot-whole-blue.svg') center center no-repeat;
+    background: colours.$red url('../images/bg-knot-whole-blue.svg') center center no-repeat;
     background-size: 120%;
     background-repeat: no-repeat;
     min-height: 400px;
-    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
       min-height: 500px;
     }
 
     &--dark-blue-with-red {
-      background: $dark-blue url('../images/bg-knot-whole-red.svg') center center no-repeat;
+      background: colours.$dark-blue url('../images/bg-knot-whole-red.svg') center center no-repeat;
       background-size: 120%;
       background-repeat: no-repeat;
     }
 
     &--dark-blue-with-neon {
-      background: $dark-blue url('../images/bg-knot-whole-neon.svg') center center no-repeat;
+      background: colours.$dark-blue url('../images/bg-knot-whole-neon.svg') center center no-repeat;
       background-size: 120%;
       background-repeat: no-repeat;
     }
 
     &--neon-with-dark-blue {
-      background: $neon url('../images/bg-knot-whole-blue.svg') center center no-repeat;
+      background: colours.$neon url('../images/bg-knot-whole-blue.svg') center center no-repeat;
       background-size: 120%;
       background-repeat: no-repeat;
     }
 
     &__hero {
-      padding-top: $spacing-lg;
-      padding-bottom: $spacing-lg;
+      padding-top: spacing.$spacing-lg;
+      padding-bottom: spacing.$spacing-lg;
       overflow: hidden;
 
       & > img {
@@ -266,7 +272,7 @@
       }
     }
 
-    @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
       .masthead-home__img {
         display: none;
       }
@@ -274,7 +280,7 @@
         display: block;
       }
     }
-    @media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+    @media (min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
       .masthead-home__img {
         display: block;
       }
@@ -285,7 +291,7 @@
 
     &__title.title {
       max-width: 30rem!important;
-      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
         & h1 {
           font-size: 1.75rem;
         }
@@ -298,25 +304,25 @@
 
     &__subtitle {
       max-width: 50rem!important;
-      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+      @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
         margin-top: 10rem;
       }
-      margin-bottom: $spacing-xl;
+      margin-bottom: spacing.$spacing-xl;
     }
 
     &__story {
       position: absolute;
-      @media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
-        top: $spacing-md;
+      @media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
+        top: spacing.$spacing-md;
       }
       z-index: 3;
-      bottom: $spacing-md;
-      margin-right: $spacing-lg;
+      bottom: spacing.$spacing-md;
+      margin-right: spacing.$spacing-lg;
     }
   }
 
   &__award-selector, &__study-option-selector {
-    margin-bottom: $spacing-lg;
+    margin-bottom: spacing.$spacing-lg;
     width: auto;
     max-width: 100%;
   }
@@ -324,7 +330,7 @@
 
 .masthead--with-image {
   & .masthead__inner {
-    padding: 2rem 0 $spacing-xl;
+    padding: 2rem 0 spacing.$spacing-xl;
   }
 
   & h1 {

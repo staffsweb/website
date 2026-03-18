@@ -239,15 +239,22 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.slab</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:map&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/functions&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.slab</span> {
   <span class="hljs-attribute">position</span>: relative;
-  <span class="hljs-variable">$border-color</span>: <span class="hljs-variable">$grey--light</span>;
-  <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-4xl</span> <span class="hljs-number">0</span>;
+  <span class="hljs-variable">$border-color</span>: colours.<span class="hljs-variable">$grey--light</span>;
+  <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-4xl</span> <span class="hljs-number">0</span>;
   <span class="hljs-attribute">background-size</span>: cover;
   <span class="hljs-attribute">background-repeat</span>: no-repeat;
 
   &amp;__header {
-    <span class="hljs-attribute">margin-top</span>: -#{<span class="hljs-variable">$spacing-4xl</span>};
+    <span class="hljs-attribute">margin-top</span>: -#{spacing.<span class="hljs-variable">$spacing-4xl</span>};
   }
 
   &amp;__bg {
@@ -265,7 +272,7 @@
   }
 
   &amp;__content {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
   }
 
   <span class="hljs-comment">//--</span>
@@ -285,10 +292,10 @@
 
   <span class="hljs-comment">//--</span>
 
-  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in <span class="hljs-variable">$slab-bg-colors</span> {
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$name</span>, <span class="hljs-variable">$value</span> in colours.<span class="hljs-variable">$slab-bg-colors</span> {
     &amp;--bg-#{<span class="hljs-variable">$name</span>} {
       <span class="hljs-attribute">background-color</span>: #{<span class="hljs-variable">$value</span>};
-      <span class="hljs-keyword">@if</span> (choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
+      <span class="hljs-keyword">@if</span> (functions.choose-contrast-color(<span class="hljs-variable">$value</span>) == white) {
         <span class="hljs-attribute">color</span>: white;
         &amp; <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:not</span>(.button), &amp; <span class="hljs-selector-tag">h2</span> {
           <span class="hljs-attribute">color</span>: white;
@@ -302,49 +309,49 @@
     <span class="hljs-attribute">background-position</span>: no-repeat;
 
     <span class="hljs-comment">// CG: Slabs have half padding on mobile devices</span>
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: (map_get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>))) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: (map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>))) {
       &amp; <span class="hljs-selector-class">.slab__content</span> {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-2xl</span>;
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-2xl</span>;
       }
     }
 
     &amp;<span class="hljs-selector-class">.burgundy-on-lavender</span> {
-      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-burgundy.svg&#x27;</span>);
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$lavender</span>;
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-box-knot-burgundy.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$lavender</span>;
 
       &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
-        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$burgundy</span>;
+        <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$burgundy</span>;
         <span class="hljs-attribute">color</span>: white;
       }
     }
 
     &amp;<span class="hljs-selector-class">.dark-blue-on-pale-blue</span> {
-      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-dark-blue.svg&#x27;</span>);
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$pale-blue</span>;
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-box-knot-dark-blue.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$pale-blue</span>;
 
       &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
-        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+        <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
         <span class="hljs-attribute">color</span>: white;
       }
     }
 
     &amp;<span class="hljs-selector-class">.neon-on-dark-blue</span> {
-      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-neon.svg&#x27;</span>);
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-box-knot-neon.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
 
       &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
-        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$neon-50-pc</span>;
-        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+        <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$neon-50-pc</span>;
+        <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
       }
     }
 
     &amp;<span class="hljs-selector-class">.lavender-on-dark-blue</span> {
-      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory}/bg-box-knot-lavender.svg&#x27;</span>);
-      <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$dark-blue</span>;
+      <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory}/bg-box-knot-lavender.svg&#x27;</span>);
+      <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
 
       &amp; <span class="hljs-selector-class">.slab__content</span>, &amp; <span class="hljs-selector-class">.slab__title</span> {
-        <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$lavender</span>;
-        <span class="hljs-attribute">color</span>: <span class="hljs-variable">$dark-blue</span>;
+        <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$lavender</span>;
+        <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
       }
     }
   }
@@ -418,7 +425,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">5.4 KB</span>
+                    <span class="Meta-value">5.8 KB</span>
                 </li>
             </ul>
         </div>

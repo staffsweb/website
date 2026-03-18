@@ -956,7 +956,13 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre>
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/config&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/layout&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/typography&quot;</span>;
+
+
 <span class="hljs-selector-class">.megaNav</span> {
   <span class="hljs-variable">$border-color</span>: <span class="hljs-number">#bebfc1</span>;
   <span class="hljs-variable">$row-padding-y</span>: <span class="hljs-number">0.75em</span>;
@@ -980,7 +986,7 @@
     <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">0</span>);
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
     <span class="hljs-attribute">top</span>: auto;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">transform</span>: none;
@@ -992,13 +998,13 @@
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5%</span>;
   }
 
-  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: calc(#{<span class="hljs-variable">$megaNav-full-breakpoint</span>} + 10rem)) {
+  <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: calc(#{layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>} + 10rem)) {
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.1em</span>;
   }
 
   <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">ul</span> {
     <span class="hljs-keyword">@at-root</span> .no-js &amp; {
-      <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$spacing-sm</span>;
+      <span class="hljs-attribute">padding-left</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
     }
   }
 
@@ -1009,12 +1015,12 @@
       <span class="hljs-attribute">position</span>: relative;
       <span class="hljs-attribute">display</span>: block;
       <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$row-padding-y</span> <span class="hljs-number">2em</span> <span class="hljs-variable">$row-padding-y</span> <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neutral--primary</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
       <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
       <span class="hljs-comment">//border-bottom: 1px solid $border-color;</span>
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-variable">$spacing-lg</span> <span class="hljs-variable">$spacing-sm</span>;
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span> spacing.<span class="hljs-variable">$spacing-lg</span> spacing.<span class="hljs-variable">$spacing-sm</span>;
       }
 
       &amp;<span class="hljs-selector-pseudo">:hover</span> {
@@ -1039,14 +1045,14 @@
         <span class="hljs-attribute">top</span>: <span class="hljs-number">0.4em</span>;
         <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
         <span class="hljs-attribute">height</span>: <span class="hljs-number">2em</span>;
-        <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
+        <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
         <span class="hljs-attribute">background-size</span>: <span class="hljs-number">0.5em</span>;
       }
     }
   }
   
   <span class="hljs-selector-class">.has-simple-children</span> {
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">position</span>: relative;
 
       <span class="hljs-selector-class">.megaNav__levelFooter</span> {
@@ -1062,7 +1068,7 @@
       }
 
       <span class="hljs-selector-class">.megaNav__secondLevel-list</span> {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
         <span class="hljs-attribute">min-height</span>: auto;
         <span class="hljs-attribute">width</span>: auto;
         <span class="hljs-attribute">min-width</span>: <span class="hljs-number">17.5em</span>;
@@ -1081,7 +1087,7 @@
       <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">0</span>);
       <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">100ms</span>, visibility <span class="hljs-number">100ms</span>;
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
         <span class="hljs-attribute">transition</span>: none;
         <span class="hljs-attribute">transform</span>: translateY(<span class="hljs-number">0</span>);
         <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
@@ -1090,9 +1096,9 @@
     }
 
     &gt; <span class="hljs-selector-class">.megaNav__secondLevel</span> {
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
         <span class="hljs-attribute">display</span>: flex;
-        <span class="hljs-attribute">margin-top</span>: -<span class="hljs-variable">$spacing-xs</span>;
+        <span class="hljs-attribute">margin-top</span>: -(spacing.<span class="hljs-variable">$spacing-xs</span>);
       }
     }
   }
@@ -1101,10 +1107,10 @@
   &amp;__controls {
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
     <span class="hljs-attribute">overflow</span>: hidden;
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">display</span>: none;
     }
   }
@@ -1114,10 +1120,10 @@
     <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">box-sizing</span>: border-box;
     <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$spacing-4xl</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">width</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">height</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
     <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">0.1em</span>; <span class="hljs-comment">// yeah this is a bit of a magic number to get it to align with the closeLevel arrows</span>
-    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-x-primary.svg&#x27;</span>) no-repeat center center;
+    <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-x-primary.svg&#x27;</span>) no-repeat center center;
     <span class="hljs-attribute">background-size</span>: <span class="hljs-number">1rem</span>;
     <span class="hljs-attribute">cursor</span>: pointer;
   }
@@ -1126,7 +1132,7 @@
     <span class="hljs-attribute">position</span>: absolute;
     <span class="hljs-comment">//opacity: 0;</span>
     <span class="hljs-attribute">visibility</span>: hidden;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--light</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$greyblue--light</span>;
     <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
@@ -1135,13 +1141,13 @@
     <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">12rem</span>; <span class="hljs-comment">// this needs to be stupidly large, because of the way iOS handles 100vh, so items aren&#x27;t covered by the bottom OS UI when expanded.</span>
     <span class="hljs-attribute">overflow</span>: hidden;
     <span class="hljs-attribute">transform</span>: translateX(<span class="hljs-number">100%</span>);
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">padding-left</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
     <span class="hljs-attribute">box-sizing</span>: border-box;
     <span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;
     <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">100ms</span>, visibility <span class="hljs-number">100ms</span>;
 
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">min-height</span>: auto;
       <span class="hljs-attribute">transform</span>: translateY(-<span class="hljs-number">200%</span>);
       <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
@@ -1151,14 +1157,14 @@
   }
 
   &amp;__levelHeader {
-    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-lg</span>;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-lg</span>);
+    <span class="hljs-attribute">padding-left</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
     <span class="hljs-attribute">background</span>: white;
-    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neutral--primary</span>;
+    <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
     <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$border-color</span>;
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">display</span>: none;
     }
   }
@@ -1169,14 +1175,14 @@
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
     <span class="hljs-attribute">background</span>: none;
     <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">@include</span> line-height(<span class="hljs-string">&#x27;spaced&#x27;</span>);
+    <span class="hljs-keyword">@include</span> typography.line-height(<span class="hljs-string">&#x27;spaced&#x27;</span>);
     <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$row-padding-y</span> <span class="hljs-number">2em</span>;
     <span class="hljs-attribute">box-sizing</span>: border-box;
     <span class="hljs-attribute">cursor</span>: pointer;
     <span class="hljs-attribute">text-align</span>: center;
 
     &amp;<span class="hljs-selector-pseudo">:active</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$primary</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$primary</span>;
     }
 
     &amp;:before {
@@ -1187,7 +1193,7 @@
       <span class="hljs-attribute">top</span>: <span class="hljs-variable">$row-padding-y</span>;
       <span class="hljs-attribute">width</span>: <span class="hljs-number">1em</span>;
       <span class="hljs-attribute">height</span>: <span class="hljs-number">2em</span>;
-      <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
+      <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
       <span class="hljs-attribute">background-size</span>: <span class="hljs-number">0.5em</span>;
       <span class="hljs-attribute">transform</span>: rotate(<span class="hljs-number">180deg</span>);
     }
@@ -1202,45 +1208,45 @@
       <span class="hljs-attribute">text-align</span>: left;
     }
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">display</span>: none;
     }
   }
 
   &amp;__levelFooter {
     <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-variable">$spacing-lg</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span>;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-variable">$spacing-lg</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$neutral--light</span>;
+    <span class="hljs-attribute">margin-left</span>: -(spacing.<span class="hljs-variable">$spacing-lg</span>);
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
+    <span class="hljs-attribute">padding-left</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$neutral--light</span>;
     <span class="hljs-attribute">color</span>: white;
     <span class="hljs-attribute">z-index</span>: <span class="hljs-number">0</span>;
 
     <span class="hljs-selector-tag">form</span> {
       <span class="hljs-attribute">display</span>: flex;
       <span class="hljs-attribute">flex-wrap</span>: wrap;
-      <span class="hljs-attribute">margin-left</span>: -#{<span class="hljs-variable">$grid-gutter-small</span>};
-      <span class="hljs-attribute">margin-right</span>: -#{<span class="hljs-variable">$grid-gutter-small</span>};
+      <span class="hljs-attribute">margin-left</span>: -#{layout.<span class="hljs-variable">$grid-gutter-small</span>};
+      <span class="hljs-attribute">margin-right</span>: -#{layout.<span class="hljs-variable">$grid-gutter-small</span>};
 
       <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=text]</span>, <span class="hljs-selector-class">.button</span> {
         <span class="hljs-attribute">width</span>: auto;
-        <span class="hljs-attribute">margin-left</span>: #{<span class="hljs-variable">$grid-gutter-small</span>};
-        <span class="hljs-attribute">margin-right</span>: #{<span class="hljs-variable">$grid-gutter-small</span>};
+        <span class="hljs-attribute">margin-left</span>: #{layout.<span class="hljs-variable">$grid-gutter-small</span>};
+        <span class="hljs-attribute">margin-right</span>: #{layout.<span class="hljs-variable">$grid-gutter-small</span>};
         <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">15em</span>;
-        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-2xs</span>;
+        <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span>;
         <span class="hljs-attribute">box-sizing</span>: border-box;
       }
     }
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
       <span class="hljs-attribute">text-align</span>: center;
       <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span> spacing.<span class="hljs-variable">$spacing-sm</span> <span class="hljs-number">0</span>;
       <span class="hljs-attribute">z-index</span>: <span class="hljs-number">2</span>;
 
       <span class="hljs-selector-tag">p</span>, <span class="hljs-selector-tag">form</span> {
-        <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-sm</span> spacing.<span class="hljs-variable">$spacing-md</span>;
         <span class="hljs-attribute">display</span>: inline-block;
       }
     }
@@ -1250,16 +1256,16 @@
     <span class="hljs-attribute">position</span>: relative;
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--light</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-4xl</span> <span class="hljs-variable">$spacing-lg</span>;
-    <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$greyblue--light</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-4xl</span> spacing.<span class="hljs-variable">$spacing-lg</span>;
+    <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
     <span class="hljs-attribute">border-left</span>: <span class="hljs-number">1px</span> solid <span class="hljs-variable">$border-color</span>;
     <span class="hljs-attribute">overflow</span>: hidden;
     <span class="hljs-attribute">overflow-y</span>: auto;
     <span class="hljs-attribute">overflow</span>-scrolling: touch;
     <span class="hljs-attribute">box-sizing</span>: border-box;
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">position</span>: static;
       <span class="hljs-attribute">height</span>: auto;
       <span class="hljs-attribute">background</span>: none;
@@ -1274,7 +1280,7 @@
         <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
       }
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
         &amp;<span class="hljs-selector-class">.has-children</span> {
           &gt; <span class="hljs-selector-tag">a</span> {
             &amp;:after {
@@ -1292,14 +1298,14 @@
 
         &amp;<span class="hljs-selector-class">.is-active</span> {
           &gt; <span class="hljs-selector-tag">a</span> {
-            <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span> <span class="hljs-variable">$primary</span>;
+            <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-2xs</span> <span class="hljs-number">0</span> colours.<span class="hljs-variable">$primary</span>;
           }
         }
       }
     }
 
     &amp;-list {
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
         <span class="hljs-attribute">display</span>: flex;
         <span class="hljs-attribute">justify-content</span>: flex-end;
         <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> auto;
@@ -1309,8 +1315,8 @@
     <span class="hljs-selector-class">.megaNav__topLevel-link</span> {
       <span class="hljs-comment">// increase specificity to override &gt; li &gt; a&#x27; behaviour</span>
 
-      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-sm</span> <span class="hljs-variable">$spacing-lg</span>;
+      <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-sm</span> spacing.<span class="hljs-variable">$spacing-lg</span>;
         <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
       }
     }
@@ -1324,7 +1330,7 @@
     <span class="hljs-comment">//display: none;</span>
     <span class="hljs-comment">//padding-top: $spacing-4xl;</span>
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">display</span>: flex;
       <span class="hljs-attribute">flex-wrap</span>: wrap;
       <span class="hljs-attribute">top</span>: <span class="hljs-number">92%</span>;
@@ -1353,7 +1359,7 @@
       &amp;-list {
         <span class="hljs-attribute">position</span>: relative;
         <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-md</span> <span class="hljs-variable">$spacing-md</span>;
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xl</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-md</span> spacing.<span class="hljs-variable">$spacing-md</span>;
         <span class="hljs-attribute">min-height</span>: <span class="hljs-number">70vh</span>;
         <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>; <span class="hljs-comment">// yeah I really don&#x27;t like this either (pt.1), please do feel free to think of a better way of doing this.</span>
         <span class="hljs-attribute">box-sizing</span>: border-box;
@@ -1367,7 +1373,7 @@
           <span class="hljs-attribute">bottom</span>: <span class="hljs-number">1rem</span>;
           <span class="hljs-attribute">display</span>: block;
           <span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
-          <span class="hljs-attribute">background</span>: <span class="hljs-variable">$red</span>;
+          <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$red</span>;
         }
       }
     }
@@ -1389,7 +1395,7 @@
           <span class="hljs-attribute">top</span>: <span class="hljs-number">0.4em</span>;
           <span class="hljs-attribute">width</span>: <span class="hljs-number">2em</span>;
           <span class="hljs-attribute">height</span>: <span class="hljs-number">2em</span>;
-          <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
+          <span class="hljs-attribute">background</span>: url(<span class="hljs-string">&#x27;#{config.$image-theme-directory-icon}/icon-gt-primary.svg&#x27;</span>) no-repeat center center;
           <span class="hljs-attribute">background-size</span>: <span class="hljs-number">0.5em</span>;
         }
       }
@@ -1401,21 +1407,21 @@
   &amp;__thirdLevel, &amp;__fourthLevel {
     <span class="hljs-comment">//display: none;</span>
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.85em</span>;
       <span class="hljs-attribute">left</span>: <span class="hljs-number">100%</span>;
       <span class="hljs-attribute">right</span>: -<span class="hljs-number">300%</span>; <span class="hljs-comment">// yeah I really don&#x27;t like this either (pt.2), please do feel free to think of a better way of doing this.</span>
       <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
       <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
       <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
-      <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span>;
+      <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
       <span class="hljs-attribute">max-height</span>: <span class="hljs-number">100%</span>;
       <span class="hljs-attribute">overflow</span>: auto <span class="hljs-meta">!important</span>; <span class="hljs-comment">// sorry, this was lazy</span>
       <span class="hljs-attribute">box-sizing</span>: border-box;
 
       &amp;-list {
         <span class="hljs-attribute">columns</span>: <span class="hljs-number">2</span>;
-        <span class="hljs-attribute">column-gap</span>: <span class="hljs-variable">$spacing-xl</span>;
+        <span class="hljs-attribute">column-gap</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
         &amp;<span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>) {
           <span class="hljs-comment">//padding-top: $spacing-5xl;</span>
         }
@@ -1435,7 +1441,7 @@
         <span class="hljs-comment">// increase specificity to override &gt; li &gt; a&#x27; behaviour</span>
         <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
         <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
-        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-xs</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-xs</span>;
       }
     }
 
@@ -1456,7 +1462,7 @@
       <span class="hljs-selector-class">.megaNav__thirdLevel</span> {
         <span class="hljs-comment">//background: #f7f8f9;</span>
 
-        <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+        <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
           <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
           <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
 
@@ -1468,7 +1474,7 @@
             <span class="hljs-attribute">bottom</span>: <span class="hljs-number">1rem</span>;
             <span class="hljs-attribute">display</span>: block;
             <span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
-            <span class="hljs-attribute">background</span>: <span class="hljs-variable">$red</span>;
+            <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$red</span>;
           }
 
           <span class="hljs-comment">//box-shadow: 0 1em 1em rgba(black, 0.15);</span>
@@ -1498,7 +1504,7 @@
 
           &amp;-list {
             <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
-            <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xl</span> <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-md</span> <span class="hljs-variable">$spacing-md</span>;
+            <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xl</span> <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-md</span> spacing.<span class="hljs-variable">$spacing-md</span>;
             <span class="hljs-attribute">min-height</span>: <span class="hljs-number">60vh</span>;
             <span class="hljs-attribute">box-sizing</span>: border-box;
             <span class="hljs-attribute">columns</span>: unset;
@@ -1515,7 +1521,7 @@
               <span class="hljs-attribute">bottom</span>: <span class="hljs-number">1rem</span>;
               <span class="hljs-attribute">display</span>: block;
               <span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
-              <span class="hljs-attribute">background</span>: <span class="hljs-variable">$red</span>;
+              <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$red</span>;
             }
           }
         }
@@ -1529,7 +1535,7 @@
 
 
         <span class="hljs-selector-class">.megaNav__thirdLevel-link</span> {
-          <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+          <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
             <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.75rem</span> <span class="hljs-number">1.5rem</span> <span class="hljs-number">0.75rem</span>;
           }
           <span class="hljs-comment">//border-bottom: 1px solid #bebfc1;</span>
@@ -1543,7 +1549,7 @@
   &amp;__thirdLevel {
     <span class="hljs-comment">//display: none;</span>
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-comment">//padding-top: 6.7rem;</span>
     }
 
@@ -1552,7 +1558,7 @@
   &amp;__fourthLevel {
     <span class="hljs-comment">//display: none;</span>
 
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">left</span>: <span class="hljs-number">100%</span>;
       <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
       <span class="hljs-attribute">width</span>: <span class="hljs-number">200%</span>;
@@ -1593,7 +1599,7 @@
       <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
       <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5rem</span>;
     }
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$megaNav-full-breakpoint</span>) {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: layout.<span class="hljs-variable">$megaNav-full-breakpoint</span>) {
       <span class="hljs-attribute">display</span>: none;
     }
   }
@@ -1623,7 +1629,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">14.2 KB</span>
+                    <span class="Meta-value">15 KB</span>
                 </li>
             </ul>
         </div>

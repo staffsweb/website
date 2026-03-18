@@ -1,3 +1,6 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 hr {
   position: relative;
   // see base-elements in vars/_typography
@@ -5,27 +8,27 @@ hr {
 
 .hr--primary {
   border-top-width: 2px;
-  border-color: $grey-50-pc;
+  border-color: colours.$grey-50-pc;
 }
 
 .hr--burgundy {
   border-top-width: 2px;
-  border-color: $burgundy;
+  border-color: colours.$burgundy;
 }
 
 .hr--teal {
   border-top-width: 2px;
-  border-color: $teal;
+  border-color: colours.$teal;
 }
 
 // Spacing
 
 .hr--compact {
-  margin: $spacing-xl auto;
+  margin: spacing.$spacing-xl auto;
 }
 
 .hr--spaced {
-  margin: $spacing-5xl auto;
+  margin: spacing.$spacing-5xl auto;
 }
 
 .hr--invisible {

@@ -227,9 +227,11 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.sitewide-message</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.sitewide-message</span> {
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#FFD91C</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-xs</span> <span class="hljs-variable">$spacing-sm</span>;
+    <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-xs</span> spacing.<span class="hljs-variable">$spacing-sm</span>;
 
     &amp;__text {
         <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
@@ -251,7 +253,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">164 Bytes</span>
+                    <span class="Meta-value">224 Bytes</span>
                 </li>
             </ul>
         </div>

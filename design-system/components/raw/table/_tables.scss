@@ -1,3 +1,6 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
 table {
   // there are some base styles set on this element in the 'base-elements' mixin,
   // in __vars/typography
@@ -7,9 +10,9 @@ table {
 }
 
 $module-table-header-colours: (
-  'pale-blue': $pale-blue,
-  'lavender' : $lavender,
-  'neon' : $neon-50-pc
+  'pale-blue': colours.$pale-blue,
+  'lavender' : colours.$lavender,
+  'neon' : colours.$neon-50-pc
 );
 
 .table--modules {
@@ -18,11 +21,11 @@ $module-table-header-colours: (
       @each $name, $value in $module-table-header-colours {
         &.th--#{$name} {
           background: $value;
-          color: $dark-blue;
+          color: colours.$dark-blue;
         }
       }
 
-      color: $dark-blue;
+      color: colours.$dark-blue;
     }
   }
 
@@ -51,7 +54,7 @@ $module-table-header-colours: (
   }
 
   .button {
-    margin: $spacing-sm 0;
+    margin: spacing.$spacing-sm 0;
     white-space: pre; // this is a bit strong, but we really want to avoid this wrapping
   }
 
@@ -62,7 +65,7 @@ $module-table-header-colours: (
 
     tr {
       width: 100%;
-      padding: $spacing-sm 0;
+      padding: spacing.$spacing-sm 0;
       display: flex;
       justify-content: flex-start;
       align-items: center;

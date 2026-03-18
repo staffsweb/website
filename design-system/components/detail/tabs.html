@@ -292,16 +292,19 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.tabs</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.tabs</span> {
   <span class="hljs-variable">$tabs-inline-breakpoint</span>: <span class="hljs-number">65rem</span>;
 
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xl</span>;
-  <span class="hljs-attribute">border-bottom</span>: <span class="hljs-variable">$spacing-2xs</span> solid <span class="hljs-variable">$neutral--primary</span>;
-  <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-variable">$spacing-sm</span>;
+  <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xl</span>;
+  <span class="hljs-attribute">border-bottom</span>: spacing.<span class="hljs-variable">$spacing-2xs</span> solid colours.<span class="hljs-variable">$neutral--primary</span>;
+  <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-sm</span>;
 
   &amp;__nav {
     <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> -<span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">3px</span> solid <span class="hljs-variable">$neutral--primary</span>;
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">3px</span> solid colours.<span class="hljs-variable">$neutral--primary</span>;
     <span class="hljs-attribute">text-align</span>: center;
 
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$tabs-inline-breakpoint</span>) {
@@ -328,7 +331,7 @@
     <span class="hljs-attribute">display</span>: flex;
     <span class="hljs-attribute">align-content</span>: center;
     <span class="hljs-attribute">justify-content</span>: center;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-variable">$spacing-2xs</span> <span class="hljs-variable">$spacing-xs</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> spacing.<span class="hljs-variable">$spacing-2xs</span> spacing.<span class="hljs-variable">$spacing-xs</span>;
 
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$tabs-inline-breakpoint</span>) {
       <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;
@@ -340,10 +343,10 @@
     <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span>;
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.2em</span> <span class="hljs-number">1em</span>;
-    <span class="hljs-attribute">background</span>: <span class="hljs-variable">$greyblue--light</span>;
+    <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$greyblue--light</span>;
 
     &amp;<span class="hljs-selector-pseudo">:hover</span> {
-      <span class="hljs-attribute">color</span>: <span class="hljs-variable">$neutral--primary</span>;
+      <span class="hljs-attribute">color</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
     }
 
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-variable">$tabs-inline-breakpoint</span>) {
@@ -360,13 +363,13 @@
     }
 
     &amp;<span class="hljs-selector-class">.is-selected</span> {
-      <span class="hljs-attribute">background</span>: <span class="hljs-variable">$neutral--primary</span>;
+      <span class="hljs-attribute">background</span>: colours.<span class="hljs-variable">$neutral--primary</span>;
       <span class="hljs-attribute">color</span>: white;
     }
   }
 
   &amp;__section {
-    <span class="hljs-attribute">padding-top</span>: <span class="hljs-variable">$spacing-4xl</span>;
+    <span class="hljs-attribute">padding-top</span>: spacing.<span class="hljs-variable">$spacing-4xl</span>;
   }
 
 }</pre>
@@ -385,7 +388,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.6 KB</span>
+                    <span class="Meta-value">1.8 KB</span>
                 </li>
             </ul>
         </div>

@@ -1,12 +1,17 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/spacing";
+
+@use "sass:color";
+
 
 .page-nav {
-  min-height: #{$spacing-md + $spacing-xl + $spacing-md};
-  margin-bottom: $spacing-4xl;
+  min-height: #{spacing.$spacing-md + spacing.$spacing-xl + spacing.$spacing-md};
+  margin-bottom: spacing.$spacing-4xl;
 
   $background: white;
 
   --background: #{$background};
-  --backgroundRGB: #{red($background)}, #{green($background)}, #{blue($background)};
+  --backgroundRGB: #{color.channel($background, 'red', $space: rgb)}, #{color.channel($background, 'green', $space: rgb)}, #{color.channel($background, 'blue', $space: rgb)};
 
   &__stickyContainer {
     // we'd be doing this with position sticky, but IE,
@@ -68,16 +73,16 @@
     position: relative;
     display: flex;
     margin: 0;
-    padding: $spacing-md 0;
+    padding: spacing.$spacing-md 0;
     white-space: nowrap;
   }
 
   &__item {
-    margin: 0 $spacing-2xs;
+    margin: 0 spacing.$spacing-2xs;
   }
 
   &__link {
-    padding: $spacing-sm;
+    padding: spacing.$spacing-sm;
     border-radius: 0.2em;
     font-weight: 500;
     transition: all 200ms;
@@ -87,7 +92,7 @@
     }
 
     &.is-active {
-      background: $primary;
+      background: colours.$primary;
       color: white;
       text-decoration: none;
       cursor: default;
@@ -95,9 +100,9 @@
   }
 
   &.is-waypoint-reached {
-    $background: $teal;
+    $background: colours.$teal;
     --background: #{$background};
-    --backgroundRGB: #{red($background)}, #{green($background)}, #{blue($background)};
+    --backgroundRGB: #{color.channel($background, 'red', $space: rgb)}, #{color.channel($background, 'green', $space: rgb)}, #{color.channel($background, 'blue', $space: rgb)};
 
     .page-nav__stickyContainer {
       position: fixed;
@@ -133,7 +138,7 @@
 
       &.is-active {
         background: white;
-        color: $text-color;
+        color: colours.$text-color;
       }
     }
   }

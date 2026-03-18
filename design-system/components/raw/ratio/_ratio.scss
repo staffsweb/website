@@ -1,3 +1,5 @@
+@use "../../assets/styles/__vars/spacing";
+
 .ratio {
 	position: relative;
     height: 0;
@@ -29,7 +31,7 @@
 	background-color: #CCC;
 }
 .optanon-video-message {
-	padding: $spacing-md;
+	padding: spacing.$spacing-md;
 	position: absolute;
 	z-index: 100;
 	font-size: 0.75rem;

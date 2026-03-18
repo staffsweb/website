@@ -251,15 +251,20 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.side-nav</span> {
-    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map-get(<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
-        <span class="hljs-attribute">margin-left</span>: <span class="hljs-variable">$spacing-md</span>;
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;sass:map&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/breakpoints&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+<span class="hljs-selector-class">.side-nav</span> {
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet&#x27;</span>)) {
+        <span class="hljs-attribute">margin-left</span>: spacing.<span class="hljs-variable">$spacing-md</span>;
     }
 
     &amp;__list {
-        <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid <span class="hljs-variable">$red</span>;
-        <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> solid <span class="hljs-variable">$red</span>;
-        <span class="hljs-attribute">padding</span>: <span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid colours.<span class="hljs-variable">$red</span>;
+        <span class="hljs-attribute">border-top</span>: <span class="hljs-number">2px</span> solid colours.<span class="hljs-variable">$red</span>;
+        <span class="hljs-attribute">padding</span>: spacing.<span class="hljs-variable">$spacing-lg</span> <span class="hljs-number">0</span>;
     }
 
     &amp;__current {
@@ -269,7 +274,7 @@
     &amp; <span class="hljs-selector-class">.title</span> {
         <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
         <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
-        <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">$spacing-lg</span>;
+        <span class="hljs-attribute">line-height</span>: spacing.<span class="hljs-variable">$spacing-lg</span>;
     }
 
     <span class="hljs-selector-class">.title__highlight</span> {
@@ -280,7 +285,7 @@
     }
 
     &amp; <span class="hljs-selector-tag">h2</span> {
-        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-variable">$spacing-xs</span>;
+        <span class="hljs-attribute">margin-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
     }
 }</pre>
                             </code>
@@ -298,7 +303,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">594 Bytes</span>
+                    <span class="Meta-value">805 Bytes</span>
                 </li>
             </ul>
         </div>

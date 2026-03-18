@@ -1,19 +1,23 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/config";
+@use "../../assets/styles/__vars/spacing";
+
 .feature-link {
   display: block;
   position: relative;
-  --accent-color: #{$primary};
-  margin-bottom: $spacing-xl;
-  color: $dark-blue;
+  --accent-color: #{colours.$primary};
+  margin-bottom: spacing.$spacing-xl;
+  color: colours.$dark-blue;
   text-decoration: none;
 
   &__title {
     display: table;
     position: relative;
-    margin-bottom: $spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
     padding-right: 1em;
     word-break: break-word;
     font-weight: 500;
-    width: calc(100% - #{$spacing-md});
+    width: calc(100% - #{spacing.$spacing-md});
 
     &:after {
       content: '';
@@ -22,8 +26,8 @@
       display: inline-block;
       width: 1em;
       height: 2.5em;
-      margin-left: $spacing-2xs;
-      background: url('#{$image-theme-directory-icon}/icon-gt-red.svg') center center no-repeat;
+      margin-left: spacing.$spacing-2xs;
+      background: url('#{config.$image-theme-directory-icon}/icon-gt-red.svg') center center no-repeat;
       background-size: 40%;
       vertical-align: text-bottom;
       transition: transform 75ms ease-out;
@@ -31,17 +35,17 @@
   }
 
   &__figure {
-    border-bottom: $spacing-2xs solid rgba(0,0,0,0);
-    margin-bottom: $spacing-2xs;
+    border-bottom: spacing.$spacing-2xs solid rgba(0,0,0,0);
+    margin-bottom: spacing.$spacing-2xs;
     transition: all 125ms;
   }
 
   &:hover &__figure {
-    border-bottom: $spacing-2xs solid $red;
+    border-bottom: spacing.$spacing-2xs solid colours.$red;
   }
 
   &__content {
-    padding: $spacing-xs 0;
+    padding: spacing.$spacing-xs 0;
     
     > :first-child {
       margin-top: 0;
@@ -53,12 +57,12 @@
   }
 
   p {
-    color: $dark-blue;
+    color: colours.$dark-blue;
   }
 
   &--no-image &__title {
-    border-bottom: $spacing-3xs solid $red;
-    padding-bottom: $spacing-md;
+    border-bottom: spacing.$spacing-3xs solid colours.$red;
+    padding-bottom: spacing.$spacing-md;
 
     &::after {
       right: 0;
@@ -72,7 +76,7 @@
 
 a.feature-link {
   .feature-link__title {
-    color: $dark-blue;
+    color: colours.$dark-blue;
   }
   &:hover {
     .feature-link__title {
@@ -82,7 +86,7 @@ a.feature-link {
     }
 
     .feature-link__figure {
-      opacity: $link-image-hover-opacity;
+      opacity: config.$link-image-hover-opacity;
     }
   }
 }
@@ -110,6 +114,6 @@ a.feature-link {
   }
 
   .feature-link .feature-link__title:after {
-    background-image: url('#{$image-theme-directory-icon}/icon-gt-white.svg');
+    background-image: url('#{config.$image-theme-directory-icon}/icon-gt-white.svg');
   }
 }

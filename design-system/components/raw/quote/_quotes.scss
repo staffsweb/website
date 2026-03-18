@@ -1,63 +1,68 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/layout";
+@use "../../assets/styles/__vars/spacing";
+@use "../../assets/styles/__vars/typography";
+
 
 blockquote,
 .blockquote {
-  @include blockquote;
+  @include typography.blockquote;
 
   footer {
-    margin-top: $spacing-lg;
-    @include typescale('sm');
+    margin-top: spacing.$spacing-lg;
+    @include typography.typescale('sm');
   }
 }
 
 cite,
 .cite {
-  @include cite;
+  @include typography.cite;
 }
 
 .blockquote--large,
 .blockquote--short {
-  @include typescale('2xl', 'em');
-  @include line-height('headings');
+  @include typography.typescale('2xl', 'em');
+  @include typography.line-height('headings');
 
-  @media (min-width: $breakpoint-largescreen-typography) {
-    @include typescale('4xl', 'em');
+  @media (min-width: layout.$breakpoint-largescreen-typography) {
+    @include typography.typescale('4xl', 'em');
   }
 }
 
 .blockquote--small,
 .blockquote--long {
-  @include typescale('lg', 'em');
+  @include typography.typescale('lg', 'em');
 
-  @media (min-width: $breakpoint-largescreen-typography) {
-    @include typescale('xl', 'em');
+  @media (min-width: layout.$breakpoint-largescreen-typography) {
+    @include typography.typescale('xl', 'em');
   }
 }
 
 .blockquote__title {
-  color: $primary;
-  color: var(--accent-color, #{$primary});
+  color: colours.$primary;
+  color: var(--accent-color, #{colours.$primary});
 
-  @include typescale('2xl');
+  @include typography.typescale('2xl');
 
-  @media (min-width: $breakpoint-largescreen-typography) {
-    @include typescale('3xl');
+  @media (min-width: layout.$breakpoint-largescreen-typography) {
+    @include typography.typescale('3xl');
   }
 }
 
 .blockquote__highlight {
-  color: $primary;
-  color: var(--accent-color, #{$primary});
+  color: colours.$primary;
+  color: var(--accent-color, #{colours.$primary});
 }
 
 .blockquote__footer {
-  margin-top: $spacing-lg;
-  @include typescale('md');
+  margin-top: spacing.$spacing-lg;
+  @include typography.typescale('md');
 }
 
 .blockquote__prose {
-  margin: $spacing-lg 0;
-  @include typescale('md');
-  @include line-height('spaced');
+  margin: spacing.$spacing-lg 0;
+  @include typography.typescale('md');
+  @include typography.line-height('spaced');
 }
 
 .blockquote__figure {

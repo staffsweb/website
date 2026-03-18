@@ -1,3 +1,5 @@
+@use "../__vars/spacing";
+
 /* CG: Alternative to the grid to allow items to be aligned to the bottom */
 .title-grid {
     display:  table;
@@ -15,7 +17,7 @@
         text-align: right;
 
         & .button {
-            margin-bottom: $spacing-lg;
+            margin-bottom: spacing.$spacing-lg;
         }
     }
 }

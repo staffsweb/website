@@ -231,38 +231,40 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre><span class="hljs-selector-class">.button</span> {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/mixins&quot;</span>;
+
+<span class="hljs-selector-class">.button</span> {
   <span class="hljs-comment">// For the moment, these are defined as little mixins over in __vars/mixins so they can be included elsewhere</span>
 
-  <span class="hljs-keyword">@include</span> button;
+  <span class="hljs-keyword">@include</span> mixins.button;
 
   <span class="hljs-comment">// Sizes</span>
 
   &amp;--xs {
-    <span class="hljs-keyword">@include</span> button--xs;
+    <span class="hljs-keyword">@include</span> mixins.button--xs;
   }
 
   &amp;--sm {
-    <span class="hljs-keyword">@include</span> button--sm;
+    <span class="hljs-keyword">@include</span> mixins.button--sm;
   }
 
   &amp;--lg {
-    <span class="hljs-keyword">@include</span> button--lg;
+    <span class="hljs-keyword">@include</span> mixins.button--lg;
   }
 
   &amp;--xl {
-    <span class="hljs-keyword">@include</span> button--xl;
+    <span class="hljs-keyword">@include</span> mixins.button--xl;
   }
 
   <span class="hljs-comment">// Layout</span>
 
   &amp;--block {
-    <span class="hljs-keyword">@include</span> button--block;
+    <span class="hljs-keyword">@include</span> mixins.button--block;
     <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.5</span>;
   }
 
   &amp;--pointy {
-    <span class="hljs-keyword">@include</span> button--pointy;
+    <span class="hljs-keyword">@include</span> mixins.button--pointy;
   }
 
   &amp;--caps {
@@ -272,23 +274,23 @@
   <span class="hljs-comment">// Colours</span>
 
   &amp;--dark-blue {
-    <span class="hljs-keyword">@include</span> button--dark-blue;
+    <span class="hljs-keyword">@include</span> mixins.button--dark-blue;
   }
 
   &amp;--digital-blue {
-    <span class="hljs-keyword">@include</span> button--digital-blue;
+    <span class="hljs-keyword">@include</span> mixins.button--digital-blue;
   }
 
   &amp;--granite {
-    <span class="hljs-keyword">@include</span> button--granite;
+    <span class="hljs-keyword">@include</span> mixins.button--granite;
   }
 
   &amp;--grey {
-    <span class="hljs-keyword">@include</span> button--grey;
+    <span class="hljs-keyword">@include</span> mixins.button--grey;
   }
 
   &amp;--<span class="hljs-attribute">outline</span> {
-    <span class="hljs-keyword">@include</span> button--outline;
+    <span class="hljs-keyword">@include</span> mixins.button--outline;
 
     <span class="hljs-selector-class">.slab--bg-slate</span> &amp;, <span class="hljs-selector-class">.slab--bg-teal</span> &amp; {
       <span class="hljs-attribute">color</span>: white;
@@ -296,19 +298,19 @@
   }
 
   &amp;--<span class="hljs-attribute">outline</span>-dark-blue {
-    <span class="hljs-keyword">@include</span> button--outline-dark-blue;
+    <span class="hljs-keyword">@include</span> mixins.button--outline-dark-blue;
   }
 
   &amp;--<span class="hljs-attribute">outline</span>-grey {
-    <span class="hljs-keyword">@include</span> button--outline-grey;
+    <span class="hljs-keyword">@include</span> mixins.button--outline-grey;
   }
 
   &amp;--<span class="hljs-attribute">outline</span>-slate {
-    <span class="hljs-keyword">@include</span> button--outline-dark-blue;
+    <span class="hljs-keyword">@include</span> mixins.button--outline-dark-blue;
   }
 
   &amp;<span class="hljs-selector-attr">[disabled]</span> {
-    <span class="hljs-keyword">@include</span> button--disabled;
+    <span class="hljs-keyword">@include</span> mixins.button--disabled;
   }
 }</pre>
                             </code>
@@ -326,7 +328,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">1.2 KB</span>
+                    <span class="Meta-value">1.3 KB</span>
                 </li>
             </ul>
         </div>

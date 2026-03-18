@@ -1,3 +1,6 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/functions";
+
 .tag--narrow {
     padding: 0.35em 0.5em;
 }
@@ -6,13 +9,13 @@
     border-radius: 0;
 }
 
-@each $name, $value in $tag-bg-colors {
+@each $name, $value in colours.$tag-bg-colors {
     .tag--#{$name} {
         background-color: #{$value};
         @if ($name == 'red') {
             color: white;
         }
-        @else if (choose-contrast-color($value) == white) {
+        @else if (functions.choose-contrast-color($value) == white) {
             color: white;
         }
         @else {

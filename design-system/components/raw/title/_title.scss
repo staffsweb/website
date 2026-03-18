@@ -1,34 +1,38 @@
+@use "../../assets/styles/__vars/colours";
+@use "../../assets/styles/__vars/functions";
+@use "../../assets/styles/__vars/spacing";
+
 .title {
   // $title-bg-colors: see __vars/colours
 
   position: relative;
-  --background: #{$dark-blue};
+  --background: #{colours.$dark-blue};
   --color: white;
   max-width: 42em; // @TODO: why? what does this relate to? make a variable
-  margin-bottom: $spacing-lg;
-  margin-right: $spacing-md;
+  margin-bottom: spacing.$spacing-lg;
+  margin-right: spacing.$spacing-md;
 
   + .title {
-    margin-top: -$spacing-md;
+    margin-top: -(spacing.$spacing-md);
   }
 
   &--course-location {
-    margin-top: $spacing-xs;
+    margin-top: spacing.$spacing-xs;
   }
 }
 
 .title__highlight {
   position: relative;
   display: inline;
-  left: $spacing-xs;
+  left: spacing.$spacing-xs;
   padding: 0.25rem;
   line-height: 1.4;
-  background: $primary;
-  background: var(--background, #{$primary});
+  background: colours.$primary;
+  background: var(--background, #{colours.$primary});
   color: white;
   color: var(--color);
-  box-shadow: -$spacing-xs 0 0 0 #{$primary}, $spacing-xs 0 0 0 #{$primary};
-  box-shadow: -$spacing-xs 0 0 0 var(--background, #{$primary}), $spacing-xs 0 0 0 var(--background, #{$primary});
+  box-shadow: -(spacing.$spacing-xs) 0 0 0 #{colours.$primary}, spacing.$spacing-xs 0 0 0 #{colours.$primary};
+  box-shadow: -(spacing.$spacing-xs) 0 0 0 var(--background, #{colours.$primary}), spacing.$spacing-xs 0 0 0 var(--background, #{colours.$primary});
   box-decoration-break: clone;
 }
 
@@ -38,10 +42,10 @@
   }
 }
 
-@each $name, $value in $title-bg-colors {
+@each $name, $value in colours.$title-bg-colors {
   .title--bg-#{$name} {
     --background: #{$value};
-    @if (choose-contrast-color($value) == black) {
+    @if (functions.choose-contrast-color($value) == black) {
       --color: black;
     }
   }

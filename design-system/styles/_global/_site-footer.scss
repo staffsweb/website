@@ -1,9 +1,15 @@
+@use "../__vars/breakpoints";
+@use "../__vars/colours";
+@use "../__vars/config";
+@use "../__vars/spacing";
+@use "../__vars/typography";
+
 .footer-site {
-  background: $neutral--primary;
+  background: colours.$neutral--primary;
   color: #fff;
   clear: both;
   position: relative;
-  padding: $spacing-xl 0;
+  padding: spacing.$spacing-xl 0;
   z-index: 0;
 
   a:not(.button) {
@@ -18,24 +24,24 @@
   }
 
   li::marker {
-    color: $red;
+    color: colours.$red;
   }
 
   .h6 {
     color: white;
-    margin-top: $spacing-lg;
+    margin-top: spacing.$spacing-lg;
   }
 
   &__links {
-    margin-top: $spacing-xl;
-    border-top: 1px solid $grey-50-pc;
+    margin-top: spacing.$spacing-xl;
+    border-top: 1px solid colours.$grey-50-pc;
   }
 
   & .list--links li {
     margin-bottom: 0.25rem;
   }
 
-  @media (min-width: $third-breakpoint) {
+  @media (min-width: breakpoints.$third-breakpoint) {
     &__links {
       display: flex;
       & > div {
@@ -44,17 +50,17 @@
     }
 
     &__logo-img {
-      margin: $spacing-4xl 0;
+      margin: spacing.$spacing-4xl 0;
     }
   }
 
-  @media (max-width: $third-breakpoint) {
+  @media (max-width: breakpoints.$third-breakpoint) {
     &__map {
       display: none;
     }
 
     &__logo-img {
-      margin: 0 0 $spacing-lg;
+      margin: 0 0 spacing.$spacing-lg;
     }
   }
 
@@ -70,12 +76,12 @@
 
   &__social-list {
     .icon {
-      @include typescale('3xl');
-      margin-right: $spacing-sm;
+      @include typography.typescale('3xl');
+      margin-right: spacing.$spacing-sm;
       max-height: 100%;
       vertical-align: middle;
 
-      @each $name, $value in $social-media-icons {
+      @each $name, $value in config.$social-media-icons {
         &--#{$name} {
           background-image: url('#{$value}');
         }
@@ -84,8 +90,8 @@
   }
 
   &__legal {
-    margin: 0 0 $spacing-2xs;
-    @include typescale('xs');
-    @include line-height('compact');
+    margin: 0 0 spacing.$spacing-2xs;
+    @include typography.typescale('xs');
+    @include typography.line-height('compact');
   }
 }

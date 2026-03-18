@@ -1,10 +1,16 @@
+@use "sass:map";
+@use "../__vars/breakpoints";
+@use "../__vars/colours";
+@use "../__vars/layout";
+@use "../__vars/spacing";
+
 .debug {
   * {
     box-shadow: 0 0 0.5em rgba(255, 0, 0, 0.75), inset 0 0 0.5em rgba(0, 255, 0, 0.75) !important;
   }
 }
 
-@each $name, $value in $utils-bg-colors {
+@each $name, $value in colours.$utils-bg-colors {
   .bg-#{$name} {
     background: $value !important;
 
@@ -14,7 +20,7 @@
   }
 }
 
-@each $name, $value in $utils-text-colors {
+@each $name, $value in colours.$utils-text-colors {
   .text-color-#{$name} {
     color: $value !important;
   }
@@ -39,14 +45,14 @@
 
 .text-columns {
   columns: 25em;
-  column-gap: $grid-gutter;
+  column-gap: layout.$grid-gutter;
 
   p {
     break-inside: avoid;
   }
 }
 
-@each $name, $value in $utils-margin-sizes {
+@each $name, $value in spacing.$utils-margin-sizes {
   .margin-y-#{$name} {
     margin-top: $value !important;
     margin-bottom: $value !important;
@@ -135,7 +141,7 @@
   padding: 2px;
   font-size: 12px;
   color: #FFF;
-  background-color: $red;  
+  background-color: colours.$red;  
   z-index: 200;
   border: 1px solid #FFF;
 }
@@ -151,7 +157,7 @@
 }
 
 .accreditation-logos {
-  margin-bottom: $spacing-2xl;
+  margin-bottom: spacing.$spacing-2xl;
 
   & > img {
     display: inline-block;
@@ -165,7 +171,7 @@
 
 .note {
   &--validation {
-    color: $red;
+    color: colours.$red;
     font-weight: 500;
   }
 }
@@ -173,7 +179,7 @@
 p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: none; }
 
 /* CG: Utility classes for showing / hiding content at specific breakpoints */
-@media (max-width: map_get($breakpoint-stages, 'mobile-wide')) {
+@media (max-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
   .visible-mobile-down {
     display: block!important;
   }
@@ -182,7 +188,7 @@ p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: n
   }
 }
 
-@media (max-width: map_get($breakpoint-stages, 'tablet-wide')) {
+@media (max-width: map.get(breakpoints.$breakpoint-stages, 'tablet-wide')) {
   .visible-tablet-wide-down {
     display: block!important;
   }
@@ -191,7 +197,7 @@ p.optanon-category-C0003[src], img.optanon-category-C0003[data-src] { display: n
   }
 }
 
-@media (min-width: map_get($breakpoint-stages, 'mobile-wide')) {
+@media (min-width: map.get(breakpoints.$breakpoint-stages, 'mobile-wide')) {
   .visible-mobile-down {
     display: none!important;
   }

@@ -220,34 +220,37 @@
                         <div class="FileBrowser-itemPreview">
                             
                             <code class="Code Code--lang-SCSS FileBrowser-code hljs">
-                                <pre>hr {
+                                <pre><span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/colours&quot;</span>;
+<span class="hljs-keyword">@use</span> <span class="hljs-string">&quot;../../assets/styles/__vars/spacing&quot;</span>;
+
+hr {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-comment">// see base-elements in vars/_typography</span>
 }
 
 <span class="hljs-selector-class">.hr--primary</span> {
   <span class="hljs-attribute">border-top-width</span>: <span class="hljs-number">2px</span>;
-  <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$grey-50-pc</span>;
+  <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$grey-50-pc</span>;
 }
 
 <span class="hljs-selector-class">.hr--burgundy</span> {
   <span class="hljs-attribute">border-top-width</span>: <span class="hljs-number">2px</span>;
-  <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$burgundy</span>;
+  <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$burgundy</span>;
 }
 
 <span class="hljs-selector-class">.hr--teal</span> {
   <span class="hljs-attribute">border-top-width</span>: <span class="hljs-number">2px</span>;
-  <span class="hljs-attribute">border-color</span>: <span class="hljs-variable">$teal</span>;
+  <span class="hljs-attribute">border-color</span>: colours.<span class="hljs-variable">$teal</span>;
 }
 
 <span class="hljs-comment">// Spacing</span>
 
 <span class="hljs-selector-class">.hr--compact</span> {
-  <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-xl</span> auto;
+  <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-xl</span> auto;
 }
 
 <span class="hljs-selector-class">.hr--spaced</span> {
-  <span class="hljs-attribute">margin</span>: <span class="hljs-variable">$spacing-5xl</span> auto;
+  <span class="hljs-attribute">margin</span>: spacing.<span class="hljs-variable">$spacing-5xl</span> auto;
 }
 
 <span class="hljs-selector-class">.hr--invisible</span> {
@@ -268,7 +271,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">462 Bytes</span>
+                    <span class="Meta-value">589 Bytes</span>
                 </li>
             </ul>
         </div>

@@ -1,3 +1,8 @@
+@use "../__vars/colours";
+@use "../__vars/layout";
+@use "../__vars/spacing";
+@use "../__vars/typography";
+
 
 //@include font-face;
 
@@ -25,23 +30,23 @@ html {
 }
 
 body {
-  @include body;
+  @include typography.body;
 }
 
 ::selection {
-  background: rgba($primary, 0.2);
+  background: rgba(colours.$primary, 0.2);
 }
 
-@include base-elements;
+@include typography.base-elements;
 
-@each $name, $size in $typescale-map {
+@each $name, $size in typography.$typescale-map {
   .font-#{$name} {
-    @include typescale($name, $important: true);
+    @include typography.typescale($name, $important: true);
   }
 }
 
 .font-primary {
-  @include font-primary;
+  @include typography.font-primary;
 }
 
 //.font-secondary {
@@ -51,42 +56,42 @@ body {
 main,
 article {
   p:not([class]) {
-    max-width: $line-length-max-rem;
+    max-width: layout.$line-length-max-rem;
   }
 
   ul:not([class]),
   ol:not([class]) {
-    max-width: calc(#{$line-length-max-rem} - 1.5em); // subtract base ul left hand padding to match p width
+    max-width: calc(#{layout.$line-length-max-rem} - 1.5em); // subtract base ul left hand padding to match p width
   }
 }
 
 hgroup,
 .hgroup {
-  margin: 0 0 $spacing-xl;
+  margin: 0 0 spacing.$spacing-xl;
 
-  #{headings()} {
-    margin: 0 0 $spacing-xs;
+  #{typography.headings()} {
+    margin: 0 0 spacing.$spacing-xs;
   }
 }
 
 
 .caps {
-  @include caps;
+  @include typography.caps;
 }
 
 .tag {
-  @include tag;
+  @include typography.tag;
 }
 
 a.tag {
   &:hover {
-    @include tag--hover;
+    @include typography.tag--hover;
   }
 }
 
 .url {
   // has break-word in @mixin base-elements
-  color: $text-color;
+  color: colours.$text-color;
   text-decoration: underline;
 }
 
