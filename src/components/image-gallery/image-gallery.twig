@@ -1,0 +1,43 @@
+<div class="grid  grid-5-cols">
+  {% for i in 1..10 %}
+    <article aria-label="{{ captions[i-1] }}">
+      <div class="tile  margin-bottom-lg" href="">
+        <figure class="tile__figure">
+          <a href="#" data-modal-trigger="lead-gen-modal-{{ i }}">
+            <img src="https://picsum.photos/500/500?random={{ i }}" class="tile__img" alt=""/>
+          </a>
+        </figure>
+
+        <div class="tile__caption">
+          <div class="title  title--bg-maroon  tile__title">
+            <h3 class="h6  title__highlight">{{ captions[i-1] }}</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+{% for i in 1..10 %}
+  <div id="lead-gen-modal-{{ i }}" class="modal  modal-slide" aria-hidden="true" aria-label="{{ captions[i-1] }}" data-modal="lead-gen-modal-{{ i }}">
+    <div class="modal__overlay">
+        <div class="modal__container" role="dialog">
+            <header class="modal__header">
+                <h3></h3>
+                <button class="modal__close" aria-label="Close modal" data-modal-close="" type="button" />
+            </header>
+            <div class="modal__content">
+                <div>
+                    <div>
+                        <div>
+                          <h2 class="visually-hidden">{{ captions[i-1] }}</h2>
+                          <img class="align-center" src="https://picsum.photos/500/500?random={{ i }}" alt=""/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
