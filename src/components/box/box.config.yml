@@ -33,6 +33,12 @@ variants:
       background: neon
       text: 'This is a Neon box'
 
+  - name: pale-blue
+    label: "Background: Pale blue"
+    context:
+      background: pale-blue
+      text: 'This is a Pale Blue box'
+
 #  - name: offwhite-gradient
 #    label: "Background: Offwhite Gradient"
 #    context:
