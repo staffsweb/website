@@ -102,6 +102,10 @@
     }
   }
 
+  &--bg-neon {
+    background: colours.$neon-50-pc;
+  }
+
   &--bg-offwhite-gradient {
     background: radial-gradient(45% 660% at 50% 50%, color.mix(#e3e3e3, white, 30%) 0%, color.mix(#ccc, white, 30%) 100%);
   }
