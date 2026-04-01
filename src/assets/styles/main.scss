@@ -1,4 +1,5 @@
-@use "__vars/_all";
+@use "__vars/__all";
+@use "__vars/_colours" as colours;
 
 $icon-accent-colors: (
   'red' : colours.$red,
@@ -73,4 +74,3 @@ $icon-accent-colors: (
 //Custom
 @use "../../components/modal/modal";
 @use "../../components/news/_news.scss";
-@use "__vars/colours";
