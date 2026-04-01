@@ -1,25 +1,24 @@
-<div class="grid  grid-5-cols">
+<div class="image-gallery  grid  grid-5-cols">
   {% for i in 1..10 %}
-    <article aria-label="{{ captions[i-1] }}">
-      <div class="tile  margin-bottom-lg" href="">
-        <figure class="tile__figure">
-          <a href="#" data-modal-trigger="lead-gen-modal-{{ i }}">
-            <img src="https://picsum.photos/500/500?random={{ i }}" class="tile__img" alt=""/>
-          </a>
+    <article class="margin-bottom-lg" aria-label="{{ captions[i-1] }}">
+        <figure>
+            <a href="#" data-modal-trigger="image-gallery-modal-{{ i }}">
+              <svg class="image-gallery__magnify" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.625 34.375C26.8757 34.375 34.375 26.8758 34.375 17.625C34.375 8.37423 26.8757 0.875 17.625 0.875C8.37427 0.875 0.875 8.37423 0.875 17.625C0.875 26.8758 8.37427 34.375 17.625 34.375ZM17.625 30C24.4595 30 30 24.4595 30 17.625C30 10.7905 24.4595 5.25 17.625 5.25C10.7905 5.25 5.25 10.7905 5.25 17.625C5.25 24.4595 10.7905 30 17.625 30Z" fill="white"></path>
+                <path d="M26.75 27.875C27.6164 27.0085 29.0213 27.0085 29.8877 27.875L40.3137 38.301C41.1802 39.1674 41.1802 40.5723 40.3137 41.4388C39.4472 42.3052 38.0424 42.3052 37.1759 41.4388L26.75 31.0128C25.8835 30.1463 25.8835 28.7415 26.75 27.875Z" fill="white"></path>
+              </svg>
+              <img src="https://picsum.photos/500/500?random={{ i }}" alt=""/>
+            </a>
         </figure>
-
-        <div class="tile__caption">
-          <div class="title  title--bg-maroon  tile__title">
+        <div class="title  tile__title">
             <h3 class="h6  title__highlight">{{ captions[i-1] }}</h3>
-          </div>
         </div>
-      </div>
     </article>
   {% endfor %}
 </div>
 
 {% for i in 1..10 %}
-  <div id="lead-gen-modal-{{ i }}" class="modal  modal-slide" aria-hidden="true" aria-label="{{ captions[i-1] }}" data-modal="lead-gen-modal-{{ i }}">
+  <div id="image-gallery-modal-{{ i }}" class="modal  modal-slide" aria-hidden="true" aria-label="{{ captions[i-1] }}" data-modal="image-gallery-modal-{{ i }}">
     <div class="modal__overlay">
         <div class="modal__container" role="dialog">
             <header class="modal__header">
