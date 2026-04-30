@@ -1,5 +1,5 @@
 name: Country Selector
-status: wip
+status: ready
 context:
   titleText: 'International entry requirements in your country'
   dropdownLabel: 'Select your country'
