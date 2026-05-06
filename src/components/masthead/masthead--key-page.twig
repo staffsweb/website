@@ -59,6 +59,12 @@
             textElement: 'h6',
             animate: true
           } %}
+          {% include '@button' with {
+            text: 'Call to action',
+            url: '#',
+            classes: ['button--pointy'],
+            animate: true
+          } %}
         </div>
         <div class="col-1/3@tablet">
           <img class="masthead__img" src="{{ ('/images/masthead-square-0.jpg') | path }}" alt="" />
@@ -120,6 +126,12 @@
       {% include '@title' with {
         text: '(If long, consider using h2 textElementStyle)',
         textElement: 'h6',
+        animate: true
+      } %}
+      {% include '@button' with {
+        text: 'Call to action',
+        url: '#',
+        classes: ['button--pointy'],
         animate: true
       } %}
     </div>
