@@ -47,6 +47,14 @@
   &--entry-requirements {
     margin-bottom: 2rem;
     padding: 3rem 0 1rem;
+
+    @media (min-width: (map.get(breakpoints.$breakpoint-stages, 'tablet'))) {
+      & .grid > section {
+        border-left: 1px solid $border-color;
+        padding-left: spacing.$spacing-xs;
+        margin-bottom: spacing.$spacing-xs;
+      }
+    }
   }
 
   //--
