@@ -226,16 +226,20 @@ $banner-bg-colors: (
 );
 
 $icon-box-colors: (
-  'red': $digital-blue, // CG: Polyfill for legacy colour
   'digital-blue': $digital-blue,
   'dark-blue': $dark-blue,
   'teal' : $teal,
   'pink': $pink,
   'neon': $neon,
-  'maroon': $burgundy, // CG: Polyfill for legacy colour
   'burgundy': $burgundy,
-  'slate': $dark-blue, // CG: Polyfill for legacy colour
-  'offwhite': $grey-50-pc
+  'offwhite': $grey-50-pc,
+  'pale-blue': $pale-blue,
+  'lavender': $lavender,
+  'neon-50-pc': $neon-50-pc,
+  // CG: Polyfills for legacy colours
+  'red': $digital-blue,
+  'maroon': $burgundy,
+  'slate': $dark-blue
 );
 
 $tag-bg-colors: (
