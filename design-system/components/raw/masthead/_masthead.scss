@@ -261,6 +261,18 @@
       background-repeat: no-repeat;
     }
 
+    &--digital-blue-with-pale-blue {
+      background: colours.$digital-blue url('../images/bg-knot-whole-pale-blue.svg') center center no-repeat;
+      background-size: 120%;
+      background-repeat: no-repeat;
+    }
+
+    &--teal-with-peach {
+      background: colours.$teal url('../images/bg-knot-whole-peach.svg') center center no-repeat;
+      background-size: 120%;
+      background-repeat: no-repeat;
+    }
+
     &__hero {
       padding-top: spacing.$spacing-lg;
       padding-bottom: spacing.$spacing-lg;
