@@ -30,7 +30,7 @@ $grey-50-pc: #E0DFE8;
 // Elevated colours
 $teal: #006b82;
 $pale-blue: #bdf7e3;
-$pale-blue-50-pc: #DEFBF1;
+$pale-blue-50-pc: #D9F7F0;
 $neon: #c4ff36;
 $neon-50-pc: #E1FF9A;
 $yellow: #ffff58;
@@ -233,7 +233,7 @@ $icon-box-colors: (
   'neon': $neon,
   'burgundy': $burgundy,
   'offwhite': $grey-50-pc,
-  'pale-blue': $pale-blue,
+  'pale-blue': $pale-blue-50-pc,
   'lavender': $lavender,
   'neon-50-pc': $neon-50-pc,
   // CG: Polyfills for legacy colours
