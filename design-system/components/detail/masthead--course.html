@@ -240,7 +240,7 @@
 
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;masthead__course-hero&quot;</span>&gt;</span>
 
-                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/masthead5.jpg&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/masthead4.jpg&quot;</span> /&gt;</span>
 
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -373,9 +373,21 @@
     <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$burgundy</span>;
   }
 
-  &amp;--teal {
+  &amp;--teal-with-peach {
     <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$teal</span><span class="hljs-meta">!important</span>;
-    <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-lavender.svg&quot;</span>);
+    <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-peach.svg&quot;</span>);
+    <span class="hljs-attribute">background-size</span>: contain;
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
+      <span class="hljs-attribute">background-size</span>: cover;
+      <span class="hljs-attribute">background-position</span>: calc(<span class="hljs-number">50%</span> + <span class="hljs-number">25rem</span>) center;
+    }
+    <span class="hljs-attribute">background-repeat</span>: no-repeat;
+    <span class="hljs-attribute">background-position</span>: right center;
+  }
+
+  &amp;--digital-blue-with-pale-blue {
+    <span class="hljs-attribute">background-color</span>: colours.<span class="hljs-variable">$digital-blue</span><span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">&quot;../images/masthead-knot-pale-blue.svg&quot;</span>);
     <span class="hljs-attribute">background-size</span>: contain;
     <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: map.get(breakpoints.<span class="hljs-variable">$breakpoint-stages</span>, <span class="hljs-string">&#x27;tablet-wide&#x27;</span>)) {
       <span class="hljs-attribute">background-size</span>: cover;
@@ -736,7 +748,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">8.7 KB</span>
+                    <span class="Meta-value">9.1 KB</span>
                 </li>
             </ul>
         </div>
