@@ -409,6 +409,20 @@
 }
 
 <span class="hljs-selector-class">.table</span> {
+  &amp;--fees {
+    &amp; <span class="hljs-selector-tag">thead</span>, &amp; <span class="hljs-selector-tag">th</span>, &amp; <span class="hljs-selector-tag">thead</span> &gt; <span class="hljs-selector-tag">tr</span> {
+      <span class="hljs-attribute">border-bottom</span>: none;
+      <span class="hljs-attribute">background</span>: none;
+      <span class="hljs-attribute">padding-bottom</span>: spacing.<span class="hljs-variable">$spacing-xs</span>;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.125rem</span>;
+      <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0.75rem</span>;
+    }
+
+    &amp; <span class="hljs-selector-tag">tr</span> {
+      <span class="hljs-attribute">background</span>: none;
+      <span class="hljs-attribute">border-bottom-color</span>: colours.<span class="hljs-variable">$dark-blue</span>;
+    }
+  }
 }
 
 <span class="hljs-variable">$module-table-header-colours</span>: (
@@ -516,7 +530,7 @@
                 </li>
                 <li class="Meta-item">
                     <strong class="Meta-key">Size:</strong>
-                    <span class="Meta-value">2 KB</span>
+                    <span class="Meta-value">2.3 KB</span>
                 </li>
             </ul>
         </div>
@@ -540,7 +554,7 @@
         
         
         <li class="Meta-item">
-            <strong class="Meta-key">Variants <em class="Meta-count">(3)</em>:</strong>
+            <strong class="Meta-key">Variants <em class="Meta-count">(4)</em>:</strong>
             <span class="Meta-value Meta-value--linkList">
             
                 <a href="./table--default.html">
@@ -549,6 +563,10 @@
             
                 <a href="./table--apply.html">
                     <span>Apply</span>
+                </a>, 
+            
+                <a href="./table--fees.html">
+                    <span>Fees</span>
                 </a>, 
             
                 <a href="./table--modules.html">
@@ -6099,6 +6117,40 @@
                 data-handle="table--apply"
             >
                 <span>Apply</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29cc29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./table--fees.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="table--fees"
+                data-handle="table--fees"
+            >
+                <span>Fees</span>
                 
 
 <div class="Status Status--unlabelled">

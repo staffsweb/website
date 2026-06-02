@@ -7,6 +7,20 @@ table {
 }
 
 .table {
+  &--fees {
+    & thead, & th, & thead > tr {
+      border-bottom: none;
+      background: none;
+      padding-bottom: spacing.$spacing-xs;
+      font-size: 1.125rem;
+      padding-left: 0.75rem;
+    }
+
+    & tr {
+      background: none;
+      border-bottom-color: colours.$dark-blue;
+    }
+  }
 }
 
 $module-table-header-colours: (
