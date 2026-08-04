@@ -1285,16 +1285,22 @@ if(anchorTarget == "#courses__postgraduate")
   };
 
   var countrySubmit = function countrySubmit() {
-      $('#countrySubmit').on("click", function (e) {
+      $(document).on("click", '[name="countrySubmit"]', function (e) {
         e.preventDefault();
-        var countryPagePath = document.getElementById('countryPicker').value;
+
+        var countrySelector = $(this).closest('.country-selector');
+        var countryPagePath = countrySelector.find('.countryPicker, .country-picker__dropdown').first().val();
+
         if (countryPagePath == "") {
             return false;
-        } 
+        }
+
         $('#form1').on('submit', function (e) {
             e.preventDefault();
         });
+
         e.stopImmediatePropagation();
+
         if (countryPagePath != "") {
           if (window.location.hostname == "www.staffslondon.ac.uk") { // SM 21/05/21 If the country selector is used from the London site, direct to the main site pages
               window.location.href = window.location.protocol + "//www.staffs.ac.uk" + countryPagePath;

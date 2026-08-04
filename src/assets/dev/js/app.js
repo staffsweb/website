@@ -6726,9 +6726,10 @@ let newsAndEventsSearchInit = function () {
     }
   };
   var countrySubmit = function countrySubmit() {
-    $('#countrySubmit').on("click", function (e) {
+    $(document).on("click", '[name="countrySubmit"]', function (e) {
       e.preventDefault();
-      var countryPagePath = document.getElementById('countryPicker').value;
+      var countrySelector = $(this).closest('.country-selector');
+      var countryPagePath = countrySelector.find('.countryPicker, .country-picker__dropdown').first().val();
       if (countryPagePath == "") {
         return false;
       }
